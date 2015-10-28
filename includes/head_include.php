@@ -25,3 +25,9 @@
 	
 	<!-- LESS -->
 	<link rel="stylesheet" href="css/less.css" />
+	
+	<!-- jQuery - Needs at the head part of the hmtl document -->
+    <script src="js/jquery.js"></script>
+	
+	<!-- Register Validation JS File -->
+	<script src="js/register_validation.js"></script>

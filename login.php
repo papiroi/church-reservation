@@ -104,10 +104,12 @@
 				<h3 class="white-text">Login Form</h3>
 				<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
 					<label for="username">Username:</label>
-					<input type="text" name="username" id="username" class="form-control" placeholder="Username" required title="Enter Your Username! Username is Required!" autofocus/>
+					<input type="text" name="username" id="username" class="form-control" 
+						placeholder="Username" required title="Enter Your Username! Username is Required!" autofocus/>
 					<br/>
 					<label for="password">Password:</label>
-					<input type="password" name="password" id="password" class="form-control" placeholder="Password" required title="Enter Your Password! Password is Required"/>
+					<input type="password" name="password" id="password" class="form-control" 
+						placeholder="Password" required title="Enter Your Password! Password is Required"/>
 					<br/>
 					<input type="submit" value="Login" class="btn btn-primary form-control"/>
 				

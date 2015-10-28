@@ -9,6 +9,7 @@
 * Validation Class
 * This class' purpose is to validate and sanitize all input for users
 * for security purposes, example: sql injections techniques
+* This is client side validation
 */
 
 class Validation {

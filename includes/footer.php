@@ -15,9 +15,6 @@
  ?>
 	
 	<!-- Includes at the end of every files -->
-	
-	<!-- jQuery -->
-    <script src="js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
