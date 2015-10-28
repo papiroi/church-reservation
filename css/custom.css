@@ -1,0 +1,42 @@
+/*Custom CSS*/
+
+.center-div {
+	color: #ffffff;
+	background-color: rgba(0,0,0,0.8);
+	margin-top:90px;
+	min-width: 350px;
+	padding: 5px 30px 20px 30px;
+	border-radius: 10px;
+	margin-bottom: 50px;
+}
+
+.error-message {
+	margin: 3px auto;
+	color: red;
+	font-size: 19px;
+}
+
+input, select, textarea{
+	color: #000000;
+}
+
+.white-text {
+	color: #ffffff;
+	text-shadow: 2px 2px 5px black;
+}
+
+.input-width {
+	width: 300px;
+	min-width: 100px;
+}
+
+/* Highlight Color  */
+::-moz-selection {
+    color: white;
+    background: pink;
+}
+
+::selection {
+    color: white;
+    background: pink;
+}
