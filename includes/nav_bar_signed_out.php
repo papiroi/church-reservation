@@ -30,13 +30,16 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#"><strong>Services</strong></a>
+                        <a href="index.php"><strong>Home</strong></a>
                     </li>
                     <li>
-                        <a href="#"><strong>Contact</strong></a>
+                        <a href="services.php"><strong>Services</strong></a>
                     </li>
                     <li>
-                        <a href="#"><strong>About</strong></a>
+                        <a href="contact.php"><strong>Contact</strong></a>
+                    </li>
+                    <li>
+                        <a href="about.php"><strong>About</strong></a>
                     </li>
 					<li>
 						<a href="login.php"><strong>Login</strong></a>

@@ -33,13 +33,16 @@
 						<a href="#"><strong>Reservation &amp; Scheduling</strong></a>
 					</li>
                     <li>
-                        <a href="#"><strong>Services</strong></a>
+                        <a href="index.php"><strong>Home</strong></a>
                     </li>
                     <li>
-                        <a href="#"><strong>Contact</strong></a>
+                        <a href="services.php"><strong>Services</strong></a>
                     </li>
                     <li>
-                        <a href="#"><strong>About</strong></a>
+                        <a href="contact.php"><strong>Contact</strong></a>
+                    </li>
+                    <li>
+                        <a href="about.php"><strong>About</strong></a>
                     </li>
 					
                 </ul>
