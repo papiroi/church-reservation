@@ -30,7 +30,15 @@ input, select, textarea{
 
 .white-text {
 	color: #ffffff;
-	text-shadow: 2px 2px 5px black;
+	text-shadow: 4px 4px 10px black;
+}
+
+.link-text {
+	color: white;
+	text-shadow: 4px 4px 15px black;
+	padding-left: 5px;
+	padding-right: 5px;
+	text-decoration: underline;
 }
 
 .input-width {
@@ -47,4 +55,8 @@ input, select, textarea{
 ::selection {
     color: white;
     background: pink;
+}
+
+.glyphicon .glyphicon-home {
+	font-size: 45px;
 }

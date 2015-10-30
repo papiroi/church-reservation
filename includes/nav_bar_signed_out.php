@@ -30,7 +30,10 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="index.php"><strong>Home</strong></a>
+                        <a href="index.php">
+						<span class="glyphicon glyphicon-home"></span> 
+						<strong>Home</strong>
+						</a>
                     </li>
                     <li>
                         <a href="services.php"><strong>Services</strong></a>

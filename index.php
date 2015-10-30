@@ -55,7 +55,7 @@
 <!DOCTYPE html>
 <html class="full" lang="en-US">
 <head>
-	<title>Tarlac Cathedral Reservation and Scheduling</title>
+	<title>Tarlac Cathedral Online Reservation and Scheduling</title>
 	
 <?php
 /*
@@ -96,23 +96,8 @@
 	
 		<span class="white-text">
 			Welcome <?php echo $username; ?>!!!
-			<?php 
+			<?php require_once "includes/user_account_link.php"; ?>
 			
-				if($username != 'Guest') { 
-					echo "<a href='?s=logout' id='logout'>Logout</a>"; 
-
-					if(isset($_GET['s']) && $_GET['s'] == 'logout') {
-
-						session_destroy();
-
-						$conn->close();
-						
-						header("Location: index.php");
-						exit();
-						
-					}
-				}
-			?>
 		</span>
 	
 		<h1 class="text-center white-text">Tarlac Cathedral Online Reservation and Scheduling</h1>

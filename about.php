@@ -53,20 +53,7 @@
 <!-- Start of PHP Code for username display -->
 		<span class="white-text">
 		Welcome <?php echo $username; ?>!!!
-			<?php 
-			
-				if($username != 'Guest') { 
-					echo "<a href='?s=logout' id='logout'>Logout</a>"; 
-
-					if(isset($_GET['s']) && $_GET['s'] == 'logout') {
-
-						session_destroy();
-						
-						header("Location: services.php");
-						
-					}
-				}
-			?>
+			<?php require_once "includes/user_account_link.php"; ?>
 		</span>
 
 	
@@ -76,7 +63,8 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="center-div">
-						<p class="white-text">Tarlac Cathedral Online Reservation and Scheduling.
+						<h3 class="white-text">Tarlac Cathedral Online Reservation and Scheduling.</h3>
+						<p class="white-text">
 						An online system for Reservation and Scheduling of Events on the Cathedral.
 						Including events like Wedding etc...
 						</p>
