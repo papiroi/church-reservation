@@ -27,6 +27,8 @@
 	// To avoid direct scripting
 	unset($_SESSION['code']);
 	
+	@$conn -> close();
+	
 	// This will prevent executing additional script at the 
 	// end of every pages
 	exit();

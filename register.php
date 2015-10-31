@@ -134,7 +134,8 @@
 				
 				<div id="bdayclassdiv" class="form-group has-feedback">
 				<label for="bday">Birthday:</label>
-				<input type="date" name="bday" id="bday" class="form-control input-width" required/>
+				<input type="date" name="bday" id="bday" class="form-control input-width" 
+					placeholder="YYYY-MM-DD" required/>
 				<span id="bdayclassspan" class="glyphicon form-control-feedback"></span>
 				</div>
 				
@@ -143,8 +144,8 @@
 				<div id="usernameclassdiv" class="form-group has-feedback">
 				<label for="username">Username:</label>
 				<input type="text" name="username" id="username" class="form-control input-width" 
-					placeholder="Username" pattern=".{5,32}" required maxlength="32" min="5"
-					title="It must be a minimum of 5 characters and a maximum of 32 characters!"/>
+					placeholder="Username" pattern=".{4,32}" required maxlength="32" min="5"
+					title="It must be a minimum of 4 characters and a maximum of 32 characters!"/>
 				<span id="usernameclassspan" class="glyphicon form-control-feedback"></span>
 				</div>
 				
@@ -186,7 +187,7 @@
 <script>
 $(document).ready(function() {
 	// Validation for Firstname
-	$("#firstname").keyup(function() {
+	$("#firstname").focusout(function() {
 		if($("#firstname").val().length == "") {
 			$( "#firstnameclassdiv" ).removeClass( "has-success" ).addClass( "has-error" );
 			$( "#firstnameclassspan" ).removeClass( "glyphicon-ok" ).addClass( "glyphicon-remove" );
@@ -198,7 +199,7 @@ $(document).ready(function() {
 	});
 	
 	// Validation for Lastname
-	$("#lastname").keyup(function() {
+	$("#lastname").focusout(function() {
 		if($("#lastname").val().length == "") {
 			$( "#lastnameclassdiv" ).removeClass( "has-success" ).addClass( "has-error" );
 			$( "#lastnameclassspan" ).removeClass( "glyphicon-ok" ).addClass( "glyphicon-remove" );
@@ -210,7 +211,7 @@ $(document).ready(function() {
 	});
 	
 	// Validation for Mobile Number
-	$("#mobile").keyup(function() {
+	$("#mobile").focusout(function() {
 		if($("#mobile").val().length == "" || $("#mobile").val().length < 11) {
 			$( "#mobileclassdiv" ).removeClass( "has-success" ).addClass( "has-error" );
 			$( "#mobileclassspan" ).removeClass( "glyphicon-ok" ).addClass( "glyphicon-remove" );
@@ -223,7 +224,7 @@ $(document).ready(function() {
 	
 	
 	// Email Validation
-	$("#email").keyup(function() {
+	$("#email").focusout(function() {
 		
 		var email = $("#email").val();
 		
@@ -244,7 +245,7 @@ $(document).ready(function() {
 	});
 	
 	// Validation for Address
-	$("#address").keyup(function() {
+	$("#address").focusout(function() {
 		if($("#address").val().length == "" || $("#address").val().length < 4 ) {
 			$( "#addressclassdiv" ).removeClass( "has-success" ).addClass( "has-error" );
 			$( "#addressclassspan" ).removeClass( "glyphicon-ok" ).addClass( "glyphicon-remove" );
@@ -255,8 +256,10 @@ $(document).ready(function() {
 		}
 	});
 	
-	// Validation for Birthday
-	$("#bday").keyup(function() {
+	// Validation for Birthday -- No More Needed
+	/*
+	$("#bday").click(function() {
+	$("#bday").focusout(function(){
 		if($("#bday").val().length == "") {
 			$( "#bdayclassdiv" ).removeClass( "has-success" ).addClass( "has-error" );
 			$( "#bdayclassspan" ).removeClass( "glyphicon-ok" ).addClass( "glyphicon-remove" );
@@ -266,10 +269,11 @@ $(document).ready(function() {
 			$( "#bdayclassspan" ).removeClass( "glyphicon-remove" ).addClass( "glyphicon-ok" );
 		}
 	});
-	
+	});
+	*/
 	// Validation for Username
-	$("#username").keyup(function() {
-		if($("#username").val().length == "" || $("#username").val().length < 5 || $("#username").val().length > 32) {
+	$("#username").focusout(function() {
+		if($("#username").val().length == "" || $("#username").val().length < 3 || $("#username").val().length > 32) {
 			$( "#usernameclassdiv" ).removeClass( "has-success" ).addClass( "has-error" );
 			$( "#usernameclassspan" ).removeClass( "glyphicon-ok" ).addClass( "glyphicon-remove" );
 		}
@@ -280,7 +284,7 @@ $(document).ready(function() {
 	});
 	
 	// Validation for Password
-	$("#password").keyup(function() {
+	$("#password").focusout(function() {
 		if($("#password").val().length == "" || $("#password").val().length < 8) {
 			$( "#passwordclassdiv" ).removeClass( "has-success" ).addClass( "has-error" );
 			$( "#passwordclassspan" ).removeClass( "glyphicon-ok" ).addClass( "glyphicon-remove" );
@@ -292,7 +296,7 @@ $(document).ready(function() {
 	});
 	
 	// Validation for Password2
-	$("#password2").keyup(function() {
+	$("#password2").focusout(function() {
 		if($("#password2").val().length == "" || $("#password2").val().length < 8) {
 			$( "#password2classdiv" ).removeClass( "has-success" ).addClass( "has-error" );
 			$( "#password2classspan" ).removeClass( "glyphicon-ok" ).addClass( "glyphicon-remove" );

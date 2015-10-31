@@ -31,3 +31,19 @@
 	
 	<!-- Register Validation JS File -->
 	<script src="js/register_validation.js"></script>
+
+	<!-- Date Picker jQuery -->
+	<link rel="stylesheet" href="css/datepicker/metallic.css" />
+	
+	<script src="js/datepicker/zebra_datepicker.js"></script>
+	
+	<script>
+		$(document).ready(function(){
+			$("#bday").Zebra_DatePicker({
+				direction: [false,'1940-01-01']
+			});
+			$("#bday").Zebra_DatePicker({
+				view: 'years'
+			});
+		});
+	</script>
