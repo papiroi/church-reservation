@@ -4,17 +4,6 @@
 		exit("Direct Script Not Allowed!");
 
 	}
-
-	
-/*
-* This is the PHP Script to change the password
-* 
-*/
-	
-	
-/*
-* Change Password Script End Here
-*/
 ?>
 
 <!--
@@ -27,6 +16,50 @@ This will display if the user try to access Change Password of Similar
 	<div class="col-md-4">
 	
 		<div class="center-div">
+
+		
+<?php	
+/*
+* This is the PHP Script to change the password
+* 
+*/
+	if(isset($_POST['old_password']) && !empty($_POST['old_password'])) {
+	
+		// $username variable is already initialized and was declared a value
+		// Variable Assignments
+		$old_password = stripslashes($_POST['old_password']);
+		$new_password = stripslashes($_POST['new_password']);
+		$new_password2 = stripslashes($_POST['new_password2']);
+		
+		// Includes Connection String to Database Server
+		// $conn variable is included
+		require_once "includes/connect.php";
+	
+		// Include Password Changing Class
+		require_once "core/password.php";
+		
+		if($new_password == $new_password2 && strlen($new_password) > 7) {
+		
+			$password_instance = new Password($conn, $username, $old_password, $new_password);
+			
+			$password_instance->changePassword();
+			
+		
+		}
+		else {
+		
+			echo "<span class='error-message'>New Password Not Matched or You have entered less than 8 characters!</span>";
+		
+		}
+	}
+	
+	
+/*
+* Change Password Script End Here
+*/
+?>
+
+
 			<h2 class="white-text">Change Password</h2>
 			<form action="" method="post">
 				

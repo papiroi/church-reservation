@@ -7,17 +7,20 @@
 
 	if($username != 'Guest') { 
 ?>
-<a href="changepass.php"><span class="link-text">Change Password</span></a>
-<a href="?s=logout" id="logout"><span class="link-text">Logout</span></a>
+
+	<a href="changepass.php"><span class="link-text">Change Password</span></a>
+	<a href="?s=logout" id="logout"><span class="link-text">Logout</span></a>
 
 <?php
 		if(isset($_GET['s']) && $_GET['s'] == 'logout') {
 			
 			session_destroy();
 			
-			$conn->close();
+			if($conn) {
+				$conn->close();
+			}
 			
-			header("Location: index.php");
+			header("Location: " . $_SERVER['PHP_SELF']);
 			
 		}
 	}

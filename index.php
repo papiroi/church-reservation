@@ -92,7 +92,7 @@
 ?>
 
 
-	<div class="container-fluid">
+	<div class="container">
 	
 		<span class="white-text">
 			Welcome <?php echo $username; ?>!!!

@@ -69,7 +69,7 @@ class Registration {
 					'$this->address',
 					'$this->bday',
 					'Active',
-					'NOW()'
+					NOW()
 				)";
 	
 			$reg_query_result = $this->conn->query($reg_query);
