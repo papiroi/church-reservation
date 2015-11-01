@@ -9,6 +9,7 @@
 ?>
 
 	<a href="changepass.php"><span class="link-text">Change Password</span></a>
+	<a href="update.php"><span class="link-text">Update User Details</span></a>
 	<a href="?s=logout" id="logout"><span class="link-text">Logout</span></a>
 
 <?php

@@ -15,7 +15,7 @@ This will display if the user try to access Change Password of Similar
 	<div class="col-md-12">
 	
 		<div class="center-div">
-			<h2 class="white-text">Login First to Change Your Password!!!</h2>
+			<h2 class="white-text">Login First!!!</h2>
 			<h4><a href="login.php">Click Here to Login</a></h4>
 		</div>
 
