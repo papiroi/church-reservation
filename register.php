@@ -197,6 +197,16 @@ $(document).ready(function() {
 			$( "#firstnameclassspan" ).removeClass( "glyphicon-remove" ).addClass( "glyphicon-ok" );
 		}
 	});
+	$("#firstname").keyup(function() {
+		if($("#firstname").val().length == "") {
+			$( "#firstnameclassdiv" ).removeClass( "has-success" ).addClass( "has-error" );
+			$( "#firstnameclassspan" ).removeClass( "glyphicon-ok" ).addClass( "glyphicon-remove" );
+		}
+		else {
+			$( "#firstnameclassdiv" ).removeClass( "has-error" ).addClass( "has-success" );
+			$( "#firstnameclassspan" ).removeClass( "glyphicon-remove" ).addClass( "glyphicon-ok" );
+		}
+	});
 	
 	// Validation for Lastname
 	$("#lastname").focusout(function() {
@@ -209,9 +219,29 @@ $(document).ready(function() {
 			$( "#lastnameclassspan" ).removeClass( "glyphicon-remove" ).addClass( "glyphicon-ok" );
 		}
 	});
+	$("#lastname").keyup(function() {
+		if($("#lastname").val().length == "") {
+			$( "#lastnameclassdiv" ).removeClass( "has-success" ).addClass( "has-error" );
+			$( "#lastnameclassspan" ).removeClass( "glyphicon-ok" ).addClass( "glyphicon-remove" );
+		}
+		else {
+			$( "#lastnameclassdiv" ).removeClass( "has-error" ).addClass( "has-success" );
+			$( "#lastnameclassspan" ).removeClass( "glyphicon-remove" ).addClass( "glyphicon-ok" );
+		}
+	});
 	
 	// Validation for Mobile Number
 	$("#mobile").focusout(function() {
+		if($("#mobile").val().length == "" || $("#mobile").val().length < 11) {
+			$( "#mobileclassdiv" ).removeClass( "has-success" ).addClass( "has-error" );
+			$( "#mobileclassspan" ).removeClass( "glyphicon-ok" ).addClass( "glyphicon-remove" );
+		}
+		else {
+			$( "#mobileclassdiv" ).removeClass( "has-error" ).addClass( "has-success" );
+			$( "#mobileclassspan" ).removeClass( "glyphicon-remove" ).addClass( "glyphicon-ok" );
+		}
+	});
+	$("#mobile").keyup(function() {
 		if($("#mobile").val().length == "" || $("#mobile").val().length < 11) {
 			$( "#mobileclassdiv" ).removeClass( "has-success" ).addClass( "has-error" );
 			$( "#mobileclassspan" ).removeClass( "glyphicon-ok" ).addClass( "glyphicon-remove" );
@@ -243,6 +273,25 @@ $(document).ready(function() {
 			}
 		}
 	});
+	$("#email").keyup(function() {
+		
+		var email = $("#email").val();
+		
+		if($("#email").val().length == "") {
+			$( "#emailclassdiv" ).removeClass( "has-success" ).addClass( "has-error" );
+			$( "#emailclassspan" ).removeClass( "glyphicon-ok" ).addClass( "glyphicon-remove" );
+		}
+		else {
+			if(validateEmail(email)) {
+				$( "#emailclassdiv" ).removeClass( "has-error" ).addClass( "has-success" );
+				$( "#emailclassspan" ).removeClass( "glyphicon-remove" ).addClass( "glyphicon-ok" );
+			}
+			else {
+				$( "#emailclassdiv" ).removeClass( "has-success" ).addClass( "has-error" );
+				$( "#emailclassspan" ).removeClass( "glyphicon-ok" ).addClass( "glyphicon-remove" );
+			}
+		}
+	});
 	
 	// Validation for Address
 	$("#address").focusout(function() {
@@ -255,22 +304,17 @@ $(document).ready(function() {
 			$( "#addressclassspan" ).removeClass( "glyphicon-remove" ).addClass( "glyphicon-ok" );
 		}
 	});
-	
-	// Validation for Birthday -- No More Needed
-	/*
-	$("#bday").click(function() {
-	$("#bday").focusout(function(){
-		if($("#bday").val().length == "") {
-			$( "#bdayclassdiv" ).removeClass( "has-success" ).addClass( "has-error" );
-			$( "#bdayclassspan" ).removeClass( "glyphicon-ok" ).addClass( "glyphicon-remove" );
+	$("#address").keyup(function() {
+		if($("#address").val().length == "" || $("#address").val().length < 4 ) {
+			$( "#addressclassdiv" ).removeClass( "has-success" ).addClass( "has-error" );
+			$( "#addressclassspan" ).removeClass( "glyphicon-ok" ).addClass( "glyphicon-remove" );
 		}
 		else {
-			$( "#bdayclassdiv" ).removeClass( "has-error" ).addClass( "has-success" );
-			$( "#bdayclassspan" ).removeClass( "glyphicon-remove" ).addClass( "glyphicon-ok" );
+			$( "#addressclassdiv" ).removeClass( "has-error" ).addClass( "has-success" );
+			$( "#addressclassspan" ).removeClass( "glyphicon-remove" ).addClass( "glyphicon-ok" );
 		}
 	});
-	});
-	*/
+
 	// Validation for Username
 	$("#username").focusout(function() {
 		if($("#username").val().length == "" || $("#username").val().length < 3 || $("#username").val().length > 32) {
@@ -282,7 +326,16 @@ $(document).ready(function() {
 			$( "#usernameclassspan" ).removeClass( "glyphicon-remove" ).addClass( "glyphicon-ok" );
 		}
 	});
-	
+	$("#username").keyup(function() {
+		if($("#username").val().length == "" || $("#username").val().length < 3 || $("#username").val().length > 32) {
+			$( "#usernameclassdiv" ).removeClass( "has-success" ).addClass( "has-error" );
+			$( "#usernameclassspan" ).removeClass( "glyphicon-ok" ).addClass( "glyphicon-remove" );
+		}
+		else {
+			$( "#usernameclassdiv" ).removeClass( "has-error" ).addClass( "has-success" );
+			$( "#usernameclassspan" ).removeClass( "glyphicon-remove" ).addClass( "glyphicon-ok" );
+		}
+	});	
 	// Validation for Password
 	$("#password").focusout(function() {
 		if($("#password").val().length == "" || $("#password").val().length < 8) {

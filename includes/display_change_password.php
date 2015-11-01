@@ -60,7 +60,7 @@ This will display if the user try to access Change Password of Similar
 ?>
 
 
-			<h2 class="white-text">Change Password</h2>
+			<h3 class="white-text">Change Password: <u><?php echo $_SESSION['username']; ?></u></h3>
 			<form action="" method="post">
 				
 				<label for="old_password">Enter Old Password:</label>
