@@ -10,7 +10,30 @@
  * Load values on fields
  */
  
- 
+	// Include the connection string below
+	include_once "includes/connect.php";
+	
+	// Statements that get and load the values
+	$user_select = "SELECT * FROM users WHERE username = '$username'";
+		
+	$user_select_result = $conn->query($user_select);
+	
+	if ($user_select_result) {
+	
+	
+		while($row_usr = $user_select_result->fetch_assoc()) {
+		
+			$fetched_firstname = $row_usr['firstName'];
+			$fetched_lastname = $row_usr['lastName'];
+			$fetched_mobile = $row_usr['mobile'];
+			$fetched_email = $row_usr['email'];
+			$fetched_address = $row_usr['address'];
+		
+		}
+		
+	}
+	
+	
 ?>
 <!--
 Update User Details Form
@@ -29,7 +52,7 @@ Update User Details Form
 			<div id="firstnameclassdiv" class="form-group has-feedback">
 			<label for="firstname">First Name:</label>
 			<input type="text" name="firstname" id="firstname" class="form-control input-width" 
-				value=""
+				value="<?php echo $fetched_firstname; ?>"
 				placeholder="First Name" title="First Name Field is Required!" required/>
 			<span id="firstnameclassspan" class="glyphicon form-control-feedback"></span>
 			</div>
@@ -39,7 +62,7 @@ Update User Details Form
 			<div id="lastnameclassdiv" class="form-group has-feedback">
 			<label for="lastname">Lastname:</label>
 			<input type="text" name="lastname" id="lastname" class="form-control input-width" 
-				value=""
+				value="<?php echo $fetched_lastname; ?>"
 				placeholder="Last Name" title="Lastname is Required!" required/>
 			<span id="lastnameclassspan" class="glyphicon form-control-feedback"></span>
 			</div>
@@ -49,7 +72,7 @@ Update User Details Form
 			<div id="mobileclassdiv" class="form-group has-feedback">
 			<label for="mobile">Mobile Number:</label><i> 11 Digit Number</i>
 			<input type="number" name="mobile" id="mobile" class="form-control input-width" 
-				value=""
+				value="<?php echo $fetched_mobile; ?>"
 				placeholder="Mobile Number" title="Mobile Number is Required!" required/>
 			<span id="mobileclassspan" class="glyphicon form-control-feedback"></span>
 			</div>
@@ -59,7 +82,7 @@ Update User Details Form
 			<div id="emailclassdiv" class="form-group has-feedback">
 			<label for="email">Email:</label>
 			<input type="email" name="email" id="email" class="form-control input-width" 
-				value=""
+				value="<?php echo $fetched_email; ?>"
 				placeholder="Email Address" title="Email Address is Required!" required/>
 			<span id="emailclassspan" class="glyphicon form-control-feedback"></span>
 			</div>
@@ -69,7 +92,7 @@ Update User Details Form
 			<div id="addressclassdiv" class="form-group has-feedback">
 			<label for="address">Address:</label>
 			<input type="text" name="address" id="address" class="form-control input-width" 
-				value=""
+				value="<?php echo $fetched_address; ?>"
 				placeholder="Address" title="Address is Required" required/>
 			<span id="addressclassspan" class="glyphicon form-control-feedback"></span>
 			</div>
@@ -80,7 +103,8 @@ Update User Details Form
 			<label for="bday">Birthday:</label>
 			<input type="date" name="bday" id="bday" class="form-control input-width" 
 				value=""
-				placeholder="YYYY-MM-DD" required/>
+				placeholder="YYYY-MM-DD" required
+				title="Click and Select Your Birthdate"/>
 			<span id="bdayclassspan" class="glyphicon form-control-feedback"></span>
 			</div>
 			
@@ -101,7 +125,8 @@ Update User Details Form
 			<h3 class="white-text">Enter Your Password to Save Changes:</h3>
 			
 			<input type="password" name="password" id="password" class="form-control input-width" 
-					placeholder="Enter Your Password" required maxlength="32"/>
+					placeholder="Enter Your Password" required maxlength="32"
+					title="Enter Your Password to Continue and to Save Changes!" />
 		
 			
 			<br/>

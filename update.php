@@ -19,7 +19,9 @@
 *
 */
 	if(isset($_SESSION['username']) && !empty($_SESSION['username'])) {
-		// Nothing to do here
+		
+		$username = $_SESSION['username'];
+		
 	}
 	else {
 		header('Location: index.php');
