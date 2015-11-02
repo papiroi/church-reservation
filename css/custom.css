@@ -26,6 +26,28 @@
 	padding: 5px;
 }
 
+.error-message-div {
+	color: red;
+	background-color: rgba(0,0,0,0.8);
+	margin: 0 auto;
+	min-width: 350px;
+	padding: 20px 30px 30px 20px;
+	border-radius: 10px;
+	text-align: center;
+
+}
+
+.success-message-div {
+	color: green;
+	background-color: rgba(0,0,0,0.8);
+	margin: 0 auto;
+	min-width: 350px;
+	padding: 20px 30px 30px 20px;
+	border-radius: 10px;
+	text-align: center;
+
+}
+
 input, select, textarea{
 	color: #000000;
 }

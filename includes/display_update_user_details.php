@@ -13,6 +13,9 @@
 	// Include the connection string below
 	include_once "includes/connect.php";
 	
+	// Incude the update class here
+	require_once "core/update_user.php";
+	
 	// Statements that get and load the values
 	$user_select = "SELECT * FROM users WHERE username = '$username'";
 		
@@ -28,12 +31,35 @@
 			$fetched_mobile = $row_usr['mobile'];
 			$fetched_email = $row_usr['email'];
 			$fetched_address = $row_usr['address'];
+			$fetched_bday = $row_usr['bday'];
+			$fetched_password = $row_usr['password'];
+			
 		
 		}
 		
 	}
 	
+	if(isset($_POST['firstname']) && !empty($_POST['firstname'])) {
+		
+		$fn = $_POST['firstname'];
+		$ln = $_POST['lastname'];
+		$mob = $_POST['mobile'];
+		$email = $_POST['email'];
+		$add = $_POST['address'];
+		$bday = $_POST['bday'];
+		$pass = $_POST['password'];
 	
+		if(sha1($pass) == $fetched_password) {
+			// Call the update class here
+			// Create an instance the update class
+			$userup = new Update($conn, $username, $fn, $ln, $mob, $email, $add, $bday);
+			
+			$userup->updateUser();
+		}
+		else {
+			echo "<div class='error-message-div'><h2>Wrong Password!!!</h2></div>";
+		}
+	}
 ?>
 <!--
 Update User Details Form
@@ -102,7 +128,7 @@ Update User Details Form
 			<div id="bdayclassdiv" class="form-group has-feedback">
 			<label for="bday">Birthday:</label>
 			<input type="date" name="bday" id="bday" class="form-control input-width" 
-				value=""
+				value="<?php echo $fetched_bday; ?>"
 				placeholder="YYYY-MM-DD" required
 				title="Click and Select Your Birthdate"/>
 			<span id="bdayclassspan" class="glyphicon form-control-feedback"></span>
