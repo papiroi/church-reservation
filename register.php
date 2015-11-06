@@ -232,7 +232,7 @@ $(document).ready(function() {
 	
 	// Validation for Mobile Number
 	$("#mobile").focusout(function() {
-		if($("#mobile").val().length == "" || $("#mobile").val().length < 11) {
+		if($("#mobile").val().length == "" || $("#mobile").val().length < 11  || $("").val().length > 11) {
 			$( "#mobileclassdiv" ).removeClass( "has-success" ).addClass( "has-error" );
 			$( "#mobileclassspan" ).removeClass( "glyphicon-ok" ).addClass( "glyphicon-remove" );
 		}
@@ -242,7 +242,7 @@ $(document).ready(function() {
 		}
 	});
 	$("#mobile").keyup(function() {
-		if($("#mobile").val().length == "" || $("#mobile").val().length < 11) {
+		if ($("#mobile").val().length > 11 || $("#mobile").val().length == "" || $("#mobile").val().length < 11 ) {
 			$( "#mobileclassdiv" ).removeClass( "has-success" ).addClass( "has-error" );
 			$( "#mobileclassspan" ).removeClass( "glyphicon-ok" ).addClass( "glyphicon-remove" );
 		}

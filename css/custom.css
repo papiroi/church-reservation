@@ -48,6 +48,15 @@
 
 }
 
+.announcements {
+	background-color: rgba(0,0,0,0.3);
+	padding: 10px 10px 10px 10px;
+	color: white;
+	border-radius: 5px;
+	font-size: 30px;
+}
+
+
 input, select, textarea{
 	color: #000000;
 }
@@ -79,12 +88,12 @@ input, select, textarea{
 /* Highlight Color  */
 ::-moz-selection {
     color: white;
-    background: pink;
+    background: purple;
 }
 
 ::selection {
     color: white;
-    background: pink;
+    background: purple;
 }
 
 .glyphicon .glyphicon-home {

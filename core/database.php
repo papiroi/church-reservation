@@ -93,6 +93,21 @@ class Database {
 		
 		
 	}
+
+
+	// database/table for user login
+	public function Log() {
+
+
+		
+	}
+
+	// chat for tables
+	public function Chat() {
+
+		
+		
+	}
 	
 	// End of Database Class
 }
