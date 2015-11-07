@@ -13,6 +13,20 @@
 
 
 /*
+* Check if admin is already logged in
+*
+*/
+
+	if(isset($_SESSION['username']) && !empty($_SESSION['username'])) {
+
+		if($_SESSION['username'] == 'admin') {
+			header("Location: index.php");
+		}
+		
+	}
+
+
+/*
 * Include the basepath file
 * in the constant BASE
 */
