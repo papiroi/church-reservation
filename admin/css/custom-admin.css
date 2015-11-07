@@ -1,0 +1,101 @@
+/*Custom CSS*/
+
+.center-div {
+	color: #ffffff;
+	background-color: rgba(0,0,0,0.8);
+	margin-top:90px;
+	min-width: 350px;
+	padding: 5px 30px 20px 30px;
+	border-radius: 10px;
+	margin-bottom: 50px;
+}
+
+.error-message {
+	margin: 3px auto;
+	color: red;
+	font-size: 19px;
+	text-align: center;
+	padding: 5px;
+}
+
+.ok-message {
+	margin: 0 auto;
+	color: lightgreen;
+	font-size: 19px;
+	text-align: center;
+	padding: 5px;
+}
+
+.error-message-div {
+	color: red;
+	background-color: rgba(0,0,0,0.8);
+	margin: 0 auto;
+	min-width: 350px;
+	padding: 20px 30px 30px 20px;
+	border-radius: 10px;
+	text-align: center;
+
+}
+
+.success-message-div {
+	color: green;
+	background-color: rgba(0,0,0,0.8);
+	margin: 0 auto;
+	min-width: 350px;
+	padding: 20px 30px 30px 20px;
+	border-radius: 10px;
+	text-align: center;
+
+}
+
+.announcements {
+	background-color: rgba(0,0,0,0.3);
+	padding: 10px 10px 10px 10px;
+	color: white;
+	border-radius: 5px;
+	font-size: 30px;
+}
+
+
+input, select, textarea{
+	color: #000000;
+}
+
+.white-text {
+	color: #ffffff;
+	text-shadow: 4px 4px 10px black;
+}
+
+.link-text {
+	color: white;
+	text-shadow: 4px 4px 15px black;
+	padding-left: 5px;
+	padding-right: 5px;
+	text-decoration: underline;
+}
+
+.input-width {
+	width: 310px;
+	min-width: 100px;
+}
+
+.dropdown-menu > li > a:hover {
+
+	background-color: #3D3D5C;
+	
+}
+
+/* Highlight Color  */
+::-moz-selection {
+    color: white;
+    background: purple;
+}
+
+::selection {
+    color: white;
+    background: purple;
+}
+
+.glyphicon .glyphicon-home {
+	font-size: 45px;
+}

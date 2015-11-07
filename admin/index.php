@@ -31,6 +31,9 @@
 			header ("Location: error_location.php");
 
 		}	
+		else {
+			// Nothing to do here
+		}
 
 	}
 	else {
@@ -50,16 +53,21 @@
 
 <?php
 	
-	include BASE . "includes/head_include.php";
+	include "includes/head_include.php";
 
 ?>
 
 </head>
 <body>
+	<div class="container">
+
+		<h1>Admin Pannel</h1>
+
+	</div>
 
 
 <?php
 
-	require BASE . "includes/footer.php";
+	require "includes/footer.php";
 
 ?>
