@@ -69,6 +69,7 @@
 				<li><a href="#">Reservations</a></li>
 				<li><a href="#">Schedules</a></li>
 				<li><a href="#">Users Chat</a></li>
+				<li><a href="#">Edit Announcement</a></li>
 				<li><a href="#">Password Request</a></li>
 
 			</ul>
