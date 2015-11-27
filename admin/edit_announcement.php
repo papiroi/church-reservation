@@ -1,7 +1,7 @@
 <?php
 /*
-* Start of Tarlac Cathedral Online Reservation and Scheduling
-* Index for Admin Page
+* Tarlac Cathedral Online Reservation and Scheduling
+* Edit Announcement
 */
 
 /*
@@ -49,7 +49,7 @@
 <!DOCTYPE html>
 <html class="" lang="en-US">
 <head>
-	<title>Admin Panel</title>
+	<title>Edit Announcement - Admin Panel</title>
 
 <?php
 	
@@ -63,19 +63,7 @@
 
 		<h1>Admin Pannel</h1>
 
-		<div class="admin-menu">
-			
-			<ul>
-				<li><a href="#">Reservations</a></li>
-				<li><a href="#">Schedules</a></li>
-				<li><a href="#">Users Chat</a></li>
-				<li><a href="edit_announcement.php">Edit Announcement</a></li>
-				<li><a href="#">Password Request</a></li>
-
-			</ul>
-
-
-		</div>
+		<h2>Edit Announcement Message</h2>
 
 	</div>
 
