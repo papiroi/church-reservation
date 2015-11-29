@@ -64,6 +64,25 @@
 		<h1>Admin Pannel</h1>
 
 		<h2>Edit Announcement Message</h2>
+		
+		<a href="index.php" title="Admin Home">Home</a>
+		
+		<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+		
+			<textarea cols="40" rows="5" placeholder="Enter Announcement Here"><?php 
+					// Any Value From the Current Announcement
+					
+					echo @$announcement;
+					
+			?></textarea>
+			
+			<br/>
+			
+			<input type="submit" value="Save" />
+			
+			<input type="reset" value="Reset" />
+		
+		</form>
 
 	</div>
 

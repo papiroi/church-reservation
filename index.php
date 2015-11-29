@@ -103,7 +103,14 @@
 		<h1 class="text-center white-text">Tarlac Cathedral Online Reservation and Scheduling</h1>
 
 		<div class="announcements">
-			<marquee>Announcements will display here.</marquee>
+			<marquee>
+				<?php
+					// Load The Value of the Announcement
+					
+					echo $announcement;
+					
+				?>
+			</marquee>
 		</div>
 		
 	
