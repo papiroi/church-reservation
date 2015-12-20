@@ -66,7 +66,15 @@
 		<h2>Edit Announcement Message</h2>
 		
 		<a href="index.php" title="Admin Home">Home</a>
-		
+<!-- Announcmenet Function in Edit Announcement -->
+<?php
+/*
+* Announcement Function
+*/
+
+	
+
+?>
 		<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
 		
 			<textarea cols="40" rows="5" placeholder="Enter Announcement Here"><?php 

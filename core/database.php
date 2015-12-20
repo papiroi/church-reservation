@@ -102,11 +102,24 @@ class Database {
 		
 	}
 
-	// chat for tables
+	// database/tables for chat
 	public function Chat() {
 
 		
 		
+	}
+	
+	
+	// Database for Announcement
+	public function create_announcement() {
+		
+		$create_announcement_table = "CREATE TABLE IF NOT EXISTING announcement (
+			announcementID int(11) AUTO_INCREMENT PRIMARY KEY NOT NULL,
+			atext varchar (255) NOT NULL,
+			dateReg datetime NOT NULL,
+			dateLastMod datetime NOT NULL
+			)";
+	
 	}
 	
 	// End of Database Class

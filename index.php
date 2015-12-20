@@ -48,6 +48,7 @@
 */
 	$db = new Database($conn);
 	$db->create_user_table();
+	$db->create_announcement();
 	
 ?>
 
