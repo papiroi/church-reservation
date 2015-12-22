@@ -93,6 +93,34 @@ class Database {
 		
 		
 	}
+	
+	
+	// Database for Announcement
+	public function create_announcement() {
+		
+		$create_announcement_table = "CREATE TABLE IF NOT EXISTS announcement (
+			announcementID int(11) PRIMARY KEY NOT NULL,
+			atext varchar(255) NOT NULL,
+			dateReg datetime NOT NULL,
+			dateLastMod datetime NOT NULL
+			)";
+	
+		$cat = $this->conn->query($create_announcement_table);
+		
+		
+		// Error Checking for Creating Announcement Table
+		if(!$cat) {
+			exit("Database Script Error: 2");
+		}
+		
+		$insert_dummy = "INSERT INTO announcement
+			(atext, announcementID)
+			VALUES('Dummy Announcement!',1)
+		";
+		
+		$insert_dummy_dat = $this->conn->query($insert_dummy);
+		
+	}
 
 
 	// database/table for user login
@@ -109,18 +137,6 @@ class Database {
 		
 	}
 	
-	
-	// Database for Announcement
-	public function create_announcement() {
-		
-		$create_announcement_table = "CREATE TABLE IF NOT EXISTING announcement (
-			announcementID int(11) AUTO_INCREMENT PRIMARY KEY NOT NULL,
-			atext varchar (255) NOT NULL,
-			dateReg datetime NOT NULL,
-			dateLastMod datetime NOT NULL
-			)";
-	
-	}
 	
 	// End of Database Class
 }

@@ -65,22 +65,52 @@
 
 		<h2>Edit Announcement Message</h2>
 		
-		<a href="index.php" title="Admin Home">Home</a>
+		<a href="index.php" title="Admin Home">Home</a><br/>
 <!-- Announcmenet Function in Edit Announcement -->
 <?php
-/*
-* Announcement Function
-*/
-
+	/*
+	* Announcement Function
+	*/
 	
+	// Include the connection string in "includes" directory !Important
+	// This contains the $conn variable, containing the connection string
+	require_once "includes/connect.php";
 
+	// Check if the variable to save(New Announcement is not empty and set)
+	if(isset($_POST['announce']) && !empty($_POST['announce'])) {
+		// The new announcement to be post is set to variable $new_announcment
+		$new_announcement = stripslashes($_POST['announce']);
+
+		$update_announcement = "UPDATE announcement 
+			SET atext = '$new_announcement'
+			WHERE announcementID = 1
+		";
+
+		$query_update = $conn->query($update_announcement);
+	}
+	else {
+	
+	}
 ?>
 		<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
 		
-			<textarea cols="40" rows="5" placeholder="Enter Announcement Here"><?php 
+			<textarea cols="40" rows="5" name="announce" id="announce" placeholder="Enter Announcement Here"><?php 
 					// Any Value From the Current Announcement
 					
-					echo @$announcement;
+					$select_announcement = "SELECT atext FROM announcement";
+					$sa_result = $conn->query($select_announcement);
+					
+					$old_announcement = "";
+					
+					if($sa_result->num_rows > 0) {
+						
+						while($row_sa_result = $sa_result->fetch_assoc()) {
+							$old_announcement = $row_sa_result['atext'];
+						}
+					
+					}
+					// The old announcement will display in the textarea of the edit announcement page
+					echo $old_announcement;
 					
 			?></textarea>
 			

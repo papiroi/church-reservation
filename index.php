@@ -107,8 +107,21 @@
 			<marquee>
 				<?php
 					// Load The Value of the Announcement
+					$select_announcement = "SELECT atext FROM announcement";
+					$sa_result = $conn->query($select_announcement);
 					
-					echo $announcement;
+					$new_announcement = "";
+					
+					if($sa_result->num_rows > 0) {
+						
+						while($row_sa_result = $sa_result->fetch_assoc()) {
+							$new_announcement = $row_sa_result['atext'];
+						}
+					
+					}
+					// The new announcement will display in the home page of the website
+					echo $new_announcement;
+					
 					
 				?>
 			</marquee>
