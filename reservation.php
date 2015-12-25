@@ -28,7 +28,7 @@
 	
 	<div class="container">
 
-		
+		<h1>Tarlac Cathedral</h1>
 		
 	
 	</div>

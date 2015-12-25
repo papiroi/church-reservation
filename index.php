@@ -47,7 +47,11 @@
 * 
 */
 	$db = new Database($conn);
+	
+	// Create User Database and Load initial content
 	$db->create_user_table();
+	
+	// Create Announcement
 	$db->create_announcement();
 	
 ?>
