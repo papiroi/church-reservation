@@ -30,7 +30,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
 					<li>
-						<a href="reservation.php"><strong>Reservation &amp; Scheduling</strong></a>
+						<a href="reservation.php"><strong>Scheduling &amp; Reservation</strong></a>
 					</li>
                     <li>
                         <a href="index.php">

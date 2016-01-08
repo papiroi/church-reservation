@@ -47,7 +47,7 @@
 
 
 <!DOCTYPE html>
-<html class="" lang="en-US">
+<html class="about-full" lang="en-US">
 <head>
 	<title>Admin Panel</title>
 
@@ -57,20 +57,40 @@
 
 ?>
 
+	<!-- Custome Background for Services Offered Page -->
+	<link rel="stylesheet" href="../css/about-background-image.css" />
+
 </head>
 <body>
 	<div class="container">
 
-		<h1>Admin Pannel</h1>
+		<h1 class="white-text">Admin Pannel</h1>
+		
+		
+		<a href="?s=logout" id="logout"><span class="link-text">Logout</span></a>
+
+		<?php
+			if(isset($_GET['s']) && $_GET['s'] == 'logout') {
+			
+			session_destroy();
+			
+			if($conn) {
+				$conn->close();
+			}
+			
+			header("Location: " . $_SERVER['PHP_SELF']);
+			
+			}
+		?>
 
 		<div class="admin-menu">
 			
 			<ul>
-				<li><a href="#">Reservations</a></li>
-				<li><a href="#">Schedules</a></li>
-				<li><a href="#">Users Chat</a></li>
-				<li><a href="edit_announcement.php">Edit Announcement - OK</a></li>
-				<li><a href="#">Password Request</a></li>
+				<li><a href="#"><h3 class="white-text">Reservations</h3></a></li>
+				<li><a href="#"><h3 class="white-text">Schedules</h3></a></li>
+				<li><a href="#"><h3 class="white-text">Chat</h3></a></li>
+				<li><a href="edit_announcement.php"><h3 class="white-text">Edit Announcement</h3></a></li>
+				<li><a href="#"><h3 class="white-text">Password Request</h3></a></li>
 
 			</ul>
 

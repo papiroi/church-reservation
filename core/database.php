@@ -95,12 +95,13 @@ class Database {
 	}
 	
 	// Function to Create reservation table if it is not existing
-	public function reservation {
+	public function reservation() {
 	
 		$create_reservaton = "CREATE TABLE IF NOT EXISTS reservaton (
 			reservationID int(11) AUTO_INCREMENT PRIMARY KEY NOT NULL,
 			reserv_num varchar(12) NOT NULL,
-			reserv_type varchar(15) NOT NULL
+			reserv_type varchar(15) NOT NULL,
+			
 		)";
 	
 	}

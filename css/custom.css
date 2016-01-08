@@ -75,7 +75,7 @@ input, select, textarea{
 }
 
 .input-width {
-	width: 310px;
+	max-width: 320px;
 	min-width: 100px;
 }
 

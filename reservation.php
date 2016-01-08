@@ -10,12 +10,39 @@
 	session_start();
 	
 	$_SESSION['code'] = 1;
+	
+	
+/*
+* Condition to check if there's a logined user
+*
+*/
+	if(isset($_SESSION['username']) && !empty($_SESSION['username'])) {
+		
+		$username = $_SESSION['username'];
+		
+	}
+	else {
+		header('Location: index.php');
+	}
+	
+	
+/*
+* Check if session username or name of the logged in user isset
+* if not Guest User 
+*/
+
+	if(isset($_SESSION['username']) && !empty($_SESSION['username'])) {
+		$username = $_SESSION['username'];;
+	}
+	else {
+		$username = "Guest";
+	}
 
 ?>
 <!DOCTYPE html>
-<html lang="en-US">
+<html class="full" lang="en-US">
 <head>
-	<title>Reservation Page - Tarlac Cathedral Online Scheduling and Reservation</title>
+	<title>Reservation Page - Scheduling and Reservation System</title>
 	
 	<?php
 	
@@ -23,14 +50,24 @@
 		include_once "includes/head_include.php";
 
 	?>
+	
+	<!-- Custom CSS for Background Image for this page -->
+	<link rel="stylesheet" href="css/background-image.css" />
+	
 </head>
 <body>
 	
 	<div class="container">
 
-		<h1>Tarlac Cathedral</h1>
+		<h1 class="text-center white-text">Scheduling and Reservation System for Tarlac San Sebastian Cathedral Parish</h1>
 		
-	
+		
+		<?php
+			
+			include "includes/reservation_form.php";
+			
+		?>
+		
 	</div>
 
 

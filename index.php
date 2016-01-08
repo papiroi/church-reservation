@@ -60,7 +60,7 @@
 <!DOCTYPE html>
 <html class="full" lang="en-US">
 <head>
-	<title>Tarlac Cathedral Online Reservation and Scheduling</title>
+	<title>Scheduling and Reservation System for Tarlac San Sebastian Cathedral Parish</title>
 	
 <?php
 /*
@@ -105,7 +105,7 @@
 			
 		</span>
 	
-		<h1 class="text-center white-text">Tarlac Cathedral Online Reservation and Scheduling</h1>
+		<h1 class="text-center white-text">Scheduling and Reservation System for Tarlac San Sebastian Cathedral Parish</h1>
 
 		<div class="announcements">
 			<marquee>

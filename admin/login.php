@@ -35,7 +35,7 @@
 ?>
 
 <!DOCTYPE html>
-<html class="" lang="en-US">
+<html class="about-full" lang="en-US">
 <head>
 
 	<title>Admin Login - Tarlac Cathedral Online Reservation and Scheduling</title>
@@ -46,11 +46,14 @@
 
 ?>
 
+	<!-- Custome Background for Services Offered Page -->
+	<link rel="stylesheet" href="../css/about-background-image.css" />
+
 </head>
 <body>
 
 	<div class="container">
-		<h1>Tarlac Cathedral Online Reservation and Scheduling</h1>
+		<h1 class="white-text">Scheduling and Reservation System for Tarlac San Sebastian Cathedral Parish</h1>
 
 		<div class="row">
 			<div class="col-md-4"></div>
