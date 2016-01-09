@@ -47,7 +47,7 @@
 
 
 <!DOCTYPE html>
-<html class="" lang="en-US">
+<html class="full" lang="en-US">
 <head>
 	<title>Edit Announcement - Admin Panel</title>
 
@@ -56,16 +56,17 @@
 	include "includes/head_include.php";
 
 ?>
-
+	<!-- Custome Background for Services Offered Page -->
+	<link rel="stylesheet" href="../css/background-image.css" />
+	
 </head>
 <body>
 	<div class="container">
 
-		<h1>Admin Pannel</h1>
+		<h1 class="white-text">Admin Pannel</h1>
 
-		<h2>Edit Announcement Message</h2>
+		<h2 class="white-text">Edit Announcement Message</h2>
 		
-		<a href="index.php" title="Admin Home">Home</a><br/>
 <!-- Announcmenet Function in Edit Announcement -->
 <?php
 	/*
@@ -114,12 +115,13 @@
 					
 			?></textarea>
 			
-			<br/>
+			<br/><br/>
 			
-			<input type="submit" value="Save" />
+			<input type="submit" value="Save" class="btn btn-primary"/>
 			
-			<input type="reset" value="Reset" />
+			<input type="reset" value="Revert" class="btn btn-danger"/>
 		
+			<a href="index.php" class="btn btn-info" title="Back to Home">Cancel</a>
 		</form>
 
 	</div>

@@ -3,7 +3,7 @@
 .center-div {
 	color: #ffffff;
 	background-color: rgba(0,0,0,0.8);
-	margin-top:90px;
+	margin-top:50px;
 	min-width: 350px;
 	padding: 5px 30px 20px 30px;
 	border-radius: 10px;
@@ -49,7 +49,7 @@
 }
 
 .announcements {
-	background-color: rgba(0,0,0,0.3);
+	background-color: rgba(0,0,0,0.8);
 	padding: 10px 10px 10px 10px;
 	color: white;
 	border-radius: 5px;
@@ -83,6 +83,10 @@ input, select, textarea{
 
 	background-color: #3D3D5C;
 	
+}
+
+.dropdown-menu a{
+    color: #ffffff !important;
 }
 
 /* Highlight Color  */

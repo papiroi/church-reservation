@@ -16,7 +16,7 @@
 			<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
 
 				<label for="event-type">Select Event:</label>
-				<select id="event-type" name="event-type" class="form-control">
+				<select id="event-type" name="event-type" class="form-control" required autofocus>
 					<option value="">Select Event</option>
 					<option value="baptism">Baptism</option>
 					<option value="wedding">Wedding</option>
@@ -26,12 +26,12 @@
 				<br/>
 				
 				<label for="date-select">Select Date:</label>
-				<input type="date" id="date-select" name="date-select" class="form-control"/>
+				<input type="date" id="date-select" name="date-select" class="form-control" required/>
 				
 				<br/>
 				
 				<label for="time-select">Select Starting Time:</label>
-				<input type="time" id="time-select" name="time-select" class="form-control"/>
+				<input type="time" id="time-select" name="time-select" class="form-control" required/>
 				
 				
 				<br/>

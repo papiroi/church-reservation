@@ -47,7 +47,7 @@
 
 
 <!DOCTYPE html>
-<html class="about-full" lang="en-US">
+<html class="full" lang="en-US">
 <head>
 	<title>Admin Panel</title>
 
@@ -58,7 +58,7 @@
 ?>
 
 	<!-- Custome Background for Services Offered Page -->
-	<link rel="stylesheet" href="../css/about-background-image.css" />
+	<link rel="stylesheet" href="../css/background-image.css" />
 
 </head>
 <body>
@@ -86,8 +86,7 @@
 		<div class="admin-menu">
 			
 			<ul>
-				<li><a href="#"><h3 class="white-text">Reservations</h3></a></li>
-				<li><a href="#"><h3 class="white-text">Schedules</h3></a></li>
+				<li><a href="#"><h3 class="white-text">Schedules and Reservations</h3></a></li>
 				<li><a href="#"><h3 class="white-text">Chat</h3></a></li>
 				<li><a href="edit_announcement.php"><h3 class="white-text">Edit Announcement</h3></a></li>
 				<li><a href="#"><h3 class="white-text">Password Request</h3></a></li>

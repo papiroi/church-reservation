@@ -34,7 +34,7 @@
 <html class="full" lang="en-US">
 <head>
 
-	<title>Change Password</title>
+	<title>Change Password - Scheduling and Reservation System for Tarlac San Sebastian Cathedral Parish</title>
 	
 <!-- Head Include -->
 <?php
@@ -50,7 +50,7 @@
 </head>
 <body>
 	<div class="container">
-		<h1 class="text-center white-text">Tarlac Cathedral Online Reservation and Scheduling</h1>
+		<h1 class="text-center white-text">Scheduling and Reservation System for Tarlac San Sebastian Cathedral Parish</h1>
 <!--
 Condition: If there is no user login 
 Display the right options

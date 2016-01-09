@@ -131,7 +131,19 @@
 			</marquee>
 		</div>
 		
-	
+		<br/></br/>
+		
+		<div class="row">
+			<div class="col-md-4 text-center white-text">
+				<h3>Column1</h3>
+			</div>
+			<div class="col-md-4 text-center white-text">
+				<h3>Column2</h3>
+			</div>
+			<div class="col-md-4 text-center white-text">
+				<h3>Column2</h3>
+			</div>
+		</div>
 	</div>
 
 <?php

@@ -47,6 +47,24 @@
 
 </head>
 <body>
+<?php
+/*
+* This will show navigation bar menu if there is signed in user or not
+*
+*/
+
+	if(isset($_SESSION['username']) && !empty($_SESSION['username'])) {
+		
+		require_once "includes/nav_bar_signed_in.php";
+	
+	}
+	else {
+	
+		require_once "includes/nav_bar_signed_out.php";
+	
+	}
+?>
+
 	<div class="container">
 
 <!-- Start of PHP Code for username display -->
@@ -72,27 +90,6 @@
 			</div>
 		</div>
 	</div>
-
-
-<?php
-/*
-* This will show navigation bar menu if there is signed in user or not
-*
-*/
-
-	if(isset($_SESSION['username']) && !empty($_SESSION['username'])) {
-		
-		require_once "includes/nav_bar_signed_in.php";
-	
-	}
-	else {
-	
-		require_once "includes/nav_bar_signed_out.php";
-	
-	}
-?>
-
-
 
 <?php
 
