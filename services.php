@@ -31,19 +31,19 @@
 ?>
 
 <!DOCTYPE html>
-<html class="services-full" lang="en-US">
+<html class="full" lang="en-US">
 <head>
 
-	<title>Services - Tarlac Cathedral Online Reservation and Scheduling</title>
+	<title>Services - Scheduling and Reservation System for Tarlac San Sebastian Cathedral Parish</title>
 	
 <?php
 
 	require_once "includes/head_include.php";
 
 ?>
-
-	<!-- Custome Background for Services Offered Page -->
-	<link rel="stylesheet" href="css/services-background-image.css" />
+	
+	<!-- Custom CSS for Background Image for this page -->
+	<link rel="stylesheet" href="css/background-image.css" />
 
 </head>
 <body>
@@ -58,7 +58,7 @@
 	
 	
 	
-		<h1 class="text-center white-text">Tarlac Cathedral Online Reservation and Scheduling</h1>
+		<h1 class="text-center white-text">Scheduling and Reservation System for Tarlac San Sebastian Cathedral Parish</h1>
 		<h2 class="white-text">Services Offered:</h2>
 		
 		<div class="row">

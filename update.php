@@ -30,7 +30,7 @@
 
 
 <!DOCTYPE html>
-<html class="register-full" lang="en-US">
+<html class="full" lang="en-US">
 <head>
 	<title>Update User Detail - Tarlac Cathedral Online Reservation and Scheduling</title>
 
@@ -40,7 +40,8 @@
 
 ?>
 	
-	<link rel="stylesheet" href="css/register-background-image.css" />
+	<!-- Custom CSS for Background Image for this page -->
+	<link rel="stylesheet" href="css/background-image.css" />
 
 </head>
 <body>

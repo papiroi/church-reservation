@@ -28,9 +28,9 @@
 
 
 <!DOCTYPE html>
-<html class="register-full" lang="en-US">
+<html class="full" lang="en-US">
 <head>
-	<title>Registration - Tarlac Cathedral</title>
+	<title>Registration - Scheduling and Reservation System for Tarlac San Sebastian Cathedral Parish</title>
 
 <?php
 
@@ -38,12 +38,14 @@
 
 ?>
 	
-	<link rel="stylesheet" href="css/register-background-image.css" />
+	
+	<!-- Custom CSS for Background Image for this page -->
+	<link rel="stylesheet" href="css/background-image.css" />
 	
 </head>
 <body>
 	<div class="container">
-		<h1 class="text-center white-text">Welcome to Tarlac Cathedral Online Reservation and Scheduling User Registration</h1>
+		<h1 class="text-center white-text">Scheduling and Reservation System for Tarlac San Sebastian Cathedral Parish</h1>
 	
 		<div class="row">
 		<div class="col-md-5">

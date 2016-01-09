@@ -31,7 +31,7 @@
 ?>
 
 <!DOCTYPE html>
-<html class="full-login" lang="en-US">
+<html class="full" lang="en-US">
 <head>
 
 	<title>Change Password</title>
@@ -43,8 +43,9 @@
 
 ?>
 
-	<!-- Background CSS for This Page -->
-	<link rel="stylesheet" href="css/login-background-image.css" />
+	
+	<!-- Custom CSS for Background Image for this page -->
+	<link rel="stylesheet" href="css/background-image.css" />
 	
 </head>
 <body>

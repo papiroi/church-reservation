@@ -31,10 +31,10 @@
 ?>
 
 <!DOCTYPE html>
-<html class="about-full" lang="en-US">
+<html class="full" lang="en-US">
 <head>
 
-	<title>About - Tarlac Cathedral Online Reservation and Scheduling</title>
+	<title>About - Scheduling and Reservation System for Tarlac San Sebastian Cathedral Parish</title>
 	
 <?php
 
@@ -42,8 +42,9 @@
 
 ?>
 
-	<!-- Custome Background for Services Offered Page -->
-	<link rel="stylesheet" href="css/about-background-image.css" />
+	
+	<!-- Custom CSS for Background Image for this page -->
+	<link rel="stylesheet" href="css/background-image.css" />
 	
 	
 </head>
@@ -57,13 +58,13 @@
 		</span>
 
 	
-		<h1 class="text-center white-text">Tarlac Cathedral Online Reservation and Scheduling</h1>
+		<h1 class="text-center white-text">Scheduling and Reservation System for Tarlac San Sebastian Cathedral Parish</h1>
 		<h2 class="white-text">About this website:</h2>
 			
 			<div class="row">
 				<div class="col-md-12">
 					<div class="center-div">
-						<h3 class="white-text">Tarlac Cathedral Online Reservation and Scheduling.</h3>
+						<h3 class="white-text">San Sebastian Cathedral Parish</h3>
 						<p class="white-text">
 						Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
 						Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 

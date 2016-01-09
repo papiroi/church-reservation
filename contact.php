@@ -31,10 +31,10 @@
 ?>
 
 <!DOCTYPE html>
-<html class="contact-full" lang="en-US">
+<html class="full" lang="en-US">
 <head>
 
-	<title>Contact - Tarlac Cathedral Online Reservation and Scheduling</title>
+	<title>Contact - Scheduling and Reservation System for Tarlac San Sebastian Cathedral Parish</title>
 	
 <?php
 
@@ -43,7 +43,7 @@
 ?>
 
 	<!-- Custome Background for Services Offered Page -->
-	<link rel="stylesheet" href="css/contact-background-image.css"/>
+	<link rel="stylesheet" href="css/background-image.css"/>
 
 </head>
 <body>
@@ -56,7 +56,7 @@
 		</span>
 
 	
-		<h1 class="text-center white-text">Tarlac Cathedral Online Reservation and Scheduling</h1>
+		<h1 class="text-center white-text">Scheduling and Reservation System for Tarlac San Sebastian Cathedral Parish</h1>
 		<h2 class="white-text">Contacts:</h2>
 			
 			<div class="row">
