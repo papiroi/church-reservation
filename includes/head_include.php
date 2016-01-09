@@ -33,7 +33,8 @@
 	<!-- Register Validation JS File -->
 	<script src="js/register_validation.js"></script>
 
-	<!-- Date Picker jQuery -->
+	<!-- Remove Date Picker 
+	<!-- Date Picker jQuery
 	<link rel="stylesheet" href="css/datepicker/metallic.css" />
 	
 	<script src="js/datepicker/zebra_datepicker.js"></script>
@@ -48,3 +49,4 @@
 			});
 		});
 	</script>
+	-->
