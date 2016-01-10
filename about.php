@@ -49,6 +49,18 @@
 	
 </head>
 <body>
+
+	<div class="container">
+
+<!-- Start of PHP Code for username display -->
+		<span class="white-text">
+		Welcome <?php echo $username; ?>!!!
+			<?php require_once "includes/user_account_link.php"; ?>
+		</span>
+
+	
+		<h1 class="text-center white-text">Scheduling and Reservation System for Tarlac San Sebastian Cathedral Parish</h1>
+<!-- Start of Navigation -->
 <?php
 /*
 * This will show navigation bar menu if there is signed in user or not
@@ -65,18 +77,9 @@
 		require_once "includes/nav_bar_signed_out.php";
 	
 	}
-?>
-	<div class="container">
-
-<!-- Start of PHP Code for username display -->
-		<span class="white-text">
-		Welcome <?php echo $username; ?>!!!
-			<?php require_once "includes/user_account_link.php"; ?>
-		</span>
-
-	
-		<h1 class="text-center white-text">Scheduling and Reservation System for Tarlac San Sebastian Cathedral Parish</h1>
-		<h2 class="white-text">About this website:</h2>
+?>		
+<!--End of Navigation -->
+			<h2 class="white-text">About this website:</h2>
 			
 			<div class="row">
 				<div class="col-md-12">

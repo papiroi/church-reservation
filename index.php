@@ -78,6 +78,19 @@
 </head>
 <body>
 
+
+
+
+	<div class="container">
+	
+		<span class="white-text">
+			Welcome <?php echo $username; ?>!!!
+			<?php require_once "includes/user_account_link.php"; ?>
+			
+		</span>
+	
+		<h1 class="text-center white-text">Scheduling and Reservation System for Tarlac San Sebastian Cathedral Parish</h1>
+<!-- Start of Navigation Bar -->
 <?php
 /*
 * This will show navigation bar menu if there is signed in user or not
@@ -95,18 +108,7 @@
 	
 	}
 ?>
-
-
-	<div class="container">
-	
-		<span class="white-text">
-			Welcome <?php echo $username; ?>!!!
-			<?php require_once "includes/user_account_link.php"; ?>
-			
-		</span>
-	
-		<h1 class="text-center white-text">Scheduling and Reservation System for Tarlac San Sebastian Cathedral Parish</h1>
-
+<!-- End of Navigation Bar -->
 		<div class="announcements">
 			<marquee>
 				<?php
@@ -135,13 +137,13 @@
 		
 		<div class="row">
 			<div class="col-md-4 text-center white-text">
-				<h3>Column1</h3>
+				<h3>Online Scheduling and Reservation for Tarlac San Sebastian Cathedral Parish</h3>
 			</div>
 			<div class="col-md-4 text-center white-text">
-				<h3>Column2</h3>
+				<h3>Online Scheduling and Reservation for Tarlac San Sebastian Cathedral Parish</h3>
 			</div>
 			<div class="col-md-4 text-center white-text">
-				<h3>Column2</h3>
+				<h3>Online Scheduling and Reservation for Tarlac San Sebastian Cathedral Parish</h3>
 			</div>
 		</div>
 	</div>

@@ -34,7 +34,7 @@
 					
 						<ul class="dropdown-menu">
 							<li class="menu-dropdown"><a href="reservation.php">Scheduling and Reservation Form</a></li>
-							<li><a href="#">Reservation Status</a></li>
+							<li><a href="status.php">Reservation Status</a></li>
 						</ul>
 					</li>
                     <li>
@@ -42,6 +42,9 @@
 						<span class="glyphicon glyphicon-home"></span> 
 						<strong>Home</strong>
 						</a>
+                    </li>
+                    <li>
+                        <a href="gallery.php"><strong>Gallery</strong></a>
                     </li>
                     <li>
                         <a href="services.php"><strong>Services</strong></a>

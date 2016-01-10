@@ -132,9 +132,14 @@
 				<span id="addressclassspan" class="glyphicon form-control-feedback"></span>
 				</div>
 				
-				<br/>
-				
-				<div id="bdayclassdiv" class="form-group has-feedback">
+		</div>
+		</div>
+		<div class="col-md-5">
+			<div class="center-div">
+			
+			<br/><br/>
+			
+			<div id="bdayclassdiv" class="form-group has-feedback">
 				<label for="bday">Birthday:</label>
 				<input type="date" name="bday" id="bday" class="form-control input-width" 
 					placeholder="YYYY-MM-DD" required/>
@@ -180,9 +185,11 @@
 			<span class="white-text">Already Have an Account? Click <a href="login.php">here</a>.</span>
 			<br/>
 			<a href="index.php"><span class="white-text">Return to Home Page</span></a>
+			
+			</div>
+		
 		</div>
-		</div>
-		<div class="col-md-7"></div>
+		<div class="col-md-2"></div>
 	
 	</div>
 	
