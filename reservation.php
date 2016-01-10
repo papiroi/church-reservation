@@ -37,6 +37,15 @@
 	else {
 		$username = "Guest";
 	}
+	
+	
+	
+/*
+* Include Connection String to Database Server
+* 
+*/
+
+	include "includes/connect.php";
 
 ?>
 <!DOCTYPE html>

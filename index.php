@@ -51,8 +51,11 @@
 	// Create User Database and Load initial content
 	$db->create_user_table();
 	
-	// Create Announcement
+	// Create Announcement TAble
 	$db->create_announcement();
+	
+	//Create Reservation Table
+	$db->reservation();
 	
 ?>
 

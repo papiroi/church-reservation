@@ -97,14 +97,21 @@ class Database {
 	// Function to Create reservation table if it is not existing
 	public function reservation() {
 	
-		$create_reservaton = "CREATE TABLE IF NOT EXISTS reservaton (
+		$create_reservation = "CREATE TABLE IF NOT EXISTS reservation (
 			reservationID int(11) AUTO_INCREMENT PRIMARY KEY NOT NULL,
 			reserv_num varchar(12) NOT NULL,
-			even_type varchar(15) NOT NULL,
-			
+			event_type varchar(15) NOT NULL,
+			reserv_date date NOT NULL,
+			reserv_time time NOT NULL,
+			username varchar(60) NOT NULL,
+			status varchar(15) NOT NULL,
+			confirmation varchar(15) NOT NULL,
+			date_reserved datetime NOT NULL
 			
 		)";
 	
+	
+		$crq = $this->conn->query($create_reservation);
 	}
 	
 	// Database for Announcement
