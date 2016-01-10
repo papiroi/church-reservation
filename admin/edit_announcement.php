@@ -88,6 +88,14 @@
 		";
 
 		$query_update = $conn->query($update_announcement);
+		
+		if ($query_update == true) {
+			
+			echo "<script type='text/javascript'>";
+			echo "alert('Announcement has been Updated!');";
+			echo "document.getElementById('styled').style.backgroundColor='green';";
+			echo "</script>";
+		}
 	}
 	else {
 	
@@ -95,7 +103,7 @@
 ?>
 		<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
 		
-			<textarea cols="40" rows="5" name="announce" id="announce" placeholder="Enter Announcement Here"><?php 
+			<textarea id="styled" cols="40" rows="5" name="announce" id="announce" placeholder="Enter Announcement Here"><?php 
 					// Any Value From the Current Announcement
 					
 					$select_announcement = "SELECT atext FROM announcement";
@@ -118,10 +126,10 @@
 			<br/><br/>
 			
 			<input type="submit" value="Save" class="btn btn-primary"/>
-			
+			&nbsp;&nbsp;&nbsp;
 			<input type="reset" value="Revert" class="btn btn-danger"/>
-		
-			<a href="index.php" class="btn btn-info" title="Back to Home">Cancel</a>
+			&nbsp;&nbsp;&nbsp;
+			<a href="index.php" class="btn btn-info" title="Back to Home">Back</a>
 		</form>
 
 	</div>

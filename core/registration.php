@@ -55,7 +55,7 @@ class Registration {
 	public function register() {
 	
 		if($this->check_user($this->username) == 'true') {
-			echo "User Already Exists!";
+			echo "<h3>User Already Exists!</h3>";
 		}
 		else {
 			$reg_query = "INSERT INTO users (username, password, firstname, lastname, mobile, email, address, bday, status, dateReg)
@@ -76,7 +76,8 @@ class Registration {
 		
 			if($reg_query_result) {
 				// Successfull Creation of User
-				echo "Successfully Created User!";
+				echo "<h3 class='reg-success'>Successfully Created User!</h3>
+					<h4 class='reg-success-link'><a href='login.php'>Click Here To Login</a></h4>";
 			}
 			else {
 				echo "Error in Registration! Try Again Later.";

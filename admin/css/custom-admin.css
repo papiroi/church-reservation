@@ -1,5 +1,11 @@
 /*Custom CSS*/
 
+.admin-menu {
+	background-color: rgba(0,0,0,0.8);
+	border-radius: 5px;
+	padding: 10px;	
+}
+
 .center-div {
 	color: #ffffff;
 	background-color: rgba(0,0,0,0.8);
@@ -38,7 +44,7 @@
 }
 
 .success-message-div {
-	color: green;
+	color: #1aff1a;
 	background-color: rgba(0,0,0,0.8);
 	margin: 0 auto;
 	min-width: 350px;
@@ -46,6 +52,10 @@
 	border-radius: 10px;
 	text-align: center;
 
+}
+
+.no-bullet {
+	list-style-type: none;
 }
 
 .announcements {
@@ -59,6 +69,17 @@
 
 input, select, textarea{
 	color: #000000;
+}
+
+textarea {
+	
+	width: 600px;
+	height: 120px;
+	border: 3px solid #cccccc;
+	padding: 5px;
+	font-family: Tahoma, sans-serif;
+	background-position: bottom right;
+	
 }
 
 .white-text {
