@@ -14,7 +14,7 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 	
 	// Setting the Values in Input Form
 	$event_type = $_POST['eventtype'];
-	$event_date = $_POST['dateselect'];
+	$event_date = date('y-m-d', strtotime($_POST['dateselect']));
 	$event_time = $_POST['timeselect'];
 	
 	$username = $_SESSION['username'];
@@ -24,12 +24,13 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 	
 	
 	// Reserve Number Generator
+	$reserv_num = "";
 	
 	// Insert the reservation in database as record
 	// Statement for Inserting New Reserved Records
 	$add_reservation = "INSERT INTO reservation 
 		(reserv_num, event_type, reserv_date, reserv_time, username, status, confirmation, date_reserved)
-				VALUES ('','$event_type','$reserv_date','reserv_time','$username','Active','Confirmed',NOW())";
+				VALUES ('$reserv_num','$event_type','$event_date','reserv_time','$username','Active','Confirmed',NOW())";
 	
 	$arq = $conn->query($add_reservation);
 	

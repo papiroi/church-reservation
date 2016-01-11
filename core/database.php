@@ -112,6 +112,15 @@ class Database {
 	
 	
 		$crq = $this->conn->query($create_reservation);
+		
+		if($crq == true) {
+			//nothing to do here
+			//Success creating reservation table in database
+		}
+		else {
+			echo "Error Code: Reserv101";
+			exit();
+		}
 	}
 	
 	// Database for Announcement

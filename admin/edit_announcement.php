@@ -64,7 +64,10 @@
 	<div class="container">
 
 		<h1 class="white-text">Admin Pannel</h1>
-
+		
+		<div class="row">
+		<div class="col-md-9">
+		<div class="textarea-div">
 		<h2 class="white-text">Edit Announcement Message</h2>
 		
 <!-- Announcmenet Function in Edit Announcement -->
@@ -131,7 +134,10 @@
 			&nbsp;&nbsp;&nbsp;
 			<a href="index.php" class="btn btn-info" title="Back to Home">Back</a>
 		</form>
-
+		</div><!-- End of Div center-div -->
+		</div><!-- End of Div col-md-8 -->
+		<div class="col-md-2"></div>
+		</div><!-- End of Div row-->
 	</div>
 
 
