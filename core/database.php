@@ -102,7 +102,7 @@ class Database {
 			reserv_num varchar(12) NOT NULL,
 			event_type varchar(15) NOT NULL,
 			reserv_date date NOT NULL,
-			reserv_time time NOT NULL,
+			reserv_time varchar(5) NOT NULL,
 			username varchar(60) NOT NULL,
 			status varchar(15) NOT NULL,
 			confirmation varchar(15) NOT NULL,
