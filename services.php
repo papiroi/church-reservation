@@ -84,6 +84,7 @@
 		<h2 class="white-text">Services Offered:</h2>
 		<div class="row">
 			<div class="col-md-12">
+<<<<<<< HEAD
 			
 				<!-- Form Goes Here
 				<div class="center-div">
@@ -92,6 +93,14 @@
 				</div>
 				-->
 			
+=======
+				<div class="center-div">
+					<h3>Scheduling</h3>
+					<h3>Rervations</h3>
+					<h3>Event Setup</h3>
+					<h3>Sunday Mass</h3>
+				</div>
+>>>>>>> 95792bee27ba46010d39d8d263d3ed8ba9f601c9
 			</div>
 		</div>
 	</div>

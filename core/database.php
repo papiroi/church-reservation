@@ -59,7 +59,10 @@ class Database {
 		
 		// Insert Default user for the website, but It can change
 		// the default user is admin and the password is aietarlac
+<<<<<<< HEAD
 		// Secure Hashed Algorithm 1 used for password
+=======
+>>>>>>> 95792bee27ba46010d39d8d263d3ed8ba9f601c9
 		$default_user = 'admin';
 		$default_password = sha1('admin');
 		
