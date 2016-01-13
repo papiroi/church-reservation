@@ -1,3 +1,8 @@
+body, html {
+	height: 100% auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
 /*Custom CSS*/
 
 .center-div {

@@ -44,8 +44,8 @@
 	
 </head>
 <body>
-<br/>
 	<div class="container">
+		<br/>
 		<h1 class="text-center white-text">Scheduling and Reservation System for Tarlac San Sebastian Cathedral Parish</h1>
 
 <!-- Start of Navigation Bar -->
@@ -89,16 +89,49 @@
 		$mobile = stripslashes($_POST['mobile']);
 		$email = stripslashes($_POST['email']);
 		$address = stripslashes($_POST['address']);
-		$bday = stripslashes($_POST['bday']);
+		$bday = $_POST['bday'];
 		$username = stripslashes($_POST['username']);
 		$password = sha1(stripslashes($_POST['password']));
 		
 		// Include Registration Class
 		require_once "core/registration.php";
 		
-		$reg = new Registration($conn, $firstname, $lastname, $mobile, $email, $address, $bday, $username, $password);
-	
-		echo $reg -> register();
+		// Check if the user that are registering is 18 years old and beyond
+		// if the user is below 18 years old he/she will not be able to create account
+		// because in able for you to reserve an event you need to be 18 years old
+		// This function Calculates the age of the user 
+		function ageCalculator($dob){
+			if(!empty($dob)){
+				$birthdate = new DateTime($dob);
+				$today   = new DateTime('today');
+				$age = $birthdate->diff($today)->y;
+				return $age;
+			}else{
+				return 0;
+			}
+		}
+		
+		// Age of the User
+		echo $age = ageCalculator($bday);
+		
+		
+		// Condition if the user is 18 years old and above
+		// if not the user cannot register
+		if($age > 17 ) {
+			
+			// Writing User Registration Information to the Database
+			$reg = new Registration($conn, $firstname, $lastname, $mobile, $email, $address, $bday, $username, $password);
+		
+			echo $reg -> register();
+			
+		}
+		else {
+			
+			echo "<script>";
+			echo "alert('You are below 18 years old!')";
+			echo "</script>";
+			
+		}
 	}
 	else {
 		// Nothing to do here just run the page as is

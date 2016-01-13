@@ -53,8 +53,8 @@
 
 </head>
 <body>
-	<br/>
 	<div class="container">
+		<br/>
 		<h1 class="text-center white-text">Scheduling and Reservation System for Tarlac San Sebastian Cathedral Parish</h1>
 
 <!-- Start of Navigation Bar -->

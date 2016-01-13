@@ -15,7 +15,7 @@
 
 	<!-- Navigation -->
     <nav class="navbar navbar-inverse" role="navigation">
-        <div class="container">
+        <div class="">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -35,8 +35,23 @@
 						<strong>Home</strong>
 						</a>
                     </li>
-                    <li>
-                        <a href="services.php"><strong>Services</strong></a>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><strong>Services<span class="caret"></span></strong></a>
+						
+						<ul class="dropdown-menu">
+						
+							<li class="menu-dropdown"><a href="#">Baptism</a></li>
+							<li><a href="#">Wedding</a></li>
+							
+							<li>
+							
+								<a href="#">Senimars</a>
+								
+							</li>
+							
+							<li><a href="#">Funeral</a></li>
+							
+						</ul>
                     </li>
                     <li>
                         <a href="contact.php"><strong>Contact</strong></a>

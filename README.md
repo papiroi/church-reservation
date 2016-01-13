@@ -14,3 +14,8 @@ That's IT!!!
 History of Development
 Checkout1 - Register and Login
 editannouncement - Editting Announcement Finished
+
+Database: a9013501_data
+Username: a9013501_user
+Host: mysql9.000webhost.com
+Password: new
