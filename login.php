@@ -56,7 +56,7 @@
 	<br/>
 	<div class="container">
 		<h1 class="text-center white-text">Scheduling and Reservation System for Tarlac San Sebastian Cathedral Parish</h1>
-<<<<<<< HEAD
+
 <!-- Start of Navigation Bar -->
 <?php
 /*
@@ -77,9 +77,7 @@
 ?>
 <!-- End of Navigation Bar -->
 
-=======
-	
->>>>>>> 95792bee27ba46010d39d8d263d3ed8ba9f601c9
+
 		<div class="row">
 		<div class="col-md-4"></div>
 		<div class="col-md-4">

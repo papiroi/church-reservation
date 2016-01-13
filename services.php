@@ -84,7 +84,6 @@
 		<h2 class="white-text">Services Offered:</h2>
 		<div class="row">
 			<div class="col-md-12">
-<<<<<<< HEAD
 			
 				<!-- Form Goes Here
 				<div class="center-div">
@@ -93,7 +92,6 @@
 				</div>
 				-->
 			
-=======
 				<div class="center-div">
 					<h3>Scheduling</h3>
 					<h3>Rervations</h3>
