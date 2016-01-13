@@ -1,0 +1,5 @@
+/*LESS*/
+
+@media (max-width: 400px) {
+	h1{font-size: 30px;}
+}
