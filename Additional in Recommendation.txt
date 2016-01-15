@@ -9,7 +9,7 @@ by Request
 ----------------------------------
 given
 Font Recommendation
-Services Offered (Must be Categorized)
+Services Offered (Must be Categorized) - ok maybe
 **
 Seminars for Confirmation
 Seminars for Wedding
@@ -17,6 +17,7 @@ Seminars for Wedding
 Baptism
 Wedding 
 Funeral
+Confirmations
 
 Contacts
 Form from the church

@@ -98,8 +98,14 @@
 					</div>
 				</div>
 			</div>
-		</div>
+			
+			
 
+			
+	</div>
+		<?php
+			include "includes/include_contacts.php";
+		?>
 <?php
 
 	require_once "includes/footer.php";

@@ -149,7 +149,12 @@
 				<h3>Online Scheduling and Reservation for Tarlac San Sebastian Cathedral Parish</h3>
 			</div>
 		</div>
+		
 	</div>
+		
+		<?php
+			include "includes/include_contacts.php";
+		?>
 
 <?php
 /*

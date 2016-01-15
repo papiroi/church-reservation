@@ -45,16 +45,15 @@
 							
 							<li>
 							
-								<a href="#">Senimars</a>
+								<a href="#">Seminars</a>
 								
 							</li>
+							
+							<li><a href="#">Confirmation</a></li>
 							
 							<li><a href="#">Funeral</a></li>
 							
 						</ul>
-                    </li>
-                    <li>
-                        <a href="contact.php"><strong>Contact</strong></a>
                     </li>
                     <li>
                         <a href="about.php"><strong>About</strong></a>

@@ -146,9 +146,15 @@
 		<div class="col-md-4"></div>
 		</div>
 	
+	
+
+		
 	</div>
 
-
+	<?php
+		include "includes/include_contacts.php";
+	?>
+	
 <?php
 /*
 * This part will include the footer script.

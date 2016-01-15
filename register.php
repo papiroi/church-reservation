@@ -246,7 +246,10 @@
 		<div class="col-md-2"></div>
 	
 	</div>
-	
+	</div>
+	<?php
+		include "includes/include_contacts.php";
+	?>
 <script>
 $(document).ready(function() {
 	// Validation for Firstname

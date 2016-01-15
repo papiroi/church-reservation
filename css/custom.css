@@ -1,8 +1,13 @@
 body, html {
 	height: 100% auto;
-	background-color: rgba(0,0,0,0.4);
+	background-color: rgba(0,0,0,0.5);
 }
 
+/* bootstrap custom */
+.container {
+	margin-bottom: 25px;
+	
+}
 /*Custom CSS*/
 
 .center-div {
@@ -101,6 +106,19 @@ input, select, textarea{
 
 .dropdown-menu a{
     color: #ffffff !important;
+}
+
+.footer {
+	
+	text-align: center;
+	margin: 0;
+	width: 100%;
+	color: white;
+	padding: 10px;
+	position: fixed;
+	bottom: 0px;
+	background-color: rgba(0,0,0,2)
+	
 }
 
 /* Highlight Color  */
