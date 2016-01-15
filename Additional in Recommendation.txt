@@ -27,7 +27,7 @@ Form from the church
 ----------------------------------
 
 Make clear the userlink
-Remove Cache for input forms
+Remove Cache for input forms - OK
 Try to make a transparent background - OK maybe
 
 

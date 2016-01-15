@@ -104,6 +104,10 @@ input, select, textarea{
 	
 }
 
+.sub-menu1 {
+	list-style: none;
+}
+
 .dropdown-menu a{
     color: #ffffff !important;
 }

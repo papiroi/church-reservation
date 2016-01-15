@@ -141,12 +141,12 @@
 <!-- End of PHP Code in Registration -->
 			</span>
 			<h3 class="white-text">Registration Form</h3>
-			<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+			<form autocomplete="off" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
 				
 				<div id="firstnameclassdiv" class="form-group has-feedback">
 				<label for="firstname">First Name:</label>
 				<input type="text" name="firstname" id="firstname" class="form-control input-width" 
-					placeholder="First Name" title="First Name Field is Required!" required/>
+					placeholder="First Name" title="First Name Field is Required!" value="" required/>
 				<span id="firstnameclassspan" class="glyphicon form-control-feedback"></span>
 				</div>
 				
@@ -155,7 +155,7 @@
 				<div id="lastnameclassdiv" class="form-group has-feedback">
 				<label for="lastname">Lastname:</label>
 				<input type="text" name="lastname" id="lastname" class="form-control input-width" 
-					placeholder="Last Name" title="Lastname is Required!" required/>
+					placeholder="Last Name" title="Lastname is Required!" value="" required/>
 				<span id="lastnameclassspan" class="glyphicon form-control-feedback"></span>
 				</div>
 				
@@ -164,7 +164,7 @@
 				<div id="mobileclassdiv" class="form-group has-feedback">
 				<label for="mobile">Mobile Number:</label><i> 11 Digit Number</i>
 				<input type="number" name="mobile" id="mobile" class="form-control input-width" 
-					placeholder="Mobile Number" title="Mobile Number is Required!" required/>
+					placeholder="Mobile Number" title="Mobile Number is Required!" value="" required/>
 				<span id="mobileclassspan" class="glyphicon form-control-feedback"></span>
 				</div>
 				
@@ -173,7 +173,7 @@
 				<div id="emailclassdiv" class="form-group has-feedback">
 				<label for="email">Email:</label>
 				<input type="email" name="email" id="email" class="form-control input-width" 
-					placeholder="Email Address" title="Email Address is Required!" required/>
+					placeholder="Email Address" title="Email Address is Required!" value="" required/>
 				<span id="emailclassspan" class="glyphicon form-control-feedback"></span>
 				</div>
 				
@@ -182,7 +182,7 @@
 				<div id="addressclassdiv" class="form-group has-feedback">
 				<label for="address">Address:</label>
 				<input type="text" name="address" id="address" class="form-control input-width" 
-					placeholder="Address" title="Address is Required" required/>
+					placeholder="Address" title="Address is Required" value="" required/>
 				<span id="addressclassspan" class="glyphicon form-control-feedback"></span>
 				</div>
 				
@@ -196,7 +196,7 @@
 			<div id="bdayclassdiv" class="form-group has-feedback">
 				<label for="bday">Birthday:</label>
 				<input type="date" name="bday" id="bday" class="form-control input-width" 
-					placeholder="YYYY-MM-DD" required/>
+					placeholder="YYYY-MM-DD" value="" required/>
 				<span id="bdayclassspan" class="glyphicon form-control-feedback"></span>
 				</div>
 				
@@ -205,7 +205,7 @@
 				<div id="usernameclassdiv" class="form-group has-feedback">
 				<label for="username">Username:</label>
 				<input type="text" name="username" id="username" class="form-control input-width" 
-					placeholder="Username" pattern=".{4,32}" required maxlength="32" min="5"
+					placeholder="Username" pattern=".{4,32}" value="" required maxlength="32" min="5"
 					title="It must be a minimum of 4 characters and a maximum of 32 characters!"/>
 				<span id="usernameclassspan" class="glyphicon form-control-feedback"></span>
 				</div>
@@ -215,7 +215,7 @@
 				<div id="passwordclassdiv" class="form-group has-feedback">
 				<label for="password">Password:</label>
 				<input type="password" name="password" id="password" class="form-control input-width" 
-					placeholder="Password" pattern=".{8,32}" required maxlength="32" min="8"
+					placeholder="Password" pattern=".{8,32}" value="" required maxlength="32" min="8"
 					title="Password must not be a minimum of 8 characters and a maximum of 32!"/>
 				<span id="passwordclassspan" class="glyphicon form-control-feedback"></span>
 				</div>
@@ -225,7 +225,7 @@
 				<div id="password2classdiv" class="form-group has-feedback">
 				<label for="password2">Re-Enter Password:</label>
 				<input type="password" name="password2" id="password2" class="form-control input-width" 
-					placeholder="Re-Type Password" pattern=".{8,32}" required maxlength="32"
+					placeholder="Re-Type Password" pattern=".{8,32}" value="" required maxlength="32"
 					title="Must be the same as the first password you enter!"/>
 				<span id="password2classspan" class="glyphicon form-control-feedback"></span>
 				</div>

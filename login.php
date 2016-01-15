@@ -30,9 +30,9 @@
 * the $conn variable contains connection string in the database server
 */
 	require_once "includes/connect.php";
+	require_once "core/login.php";
 	
 ?>
-
 <!DOCTYPE html>
 <html class="full" lang="en-US">
 <head>
@@ -76,14 +76,11 @@
 	}
 ?>
 <!-- End of Navigation Bar -->
-
-
 		<div class="row">
 		<div class="col-md-4"></div>
 		<div class="col-md-4">
 			<div class="center-div">
 			<span class="error-message">
-			
 <!-- Start of PHP Code in Login -->
 <?php
 /*
@@ -106,13 +103,24 @@
 		// Including the lgoin class
 		// The Login Class Requires 3 parameters: $conn, $username, $password respectively
 		
-		require_once "core/login.php";
+		if($username == 'admin') {
+			// Nothing to do here
+			
+		}
+		else {
 		
-		$login = new Login($conn, $username, $password);
-		
-		
-		echo $login->login();
-		
+			$login = new Login($conn, $username, $password);			
+			
+			@$login -> login();
+			
+			if(isset($_SESSION['username']) && !empty($_SESSION['username'])) {
+				echo "<a href='index.php'>";
+				echo "Click here if your browser does not redirect you to home page.";
+				echo "</a>";
+				exit();
+			}
+			
+		}
 		
 	}
 	else {

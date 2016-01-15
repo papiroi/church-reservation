@@ -96,8 +96,11 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 				<select id="eventtype" name="eventtype" class="form-control" required autofocus>
 					<option value="">Select Event</option>
 					<option value="Baptism">Baptism</option>
-					<option value="Wedding">Wedding</option>
+					<option value="Confirmation">Confirmation</option>
 					<option value="Funeral">Funeral</option>
+					<option value="For Confirmation">Seminar For Confirmation</option>
+					<option value="For Wedding">Seminar For Wedding</option>
+					<option value="Wedding">Wedding</option>
 				</select>
 
 				<br/>
@@ -142,7 +145,7 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 				<input type="reset" value="Clear Input" onclick="" class="btn btn-primary"/>
 			</form> 
 			<br/>
-			<a href="index.php" title="Cancel Reservation">Cancel</a>
+			<a href="index.php" title="Cancel Reservation">Home</a>
 			
 		</div>
 	</div>

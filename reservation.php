@@ -70,20 +70,35 @@
 	<div class="container">
 
 		<h1 class="text-center white-text">Scheduling and Reservation System for Tarlac San Sebastian Cathedral Parish</h1>
+<!-- Start of Navigation -->
+<?php
+/*
+* This will show navigation bar menu if there is signed in user or not
+*
+*/
+
+	if(isset($_SESSION['username']) && !empty($_SESSION['username'])) {
 		
-		
-		<?php
-			
-			include "includes/reservation_form.php";
-			
-		?>
+		require_once "includes/nav_bar_signed_in.php";
+	
+	}
+	else {
+	
+		require_once "includes/nav_bar_signed_out.php";
+	
+	}
+	
+// End of Navigation -->
+
+	include "includes/reservation_form.php";
+?>
 		
 	</div>
 
 
 <?php
 
-
+	include "includes/include_contacts.php";
 	require_once "includes/footer.php";
 	
 	

@@ -35,18 +35,92 @@
 <html class="full" lang="en-US">
 <head>
 	<title>Reservation Status - Scheduling and Reservation for Tarlac San Sebastian Cathedral Parish</title>
-
+	
+	<?php
+	
+		require "includes/head_include.php";
+	?>
+	<!-- Custom CSS for Background Image for this page -->
+	<link rel="stylesheet" href="css/background-image.css" />
 </head>
 <body>
 
-	<div class="">
+	<div class="container">
 		
-		<h1>Reservation Status</h1>
+		<span class="white-text">
+		
+			Welcome <?php echo $username; ?>!!!
+			<?php require_once "includes/user_account_link.php"; ?>
+			
+		</span>
+		
+		<h1 class="white-text text-center">Scheduling and Reservation for Tarlac San Sebastian Parish Cathedral</h1>
+<!-- Start of Navigation -->
+<?php
+/*
+* This will show navigation bar menu if there is signed in user or not
+*
+*/
+
+	if(isset($_SESSION['username']) && !empty($_SESSION['username'])) {
+		
+		require_once "includes/nav_bar_signed_in.php";
 	
+	}
+	else {
+	
+		require_once "includes/nav_bar_signed_out.php";
+	
+	}
+?>		
+<!--End of Navigation -->
+	
+	<h2 class="white-text">Reservation Status</h2>
+	<!-- Start of Output for Reservation Status -->
+	<div class="center-div">
+<?php
+
+	$select_all_reserv = "SELECT * FROM reservation WHERE username = '$username'";
+	$select_query_result = $conn->query($select_all_reserv);
+	
+	if($select_query_result -> num_rows > 0) {
+		
+		//echo "There is a reservation.";
+		echo "<table class='table table-bordered'>";
+		echo "<tr>";
+		echo "<th>Reservation No.</th>";
+		echo "<th>Reserve Event</th>";
+		echo "<th>Date</th>";
+		echo "<th>Time</th>";
+		echo "<th>Status</th>";
+		echo "<th>User</th>";
+		echo "</tr>";
+		while($row = $select_query_result) {
+			
+			echo "<td>";
+			
+			
+			
+			echo "</td>";
+			
+		}
+		
+		echo "</table>";
+		
+	}
+	else {
+		
+		echo "<h3 class=''>No Reservations Found</h3>";
+		
+	}
+	
+?>	
+	</div>
 	</div>
 
 <?php
 
+	include "includes/include_contacts.php";
 	include "includes/footer.php";
 	
 ?>

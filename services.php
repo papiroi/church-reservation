@@ -93,7 +93,23 @@
 				-->
 			
 				<div class="center-div">
-					Services...
+					<a name="baptism"></a>
+					<h3>Baptism</h3>
+					<p></p>
+					<a name="confirmation"></a>
+					<h3>Confirmation</h3>
+					<p></p>
+					<a name="funeral"></a>
+					<h3>Funeral</h3>
+					<a name="seminars"></a>
+					<h3>Seminars</h3>
+					<a name="forconfirmation"></a>
+					<p>For Confirmation</p>
+					<a name="forwedding"></a>
+					<p>For Wedding</p>
+					<a name="wedding"></a>
+					<h3>Wedding</h3>
+					<p></p>
 				</div>
 
 			</div>
@@ -101,6 +117,9 @@
 	</div>
 
 <?php
+
+	include "includes/include_contacts.php";
+
 
 	require_once "includes/footer.php";
 

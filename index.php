@@ -152,11 +152,9 @@
 		
 	</div>
 		
-		<?php
-			include "includes/include_contacts.php";
-		?>
-
 <?php
+	include "includes/include_contacts.php";
+
 /*
 * This part will include the footer script.
 * Required in every pages of the website

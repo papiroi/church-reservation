@@ -51,11 +51,28 @@
 						
 						<ul class="dropdown-menu">
 						
-							<li class="menu-dropdown"><a href="#">Baptism</a></li>
-							<li><a href="#">Wedding</a></li>
-							<li><a href="#">Seminars</a></li>
-							<li><a href="#">Confirmation</a></li>
-							<li><a href="#">Funeral</a></li>
+							<li class="menu-dropdown"><a href="services.php#baptism">Baptism</a></li>
+							
+							<li><a href="services.php#confirmation">Confirmation</a></li>
+							
+							<li><a href="services.php#funeral">Funeral</a></li>
+							
+							<!-- Start Submenu -->
+							
+							<li>
+							
+								<a href="services.php#seminars">Seminars</a>
+								<ul>
+									<li class="sub-menu1"><a href="services.php#forconfirmation">For Confirmation</a></li>
+									
+									<li class="sub-menu1"><a href="services.php#forwedding">For Wedding</a></li>
+								</ul>
+								
+							</li>
+							
+							<!-- End of Submenu -->
+							
+							<li><a href="services.php#wedding">Wedding</a></li>
 							
 						</ul>
                     </li>
