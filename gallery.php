@@ -22,6 +22,17 @@
 		$username = "Guest";
 	}
 
+/*
+* Condition to check if there's a logined user
+*
+*/
+	if(isset($_SESSION['username']) && !empty($_SESSION['username'])) {
+		// Nothing to do
+	}
+	else {
+		header('Location: index.php');
+	}
+	
 
 /*
 * The Connection String
@@ -35,13 +46,20 @@
 <html class="full" lang="en-US">
 <head>
 	<title>Gallery - Scheduling and Reservation for Tarlac San Sebastian Cathedral Parish</title>
+	
+	<?php
+		include "includes/head_include.php";
+	?>
 
+	<!-- Custom CSS for Background Image for this page -->
+	<link rel="stylesheet" href="css/background-image.css" />
 </head>
 <body>
 
-	<div class="">
+	<div class="container">
 		
-		<h1>Gallery Under Construction.</h1>
+		<h1 class="white-text text-center">Gallery Under Construction</h1>
+		<a href="index.php" class="white-text">Click Here to go to Home</a>
 	
 	</div>
 

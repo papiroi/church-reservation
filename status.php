@@ -21,7 +21,16 @@
 	else {
 		$username = "Guest";
 	}
-
+/*
+* Condition to check if there's a logined user
+*
+*/
+	if(isset($_SESSION['username']) && !empty($_SESSION['username'])) {
+		// Nothing to do here
+	}
+	else {
+		header('Location: index.php');
+	}
 
 /*
 * The Connection String
@@ -78,6 +87,7 @@
 	<h2 class="white-text">Reservation Status</h2>
 	<!-- Start of Output for Reservation Status -->
 	<div class="center-div">
+	<br/>
 <?php
 
 	$select_all_reserv = "SELECT * FROM reservation WHERE username = '$username'";
@@ -95,16 +105,18 @@
 		echo "<th>Status</th>";
 		echo "<th>User</th>";
 		echo "</tr>";
-		while($row = $select_query_result) {
+		while($row = $select_query_result->fetch_assoc()) {
 			
-			echo "<td>";
-			
-			
-			
-			echo "</td>";
-			
-		}
+			echo "<tr>";
+			echo "<td>" . $row['reserv_num'] . "</td>";
+			echo "<td>" . $row['event_type'] . "</td>";
+			echo "<td>" . $row['reserv_date'] . "</td>";
+			echo "<td>" . $row['reserv_time'] . "</td>";
+			echo "<td>" . $row['status'] . "</td>";
+			echo "<td>" . $row['username'] . "</td>";
+			echo "</tr>";
 		
+		}
 		echo "</table>";
 		
 	}

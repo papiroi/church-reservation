@@ -145,7 +145,6 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 				<input type="reset" value="Clear Input" onclick="" class="btn btn-primary"/>
 			</form> 
 			<br/>
-			<a href="index.php" title="Cancel Reservation">Home</a>
 			
 		</div>
 	</div>
