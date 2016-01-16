@@ -100,6 +100,7 @@
 		// if the user is below 18 years old he/she will not be able to create account
 		// because in able for you to reserve an event you need to be 18 years old
 		// This function Calculates the age of the user 
+		// The DateTime::diff() works on php ver 5.3.0 and up
 		function ageCalculator($dob){
 			if(!empty($dob)){
 				$birthdate = new DateTime($dob);
@@ -112,26 +113,26 @@
 		}
 		
 		// Age of the User
-		echo $age = ageCalculator($bday);
+		//$age = ageCalculator($bday);
 		
 		
 		// Condition if the user is 18 years old and above
 		// if not the user cannot register
-		if($age > 17 ) {
+		//if($age > 17 ) {
 			
 			// Writing User Registration Information to the Database
 			$reg = new Registration($conn, $firstname, $lastname, $mobile, $email, $address, $bday, $username, $password);
 		
 			echo $reg -> register();
 			
-		}
-		else {
+		//}
+		//else {
 			
-			echo "<script>";
-			echo "alert('You are below 18 years old!')";
-			echo "</script>";
+			//echo "<script>";
+			//echo "alert('You are below 18 years old!')";
+			//echo "</script>";
 			
-		}
+		//}
 	}
 	else {
 		// Nothing to do here just run the page as is

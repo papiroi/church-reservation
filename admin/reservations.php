@@ -1,7 +1,7 @@
 <?php
 /*
 * Start of Tarlac Cathedral Online Reservation and Scheduling
-* Index for Admin Page
+* View Schedules and Reservations 
 */
 
 /*
@@ -18,7 +18,13 @@
 * in the constant BASE
 */
 	include "basepath.php";
+	
+	
+/*
+*  
+*/
 
+	include "includes/connect.php";
 
 /*
 * Page redirection part to login if the admin is not logged in
@@ -49,7 +55,7 @@
 <!DOCTYPE html>
 <html class="full" lang="en-US">
 <head>
-	<title>Admin Panel</title>
+	<title>View Schedules and Reservation</title>
 
 <?php
 	
@@ -64,7 +70,7 @@
 <body>
 	<div class="container">
 
-		<h1 class="white-text">Admin Pannel</h1>
+		<h1 class="white-text">Admin Pannel: View Schedules</h1>
 		
 		
 		<a href="?s=logout" id="logout"><span class="link-text">Logout</span></a>
@@ -83,15 +89,47 @@
 			}
 		?>
 
-		<div class="admin-menu">
+		<div class="container">
 			
-			<ul class="no-bullet">
-				<li><a href="reservations.php"><h3 class="white-text">View Schedules and Reservations</h3></a></li>
-				<li><a href="#"><h3 class="white-text">Chat</h3></a></li>
-				<li><a href="edit_announcement.php"><h3 class="white-text">Edit Announcement</h3></a></li>
+<?php
 
-			</ul>
-
+	$select_all_reserv = "SELECT * FROM reservation WHERE username";
+	$select_query_result = $conn->query($select_all_reserv);
+	
+	if($select_query_result -> num_rows > 0) {
+		
+		//echo "There is a reservation.";
+		echo "<table class='table table-bordered'>";
+		echo "<tr>";
+		echo "<th>Reservation No.</th>";
+		echo "<th>Reserve Event</th>";
+		echo "<th>Date</th>";
+		echo "<th>Time</th>";
+		echo "<th>Status</th>";
+		echo "<th>User</th>";
+		echo "</tr>";
+		while($row = $select_query_result->fetch_assoc()) {
+			
+			echo "<tr>";
+			echo "<td>" . $row['reserv_num'] . "</td>";
+			echo "<td>" . $row['event_type'] . "</td>";
+			echo "<td>" . $row['reserv_date'] . "</td>";
+			echo "<td>" . $row['reserv_time'] . "</td>";
+			echo "<td>" . $row['status'] . "</td>";
+			echo "<td>" . $row['username'] . "</td>";
+			echo "</tr>";
+		
+		}
+		echo "</table>";
+		
+	}
+	else {
+		
+		echo "<h3 class=''>No Reservations Found</h3>";
+		
+	}
+	
+?>	
 
 		</div>
 
