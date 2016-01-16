@@ -22,16 +22,12 @@ Confirmations
 Contacts
 Form from the church
 
-
-
 ----------------------------------
-
 Make clear the userlink
 Remove Cache for input forms - OK
 Try to make a transparent background - OK maybe
-
-
-
 ----------------------------------
 
 Menu in Admin (Fix)
+--------------------------------
+Form and Certificate Dropdown

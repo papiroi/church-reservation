@@ -76,6 +76,44 @@
 							
 						</ul>
                     </li>
+					<li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><strong>Forms<span class="caret"></span></strong></a>
+						
+						<ul class="dropdown-menu">
+							
+							<li>
+								<a href="forms/Canonical_Investigation_Form.docx">
+									Canonical Investigation Form - Download
+								</a>
+							</li>
+							<li><a href="#">Form2</a></li>
+							<li><a href="#">Form3</a></li>
+						
+						</ul>
+						
+					</li>
+					<li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><strong>Certifictes<span class="caret"></span></strong></a>
+						
+						<ul class="dropdown-menu">
+							
+							<li>
+								<a href="Certifiate_of_Marriage.docx">
+									Certificate of Marriage - Download
+								</a>
+							</li>
+							<li>
+								<a href="Template_Baptismal_Certificate.docx">Baptismal Certificate - Download</a>
+							</li>
+							<li>
+								<a href="Template_Certificate_of_Good_Moral_Character.docx">
+									Certificte of Good Moral Character - Download
+								</a>
+							</li>
+						
+						</ul>
+						
+					</li>
                     <li>
                         <a href="about.php"><strong>About</strong></a>
                     </li>

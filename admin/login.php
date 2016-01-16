@@ -101,14 +101,14 @@
 
 				<h2>Admin Login</h2>
 
-				<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+				<form autocomplete="off" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
 					<label for="username">Username</label>
-					<input type="text" name="username" id="username" class="form-control" required autofocus/>
+					<input type="text" name="username" id="username" class="form-control" value="" required autofocus/>
 
 					<br/>
 
 					<label for="password">Password</label>
-					<input type="password" name="password" id="password" class="form-control" required />
+					<input type="password" name="password" id="password" class="form-control" value="" required />
 
 					<br/>
 
