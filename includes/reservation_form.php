@@ -26,7 +26,7 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 	
 	$srq = $conn->query($search_record);
 	
-	if($srq->num_rows > 0) {
+	if(@$srq->num_rows > 0) {
 		
 		echo "<script>";
 		echo "alert('The Date and Time has a Conflict!!!')";
@@ -90,7 +90,7 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 			Date of Event
 			Time to start
 			-->
-			<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+			<form autocomplete="off" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
 
 				<label for="eventtype">Select Event:</label>
 				<select id="eventtype" name="eventtype" class="form-control" required autofocus>
@@ -105,7 +105,7 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 
 				<br/>
 				
-				<label for="dateselect">Select Date:</label> <b><i>mm-dd-yyy</i></b>
+				<label for="dateselect">Select Date:</label> <b><i>yyyy-mm-dd</i></b><i>format for Firefox</i>
 				<input type="date" id="dateselect" name="dateselect" class="form-control" required/>
 				
 				<br/>
