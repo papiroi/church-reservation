@@ -163,8 +163,19 @@ class Database {
 	// database/tables for chat
 	public function Chat() {
 
-		
-		
+		$create_chat_table = "CREATE TABLE IF NOT EXISTS chat (
+			chatID int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+			message varchar(300) NOT NULL,
+			username varchar(60) NOT NULL,
+			reference varchar(10) NOT NULL,
+			dateReg datetime NOT NULL
+			)";
+			
+		$cct = $this->conn->query($create_chat_table);
+
+		if(!$cct) {
+			exit("Database Script Error: 3");
+		}
 	}
 	
 	

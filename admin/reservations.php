@@ -75,6 +75,9 @@
 		
 		<a href="?s=logout" id="logout"><span class="link-text">Logout</span></a>
 
+		<br/>
+		<br/>
+		<a class="btn btn-primary" href="index.php">Home</a>
 		<?php
 			if(isset($_GET['s']) && $_GET['s'] == 'logout') {
 			

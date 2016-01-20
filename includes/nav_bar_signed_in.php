@@ -43,6 +43,9 @@
 						<strong>Home</strong>
 						</a>
                     </li>
+					<li>
+						<a href="chat.php"><strong>Chat</strong></a>
+					</li>
                     <li>
                         <a href="gallery.php"><strong>Gallery</strong></a>
                     </li>

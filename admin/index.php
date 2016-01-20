@@ -87,7 +87,7 @@
 			
 			<ul class="no-bullet">
 				<li><a href="reservations.php"><h3 class="white-text">View Schedules and Reservations</h3></a></li>
-				<li><a href="#"><h3 class="white-text">Chat</h3></a></li>
+				<li><a href="chat.php"><h3 class="white-text">Chat</h3></a></li>
 				<li><a href="edit_announcement.php"><h3 class="white-text">Edit Announcement</h3></a></li>
 
 			</ul>

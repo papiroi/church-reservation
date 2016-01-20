@@ -125,6 +125,28 @@ input, select, textarea{
 	
 }
 
+.chat-output {
+	
+	width: 100%;
+	padding: 10px;
+	border: 5px solid #cccccc;
+	color: black;
+	background-color: #eeeeee;
+	margin-top: 10px;
+	height: 200px;
+	overflow-y: auto;
+	border-radius: 5px;
+}
+
+.chat-input {
+	
+	width: 100%;
+	padding: 10px;
+	
+}
+
+
+
 /* Highlight Color  */
 ::-moz-selection {
     color: white;
