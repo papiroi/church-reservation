@@ -3441,7 +3441,8 @@ tbody.collapse.in {
   font-size: 14px;
   text-align: left;
   list-style: none;
-  background-color: black;
+  /*background-color: black;*/
+  background-color: grey;
   -webkit-background-clip: padding-box;
           background-clip: padding-box;
   border: 1px solid #ccc;
@@ -4396,7 +4397,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-default {
-  background-color: #f8f8f8;
+  /*background-color: #11ee11;*/
+  background-color: #e6e6e6;
   border-color: #e7e7e7;
 }
 .navbar-default .navbar-brand {

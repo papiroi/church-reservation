@@ -89,11 +89,7 @@
 
 	<div class="container">
 	
-		<span class="white-text">
-			Welcome <?php echo $username; ?>!!!
-			<?php require_once "includes/user_account_link.php"; ?>
-			
-		</span>
+
 	
 		<h1 class="text-center white-text">Scheduling and Reservation System for Tarlac San Sebastian Cathedral Parish</h1>
 <!-- Start of Navigation Bar -->
@@ -115,42 +111,45 @@
 	}
 ?>
 <!-- End of Navigation Bar -->
-		<div class="announcements">
-			<marquee>
-				<?php
-					// Load The Value of the Announcement
-					$select_announcement = "SELECT atext FROM announcement";
-					$sa_result = $conn->query($select_announcement);
-					
-					$new_announcement = "";
-					
-					if($sa_result->num_rows > 0) {
-						
-						while($row_sa_result = $sa_result->fetch_assoc()) {
-							$new_announcement = $row_sa_result['atext'];
-						}
-					
-					}
-					// The new announcement will display in the home page of the website
-					echo $new_announcement;
-					
-					
-				?>
-			</marquee>
-		</div>
 		
-		<br/></br/>
 		
 		<div class="row">
-			<div class="col-md-4 text-center white-text">
-				<h3>Online Scheduling and Reservation for Tarlac San Sebastian Cathedral Parish</h3>
+			
+			<!-- This is where to place the announcement -->
+			<div class="col-md-6">
+				<div class="announcements">
+					<marquee direction="up">
+						<?php
+							// Load The Value of the Announcement
+							$select_announcement = "SELECT atext FROM announcement";
+							$sa_result = $conn->query($select_announcement);
+							
+							$new_announcement = "";
+							
+							if($sa_result->num_rows > 0) {
+								
+								while($row_sa_result = $sa_result->fetch_assoc()) {
+									$new_announcement = $row_sa_result['atext'];
+								}
+							
+							}
+							// The new announcement will display in the home page of the website
+							echo $new_announcement;
+							
+							
+						?>
+					</marquee>
+				</div>
 			</div>
-			<div class="col-md-4 text-center white-text">
-				<h3>Online Scheduling and Reservation for Tarlac San Sebastian Cathedral Parish</h3>
+			<!-- Login Page if no user logged -->
+			<!-- Mass schedule if a user logged -->
+			<div class="col-md-6">
+			
+				
+			
 			</div>
-			<div class="col-md-4 text-center white-text">
-				<h3>Online Scheduling and Reservation for Tarlac San Sebastian Cathedral Parish</h3>
-			</div>
+			
+			
 		</div>
 		
 	</div>

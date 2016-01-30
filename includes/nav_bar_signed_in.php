@@ -14,7 +14,7 @@
 ?>	
 
 	<!-- Navigation -->
-    <nav class="navbar navbar-inverse" role="navigation">
+    <nav class="navbar navbar-default" role="navigation">
         <div class="">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -91,28 +91,6 @@
 							</li>
 							<li><a href="#">Form2</a></li>
 							<li><a href="#">Form3</a></li>
-						
-						</ul>
-						
-					</li>
-					<li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><strong>Certifictes<span class="caret"></span></strong></a>
-						
-						<ul class="dropdown-menu">
-							
-							<li>
-								<a href="Certifiate_of_Marriage.docx">
-									Certificate of Marriage - Download
-								</a>
-							</li>
-							<li>
-								<a href="Template_Baptismal_Certificate.docx">Baptismal Certificate - Download</a>
-							</li>
-							<li>
-								<a href="Template_Certificate_of_Good_Moral_Character.docx">
-									Certificte of Good Moral Character - Download
-								</a>
-							</li>
 						
 						</ul>
 						
