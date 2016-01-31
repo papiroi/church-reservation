@@ -145,7 +145,29 @@
 			<!-- Mass schedule if a user logged -->
 			<div class="col-md-6">
 			
+				<div class="login-div">
 				
+<?php
+/*
+* This part of index or home page will show login form and/or registration form
+* if there is no user logged in, other wise the schedule of mass will appear
+*/
+
+	if($username == 'Guest') {
+		
+		include "includes/login_form.php";
+		
+	}
+	else {
+		
+		//echo "Mass Schedules";
+		
+		include "includes/mass_sched.php";
+		
+	}
+?>
+				
+				</div>
 			
 			</div>
 			

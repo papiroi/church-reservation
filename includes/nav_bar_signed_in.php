@@ -80,7 +80,7 @@
 						</ul>
                     </li>
 					<li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><strong>Forms<span class="caret"></span></strong></a>
+                        <a href="#" class="dropdown-toggle" ><strong>Forms<span class="caret"></span></strong></a>
 						
 						<ul class="dropdown-menu">
 							
@@ -98,6 +98,20 @@
                     <li>
                         <a href="about.php"><strong>About</strong></a>
                     </li>
+					
+					<li id="user-position" class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<?php echo $username; 
+							include "includes/user_account_link.php";?>
+							<span class="caret"></span>
+						</a>
+							<ul class="dropdown-menu">
+								<li><a href="?s=logout">Logout</a></li>
+								<li></li>
+								<li></li>
+							
+							</ul>
+					</li>
 					
                 </ul>
             </div>

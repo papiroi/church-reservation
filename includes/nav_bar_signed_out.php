@@ -69,10 +69,10 @@
                         <a href="about.php"><strong>About</strong></a>
                     </li>
 					
-						<li id="user-position"><a href="#">
-							Welcome <?php echo $username; ?>!!!
-							<?php require_once "includes/user_account_link.php"; ?>
-						</a></li>
+					<li id="user-position"><a href="#">
+						Welcome <?php echo $username; ?>!!!
+						<?php require_once "includes/user_account_link.php"; ?>
+					</a></li>
 				
                 </ul>
             </div>
