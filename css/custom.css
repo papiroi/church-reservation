@@ -19,7 +19,7 @@ body, html {
 .center-div {
 	background-color: rgba(0,0,0,0.8);
 	margin-top: 30px;
-	padding: 10px 10px 10px 10px;
+	padding: 10px 20px 20px 20px;
 	color: #fff;
 	border-radius: 10px;
 	min-height: 300px;
@@ -28,7 +28,7 @@ body, html {
 
 
 .error-message {
-	margin: 3px auto;
+	margin: 0 auto;
 	color: red;
 	font-size: 19px;
 	text-align: center;
@@ -79,7 +79,7 @@ body, html {
 	background-color: rgba(0,0,0,0.8);
 	margin-top: 30px;
 	padding: 10px 10px 10px 10px;
-	color: #1aff1a;
+	color: #fff;
 	border-radius: 10px;
 	font-size: 20px;
 	height: 290px;
@@ -96,13 +96,14 @@ body, html {
 .login-div {
 	background-color: rgba(0,0,0,0.8);
 	margin-top: 30px;
-	padding: 10px 10px 10px 10px;
+	padding: 20px 20px 20px 20px;
 	color: #fff;
 	border-radius: 10px;
 	font-size: 15px;
 	height: 290px;
 	margin-bottom: 50px;
 	overflow: auto;
+	
 }
 
 .login_form {
@@ -138,8 +139,11 @@ input, select, textarea{
 }
 
 .input-width {
-	max-width: 320px;
+	max-width: auto;
 	min-width: 100px;
+}
+.date-picker {
+	width: auto !important;
 }
 
 .dropdown-menu > li > a:hover {

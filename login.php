@@ -26,6 +26,19 @@
 	}
 	
 /*
+* Check if session username or name of the logged in user isset
+* if not Guest User 
+*/
+
+	if(isset($_SESSION['username']) && !empty($_SESSION['username'])) {
+		$username = $_SESSION['username'];;
+	}
+	else {
+		$username = "Guest";
+	}
+
+	
+/*
 * Calling the connection string for the database server
 * the $conn variable contains connection string in the database server
 */
@@ -80,9 +93,9 @@
 		<div class="col-md-4"></div>
 		<div class="col-md-4">
 			<div class="center-div">
-			<span class="error-message">
 <!-- Start of PHP Code in Login -->
 <?php
+			
 /*
 * Login Part
 * 
@@ -125,11 +138,11 @@
 	}
 	else {
 		// Nothing to do here
+		
 	}
-
+	
 ?>
 <!-- End of Code in Login -->
-				</span>
 			
 				<h3 class="white-text">Login Form</h3>
 				<form autocomplete="off" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">

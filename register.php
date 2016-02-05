@@ -24,6 +24,19 @@
 	else {
 		// Nothing to do
 	}
+	
+/*
+* Check if session username or name of the logged in user isset
+* if not Guest User 
+*/
+
+	if(isset($_SESSION['username']) && !empty($_SESSION['username'])) {
+		$username = $_SESSION['username'];;
+	}
+	else {
+		$username = "Guest";
+	}
+
 ?>
 
 
@@ -196,7 +209,7 @@
 			
 			<div id="bdayclassdiv" class="form-group has-feedback">
 				<label for="bday">Birthday:</label>
-				<input type="date" name="bday" id="bday" class="form-control input-width" 
+				<input type="date" name="bday" id="bday" class="form-control date-picker" 
 					placeholder="YYYY-MM-DD" value="" required/>
 				<span id="bdayclassspan" class="glyphicon form-control-feedback"></span>
 				</div>
@@ -236,7 +249,7 @@
 				<input type="submit" value="Register" class="btn btn-primary form-control input-width"/>
 			
 			</form>
-			<br/>
+			<br/><br/>
 			<span class="white-text">Already Have an Account? Click <a href="login.php">here</a>.</span>
 			<br/>
 			<a href="index.php"><span class="white-text">Return to Home Page</span></a>
