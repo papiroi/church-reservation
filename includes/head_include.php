@@ -42,10 +42,10 @@
 	
 	<script>
 		$(document).ready(function(){
-			$("#bday").Zebra_DatePicker({
-				direction: [false,'1940-01-01']
+			$("input#bday").Zebra_DatePicker({
+				direction: - [false,'1940-01-01']
 			});
-			$("#bday").Zebra_DatePicker({
+			$("input#bday").Zebra_DatePicker({
 				view: 'years'
 			});
 		});

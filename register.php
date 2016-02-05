@@ -102,7 +102,7 @@
 		$mobile = stripslashes($_POST['mobile']);
 		$email = stripslashes($_POST['email']);
 		$address = stripslashes($_POST['address']);
-		$bday = $_POST['bday'];
+		$bday = stripslashes($_POST['bday']);
 		$username = stripslashes($_POST['username']);
 		$password = sha1(stripslashes($_POST['password']));
 		
@@ -114,6 +114,7 @@
 		// because in able for you to reserve an event you need to be 18 years old
 		// This function Calculates the age of the user 
 		// The DateTime::diff() works on php ver 5.3.0 and up
+		/* Start of DateTime::diff() function
 		function ageCalculator($dob){
 			if(!empty($dob)){
 				$birthdate = new DateTime($dob);
@@ -124,7 +125,7 @@
 				return 0;
 			}
 		}
-		
+		*/ 
 		// Age of the User
 		//$age = ageCalculator($bday);
 		
@@ -209,8 +210,8 @@
 			
 			<div id="bdayclassdiv" class="form-group has-feedback">
 				<label for="bday">Birthday:</label>
-				<input type="date" name="bday" id="bday" class="form-control date-picker" 
-					placeholder="YYYY-MM-DD" value="" required/>
+				<input type="text" name="bday" id="bday" class="form-control date-picker" 
+					placeholder="YYYY-MM-DD" required/>
 				<span id="bdayclassspan" class="glyphicon form-control-feedback"></span>
 				</div>
 				
