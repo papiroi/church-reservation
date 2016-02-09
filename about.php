@@ -52,13 +52,6 @@
 
 	<div class="container">
 
-<!-- Start of PHP Code for username display -->
-		<span class="white-text">
-		Welcome <?php echo $username; ?>!!!
-			<?php require_once "includes/user_account_link.php"; ?>
-		</span>
-
-	
 		<h1 class="text-center white-text">Scheduling and Reservation System for Tarlac San Sebastian Cathedral Parish</h1>
 <!-- Start of Navigation -->
 <?php
