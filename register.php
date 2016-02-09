@@ -88,7 +88,7 @@
 <!-- Start of PHP Code in Registration -->
 <?php
 	if(isset($_POST['username']) && !empty($_POST['username'])) {
-	
+
 		// Include Database Connection String
 		require_once "includes/connect.php";
 	

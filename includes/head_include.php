@@ -42,7 +42,9 @@
 	
 	<script>
 		$(document).ready(function(){
-			$("input#bday").Zebra_DatePicker();
+			$("input#bday").Zebra_DatePicker({
+				format: 'M d, Y'
+			});
 		});
 	</script>
 	<!-- End of Zebra Date Picker -->
