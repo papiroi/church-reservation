@@ -67,7 +67,7 @@
 		<h1 class="white-text">Admin Pannel</h1>
 		
 		
-		<a href="?s=logout" id="logout"><span class="link-text">Logout</span></a>
+		
 
 		<?php
 			if(isset($_GET['s']) && $_GET['s'] == 'logout') {
@@ -81,19 +81,13 @@
 			header("Location: " . $_SERVER['PHP_SELF']);
 			
 			}
+		
+			// Include the nav bar for Admin
+			require_once "includes/menu.php";
+		
 		?>
 
-		<div class="admin-menu">
-			
-			<ul class="no-bullet">
-				<li><a href="reservations.php"><h3 class="white-text">View Schedules and Reservations</h3></a></li>
-				<li><a href="chat.php"><h3 class="white-text">Chat</h3></a></li>
-				<li><a href="edit_announcement.php"><h3 class="white-text">Edit Announcement</h3></a></li>
-
-			</ul>
-
-
-		</div>
+		
 
 	</div>
 

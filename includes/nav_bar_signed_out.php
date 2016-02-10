@@ -73,6 +73,8 @@
 						Welcome <?php echo $username; ?>!!!
 						<?php require_once "includes/user_account_link.php"; ?>
 					</a></li>
+					
+					
 				
                 </ul>
             </div>

@@ -99,18 +99,14 @@
                         <a href="about.php"><strong>About</strong></a>
                     </li>
 					
-					<li id="user-position" class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+					<li id="user-position">
+						<a href="#">
 							<?php echo $username; 
 							include "includes/user_account_link.php";?>
-							<span class="caret"></span>
 						</a>
-							<ul class="dropdown-menu">
-								<li><a href="?s=logout">Logout</a></li>
-								<li></li>
-								<li></li>
-							
-							</ul>
+					</li>
+					<li id="user-position">
+						<a href="?s=logout"><strong>Logout</strong></a>
 					</li>
 					
                 </ul>
