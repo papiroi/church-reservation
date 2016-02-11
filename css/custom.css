@@ -193,8 +193,11 @@ input, select, textarea{
 	padding: 10px;
 	
 }
+/* Solution for Overlapping Dropdown */
 
-
+.navbar .nav > li {
+z-index: 10000;
+}
 
 /* Highlight Color  */
 ::-moz-selection {
