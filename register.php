@@ -44,13 +44,12 @@
 <html class="full" lang="en-US">
 <head>
 	<title>Registration - Scheduling and Reservation System for Tarlac San Sebastian Cathedral Parish</title>
-
+	
 <?php
 
 	require_once "includes/head_include.php";
 
 ?>
-	
 	
 	<!-- Custom CSS for Background Image for this page -->
 	<link rel="stylesheet" href="css/background-image.css" />
@@ -58,7 +57,6 @@
 </head>
 <body>
 	<div class="container">
-		<br/>
 		<h1 class="text-center white-text">Scheduling and Reservation System for Tarlac San Sebastian Cathedral Parish</h1>
 
 <!-- Start of Navigation Bar -->
