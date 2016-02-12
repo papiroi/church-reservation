@@ -30,11 +30,11 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
 					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><strong>Scheduling &amp; Reservation<span class="caret"></span></strong></a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><strong>My Reservations<span class="caret"></span></strong></a>
 					
 						<ul class="dropdown-menu">
 							<li class="menu-dropdown"><a href="reservation.php">Scheduling and Reservation Form</a></li>
-							<li><a href="status.php">Reservation Status</a></li>
+							<li><a href="status.php">Reservations</a></li>
 						</ul>
 					</li>
                     <li>

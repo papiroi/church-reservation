@@ -55,13 +55,7 @@
 <body>
 
 	<div class="container">
-		
-		<span class="white-text">
-		
-			Welcome <?php echo $username; ?>!!!
-			<?php require_once "includes/user_account_link.php"; ?>
-			
-		</span>
+
 		
 		<h1 class="white-text text-center">Scheduling and Reservation for Tarlac San Sebastian Parish Cathedral</h1>
 <!-- Start of Navigation -->
@@ -84,9 +78,10 @@
 ?>		
 <!--End of Navigation -->
 	
-	<h2 class="white-text">Reservation Status</h2>
+
 	<!-- Start of Output for Reservation Status -->
 	<div class="center-div">
+	<h2 class="white-text">Reservations</h2>
 	<br/>
 <?php
 
@@ -157,7 +152,7 @@
 		
 	}
 
-	$select_all_reserv = "SELECT * FROM reservation WHERE username = '$username'";
+	$select_all_reserv = "SELECT * FROM reservation WHERE username = '$username' ORDER BY reserv_date ASC";
 	$select_query_result = $conn->query($select_all_reserv);
 	
 	if(@$select_query_result -> num_rows > 0) {
