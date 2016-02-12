@@ -127,7 +127,7 @@ Update User Details Form
 			
 			<div id="bdayclassdiv" class="form-group has-feedback">
 			<label for="bday">Birthday:</label>
-			<input type="date" name="bday" id="bday" class="form-control input-width" 
+			<input type="text" name="bday" id="bday" class="form-control input-width" 
 				value="<?php echo $fetched_bday; ?>"
 				placeholder="YYYY-MM-DD" required
 				title="Click and Select Your Birthdate"/>

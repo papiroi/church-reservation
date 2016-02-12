@@ -79,35 +79,31 @@
 							
 						</ul>
                     </li>
-					<li class="dropdown">
-                        <a href="#" class="dropdown-toggle" ><strong>Forms<span class="caret"></span></strong></a>
-						
-						<ul class="dropdown-menu">
-							
-							<li>
-								<a href="forms/Canonical_Investigation_Form.docx">
-									Canonical Investigation Form - Download
-								</a>
-							</li>
-							<li><a href="#">Form2</a></li>
-							<li><a href="#">Form3</a></li>
-						
-						</ul>
-						
-					</li>
                     <li>
                         <a href="about.php"><strong>About</strong></a>
                     </li>
 					
-					<li id="user-position">
-						<a href="#">
-							<?php echo $username; 
-							include "includes/user_account_link.php";?>
-						</a>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><strong>
+						<u>
+							<?php echo $username;?>
+						</u><span class="caret"></span></strong></a>
+						
+						<ul class="dropdown-menu">
+							<li class="menu-dropdown">
+								<a href="update.php">Update Details</a>
+							</li>
+							<li>
+								<a href="changepass.php">Change Password</a>
+							</li>
+							<li>
+								<a href="logout.php">Logout</a>
+							</li>
+						
+						</ul>
+						
 					</li>
-					<li id="user-position">
-						<a href="?s=logout"><strong>Logout</strong></a>
-					</li>
+					
 					
                 </ul>
             </div>
