@@ -63,8 +63,24 @@
 <body>
 	<div class="container">
 
-		<h1 class="white-text">Admin Pannel</h1>
+		<h1 class="white-text">Admin Pannel: Edit Announcment</h1>
+		<?php
+			if(isset($_GET['s']) && $_GET['s'] == 'logout') {
+			
+			session_destroy();
+			
+			if($conn) {
+				$conn->close();
+			}
+			
+			header("Location: " . $_SERVER['PHP_SELF']);
+			
+			}
 		
+			// Include the nav bar for Admin
+			require_once "includes/menu.php";
+		
+		?>
 		<div class="row">
 		<div class="col-md-9">
 		<div class="textarea-div">
@@ -132,7 +148,6 @@
 			&nbsp;&nbsp;&nbsp;
 			<input type="reset" value="Revert" class="btn btn-danger"/>
 			&nbsp;&nbsp;&nbsp;
-			<a href="index.php" class="btn btn-info" title="Back to Home">Back</a>
 		</form>
 		</div><!-- End of Div center-div -->
 		</div><!-- End of Div col-md-8 -->

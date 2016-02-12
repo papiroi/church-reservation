@@ -72,12 +72,6 @@
 
 		<h1 class="white-text">Admin Pannel: View Schedules</h1>
 		
-		
-		<a href="?s=logout" id="logout"><span class="link-text">Logout</span></a>
-
-		<br/>
-		<br/>
-		<a class="btn btn-primary" href="index.php">Home</a>
 		<?php
 			if(isset($_GET['s']) && $_GET['s'] == 'logout') {
 			
@@ -90,6 +84,10 @@
 			header("Location: " . $_SERVER['PHP_SELF']);
 			
 			}
+		
+			// Include the nav bar for Admin
+			require_once "includes/menu.php";
+		
 		?>
 
 		<div class="center-div">

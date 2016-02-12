@@ -61,11 +61,24 @@
 
 	<div class="container">
 		
-		<h1 class="white-text text-center">Scheduling and Reservation for Tarlac San Sebastian Cathedral Parish</h1>
-		<a href="?s=logout" id="logout"><span class="link-text">Logout</span></a>
-		<br/>
-		<br/>
-		<a class="btn btn-primary" href="index.php">Home</a>
+		<h1 class="white-text text-center">Admin Pannel: Chat</h1>
+		<?php
+			if(isset($_GET['s']) && $_GET['s'] == 'logout') {
+			
+			session_destroy();
+			
+			if($conn) {
+				$conn->close();
+			}
+			
+			header("Location: " . $_SERVER['PHP_SELF']);
+			
+			}
+		
+			// Include the nav bar for Admin
+			require_once "includes/menu.php";
+		
+		?>
 		<div class="center-div">
 			
 			<div class="chat-output" id="outputchat"></div>
