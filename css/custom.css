@@ -156,8 +156,38 @@ input, select, textarea{
 	list-style: none;
 }
 
-.dropdown-menu a{
-    color: #ffffff !important;
+.dropdown-menu a, .dropdown-menu{
+    color: #000 !important;
+}
+
+@media(max-width: 767px) {
+.default .navbar-nav .open .dropdown-menu > li > a 
+    color: #333 !important;
+}
+
+/*
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #printable, #printable * {
+    visibility: visible;
+  }
+  #printable {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}
+*/
+
+.print-div {
+	background-color: rgba(0,0,0,0.8);
+	margin-top: 30px;
+	padding: 20px;
+	color: #fff;
+	border-radius: 10px;
+	margin-bottom: 50px;
 }
 
 .footer {

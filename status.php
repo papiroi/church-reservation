@@ -82,6 +82,7 @@
 	<!-- Start of Output for Reservation Status -->
 	<div class="center-div">
 	<h2 class="white-text">Reservations</h2>
+	<span class="white-text"><i>Click on Reservation Number to Print</i></span>
 	<br/>
 <?php
 
@@ -170,7 +171,7 @@
 		while($row = $select_query_result->fetch_assoc()) {
 			
 			echo "<tr>";
-			echo "<td>" . $row['reserv_num'] . "</td>";
+			echo "<td><a href='print.php?r=" .  $row['reserv_num']. "' target='_blank'>" . $row['reserv_num'] . "</a></td>";
 			echo "<td>" . $row['event_type'] . "</td>";
 			echo "<td>" . $row['reserv_date'] . "</td>";
 			echo "<td>" . num_to_time($row['reserv_time']) . "</td>";
@@ -178,7 +179,7 @@
 			echo "<td>" . $row['username'] . "</td>";
 			echo "</tr>";
 		
-		}
+		} 
 		echo "</table>";
 		
 	}
