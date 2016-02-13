@@ -100,7 +100,7 @@
 		$mobile = stripslashes($_POST['mobile']);
 		$email = stripslashes($_POST['email']);
 		$address = stripslashes($_POST['address']);
-		$bday = stripslashes($_POST['bday']);
+		$bday = stripslashes($_POST['birthday']);
 		$username = stripslashes($_POST['username']);
 		$password = sha1(stripslashes($_POST['password']));
 		
@@ -207,9 +207,8 @@
 			<br/><br/>
 			
 			<div id="bdayclassdiv" class="form-group has-feedback">
-				<label for="bday">Birthday:</label>
-				<input type="text" name="bday" id="bday" class="form-control date-picker" 
-					placeholder="YYYY-MM-DD" required/>
+				<label for="birthday">Birthday:</label>
+				<input type="text" name="birthday" id="birthday" class="form-control" required/>
 				<span id="bdayclassspan" class="glyphicon form-control-feedback"></span>
 				</div>
 				

@@ -38,13 +38,11 @@
 		Start of Zebra Date Picker -->
 	<link rel="stylesheet" href="css/datepicker/metallic.css" />
 	
-	<script src="js/datepicker/zebra_datepicker.js"></script>
+	<script type="text/javascript" src="js/datepicker/zebra_datepicker.js"></script>
 	
 	<script>
 		$(document).ready(function(){
-			$("input#bday").Zebra_DatePicker({
-				format: 'M d, Y'
-			});
+			$("input#birthday").Zebra_DatePicker();
 		});
 	</script>
 	<!-- End of Zebra Date Picker -->
