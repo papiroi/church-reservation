@@ -37,9 +37,7 @@
 	<!-- Date Picker jQuery 
 		Start of Zebra Date Picker -->
 	<link rel="stylesheet" href="css/datepicker/metallic.css" />
-	
 	<script type="text/javascript" src="js/datepicker/zebra_datepicker.js"></script>
-	
 	<script>
 		$(document).ready(function(){
 			$("input#birthday").Zebra_DatePicker();

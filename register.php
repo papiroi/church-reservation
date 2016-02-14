@@ -100,7 +100,7 @@
 		$mobile = stripslashes($_POST['mobile']);
 		$email = stripslashes($_POST['email']);
 		$address = stripslashes($_POST['address']);
-		$bday = stripslashes($_POST['birthday']);
+		$bday = $_POST['birthday'];
 		$username = stripslashes($_POST['username']);
 		$password = sha1(stripslashes($_POST['password']));
 		
@@ -208,7 +208,7 @@
 			
 			<div id="bdayclassdiv" class="form-group has-feedback">
 				<label for="birthday">Birthday:</label>
-				<input type="text" name="birthday" id="birthday" class="form-control" required/>
+				<input type="text" name="birthday" id="birthday" class="form-control" value="" required/>
 				<span id="bdayclassspan" class="glyphicon form-control-feedback"></span>
 				</div>
 				
