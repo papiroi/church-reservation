@@ -60,7 +60,45 @@
 
 	?>
 	
-	
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("#bap-type").hide();
+			
+			
+			$("#eventtype").click(function(){
+				if(document.getElementById('eventtype').value == 'Baptism') {
+					$("#bap-type").show();
+				}
+				else {
+					$("#bap-type").hide();
+				}
+			});
+			
+			
+			$("#bap-type").click(function(){
+				if(document.getElementById('bap-type').value == 'Regular') {
+					$("#timeselect").hide(100);
+					$("#lbltimeselect").hide(100);
+				}
+			});
+			
+			
+			$("#bap-type").click(function(){
+				if(document.getElementById('bap-type').value == 'Special') {
+					$("#timeselec").show(100);
+					$("#lbltimeselect").show(100);
+				}
+			});
+		});
+		
+		$(function() {
+			$( "#dateselect" ).datepicker();
+		});
+		
+	</script>
 	<!-- Custom CSS for Background Image for this page -->
 	<link rel="stylesheet" href="css/background-image.css" />
 	

@@ -102,15 +102,27 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 					<option value="For Wedding">Seminar For Wedding</option>
 					<option value="Wedding">Wedding</option>
 				</select>
-
+				<br/>
+				<!-- Baptism Type Special or Regular -->
+				<!-- If Regular, the time will be 11:30am to 12:00pm on the date you selected -->
+				<!-- If Special, you can choose the time slot when you want, if available -->
+				
+				<select id="bap-type" name="bap-type" class="form-control">
+					<option value="">Select Type</option>
+					<option value="Regular">Regular</option>
+					<option value="Special">Special</option>
+				</select>
+				
 				<br/>
 				
-				<label for="dateselect">Select Date:</label> <b><i>yyyy-mm-dd</i></b><i>format for Firefox</i>
-				<input type="date" id="dateselect" name="dateselect" class="form-control" required/>
+				<label for="dateselect">Select Date:</label><b><i>yyyy-mm-dd</i></b><i>format for Firefox</i>
+				<input type="date" id="dateselect" name="dateselect" class="form-control" readonly required/>
+				
+				
 				
 				<br/>
 				
-				<label for="timeselect">Select Starting Time:</label>
+				<label id="lbltimeselect" for="timeselect">Select Starting Time:</label>
 				<select id="timeselect" name="timeselect" class="form-control" required>
 				
 					<option value="">Select Time</option>
