@@ -129,6 +129,12 @@ input, select, textarea{
 	color: #ffffff;
 	text-shadow: 4px 4px 10px black;
 }
+.white-text:hover {
+	color: #ffffff;
+	text-shadow: 4px 4px 10px black;
+	text-decoration: none;
+	
+}
 
 .link-text {
 	color: white;

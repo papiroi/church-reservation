@@ -74,6 +74,8 @@
 				}
 				else {
 					$("#bap-type").hide();
+					$("#timeselect").show(100);
+					$("#lbltimeselect").show(100);
 				}
 			});
 			
@@ -88,7 +90,7 @@
 			
 			$("#bap-type").click(function(){
 				if(document.getElementById('bap-type').value == 'Special') {
-					$("#timeselec").show(100);
+					$("#timeselect").show(100);
 					$("#lbltimeselect").show(100);
 				}
 			});

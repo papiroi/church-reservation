@@ -106,6 +106,7 @@ class Database {
 			reserv_date date NOT NULL,
 			reserv_time varchar(5) NOT NULL,
 			username varchar(60) NOT NULL,
+			type varchar(15) NOT NULL,
 			status varchar(15) NOT NULL,
 			confirmation varchar(15) NOT NULL,
 			date_reserved datetime NOT NULL
