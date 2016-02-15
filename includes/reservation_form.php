@@ -119,9 +119,8 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 				<!-- If Special, you can choose the time slot when you want, if available -->
 				
 				<select id="bap-type" name="bap-type" class="form-control">
-					<option value="">Select Type</option>
-					<option value="Regular">Regular</option>
 					<option value="Special">Special</option>
+					<option value="Regular">Regular</option>
 				</select>
 				
 				<br/>
