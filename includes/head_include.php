@@ -30,17 +30,19 @@
 	<!-- jQuery - Needs at the head part of the hmtl document -->
     <script src="js/jquery.js"></script>
 	
+	<!-- jQuery Datepicker -->
+	<link rel="stylesheet" href="css/jquery-ui2.css">
+	<script src="js/jquery-ui.js"></script>
+	
+	<!-- Up When Online CDN Server
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+	<link rel="stylesheet" href="/resources/demos/style.css">
+	-->
+	
 	<!-- Register Validation JS File -->
 	<script src="js/register_validation.js"></script>
-
 	
-	<!-- Date Picker jQuery 
-		Start of Zebra Date Picker -->
-	<link rel="stylesheet" href="css/datepicker/metallic.css" />
-	<script type="text/javascript" src="js/datepicker/zebra_datepicker.js"></script>
-	<script>
-		$(document).ready(function(){
-			$("input#birthday").Zebra_DatePicker();
-		});
-	</script>
-	<!-- End of Zebra Date Picker -->
+	<!-- ShowEvent Functin in Reservation Form -->
+	<script src="js/function.js"></script>

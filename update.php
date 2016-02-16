@@ -42,6 +42,13 @@
 	
 	<!-- Custom CSS for Background Image for this page -->
 	<link rel="stylesheet" href="css/background-image.css" />
+	
+
+	<script>
+		$(function() {
+			$("#birthday").datepicker({ maxDate: -6570, changeYear: true, changeMonth: true });
+		});
+	</script>
 
 </head>
 <body>

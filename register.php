@@ -54,6 +54,13 @@
 	<!-- Custom CSS for Background Image for this page -->
 	<link rel="stylesheet" href="css/background-image.css" />
 	
+	
+	<script>
+		$(function() {
+			$("#birthday").datepicker({ maxDate: -6570, changeYear: true, changeMonth: true });
+		});
+	</script>
+	
 </head>
 <body>
 	<div class="container">
@@ -159,7 +166,7 @@
 				<div id="firstnameclassdiv" class="form-group has-feedback">
 				<label for="firstname">First Name:</label>
 				<input type="text" name="firstname" id="firstname" class="form-control input-width" 
-					placeholder="First Name" title="First Name Field is Required!" value="" required/>
+					placeholder="First Name" title="First Name Field is Required!" value="" required autofocus />
 				<span id="firstnameclassspan" class="glyphicon form-control-feedback"></span>
 				</div>
 				
@@ -208,7 +215,7 @@
 			
 			<div id="bdayclassdiv" class="form-group has-feedback">
 				<label for="birthday">Birthday:</label>
-				<input type="text" name="birthday" id="birthday" class="form-control" value="" required/>
+				<input type="text" name="birthday" id="birthday" class="form-control" required/>
 				<span id="bdayclassspan" class="glyphicon form-control-feedback"></span>
 				</div>
 				
