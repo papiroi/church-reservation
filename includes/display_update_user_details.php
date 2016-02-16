@@ -34,7 +34,6 @@
 			$fetched_bday = $row_usr['bday'];
 			$fetched_password = $row_usr['password'];
 			
-		
 		}
 		
 	}
@@ -46,7 +45,7 @@
 		$mob = $_POST['mobile'];
 		$email = $_POST['email'];
 		$add = $_POST['address'];
-		$bday = $_POST['birthday'];
+		$bday = date('y-m-d', strtotime($_POST['birthday']));
 		$pass = $_POST['password'];
 	
 		if(sha1($pass) == $fetched_password) {

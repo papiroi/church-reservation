@@ -107,7 +107,7 @@
 		$mobile = stripslashes($_POST['mobile']);
 		$email = stripslashes($_POST['email']);
 		$address = stripslashes($_POST['address']);
-		$bday = $_POST['birthday'];
+		$bday = date('y-m-d', strtotime($_POST['birthday']));
 		$username = stripslashes($_POST['username']);
 		$password = sha1(stripslashes($_POST['password']));
 		
