@@ -162,19 +162,22 @@ class Database {
 	}
 
 	// database/tables for chat
-	public function Chat() {
+	public function Messages() {
 
-		$create_chat_table = "CREATE TABLE IF NOT EXISTS chat (
-			chatID int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
-			message varchar(300) NOT NULL,
-			username varchar(60) NOT NULL,
-			reference varchar(10) NOT NULL,
-			dateReg datetime NOT NULL
+		$create_messages_table = "CREATE TABLE IF NOT EXISTS messages (
+			MessageID int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+			convID int(10) NOT NULL,
+			Content varchar(300) NOT NULL,
+			sender varchar(60) NOT NULL,
+			receiver varchar(10) NOT NULL,
+			dateSent datetime NOT NULL,
+			status varchar(1) NOT NULL,
+			category varchar(10) NOT NULL
 			)";
 			
-		$cct = $this->conn->query($create_chat_table);
+		$cmt = $this->conn->query($create_messages_table);
 
-		if(!$cct) {
+		if(!$cmt) {
 			exit("Database Script Error: 3");
 		}
 	}

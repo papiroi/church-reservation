@@ -43,8 +43,15 @@
 						<strong>Home</strong>
 						</a>
                     </li>
-					<li>
-						<a href="chat.php"><strong>Chat</strong></a>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><strong>Messages<span class="caret"></span></strong></a>
+					
+						<ul class="dropdown-menu">
+							<li class="menu-dropdown"><a href="#">Compose Message</a></li>
+							<li><a href="#">Inbox</a></li>
+							<li><a href="#">Sent Items</a></li>
+							<li><a href="#">Draft</a></li>
+						</ul>
 					</li>
                     <li>
                         <a href="gallery.php"><strong>Gallery</strong></a>

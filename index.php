@@ -57,8 +57,8 @@
 	//Create Reservation Table
 	$db->reservation();
 	
-	//Create Chat Table
-	$db->Chat();
+	//Create Messages Table
+	$db->Messages();
 	
 ?>
 
