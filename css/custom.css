@@ -210,6 +210,28 @@ input, select, textarea{
 	
 }
 
+.messages{
+	background-color: rgba(0,0,0,0.8);
+	margin-top: 20px;
+	padding: 20px;
+	color: #fff;
+	border-radius: 10px;
+	min-height: 300px;
+	margin-bottom: 50px;
+}
+
+/* start Compose Message */
+.compose-text {
+	margin: 0px auto;
+	max-width: 80% !important;
+	min-height: 300px;
+	max-height: 300px;
+	font-size: 20px;
+}
+/* end of compose message CSS */
+
+
+
 /* Solution for Overlapping Dropdown */
 
 .navbar .nav > li {

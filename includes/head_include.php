@@ -46,3 +46,6 @@
 	
 	<!-- ShowEvent Functin in Reservation Form -->
 	<script src="js/function.js"></script>
+	
+	<!-- Save to Draft Message -->
+	<script src="js/saveToDraft.js"></script>
