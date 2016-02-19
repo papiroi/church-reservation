@@ -5,13 +5,19 @@
 
 	}
 
+/*
+* include connection string 
+* $conn
+*/
+	include "includes/connect.php";
+
 ?>
 <table class="table table-bordered">
 	<tr>
 		<th>MessageID</th>
 		<th>Message</th>
 		<th>Date Send</th>
-		<th>Status</th>
+		<th>Sender</th>
 	</tr>
 <?php
 	/*
@@ -27,7 +33,7 @@
 	}
 	
 	
-	$select_sent = "SELECT * FROM messages WHERE sender='$username' AND category ='Sent' ORDER BY dateSent DESC";
+	$select_sent = "SELECT * FROM messages WHERE receiver='$username' AND category ='Sent' ORDER BY dateSent DESC";
 	
 	$q_select_sent = $conn->query($select_sent);
 	
@@ -39,7 +45,7 @@
 			echo "<td>" . $q_row['convID'] . "</td>";
 			echo "<td>" . $q_row['Content'] . "</td>";
 			echo "<td>" . $q_row['dateSent'] . "</td>";
-			echo "<td>" . readUnread($q_row['status']) . "</td>";
+			echo "<td>" . $q_row['sender'] . "</td>";
 			echo "</tr>";
 		}
 	}

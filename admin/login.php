@@ -118,7 +118,7 @@
 
 				<br/>
 
-				<a href="<?php echo BASE . 'index.php'?>"><span class="white-text">Back to Tarlac Cathedral</span></a>
+				<a href="<?php echo BASE . 'index.php'?>"><span class="white-text"><< Back to Main Page</span></a>
 
 			</div>
 			</div>

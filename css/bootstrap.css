@@ -3442,7 +3442,7 @@ tbody.collapse.in {
   text-align: left;
   list-style: none;
   /*background-color: black;*/
-  background-color: grey;
+  background-color: #F6F7F0;
   -webkit-background-clip: padding-box;
           background-clip: padding-box;
   border: 1px solid #ccc;
@@ -3481,7 +3481,7 @@ tbody.collapse.in {
 .dropdown-menu > .active > a:focus {
   color: #fff;
   text-decoration: none;
-  background-color: #337ab7;
+  background-color: #F6F7F0;
   outline: 0;
 }
 .dropdown-menu > .disabled > a,

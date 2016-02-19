@@ -30,6 +30,7 @@
 	else {
 		
 		$username = 'Guest';
+		header('Location: index.php');
 		
 	}
 ?>
@@ -48,7 +49,7 @@
 
 	
 	<!-- Custom CSS for Background Image for this page -->
-	<link rel="stylesheet" href="css/background-image.css" />
+	<link rel="stylesheet" href="../css/background-image.css" />
 	
 	
 </head>
@@ -58,23 +59,23 @@
 
 		<h1 class="text-center white-text">Scheduling and Reservation System for Tarlac San Sebastian Cathedral Parish</h1>
 <!-- Start of Navigation -->
-<?php
-/*
-* This will show navigation bar menu if there is signed in user or not
-*
-*/
-
-	if(isset($_SESSION['username']) && !empty($_SESSION['username'])) {
+		<?php
+			if(isset($_GET['s']) && $_GET['s'] == 'logout') {
+			
+			session_destroy();
+			
+			if($conn) {
+				$conn->close();
+			}
+			
+			header("Location: " . $_SERVER['PHP_SELF']);
+			
+			}
 		
-		require_once "includes/nav_bar_signed_in.php";
-	
-	}
-	else {
-	
-		require_once "includes/nav_bar_signed_out.php";
-	
-	}
-?>		
+			// Include the nav bar for Admin
+			require_once "includes/menu.php";
+		
+		?>	
 <!--End of Navigation -->
 
 		<div class="messages">
@@ -88,7 +89,7 @@
 			
 	</div>
 <?php
-	include "includes/include_contacts.php";
+
 
 	require_once "includes/footer.php";
 

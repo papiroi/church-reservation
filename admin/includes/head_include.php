@@ -29,4 +29,6 @@
 	<!-- jQuery - Needs at the head part of the hmtl document -->
     <script src="js/jquery.js"></script>
 	
+	<!-- Save to Draft Message and Clear message-->
+	<script src="js/saveToDraft.js"></script>
 	

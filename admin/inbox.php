@@ -1,6 +1,6 @@
 <?php
 /*
-* Message Draft Page
+* Message Inbox Page
 * 
 */
 
@@ -13,10 +13,6 @@
 	
 	$_SESSION['code'] = 1;
 	
-/*
-* include connection string
-*/
-	include "includes/connect.php";
 
 /*
 * Condition to check if there's a logined user
@@ -30,6 +26,7 @@
 	else {
 		
 		$username = 'Guest';
+		header('Location: index.php');
 		
 	}
 ?>
@@ -38,7 +35,7 @@
 <html class="full" lang="en-US">
 <head>
 
-	<title>Draft - Scheduling and Reservation System for Tarlac San Sebastian Cathedral Parish</title>
+	<title>Message Inbox - Scheduling and Reservation System for Tarlac San Sebastian Cathedral Parish</title>
 	
 <?php
 
@@ -48,7 +45,7 @@
 
 	
 	<!-- Custom CSS for Background Image for this page -->
-	<link rel="stylesheet" href="css/background-image.css" />
+	<link rel="stylesheet" href="../css/background-image.css" />
 	
 	
 </head>
@@ -58,38 +55,35 @@
 
 		<h1 class="text-center white-text">Scheduling and Reservation System for Tarlac San Sebastian Cathedral Parish</h1>
 <!-- Start of Navigation -->
-<?php
-/*
-* This will show navigation bar menu if there is signed in user or not
-*
-*/
-
-	if(isset($_SESSION['username']) && !empty($_SESSION['username'])) {
-		
-		require_once "includes/nav_bar_signed_in.php";
-	
-	}
-	else {
-	
-		require_once "includes/nav_bar_signed_out.php";
-	
-	}
-?>		
-<!--End of Navigation -->
-
-		<div class="messages">
-			<h2 class="white-text">Draft Messages</h2>
-			<?php
+		<?php
+			if(isset($_GET['s']) && $_GET['s'] == 'logout') {
 			
-				include "includes/show_draft.php";
+			session_destroy();
+			
+			if($conn) {
+				$conn->close();
+			}
+			
+			header("Location: " . $_SERVER['PHP_SELF']);
+			
+			}
+		
+			// Include the nav bar for Admin
+			require_once "includes/menu.php";
+		
+		?>	
+<!--End of Navigation -->
+		<div class="messages">
+			<h2 class="white-text">Inbox</h2>
+			<?php
+		
+				include "includes/show_inbox.php";
 
 			?>
 		</div>
-			
 	</div>
 <?php
-	include "includes/include_contacts.php";
-
+	
 	require_once "includes/footer.php";
 
 ?>

@@ -1,6 +1,6 @@
 <?php
 /*
-* Message Draft Page
+* Sent Messages Page
 * 
 */
 
@@ -14,9 +14,10 @@
 	$_SESSION['code'] = 1;
 	
 /*
-* include connection string
+* Include connecton stirng
 */
 	include "includes/connect.php";
+	
 
 /*
 * Condition to check if there's a logined user
@@ -30,6 +31,7 @@
 	else {
 		
 		$username = 'Guest';
+		header('Location: index.php');
 		
 	}
 ?>
@@ -38,7 +40,7 @@
 <html class="full" lang="en-US">
 <head>
 
-	<title>Draft - Scheduling and Reservation System for Tarlac San Sebastian Cathedral Parish</title>
+	<title>Sent Messages - Scheduling and Reservation System for Tarlac San Sebastian Cathedral Parish</title>
 	
 <?php
 
@@ -48,7 +50,7 @@
 
 	
 	<!-- Custom CSS for Background Image for this page -->
-	<link rel="stylesheet" href="css/background-image.css" />
+	<link rel="stylesheet" href="../css/background-image.css" />
 	
 	
 </head>
@@ -58,37 +60,40 @@
 
 		<h1 class="text-center white-text">Scheduling and Reservation System for Tarlac San Sebastian Cathedral Parish</h1>
 <!-- Start of Navigation -->
-<?php
-/*
-* This will show navigation bar menu if there is signed in user or not
-*
-*/
-
-	if(isset($_SESSION['username']) && !empty($_SESSION['username'])) {
+		<?php
+			if(isset($_GET['s']) && $_GET['s'] == 'logout') {
+			
+			session_destroy();
+			
+			if($conn) {
+				$conn->close();
+			}
+			
+			header("Location: " . $_SERVER['PHP_SELF']);
+			
+			}
 		
-		require_once "includes/nav_bar_signed_in.php";
-	
-	}
-	else {
-	
-		require_once "includes/nav_bar_signed_out.php";
-	
-	}
-?>		
+			// Include the nav bar for Admin
+			require_once "includes/menu.php";
+		
+		?>	
 <!--End of Navigation -->
 
 		<div class="messages">
-			<h2 class="white-text">Draft Messages</h2>
-			<?php
-			
-				include "includes/show_draft.php";
-
-			?>
+			<h2 class="white-text">Sent Items</h2>
+			<p class="white-text"><i><!--Click MessagID to View Messages--></i></p>
+			<div class="show-sent">
+				<?php
+					
+					include "includes/show_sent_messages.php";
+				
+				?>
+			</div>
 		</div>
-			
+		
 	</div>
 <?php
-	include "includes/include_contacts.php";
+
 
 	require_once "includes/footer.php";
 

@@ -48,7 +48,7 @@
 					
 						<ul class="dropdown-menu">
 							<li class="menu-dropdown"><a href="compose_message.php">Compose Message</a></li>
-							<li><a href="#">Inbox</a></li>
+							<li><a href="inbox.php">Inbox</a></li>
 							<li><a href="sent_messages.php">Sent Items</a></li>
 							<li><a href="draft.php">Draft</a></li>
 						</ul>

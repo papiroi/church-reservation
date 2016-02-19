@@ -33,7 +33,7 @@
 	}
 	else {
 	
-		echo "<i>No Draft Message for this User.</i>";
+		echo "<i>No Draft Message for Admin.</i>";
 	
 	}
 

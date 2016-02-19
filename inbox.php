@@ -1,6 +1,6 @@
 <?php
 /*
-* Message Draft Page
+* Message Inbox Page
 * 
 */
 
@@ -13,10 +13,6 @@
 	
 	$_SESSION['code'] = 1;
 	
-/*
-* include connection string
-*/
-	include "includes/connect.php";
 
 /*
 * Condition to check if there's a logined user
@@ -38,7 +34,7 @@
 <html class="full" lang="en-US">
 <head>
 
-	<title>Draft - Scheduling and Reservation System for Tarlac San Sebastian Cathedral Parish</title>
+	<title>Message Inbox - Scheduling and Reservation System for Tarlac San Sebastian Cathedral Parish</title>
 	
 <?php
 
@@ -76,20 +72,18 @@
 	}
 ?>		
 <!--End of Navigation -->
-
 		<div class="messages">
-			<h2 class="white-text">Draft Messages</h2>
+			<h2 class="white-text">Inbox</h2>
 			<?php
-			
-				include "includes/show_draft.php";
+		
+				include "includes/show_inbox.php";
 
 			?>
 		</div>
-			
 	</div>
 <?php
 	include "includes/include_contacts.php";
-
+	
 	require_once "includes/footer.php";
 
 ?>

@@ -7,7 +7,6 @@ function saveToDraft() {
 	// Fake Notificaton
 	alert("Message Save to Draft");
 	
-	
 	var ajaxRequest;  // The variable that makes Ajax possible!
 	
 	try{

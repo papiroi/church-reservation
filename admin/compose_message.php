@@ -31,6 +31,7 @@
 	else {
 		
 		$username = 'Guest';
+		header('Location: index.php');
 		
 	}
 ?>
@@ -49,7 +50,7 @@
 
 	
 	<!-- Custom CSS for Background Image for this page -->
-	<link rel="stylesheet" href="css/background-image.css" />
+	<link rel="stylesheet" href="../css/background-image.css" />
 	
 	
 </head>
@@ -59,23 +60,23 @@
 
 		<h1 class="text-center white-text">Scheduling and Reservation System for Tarlac San Sebastian Cathedral Parish</h1>
 <!-- Start of Navigation -->
-<?php
-/*
-* This will show navigation bar menu if there is signed in user or not
-*
-*/
-
-	if(isset($_SESSION['username']) && !empty($_SESSION['username'])) {
+		<?php
+			if(isset($_GET['s']) && $_GET['s'] == 'logout') {
+			
+			session_destroy();
+			
+			if($conn) {
+				$conn->close();
+			}
+			
+			header("Location: " . $_SERVER['PHP_SELF']);
+			
+			}
 		
-		require_once "includes/nav_bar_signed_in.php";
-	
-	}
-	else {
-	
-		require_once "includes/nav_bar_signed_out.php";
-	
-	}
-?>		
+			// Include the nav bar for Admin
+			require_once "includes/menu.php";
+		
+		?>		
 <!--End of Navigation -->
 
 		<!-- Start of Div of Compose Message -->
@@ -91,7 +92,7 @@
 		
 		//Note: the sender is the user -> $username variable is already declared at the top of the script
 		//Set Receiver
-		$receiver = 'admin';
+		$receiver = $_POST['receipient'];
 		
 		$content = $_POST['content'];
 		
@@ -140,7 +141,14 @@
 <!-- end of Script to send message to admin -->
 <!-- end of Script to send message to admin -->
 			<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
-				<textarea id="content" name="content" class="form-control compose-text" autofocus></textarea>
+				<div class="compose-receipient">
+				<label for="receipient">Receipient:</label>
+				<input type="text" id="receipient" name="receipient" class="form-control" required 
+					title="You Must Enter the Username of the receipient!!!" />
+				</div>
+				<br/>
+				<textarea id="content" name="content" class="form-control compose-text" required autofocus
+					title="Content message must not be empty!!!"></textarea>
 				
 				<br/>
 				
@@ -156,8 +164,6 @@
 	
 	</div>
 <?php
-
-	include "includes/include_contacts.php";
 
 	require_once "includes/footer.php";
 

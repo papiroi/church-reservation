@@ -11,6 +11,7 @@
 		<th>MessageID</th>
 		<th>Message</th>
 		<th>Date Send</th>
+		<th>Receipient</th>
 		<th>Status</th>
 	</tr>
 <?php
@@ -36,11 +37,16 @@
 		while($q_row = $q_select_sent->fetch_assoc()) {
 		
 			echo "<tr>";
-			echo "<td>" . $q_row['convID'] . "</td>";
+			echo "<td><span data-toggle='modal' data-target='#" . $q_row['convID'] . "'>" . $q_row['convID'];
+			include "includes/show_sent_modal.php";
+			echo "</td>";
 			echo "<td>" . $q_row['Content'] . "</td>";
 			echo "<td>" . $q_row['dateSent'] . "</td>";
+			echo "<td>" . $q_row['receiver'] . "</td>";
 			echo "<td>" . readUnread($q_row['status']) . "</td>";
 			echo "</tr>";
+			
+			
 		}
 	}
 	else {
