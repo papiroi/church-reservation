@@ -166,6 +166,15 @@ input, select, textarea{
     color: #000 !important;
 }
 
+.dropdown-menu .menu-dropdown > li:hover{
+		background-color: green;
+}
+
+.menu-dropdown ~ li:nth-child(n) :hover{
+		background-color: ;
+}
+
+
 @media(max-width: 767px) {
 .default .navbar-nav .open .dropdown-menu > li > a 
     color: #333 !important;

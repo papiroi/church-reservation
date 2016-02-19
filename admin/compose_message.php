@@ -94,41 +94,53 @@
 		//Set Receiver
 		$receiver = $_POST['receipient'];
 		
-		$content = $_POST['content'];
+		$find_user = "SELECT * FROM users WHERE username='$receiver'";
+		$q_find_user = $conn->query($find_user);
 		
-		// Random Number Generator
-		function generateRandomString($length = 10) {
-			$characters = '0123456789';
-			$charactersLength = strlen($characters);
-			$randomString = '';
-			for ($i = 0; $i < $length; $i++) {
-				$randomString .= $characters[rand(0, $charactersLength - 1)];
+		if($q_find_user->num_rows > 0) {
+		
+			$content = $_POST['content'];
+			
+			// Random Number Generator
+			function generateRandomString($length = 10) {
+				$characters = '0123456789';
+				$charactersLength = strlen($characters);
+				$randomString = '';
+				for ($i = 0; $i < $length; $i++) {
+					$randomString .= $characters[rand(0, $charactersLength - 1)];
+				}
+				return $randomString;
 			}
-			return $randomString;
-		}
-		//create conversation ID
-		$convID = generateRandomString();
-		
-		$status = "0";
-		
-		$category = "Sent";
-		
-		
+			//create conversation ID
+			$convID = generateRandomString();
+			
+			$status = "0";
+			
+			$category = "Sent";
+			
+			
 
-			$query_send = "INSERT INTO messages (convID, Content, sender, receiver, dateSent, status, category)
-				VALUES ('$convID','$content','$username','$receiver',NOW(),'$status','$category')
-				";
+				$query_send = "INSERT INTO messages (convID, Content, sender, receiver, dateSent, status, category)
+					VALUES ('$convID','$content','$username','$receiver',NOW(),'$status','$category')
+					";
+					
+				$q_query_send = $conn->query($query_send);
 				
-			$q_query_send = $conn->query($query_send);
-			
-			if($q_query_send == true) {
-			
-				echo "<script>alert('Message Successfully Sent to Admin!')</script>";
-			
+				if($q_query_send == true) {
+				
+					echo "<script>alert('Message Successfully Sent to Admin!')</script>";
+				
+				}
+				else {
+					
+					echo "<script>alert('Opps! Error in Sending Message!')</script>";
+					
+				}
+				
 			}
 			else {
 				
-				echo "<script>alert('Opps! Error in Sending Message!')</script>";
+				echo "<script>alert('Receipient User Not Found!');</script>";
 				
 			}
 	}
