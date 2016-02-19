@@ -140,7 +140,8 @@
 <!-- end of Script to send message to admin -->
 <!-- end of Script to send message to admin -->
 			<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
-				<textarea id="content" name="content" class="form-control compose-text" autofocus></textarea>
+				<textarea id="content" name="content" class="form-control compose-text" autofocus required
+					title="Empty Message Will Not Allow!"></textarea>
 				
 				<br/>
 				
