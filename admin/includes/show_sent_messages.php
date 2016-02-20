@@ -6,7 +6,7 @@
 	}
 
 ?>
-<table class="table table-bordered">
+<table class="table">
 	<tr>
 		<th>MessageID</th>
 		<th>Message</th>
@@ -37,7 +37,7 @@
 		while($q_row = $q_select_sent->fetch_assoc()) {
 		
 			echo "<tr>";
-			echo "<td><span data-toggle='modal' data-target='#" . $q_row['convID'] . "'>" . $q_row['convID'];
+			echo "<td><a class='white-text' href='#'><span data-toggle='modal' data-target='#" . $q_row['convID'] . "'>" . $q_row['convID'] . "</span></a>";
 			include "includes/show_sent_modal.php";
 			echo "</td>";
 			echo "<td>" . $q_row['Content'] . "</td>";

@@ -67,6 +67,17 @@
 			header("Location: " . $_SERVER['PHP_SELF']);
 			
 			}
+			
+			//include one connection stirng
+			include_once "includes/connect.php";
+			
+			//update the status from 0 to 1 or from undread to read
+				$update_read_status = "UPDATE messages 
+					SET status='1'
+					WHERE receiver='$username' AND category='Sent'";
+						
+				$q_update_read_status = $conn->query($update_read_status);
+			
 		
 			// Include the nav bar for Admin
 			require_once "includes/menu.php";

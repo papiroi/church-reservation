@@ -45,7 +45,7 @@
 		}
 	$convID = generateRandomString();
 	
-	$receiver = 'admin';
+	$receiver = '';
 	
 	$status = "0";
 	

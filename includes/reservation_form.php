@@ -30,23 +30,6 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 		
 	}
 	
-	// Search for Conflict on the event they are trying to reserve
-	// If there are similar record that the users are trying to reserve
-	// the system will automatically prevent it, to avoid conflict in reserved schedules
-	$search_record = "SELECT * FROM reservation WHERE reserv_date='$event_date' AND reserv_time='$event_time'";
-	
-	$srq = $conn->query($search_record);
-	
-	if(@$srq->num_rows > 0) {
-		
-		echo "<script>";
-		echo "alert('The Date and Time has a Conflict!!!')";
-		echo "</script>";
-		
-	}
-	else {
-		
-		
 		// Reserve Number Generator
 		// Reference Number Serve as alternative ID for the
 		// reserved schedule
@@ -61,6 +44,48 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 		}
 		
 		$reserv_num = generateRandomString();
+	
+	
+	// Search for Conflict on the event they are trying to reserve
+	// If there are similar record that the users are trying to reserve
+	// the system will automatically prevent it, to avoid conflict in reserved schedules
+	$search_record = "SELECT * FROM reservation WHERE reserv_date='$event_date' AND reserv_time='$event_time'";
+	
+	$srq = $conn->query($search_record);
+	
+	if(@$srq->num_rows > 0) {
+		
+		if($type == 'Regular') {
+			// Insert the reservation in database as record
+			// Statement for Inserting New Reserved Records
+			$add_reservation = "INSERT INTO reservation 
+				(reserv_num, event_type, reserv_date, reserv_time, username, status, type, confirmation, date_reserved)
+						VALUES ('$reserv_num','$event_type','$event_date','$event_time','$username','Active','$type','Confirmed',NOW())";
+			
+			$arq = $conn->query($add_reservation);
+			
+			if($arq == true) {
+				
+				echo "<script>";
+				echo "alert('Successfully Reserved!')";
+				echo "</script>";
+				
+			}
+			else {
+				
+				echo "<script>";
+				echo "alert('Error in Reserving Event!')";
+				echo "</script>";
+				
+			}
+		}
+		else {
+			echo "<script>";
+			echo "alert('The Date and Time has a Conflict!!!')";
+			echo "</script>";
+		}
+	}
+	else {
 		
 		// Insert the reservation in database as record
 		// Statement for Inserting New Reserved Records
@@ -125,7 +150,7 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 				
 				<br/>
 				
-				<label for="dateselect">Select Date:</label><b><i>yyyy-mm-dd</i></b><i>format for Firefox</i>
+				<label for="dateselect">Select Date:</label>
 				<input type="text" id="dateselect" name="dateselect" class="form-control" required/>
 				
 				

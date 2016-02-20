@@ -12,7 +12,7 @@
 	include "includes/connect.php";
 
 ?>
-<table class="table table-bordered">
+<table class="table ">
 	<tr>
 		<th>MessageID</th>
 		<th>Message</th>

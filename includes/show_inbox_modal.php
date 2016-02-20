@@ -9,8 +9,9 @@
 			  <h4 class="modal-title">Message ID: <?php echo $q_row['convID']; ?></h4>
 			</div>
 			<div class="modal-body">
-			  <p><b>Receipient:</b> <?php echo $q_row['receiver']; ?></p>
+			  <p><b>From:</b> <?php echo $q_row['sender']; ?></p>
 			  <p><b>Message:</b> <?php echo $q_row['Content']; ?></p>
+			  <p><b>Date and Time:</b> <?php echo $q_row['dateSent']; ?></p>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

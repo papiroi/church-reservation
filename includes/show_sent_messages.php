@@ -6,7 +6,7 @@
 	}
 
 ?>
-<table class="table table-bordered">
+<table class="table">
 	<tr>
 		<th>MessageID</th>
 		<th>Message</th>
@@ -45,7 +45,7 @@
 	}
 	else {
 	
-		echo "<i>No Sent Message for this User.</i>";
+		echo "<i>You didn't Send any Message yet.</i>";
 	
 	}
 

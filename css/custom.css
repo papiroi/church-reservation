@@ -13,6 +13,9 @@ body, html {
    padding-right: 15px;
 }
 
+.label-as-badge {
+    border-radius: 1em;
+}
 
 /*Custom CSS*/
 
@@ -239,13 +242,10 @@ input, select, textarea{
 }
 /* end of compose message CSS */
 
-
-
-/* Solution for Overlapping Dropdown */
-
-.navbar .nav > li {
-z-index: 10000;
+.modal-text {
+	color: black;
 }
+
 
 /* Highlight Color  */
 ::-moz-selection {

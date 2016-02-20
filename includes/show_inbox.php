@@ -12,11 +12,12 @@
 	include "includes/connect.php";
 
 ?>
-<table class="table table-bordered">
+<table class="table">
+<caption><span class="white-text"><i>Click on MessageID to Show Details</i></span></caption>
 	<tr>
 		<th>MessageID</th>
 		<th>Message</th>
-		<th>Date Send</th>
+		<!--<th>Date Send</th>-->
 		<th>Sender</th>
 	</tr>
 <?php
@@ -42,18 +43,24 @@
 		while($q_row = $q_select_sent->fetch_assoc()) {
 		
 			echo "<tr>";
-			echo "<td>" . $q_row['convID'] . "</td>";
+			echo "<td><a class='white-text' href='#'><span data-toggle='modal' data-target='#" . $q_row['convID'] . "'>" . $q_row['convID'] . "</span></a>";
+			include "includes/show_inbox_modal.php";
+			echo "</td>";
 			echo "<td>" . $q_row['Content'] . "</td>";
-			echo "<td>" . $q_row['dateSent'] . "</td>";
+			//echo "<td>" . $q_row['dateSent'] . "</td>";
 			echo "<td>" . $q_row['sender'] . "</td>";
 			echo "</tr>";
+
+
 		}
 	}
 	else {
 	
-		echo "<i>No Sent Message for this User.</i>";
+		echo "<i>No Message for You.</i>";
 	
 	}
-
+	
+	
+	
 ?>
 </table>

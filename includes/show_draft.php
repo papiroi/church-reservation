@@ -6,7 +6,7 @@
 	}
 
 ?>
-<table class="table table-bordered">
+<table class="table">
 	<tr>
 		<th>MessageID</th>
 		<th>Message</th>
@@ -33,7 +33,7 @@
 	}
 	else {
 	
-		echo "<i>No Draft Message for this User.</i>";
+		echo "<i>No Draft Message</i>";
 	
 	}
 

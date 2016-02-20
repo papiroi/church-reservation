@@ -6,6 +6,21 @@
 	}
 
 /*
+* include connection string
+*/
+	include "includes/connect.php";
+	
+	$unread = '0';
+	
+	$count_unread = "SELECT * FROM messages WHERE receiver='admin' AND status='0'";
+	$q_count_unread = $conn->query($count_unread);
+	
+	if($q_count_unread->num_rows > 0) {
+		$unread = $q_count_unread->num_rows;
+	}
+	
+	
+/*
 * This is a navigation bar to in admin menu nav bar
 *
 */
@@ -41,13 +56,16 @@
                     </li>
                     </li>
 					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><strong>Messages<span class="caret"></span></strong></a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><strong>Messages
+						<span class="label label-danger label-as-badge"><?php echo $unread; ?></span>
+						<span class="caret"></span></strong></a>
 					
 						<ul class="dropdown-menu">
 							<li class="menu-dropdown"><a href="compose_message.php">Compose Message</a></li>
-							<li class="menu-dropdown"><a href="inbox.php">Inbox</a></li>
-							<li class="menu-dropdown"><a href="sent_messages.php">Sent Items</a></li>
-							<li class="menu-dropdown"><a href="draft.php">Draft</a></li>
+							<li><a href="inbox.php">Inbox
+							<span class="label label-danger label-as-badge"><?php echo $unread; ?></span></a></li>
+							<li><a href="sent_messages.php">Sent Items</a></li>
+							<li><a href="draft.php">Draft</a></li>
 						</ul>
 					</li>
 					<li>

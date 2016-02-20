@@ -147,6 +147,10 @@ textarea {
 	color: black;
 }
 
+.label-as-badge {
+    border-radius: 1em;
+}
+
 /* Highlight Color  */
 ::-moz-selection {
     color: white;

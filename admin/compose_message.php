@@ -128,7 +128,7 @@
 				
 				if($q_query_send == true) {
 				
-					echo "<script>alert('Message Successfully Sent to Admin!')</script>";
+					echo "<script>alert('Message Successfully Send!')</script>";
 				
 				}
 				else {

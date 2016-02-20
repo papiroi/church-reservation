@@ -15,6 +15,13 @@
 	
 
 /*
+*
+* include once connection string
+*/
+	
+	include "includes/connect.php";
+	
+/*
 * Condition to check if there's a logined user
 *
 */
@@ -61,6 +68,13 @@
 */
 
 	if(isset($_SESSION['username']) && !empty($_SESSION['username'])) {
+
+		//update the status from 0 to 1 or from undread to read
+		$update_read_status = "UPDATE messages 
+			SET status='1'
+			WHERE receiver='$username' AND category='Sent'";
+				
+		$q_update_read_status = $conn->query($update_read_status);
 		
 		require_once "includes/nav_bar_signed_in.php";
 	
