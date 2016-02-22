@@ -90,7 +90,7 @@
 			echo $login -> login();
 		}
 		else {
-			echo "You're Not Valid Here! PakYu!";
+			echo "You're Not Valid Here!";
 		}
 
 	}
