@@ -21,12 +21,12 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 	
 	$username = $_SESSION['username'];
 	
-	//Set if the Baptism Type is Regular
+	//Set if the Baptism Type is Ordinary
 	//The time will be automatically 11:30am on the day chosen
 	
-	if($type=='Regular') {
+	if($type=='Ordinary') {
 		
-		$event_time = "8";
+		$event_time = "9";
 		
 	}
 	
@@ -55,7 +55,7 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 	
 	if(@$srq->num_rows > 0) {
 		
-		if($type == 'Regular') {
+		if($type == 'Ordinary') {
 			// Insert the reservation in database as record
 			// Statement for Inserting New Reserved Records
 			$add_reservation = "INSERT INTO reservation 
@@ -139,13 +139,13 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 					<option value="Wedding">Wedding</option>
 				</select>
 				<br/>
-				<!-- Baptism Type Special or Regular -->
-				<!-- If Regular, the time will be 11:30am to 12:00pm on the date you selected -->
+				<!-- Baptism Type Special or Ordinary -->
+				<!-- If Ordinary, the time will be 11:30am to 12:00pm on the date you selected -->
 				<!-- If Special, you can choose the time slot when you want, if available -->
 				
 				<select id="bap-type" name="bap-type" class="form-control">
 					<option value="Special">Special</option>
-					<option value="Regular">Regular</option>
+					<option value="Ordinary">Ordinary</option>
 				</select>
 				
 				<br/>

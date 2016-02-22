@@ -79,7 +79,7 @@
 			
 			
 			$("#bap-type").click(function(){
-				if(document.getElementById('bap-type').value == 'Regular') {
+				if(document.getElementById('bap-type').value == 'Ordinary') {
 					$("#timeselect").hide(100);
 					$("#lbltimeselect").hide(100);
 				}
