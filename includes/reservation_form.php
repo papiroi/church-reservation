@@ -117,7 +117,6 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 <div class="row">
 	<div class="col-md-5">
 		<div class="center-div">
-			<h3 class="white-text">Reservee: <U><?php echo $username; ?></u></h3>
 			<h2 class="white-text">Reservation Form:</h2>
 			<!-- 
 			Form for Reservation

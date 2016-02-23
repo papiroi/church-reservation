@@ -84,23 +84,49 @@
 				-->
 			
 				<div class="center-div">
-					<a name="baptism"></a>
-					<h3>Baptism</h3>
-					<p></p>
-					<a name="confirmation"></a>
-					<h3>Confirmation</h3>
-					<p></p>
-					<a name="funeral"></a>
-					<h3>Funeral</h3>
-					<a name="seminars"></a>
-					<h3>Seminars</h3>
-					<a name="forconfirmation"></a>
-					<p>For Confirmation</p>
-					<a name="forwedding"></a>
-					<p>For Wedding</p>
-					<a name="wedding"></a>
-					<h3>Wedding</h3>
-					<p></p>
+					<?php
+						/*
+						* Shows the right Services clicke on the user menu
+						*
+						*/
+						$services = $_GET['services'];
+						if($services == 'baptism') {
+							
+							include "includes/baptism_services.php";
+							
+						}
+						else if($services == 'confirmation') {
+							
+							include "includes/confirmation_services.php";
+							
+						}
+						else if($services == 'funeral') {
+							
+							include "includes/funeral_services.php";
+							
+						}
+						else if($services == 'forconfirmation') {
+							
+							include "includes/forconfirmation_services.php";
+							
+						}
+						else if($services == 'forwedding') {
+							
+							include "includes/forwedding_services.php";
+							
+						}
+						else if($services == 'wedding') {
+							
+							include "includes/wedding_services.php";
+							
+						}
+						else {
+							
+							"<h1 class='white-text'>Select Services...</h1>";
+							
+						}
+					
+					?>
 				</div>
 
 			</div>

@@ -33,3 +33,7 @@ function showEvent(day) {
 	ajaxRequest.open("GET", "showEvent.php" + queryString, true); // --> Name of php script + plus query string if any
 	ajaxRequest.send(null);
 }
+
+function goBack() {
+    window.history.back();
+}
