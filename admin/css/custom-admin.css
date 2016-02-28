@@ -18,11 +18,13 @@
 }
 
 .error-message {
-	margin: 3px auto;
+	margin: 0 auto;
 	color: red;
-	font-size: 19px;
+	font-size: 12px;
 	text-align: center;
-	padding: 5px;
+	padding: 3px;
+	background-color: black;
+	border: 2px solid red;
 }
 
 .ok-message {

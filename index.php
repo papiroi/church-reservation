@@ -116,7 +116,7 @@
 		<div class="row">
 			
 			<!-- This is where to place the announcement -->
-			<div class="col-md-6">
+			<div class="col-md-8">
 				<div class="announcements">
 					<marquee direction="up">
 						<?php
@@ -143,7 +143,7 @@
 			</div>
 			<!-- Login Page if no user logged -->
 			<!-- Mass schedule if a user logged -->
-			<div class="col-md-6">
+			<div class="col-md-4">
 			
 				<div class="login-div">
 				

@@ -17,6 +17,7 @@ body, html {
     border-radius: 1em;
 }
 
+
 /*Custom CSS*/
 
 .center-div {
@@ -33,9 +34,9 @@ body, html {
 .error-message {
 	margin: 0 auto;
 	color: red;
-	font-size: 19px;
+	font-size: 12px;
 	text-align: center;
-	padding: 5px;
+	padding: 3px;
 	background-color: black;
 	border: 2px solid red;
 }
@@ -85,13 +86,13 @@ body, html {
 	color: #fff;
 	border-radius: 10px;
 	font-size: 20px;
-	height: 290px;
+	height: 330px;
 	margin-bottom: 50px;
 }
 
 .announcements > marquee {
 	
-	height: 250px;
+	height: 300px;
 	text-align: center;
 	
 }
@@ -103,7 +104,7 @@ body, html {
 	color: #fff;
 	border-radius: 10px;
 	font-size: 15px;
-	height: 290px;
+	height: 330px;
 	margin-bottom: 50px;
 	overflow: auto;
 	
@@ -160,7 +161,7 @@ input, select, textarea{
 	background-color: #3D3D5C;
 	
 }
-
+/*
 .sub-menu1 {
 	list-style: none;
 }
@@ -181,7 +182,7 @@ input, select, textarea{
 @media(max-width: 767px) {
 .default .navbar-nav .open .dropdown-menu > li > a 
     color: #333 !important;
-}
+}*/
 
 /*
 @media print {
@@ -245,6 +246,31 @@ input, select, textarea{
 .modal-text {
 	color: black;
 }
+
+#review {
+	
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    z-index: 100500;
+	background-color: rgba(0,0,0,0.5);
+	display: none;
+	
+}  
+
+#review-content {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: ;
+	height: 250px;
+	width: 250px;
+	background-color: green;
+}
+
 
 
 /* Highlight Color  */

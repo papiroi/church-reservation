@@ -117,7 +117,7 @@
 		// The Login Class Requires 3 parameters: $conn, $username, $password respectively
 		
 		if($username == 'admin') {
-			// Nothing to do here
+			echo "<div class='error-message'>Error: Invalid Login Details</div>";
 			
 		}
 		else {

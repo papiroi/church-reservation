@@ -37,3 +37,44 @@ function showEvent(day) {
 function goBack() {
     window.history.back();
 }
+
+
+function viewReservation() {
+	
+	$(function(){
+		$("#review").show();
+	});
+
+	return false;
+	
+}
+
+function closeReview() {
+	
+	$(function() {
+		$("#review").hide();
+	});
+	
+}
+
+function confirmSubmit() {
+	
+	if(document.getElementById('bap-type').value == 'Special') {
+		
+		if(document.getElementById('timeselect').value == '') {
+			
+			alert("Please Select Time!");
+			
+			return false;
+			
+		}
+		else {
+			
+			
+			
+		}
+		
+	}
+	
+	
+}

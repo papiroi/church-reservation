@@ -48,13 +48,13 @@ class Login {
 					header('Location: index.php');
 				}
 				else {
-					return "Username or Password is Invalid!";
+					return "<div class='error-message'>Username or Password is Invalid!</div>";
 				}
 			}
 
 		}
 		else {
-			return "Username or Password is Invalid!";
+			return "<div class='error-message'>Username or Password is Invalid!</div>";
 		}
 	
 	}

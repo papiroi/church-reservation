@@ -125,7 +125,7 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 			Date of Event
 			Time to start
 			-->
-			<form autocomplete="off" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+			<form autocomplete="off" id="reserveForm" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
 
 				<label for="eventtype">Select Event:</label>
 				<select id="eventtype" name="eventtype" class="form-control" required autofocus>
@@ -157,7 +157,7 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 				<br/>
 				
 				<label id="lbltimeselect" for="timeselect">Select Starting Time:</label>
-				<select id="timeselect" name="timeselect" class="form-control" >
+				<select id="timeselect" name="timeselect" class="form-control">
 				
 					<option value="">Select Time</option>
 					<option value="1">8:00am</option>
@@ -184,11 +184,20 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 				
 				<br/>
 				
-				<input type="submit" value="Reserve Now!" class="btn btn-success"/>
+				<input type="submit" value="Reserve Now!" onclick="return viewReservation();" class="btn btn-success"/>
 				
 				&nbsp;&nbsp;&nbsp;
 				
 				<input type="reset" value="Clear Input" onclick="" class="btn btn-primary"/>
+				
+				<div id="review">
+
+					<div id="review-content">
+						<input type="button" class="btn btn-primary" onsubmit="confirmSubmit();" value="Confirm Submit">
+						<button class="btn btn-default" onclick="closeReview();">Close</button>
+					</div>
+					
+				</div>
 			</form> 
 			<br/>
 			

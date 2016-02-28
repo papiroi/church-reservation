@@ -30,10 +30,6 @@
 		
 		if($username == 'admin') {
 			
-			echo "<script>";
-			echo "alert('Invalid Login!!!');";
-			echo "</script>";
-			
 			echo "<div class='error-message'>Error: Invalid Login</div>"; 
 			
 		}
@@ -51,7 +47,7 @@
 			}
 			else {
 				
-				echo "<div class='error-message'>Error: Invalid Login Details</div>";
+				//echo "<div class='error-message'>Error: Invalid Login Details</div>";
 				
 			}
 			

@@ -59,8 +59,6 @@
 			<div class="col-md-4"></div>
 			<div class="col-md-4">
 			<div class="center-div">
-			<span class="error-message">
-
 <?php
 /*
 * Admin Login Part
@@ -90,14 +88,13 @@
 			echo $login -> login();
 		}
 		else {
-			echo "You're Not Valid Here!";
+			echo "<div class='error-message'>You're Not Valid Here!</div>";
 		}
 
 	}
 
 
-?>	
-				</span>
+?>
 
 				<h2>Admin Login</h2>
 
