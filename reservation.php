@@ -82,6 +82,8 @@
 				if(document.getElementById('bap-type').value == 'Ordinary') {
 					$("#timeselect").hide(100);
 					$("#lbltimeselect").hide(100);
+					$("#lblpriest").hide(100);
+					$("#priest").hide(100);
 				}
 			});
 			

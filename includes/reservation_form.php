@@ -91,7 +91,7 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 		// Statement for Inserting New Reserved Records
 		$add_reservation = "INSERT INTO reservation 
 			(reserv_num, event_type, reserv_date, reserv_time, username, status, type, confirmation, date_reserved)
-					VALUES ('$reserv_num','$event_type','$event_date','$event_time','$username','Active','$type','Confirmed',NOW())";
+					VALUES ('$reserv_num','$event_type','$event_date','$event_time','$username','Active','$type','NC',NOW())";
 		
 		$arq = $conn->query($add_reservation);
 		
@@ -128,7 +128,7 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 			<form autocomplete="off" id="reserveForm" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
 
 				<label for="eventtype">Select Event:</label>
-				<select id="eventtype" name="eventtype" class="form-control" required autofocus>
+				<select id="eventtype" name="eventtype" class="form-control" required autofocus title="Select an Event!">
 					<option value="">Select Event</option>
 					<option value="Baptism">Baptism</option>
 					<option value="Confirmation">Confirmation</option>
@@ -145,6 +145,16 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 				<select id="bap-type" name="bap-type" class="form-control">
 					<option value="Special">Special</option>
 					<option value="Ordinary">Ordinary</option>
+				</select>
+				
+				<br/>
+				
+				<label id="lblpriest" for="priest">Priest: </label>
+				<select id="priest" name="priest" class="form-control">
+					<option value="">Any</option>
+					<option value="1">Priest 1</option>
+					<option value="2">Priest 2</option>
+					<option value="3">Priest 3</option>
 				</select>
 				
 				<br/>
@@ -184,7 +194,7 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 				
 				<br/>
 				
-				<input type="submit" value="Reserve Now!" onclick="return viewReservation();" class="btn btn-success"/>
+				<input type="button" value="Reserve Now!" onclick="return viewReservation();" class="btn btn-success"/>
 				
 				&nbsp;&nbsp;&nbsp;
 				
@@ -193,7 +203,9 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 				<div id="review">
 
 					<div id="review-content">
-						<input type="button" class="btn btn-primary" onsubmit="confirmSubmit();" value="Confirm Submit">
+						<label for="event_review">Event: </label>
+						<input type="label" id="event_review" name="event_review" />
+						<input type="submit" class="btn btn-primary" onclick="return confirmSubmit();" value="Confirm Submit"/>
 						<button class="btn btn-default" onclick="closeReview();">Close</button>
 					</div>
 					

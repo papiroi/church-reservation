@@ -45,6 +45,17 @@ function viewReservation() {
 		$("#review").show();
 	});
 
+
+	var event = document.getElementById('eventtype').value;
+	var bapType = document.getElementById('bap-type').value;
+	var priest = document.getElementById('priest').value;
+	var eventDate = document.getElementById('dateselect').value;
+	var eventTime = document.getElementById('timeselect').value;
+	var = document.getElementById().value;
+	var = document.getElementById().value;
+	var = document.getElementById().value;
+	
+	
 	return false;
 	
 }
@@ -75,6 +86,8 @@ function confirmSubmit() {
 		}
 		
 	}
+	
+	
 	
 	
 }
