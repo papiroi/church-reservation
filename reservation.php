@@ -74,6 +74,8 @@
 					$("#bap-type").hide();
 					$("#timeselect").show(100);
 					$("#lbltimeselect").show(100);
+					$("#lblpriest").show(100);
+					$("#priest").show(100);
 				}
 			});
 			
@@ -92,6 +94,8 @@
 				if(document.getElementById('bap-type').value == 'Special') {
 					$("#timeselect").show(100);
 					$("#lbltimeselect").show(100);
+					$("#lblpriest").show(100);
+					$("#priest").show(100);
 				}
 			});
 		});

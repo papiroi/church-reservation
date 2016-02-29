@@ -46,17 +46,65 @@ function viewReservation() {
 	});
 
 
-	var event = document.getElementById('eventtype').value;
+	var eventtype = document.getElementById('eventtype').value;
 	var bapType = document.getElementById('bap-type').value;
 	var priest = document.getElementById('priest').value;
 	var eventDate = document.getElementById('dateselect').value;
 	var eventTime = document.getElementById('timeselect').value;
-	var = document.getElementById().value;
-	var = document.getElementById().value;
-	var = document.getElementById().value;
+	
+	if(bapType == 'Ordinary') {
+		document.getElementById('time_review').value = '5';
+	}
+	else {
+		if(eventTime == '') {
+			//alert("Time Must Not Be Empty");
+			eventTime = document.getElementById('timeselect').fucus();
+		}
+	}
+	
+	document.getElementById('event_review').value = eventtype;
+	document.getElementById('priest_review').value = priest;
+	document.getElementById('date_review').value = eventDate;
+	document.getElementById('bap-type_review').value = bapType;
+	document.getElementById('time_review').value = timeSelect(eventTime);
+}
+
+function timeSelect(time) {
+	var time_final = "";
+	
+	if(time == '1') {
+		time_final = "8:00am";
+	}
+	else if(time == '2') {
+		time_final = "9:00am";
+	}
+	else if(time == '3') {
+		time_final = "10:00am";
+	}
+	else if(time == '4') {
+		time_final = "11:00am";
+	}
+	else if(time == '5') {
+		time_final = "12:00pm";
+	}
+	else if(time == '6') {
+		time_final = "1:00pm";
+	}
+	else if(time == '7') {
+		time_final = "2:00pm";
+	}
+	else if(time == '8') {
+		time_final = "3:00pm";
+	}
+	else if(time == '9') {
+		time_final = "4:00pm";
+	}
+	else if(time == '10') {
+		time_final = "5:00pm";
+	}
 	
 	
-	return false;
+	return time_final;
 	
 }
 
@@ -68,26 +116,23 @@ function closeReview() {
 	
 }
 
-function confirmSubmit() {
+
+function clearInput() {
 	
-	if(document.getElementById('bap-type').value == 'Special') {
-		
-		if(document.getElementById('timeselect').value == '') {
-			
-			alert("Please Select Time!");
-			
-			return false;
-			
-		}
-		else {
-			
-			
-			
-		}
-		
-	}
+	document.getElementById('eventtype').value = "";
+	document.getElementById('bap-type').value = "Special";
+	document.getElementById('priest').value = "Any";
+	document.getElementById('dateselect').value = "";
+	document.getElementById('timeselect').value = "";
+	
+	$("#bap-type").hide();
+	
+}
+
+function eventSubmit() {
 	
 	
+	alert("Unable to Connect to Script");
 	
 	
 }

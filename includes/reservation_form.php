@@ -119,14 +119,9 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 		<div class="center-div">
 			<h2 class="white-text">Reservation Form:</h2>
 			<!-- 
-			Form for Reservation
-			This form is used to reserve schedules
-			Type of Event to reserve
-			Date of Event
-			Time to start
+			Reservation
 			-->
-			<form autocomplete="off" id="reserveForm" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
-
+			
 				<label for="eventtype">Select Event:</label>
 				<select id="eventtype" name="eventtype" class="form-control" required autofocus title="Select an Event!">
 					<option value="">Select Event</option>
@@ -151,7 +146,7 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 				
 				<label id="lblpriest" for="priest">Priest: </label>
 				<select id="priest" name="priest" class="form-control">
-					<option value="">Any</option>
+					<option value="Any">Any</option>
 					<option value="1">Priest 1</option>
 					<option value="2">Priest 2</option>
 					<option value="3">Priest 3</option>
@@ -171,23 +166,15 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 				
 					<option value="">Select Time</option>
 					<option value="1">8:00am</option>
-					<option value="2">8:30am</option>
-					<option value="3">9:00am</option>
-					<option value="4">9:30am</option>
-					<option value="5">10:00am</option>
-					<option value="6">10:30am</option>
-					<option value="7">11:00am</option>
-					<option value="8">11:30am</option>
-					<option value="9">12:00pm</option>
-					<option value="10">1:00pm</option>
-					<option value="11">1:30pm</option>
-					<option value="12">2:00pm</option>
-					<option value="13">2:30pm</option>
-					<option value="14">3:00pm</option>
-					<option value="15">3:30pm</option>
-					<option value="16">4:00pm</option>
-					<option value="17">4:30pm</option>
-					<option value="18">5:00pm</option>
+					<option value="2">9:00am</option>
+					<option value="3">10:00am</option>
+					<option value="4">11:00am</option>
+					<option value="5">12:00pm</option>
+					<option value="6">1:00pm</option>
+					<option value="7">2:00pm</option>
+					<option value="8">3:00pm</option>
+					<option value="9">4:00pm</option>
+					<option value="10">5:00pm</option>
 					
 				</select>
 				
@@ -198,22 +185,13 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 				
 				&nbsp;&nbsp;&nbsp;
 				
-				<input type="reset" value="Clear Input" onclick="" class="btn btn-primary"/>
+				<input type="button" value="Clear Input" onclick="clearInput();" class="btn btn-primary"/>
 				
-				<div id="review">
-
-					<div id="review-content">
-						<label for="event_review">Event: </label>
-						<input type="label" id="event_review" name="event_review" />
-						<input type="submit" class="btn btn-primary" onclick="return confirmSubmit();" value="Confirm Submit"/>
-						<button class="btn btn-default" onclick="closeReview();">Close</button>
-					</div>
-					
-				</div>
-			</form> 
+				
 			<br/>
 			
 		</div>
+
 	</div>
 	<div class="col-md-7">
 		<div class="center-div">
@@ -231,5 +209,55 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 			<!-- End of Month Calendar -->
 			<!-- End of Month Calendar -->
 		</div>
+	</div>
+</div>
+
+		
+<div id="review">
+	<div id="review-content">
+		<table class="table">
+		<tr>
+			<td>
+				<label for="event_review">Event: </label>
+			</td>
+			<td>
+				<input type="input" id="event_review" name="event_review" readonly/>
+				<input type="hidden" id="bap-type_review" name="bap-type_review" readonly/>
+
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label for="priest_review">Priest: </label>
+			</td>
+			<td>
+				<input type="input" id="priest_review" name="priest_review" readonly/>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label for="date_review">Date: </label>
+			</td>
+			<td>
+				<input type="input" id="date_review" name="date_review" readonly/>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label for="time_review">Time: </label>
+			</td>
+			<td>
+				<input type="input" id="time_review" name="time_review" readonly/>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="button" onclick="eventSubmit();" class="btn btn-primary" value="Confirm Submit"/>
+			</td>
+			<td>
+				<button class="btn btn-default" onclick="closeReview();">Close</button>
+			</td>
+		</tr>
+		</table>
 	</div>
 </div>

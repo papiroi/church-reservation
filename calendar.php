@@ -4,8 +4,8 @@
 				* Function to Mark and Display the Date that has Reservations
 				*/
 				//$conn and $day as argument in this function to complete the operation
-				function getDateReserve($conn, $day) {
-					$current_month = date("m");
+				function getDateReserve($conn, $day, $month) {
+					
 					$current_year = date("y");
 					
 					$select_all_dates = "SELECT * FROM reservation";
@@ -92,7 +92,7 @@
 
 						echo "<td onclick='showEvent($day);' id='day" . $day;
 						//This function Highlights the date with reservation in green
-						if(getDateReserve($conn,$day)) {
+						if(getDateReserve($conn,$day,$month_num)) {
 							echo "' bgcolor='green'>"; //highlight TODAY in green
 							echo "<a href='#' class='white-text' title='Click to View Schedule'>$day</a></td>";
 						}
