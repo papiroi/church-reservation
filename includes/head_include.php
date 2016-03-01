@@ -49,3 +49,7 @@
 	
 	<!-- Save to Draft Message -->
 	<script src="js/saveToDraft.js"></script>
+	
+	
+	<!-- Include the calendar functions -->
+	<script src="js/calendarMonth.js"></script>

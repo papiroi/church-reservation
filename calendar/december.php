@@ -42,7 +42,7 @@
 				* Lines of Code to Display Current Month Calendar
 				*/
 				$day_num=date("j"); //If today is September 29, $day_num=29
-				$month_num = date("m"); //If today is September 29, $month_num=9
+				$month_num = 12; //set the month here for example january is 1
 				$year = date("Y"); //4-digit year
 				$date_today = getdate(mktime(0,0,0,$month_num,1,$year)); //Returns array of date info for 1st day of this month
 				$month_name = $date_today["month"]; //Example: "September" - to label the Calendar
@@ -71,9 +71,7 @@
 			<caption class="white-text"><strong><?php echo $month_name . " " . $year;?></strong></caption>
 			<tr align=left><th>Su</th><th>M</th><th>Tu</th><th>W</th><th>Th</th><th>F</th><th>Sa</th></tr>
 			<?php
-				echo $date_today["month"];
-				echo "<br/>";
-				echo $month_num;
+
 				$day = 1; //This variable will track the day of the month
 				$wday = $first_week_day; //This variable will track the day of the week (0-6, with Sunday being 0)
 				$firstweek = true; //Initialize $firstweek variable so we can deal with it first

@@ -279,6 +279,30 @@ input, select, textarea{
 	
 }
 
+.success-register {
+	
+	border: 1px solid green;
+	padding: 2px;
+	text-align: center;
+	background-color: #36C936;
+	color: #ffffff;
+	
+}
+
+.link-login {
+	
+	border: 1px solid blue;
+	padding: 2px;
+	text-align: center;
+	background-color: #246270;
+	color: #ffffff;
+	
+}
+
+.link-login > a:link, 
+.link-login > a:hover {
+	color: white;
+}
 
 /* Highlight Color  */
 ::-moz-selection {

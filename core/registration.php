@@ -76,8 +76,8 @@ class Registration {
 		
 			if($reg_query_result) {
 				// Successfull Creation of User
-				echo "<h3 class='reg-success'>Successfully Created User!</h3>
-					<h4 class='reg-success-link'><a href='login.php'>Click Here To Login</a></h4>";
+				echo "<h2 class='success-register'>Succesfully Created!</h2>
+					<h3 class='link-login'><a href='login.php' >Click Here To Login</a></h3>";
 			}
 			else {
 				echo "Error in Registration! Try Again Later.";

@@ -70,7 +70,7 @@
                     </li>
 					
 					<li id="user-position"><a href="#">
-						Welcome <?php echo $username; ?>!!!
+						Welcome Guest!!!
 					</a></li>
 					
 					
@@ -81,4 +81,3 @@
         </div>
         <!-- /.container -->
     </nav>
-	
