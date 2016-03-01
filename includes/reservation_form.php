@@ -21,14 +21,6 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 	
 	$username = $_SESSION['username'];
 	
-	//Set if the Baptism Type is Ordinary
-	//The time will be automatically 11:30am on the day chosen
-	
-	if($type=='Ordinary') {
-		
-		$event_time = "9";
-		
-	}
 	
 		// Reserve Number Generator
 		// Reference Number Serve as alternative ID for the
@@ -216,12 +208,13 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 <div id="review">
 	<div id="review-content">
 		<table class="table">
+		<caption><h2 class="modal-text text-center">Summary</h2></caption>
 		<tr>
 			<td>
 				<label for="event_review">Event: </label>
 			</td>
 			<td>
-				<input type="input" id="event_review" name="event_review" readonly/>
+				<input type="input" id="event_review" name="event_review" class="ui-input-text" readonly/>
 				<input type="hidden" id="bap-type_review" name="bap-type_review" readonly/>
 
 			</td>
@@ -231,7 +224,7 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 				<label for="priest_review">Priest: </label>
 			</td>
 			<td>
-				<input type="input" id="priest_review" name="priest_review" readonly/>
+				<input type="input" id="priest_review" name="priest_review" class="ui-input-text" readonly/>
 			</td>
 		</tr>
 		<tr>
@@ -239,7 +232,7 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 				<label for="date_review">Date: </label>
 			</td>
 			<td>
-				<input type="input" id="date_review" name="date_review" readonly/>
+				<input type="input" id="date_review" name="date_review" class="ui-input-text" readonly/>
 			</td>
 		</tr>
 		<tr>
@@ -247,7 +240,7 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 				<label for="time_review">Time: </label>
 			</td>
 			<td>
-				<input type="input" id="time_review" name="time_review" readonly/>
+				<input type="input" id="time_review" name="time_review" class="ui-input-text" readonly/>
 			</td>
 		</tr>
 		<tr>

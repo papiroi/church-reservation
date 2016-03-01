@@ -107,7 +107,7 @@
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><strong>
 						<u>
-							<?php echo $username;?>
+							<?php echo getFirstName($username,$conn);?>
 						</u><span class="caret"></span></strong></a>
 						
 						<ul class="dropdown-menu">
@@ -132,4 +132,21 @@
         </div>
         <!-- /.container -->
     </nav>
+
+<?php
+	function getFirstName($username,$conn) {
+		
+		$select_user = "SELECT firstName FROM users WHERE username='$username' LIMIT 1";
+		$select_user_query = $conn -> query($select_user);
+		
+		while($row_q = $select_user_query->fetch_assoc()) {
+		
+			$firstname = $row_q['firstName'];
+		
+		}
+		
+		return $firstname;
 	
+	}
+
+?>

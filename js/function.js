@@ -53,7 +53,7 @@ function viewReservation() {
 	var eventTime = document.getElementById('timeselect').value;
 	
 	if(bapType == 'Ordinary') {
-		document.getElementById('time_review').value = '5';
+		eventTime = "5";
 	}
 	else {
 		if(eventTime == '') {
@@ -126,6 +126,11 @@ function clearInput() {
 	document.getElementById('timeselect').value = "";
 	
 	$("#bap-type").hide();
+	
+	$("#priest").show();
+	$("#lblpriest").show();
+	$("#lbltimeselect").show();
+	$("#timeselect").show();
 	
 }
 

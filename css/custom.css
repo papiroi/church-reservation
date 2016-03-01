@@ -269,8 +269,15 @@ input, select, textarea{
 	height: auto;
 	width: auto;
 	background-color: #eee;
+	border-radius: 5px;
 }
 
+.ui-input-text {
+    border: none !important;
+    border-color: transparent !important;
+	background-color: #eee;
+	
+}
 
 
 /* Highlight Color  */
