@@ -4,7 +4,7 @@
 				* Function to Mark and Display the Date that has Reservations
 				*/
 				//$conn and $day as argument in this function to complete the operation
-				function getDateReserve($conn, $day, $month) {
+				function getDateReserve($conn, $day, $current_month) {
 					
 					$current_year = date("y");
 					

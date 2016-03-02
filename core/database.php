@@ -154,24 +154,6 @@ class Database {
 	}
 
 
-	// database/table for user login
-	public function user_log() {
-
-		
-		
-	}
-	
-	// function to create reservation log
-	public function reserv_log() {
-		
-		$create_reserv_log = "CREATE TABLE IF NOT EXISTS reserv_log (
-			rLogID int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
-			rLogDate date NOT NULL,
-			username varchar(60) NOT NULL,
-			rervationNum varchar(15) NOT NULL
-		)";
-		
-	}
 
 	// database/tables for chat
 	public function Messages() {

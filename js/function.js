@@ -41,9 +41,8 @@ function goBack() {
 
 function viewReservation() {
 	
-	$(function(){
-		$("#review").show();
-	});
+	
+	$("#review").show();
 
 
 	var eventtype = document.getElementById('eventtype').value;
@@ -67,6 +66,9 @@ function viewReservation() {
 	document.getElementById('date_review').value = eventDate;
 	document.getElementById('bap-type_review').value = bapType;
 	document.getElementById('time_review').value = timeSelect(eventTime);
+
+	
+	return false;
 }
 
 function timeSelect(time) {
@@ -117,6 +119,16 @@ function closeReview() {
 }
 
 
+
+function closePending() {
+	
+	$(function() {
+		$("#pending_status_div").hide(100);
+	});
+	
+}
+
+
 function clearInput() {
 	
 	document.getElementById('eventtype').value = "";
@@ -134,50 +146,20 @@ function clearInput() {
 	
 }
 
-function eventSubmit() {
+function validateForm() {
 	
+	//alert("validate from");
 	
-	alert("Unable to Connect to Script");
+	viewReservation();
 	
-	//alert("The day is " + day)
-
-	var eventtype = document.getElementById('event_review').value;
-	var baptype = document.getElementById('bap-type_review').value;
-	var priest = document.getElementById('priest_review').value;
-	var date = document.getElementById('date_review').value;
-	var time = document.getElementById('time_review').value;
+	var confirmation = confirm("Are you sure you want to submit?");
 	
-	
-	var ajaxRequest;  // The variable that makes Ajax possible!
-	
-	try{
-		// Opera 8.0+, Firefox, Safari
-		ajaxRequest = new XMLHttpRequest();
-	} catch (e){
-		// Internet Explorer Browsers
-		try{
-			ajaxRequest = new ActiveXObject("Msxml2.XMLHTTP");
-		} catch (e) {
-			try{
-				ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
-			} catch (e){
-				// Something went wrong
-				alert("Your browser broke!");
-				return false;
-			}
-		}
+	if(confirmation == true) {
+		return true;
 	}
-	// Create a function that will receive data sent from the server
-	ajaxRequest.onreadystatechange = function(){
-		if(ajaxRequest.readyState == 4){
-			var ajaxDisplay = document.getElementById('hidden_div'); //--> The id of the div Element
-			ajaxDisplay.innerHTML = ajaxRequest.responseText;
-		}
+	else {
+		closeReview();
+		return false;
 	}
-	
-	//var queryString = "?eventtype=" + eventtype + "&baptype=" + baptype + "&priest=" + priest + "&date=" + date + "&time=" + time; 
-	ajaxRequest.open("GET", "reserve_script.php" + queryString, true); // --> Name of php script + plus query string if any
-	ajaxRequest.send(null);
-	
 	
 }

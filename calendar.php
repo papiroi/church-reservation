@@ -4,7 +4,7 @@
 				* Function to Mark and Display the Date that has Reservations
 				*/
 				//$conn and $day as argument in this function to complete the operation
-				function getDateReserve($conn, $day, $month) {
+				function getDateReserve($conn, $day, $current_month) {
 					
 					$current_year = date("y");
 					
@@ -71,9 +71,8 @@
 			<caption class="white-text"><strong><?php echo $month_name . " " . $year;?></strong></caption>
 			<tr align=left><th>Su</th><th>M</th><th>Tu</th><th>W</th><th>Th</th><th>F</th><th>Sa</th></tr>
 			<?php
-				echo $date_today["month"];
-				echo "<br/>";
-				echo $month_num;
+				$date_today["month"];
+				$month_num;
 				$day = 1; //This variable will track the day of the month
 				$wday = $first_week_day; //This variable will track the day of the week (0-6, with Sunday being 0)
 				$firstweek = true; //Initialize $firstweek variable so we can deal with it first

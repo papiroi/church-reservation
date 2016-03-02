@@ -21,7 +21,6 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 	
 	$username = $_SESSION['username'];
 	
-	
 		// Reserve Number Generator
 		// Reference Number Serve as alternative ID for the
 		// reserved schedule
@@ -38,21 +37,65 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 		$reserv_num = generateRandomString();
 	
 	
-	// Search for Conflict on the event they are trying to reserve
-	// If there are similar record that the users are trying to reserve
-	// the system will automatically prevent it, to avoid conflict in reserved schedules
-	$search_record = "SELECT * FROM reservation WHERE reserv_date='$event_date' AND reserv_time='$event_time'";
-	
-	$srq = $conn->query($search_record);
-	
-	if(@$srq->num_rows > 0) {
+		// Search or Select for Active reservation for a user
+		// if there are active reservation for an event, 
+		// the user will not be able to resreve another
+		$select_user_events = "SELECT * FROM reservation WHERE username = '$username' AND event_type = '$event_type' && status = 'Active'";
+		$select_user_events_query = $conn -> query($select_user_events);
 		
-		if($type == 'Ordinary') {
+	if($select_user_events_query->num_rows > 0) {
+			
+		echo "<script>alert('You have another pending reservation on this event!');</script>";
+		
+	}
+	else {
+	
+		// Search for Conflict on the event they are trying to reserve
+		// If there are similar record that the users are trying to reserve
+		// the system will automatically prevent it, to avoid conflict in reserved schedules
+		$search_record = "SELECT * FROM reservation WHERE reserv_date='$event_date' AND reserv_time='$event_time'";
+		
+		$srq = $conn->query($search_record);
+		
+		if(@$srq->num_rows > 0) {
+			
+			if($type == 'Ordinary') {
+				// Insert the reservation in database as record
+				// Statement for Inserting New Reserved Records
+				$add_reservation = "INSERT INTO reservation 
+					(reserv_num, event_type, reserv_date, reserv_time, username, status, type, confirmation, date_reserved)
+							VALUES ('$reserv_num','$event_type','$event_date','$event_time','$username','Active','$type','Confirmed',NOW())";
+				
+				$arq = $conn->query($add_reservation);
+				
+				if($arq == true) {
+					
+					echo "<script>";
+					echo "alert('Successfully Reserved!')";
+					echo "</script>";
+					
+				}
+				else {
+					
+					echo "<script>";
+					echo "alert('Error in Reserving Event!')";
+					echo "</script>";
+					
+				}
+			}
+			else {
+				echo "<script>";
+				echo "alert('The Date and Time has a Conflict!!!')";
+				echo "</script>";
+			}
+		}
+		else {
+			
 			// Insert the reservation in database as record
 			// Statement for Inserting New Reserved Records
 			$add_reservation = "INSERT INTO reservation 
 				(reserv_num, event_type, reserv_date, reserv_time, username, status, type, confirmation, date_reserved)
-						VALUES ('$reserv_num','$event_type','$event_date','$event_time','$username','Active','$type','Confirmed',NOW())";
+						VALUES ('$reserv_num','$event_type','$event_date','$event_time','$username','Active','$type','NC',NOW())";
 			
 			$arq = $conn->query($add_reservation);
 			
@@ -71,36 +114,7 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 				
 			}
 		}
-		else {
-			echo "<script>";
-			echo "alert('The Date and Time has a Conflict!!!')";
-			echo "</script>";
-		}
-	}
-	else {
-		
-		// Insert the reservation in database as record
-		// Statement for Inserting New Reserved Records
-		$add_reservation = "INSERT INTO reservation 
-			(reserv_num, event_type, reserv_date, reserv_time, username, status, type, confirmation, date_reserved)
-					VALUES ('$reserv_num','$event_type','$event_date','$event_time','$username','Active','$type','NC',NOW())";
-		
-		$arq = $conn->query($add_reservation);
-		
-		if($arq == true) {
-			
-			echo "<script>";
-			echo "alert('Successfully Reserved!')";
-			echo "</script>";
-			
-		}
-		else {
-			
-			echo "<script>";
-			echo "alert('Error in Reserving Event!')";
-			echo "</script>";
-			
-		}
+	
 	}
 }	
 	
@@ -113,7 +127,7 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 			<!-- 
 			Reservation
 			-->
-			
+			<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" onsubmit="return validateForm();" autocomplete="off">
 				<label for="eventtype">Select Event:</label>
 				<select id="eventtype" name="eventtype" class="form-control" required autofocus title="Select an Event!">
 					<option value="">Select Event</option>
@@ -173,12 +187,13 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 				
 				<br/>
 				
-				<input type="button" value="Reserve Now!" onclick="return viewReservation();" class="btn btn-success"/>
+				<input type="submit" value="Reserve Now!" class="btn btn-success"/>
 				
 				&nbsp;&nbsp;&nbsp;
 				
-				<input type="button" value="Clear Input" onclick="clearInput();" class="btn btn-primary"/>
+				<input type="reset" value="Clear Input" onclick="clearInput();" class="btn btn-primary"/>
 				
+			</form>
 				
 			<br/>
 			
@@ -283,12 +298,6 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 			</td>
 		</tr>
 		<tr>
-			<td>
-				<input type="button" onclick="eventSubmit();" class="btn btn-primary" value="Confirm Submit"/>
-			</td>
-			<td>
-				<button class="btn btn-default" onclick="closeReview();">Close</button>
-			</td>
 		</tr>
 		</table>
 	</div>
@@ -297,4 +306,14 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 
 <div id="hidden_div">
 
+</div>
+
+<div id="pending_status_div">
+
+	<div id="pending_status_div_message">
+		
+		<h2 class="text-center">You have active pending reservation in this event.</h2>
+	
+	</div>
+	
 </div>
