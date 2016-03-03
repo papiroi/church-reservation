@@ -69,7 +69,17 @@
 	font-size: 30px;
 }
 
-
+.info-message {
+	
+	margin: 0px auto;
+	border: 1px solid #0088ff;
+	background-color: #0033aa;
+	padding: 5px;
+	color: #ffffff;
+	text-align: center;
+	font-size: 20px;
+	border-radius: 5px;
+}
 
 input, select, textarea{
 	color: #000000;

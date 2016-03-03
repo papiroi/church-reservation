@@ -45,11 +45,15 @@
                 <ul class="nav navbar-nav">
                     <li>
                         <a href="index.php">
+						<!---<span class='glyphicon glyphicon-home'></span>-->
 						<strong>Home</strong>
 						</a>
                     </li>
 					<li>
-						<a href="reservations.php"><strong>Schedules and Reservations</strong></a>
+						<a href="reservations.php"><strong>Request Reservations</strong></a>
+					</li>
+					<li>
+						<a href="confirmed_reserve.php"><strong>Confirmed Reservations</strong></a>
 					</li>
                     <li>
 						<a href="edit_announcement.php"><strong>Edit Announcement</strong></a>

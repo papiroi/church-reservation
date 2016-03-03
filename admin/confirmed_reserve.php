@@ -1,4 +1,8 @@
 <?php
+/*
+* Start of Tarlac Cathedral Online Reservation and Scheduling
+* View Schedules and Reservations 
+*/
 
 /*
 * This part of the script will set a session varaible for security purposes
@@ -7,85 +11,88 @@
 	session_start();
 	
 	$_SESSION['code'] = 1;
+
+
+/*
+* Include the basepath file
+* in the constant BASE
+*/
+	include "basepath.php";
 	
 	
-
 /*
-* Check if session username or name of the logged in user isset
-* if not Guest User 
+*  
 */
 
-	if(isset($_SESSION['username']) && !empty($_SESSION['username'])) {
-		$username = $_SESSION['username'];;
-	}
-	else {
-		$username = "Guest";
-	}
+	include "includes/connect.php";
+
 /*
-* Condition to check if there's a logined user
-*
+* Page redirection part to login if the admin is not logged in
+* 
 */
 	if(isset($_SESSION['username']) && !empty($_SESSION['username'])) {
-		// Nothing to do here
+		
+		if($_SESSION['username'] != 'admin') {
+
+			header ("Location: error_location.php");
+
+		}	
+		else {
+			// Nothing to do here
+		}
+
 	}
 	else {
-		header('Location: index.php');
+
+		header ("Location: login.php");
+
 	}
 
-/*
-* The Connection String
-*
-*/
-
-	require_once "includes/connect.php";
 
 ?>
-<!doctype html>
+
+
+<!DOCTYPE html>
 <html class="full" lang="en-US">
 <head>
-	<title>Reservation Status - Scheduling and Reservation for Tarlac San Sebastian Cathedral Parish</title>
+	<title>View Schedules and Reservation</title>
+
+<?php
 	
-	<?php
-	
-		require "includes/head_include.php";
-	?>
-	<!-- Custom CSS for Background Image for this page -->
-	<link rel="stylesheet" href="css/background-image.css" />
+	include "includes/head_include.php";
+
+?>
+
+	<!-- Custome Background for Services Offered Page -->
+	<link rel="stylesheet" href="../css/background-image.css" />
+
 </head>
 <body>
-
 	<div class="container">
 
+		<h1 class="white-text">Admin Pannel: View Schedules</h1>
 		
-		<h1 class="white-text text-center">Scheduling and Reservation for Tarlac San Sebastian Parish Cathedral</h1>
-<!-- Start of Navigation -->
-<?php
-/*
-* This will show navigation bar menu if there is signed in user or not
-*
-*/
-
-	if(isset($_SESSION['username']) && !empty($_SESSION['username'])) {
+		<?php
+			if(isset($_GET['s']) && $_GET['s'] == 'logout') {
+			
+			session_destroy();
+			
+			if($conn) {
+				$conn->close();
+			}
+			
+			header("Location: " . $_SERVER['PHP_SELF']);
+			
+			}
 		
-		require_once "includes/nav_bar_signed_in.php";
-	
-	}
-	else {
-	
-		require_once "includes/nav_bar_signed_out.php";
-	
-	}
-?>		
-<!--End of Navigation -->
-	
+			// Include the nav bar for Admin
+			require_once "includes/menu.php";
+		
+		?>
 
-	<!-- Start of Output for Reservation Status -->
-	<div class="center-div">
-	<h2 class="white-text">Reservations</h2>
-	<button class="btn btn-primary" onclick="goBack();">Back</button>
-	<br/>
-	<span class="white-text"><i>Click on Reservation Number to Print</i></span>
-	<br/>
+		<div class="center-div">
+		<br/>
+			
 <?php
 
 /*
@@ -154,11 +161,10 @@
 		return $val;
 		
 	}
-
-	$select_all_reserv = "SELECT * FROM reservation WHERE username = '$username' ORDER BY reserv_date ASC";
+	$select_all_reserv = "SELECT * FROM reservation WHERE confirmation = 'Confirmed' ORDER BY reserv_date ASC";
 	$select_query_result = $conn->query($select_all_reserv);
 	
-	if(@$select_query_result -> num_rows > 0) {
+	if($select_query_result -> num_rows > 0) {
 		
 		//echo "There is a reservation.";
 		echo "<table class='table table-bordered'>";
@@ -171,17 +177,15 @@
 		echo "<th>User</th>";
 		echo "</tr>";
 		while($row = $select_query_result->fetch_assoc()) {
-			
 			echo "<tr>";
-			echo "<td><a href='print.php?r=" .  $row['reserv_num']. "' target='_blank'>" . $row['reserv_num'] . "</a></td>";
+			echo "<td>" . $row['reserv_num'] . "<input type='hidden' name='reserv_num' value='" . $row['reserv_num'] . "'/></td>";
 			echo "<td>" . $row['event_type'] . "</td>";
 			echo "<td>" . dateName($row['reserv_date']) . "</td>";
 			echo "<td>" . num_to_time($row['reserv_time']) . "</td>";
 			echo "<td>" . $row['status'] . "</td>";
 			echo "<td>" . $row['username'] . "</td>";
-			echo "</tr>";
-		
-		} 
+			echo "</form>";
+		}
 		echo "</table>";
 		
 	}
@@ -191,7 +195,8 @@
 		
 	}
 	
-	// Function that converts php date to word
+	
+		// Function that converts php date to word
 	function dateName($date) {
 		
 		$result = "";
@@ -207,15 +212,15 @@
 		
 		return $result;
 	}
-	
-	
 ?>	
+
+		</div>
+
 	</div>
-	</div>
+
 
 <?php
 
-	include "includes/include_contacts.php";
-	include "includes/footer.php";
-	
+	require "includes/footer.php";
+
 ?>

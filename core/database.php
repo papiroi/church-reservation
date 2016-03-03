@@ -103,6 +103,7 @@ class Database {
 			reservationID int(11) AUTO_INCREMENT PRIMARY KEY NOT NULL,
 			reserv_num varchar(12) NOT NULL,
 			event_type varchar(15) NOT NULL,
+			priest varchar(100) NOT NULL,
 			reserv_date date NOT NULL,
 			reserv_time varchar(5) NOT NULL,
 			username varchar(60) NOT NULL,

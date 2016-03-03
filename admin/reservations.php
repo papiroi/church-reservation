@@ -161,7 +161,7 @@
 		return $val;
 		
 	}
-	$select_all_reserv = "SELECT * FROM reservation ORDER BY reserv_date ASC";
+	$select_all_reserv = "SELECT * FROM reservation WHERE confirmation = 'NC' ORDER BY reserv_date ASC";
 	$select_query_result = $conn->query($select_all_reserv);
 	
 	if($select_query_result -> num_rows > 0) {
@@ -175,28 +175,47 @@
 		echo "<th>Time</th>";
 		echo "<th>Status</th>";
 		echo "<th>User</th>";
+		echo "<th>Action</th>";
 		echo "</tr>";
 		while($row = $select_query_result->fetch_assoc()) {
-			
+			echo "<form action='confirm.php' method='post'>";
 			echo "<tr>";
-			echo "<td>" . $row['reserv_num'] . "</td>";
+			echo "<td>" . $row['reserv_num'] . "<input type='hidden' name='reserv_num' value='" . $row['reserv_num'] . "'/></td>";
 			echo "<td>" . $row['event_type'] . "</td>";
-			echo "<td>" . $row['reserv_date'] . "</td>";
+			echo "<td>" . dateName($row['reserv_date']) . "</td>";
 			echo "<td>" . num_to_time($row['reserv_time']) . "</td>";
 			echo "<td>" . $row['status'] . "</td>";
 			echo "<td>" . $row['username'] . "</td>";
+			echo "<td><input type='submit' value='Confirm?' class='btn btn-primary'/></td>";
 			echo "</tr>";
-		
+			echo "</form>";
 		}
 		echo "</table>";
 		
 	}
 	else {
 		
-		echo "<h3 class=''>No Reservations Found</h3>";
+		echo "<h3 class=''>No Reservation Requests Found</h3>";
 		
 	}
 	
+	
+		// Function that converts php date to word
+	function dateName($date) {
+		
+		$result = "";
+		
+		$convert_date = strtotime($date);
+		$month = date('F',$convert_date);
+		$year = date('Y',$convert_date);
+		$name_day = date('l',$convert_date);
+		$day = date('j',$convert_date);
+		
+		
+		$result = $month . " " . $day . ", " . $year . " - " . $name_day;
+		
+		return $result;
+	}
 ?>	
 
 		</div>

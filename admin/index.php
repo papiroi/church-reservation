@@ -87,7 +87,30 @@
 		
 		?>
 		<div class="row">
-
+			
+			<div class="col-md-12">
+			
+				<?php
+				// Display on the day request reservations
+				$this_day = date('Y-m-d');
+				
+				$select_all_reserve = "SELECT * FROM reservation WHERE reserv_date = '$this_day'";
+				$select_all_reserve_query = $conn->query($select_all_reserve);
+				
+				if($select_all_reserve_query->num_rows > 0) {
+					
+					echo "There are record for today.";
+					
+				}
+				else {
+					
+					echo "<div class='info-message'>There are no Reservation Requests for today.</div>";
+					
+				}
+				
+				?>
+			
+			</div>
 		
 		</div>
 	</div>

@@ -148,7 +148,7 @@
 							echo "<tr>";
 							echo "<td>" . $row['reserv_num'] . "</td>";
 							echo "<td>" . $row['event_type'] . "</td>";
-							echo "<td>" . $row['reserv_date'] . "</td>";
+							echo "<td>" . dateName($row['reserv_date']) . "</td>";
 							echo "<td>" . num_to_time($row['reserv_time']) . "</td>";
 							echo "<td>" . $row['username'] . "</td>";
 							echo "</tr>";
@@ -172,11 +172,27 @@
 		</table>
 		</div>
 	</div>
-		<?php
-			include "includes/include_contacts.php";
-		?>
 <?php
+	// Function that converts php date to word
+	function dateName($date) {
+		
+		$result = "";
+		
+		$convert_date = strtotime($date);
+		$month = date('F',$convert_date);
+		$year = date('Y',$convert_date);
+		$name_day = date('l',$convert_date);
+		$day = date('j',$convert_date);
+		
+		
+		$result = $month . " " . $day . ", " . $year . " - " . $name_day;
+		
+		return $result;
+	}
 
+
+	include "includes/include_contacts.php";
+	
 	require_once "includes/footer.php";
 
 ?>
