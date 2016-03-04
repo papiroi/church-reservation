@@ -4,7 +4,7 @@
 				* Function to Mark and Display the Date that has Reservations
 				*/
 				//$conn and $day as argument in this function to complete the operation
-				function getDateReserve($conn, $day, $month) {
+				function getDateReserve($conn, $day, $current_month) {
 					
 					$current_year = date("y");
 					
@@ -68,10 +68,14 @@
 			?>
 				
 			<table class="table table-bordered">
-			<caption class="white-text"><strong><?php echo $month_name . " " . $year;?>&nbsp;<button class="btn btn-primary" onclick="october();">Next Month</button></strong></caption>
+			<caption class="white-text"><strong>
+			<a href="reservation.php?month=08" class="btn btn-primary">&lt;&lt;</a>
+			<?php echo $month_name . " " . $year;?>&nbsp;
+			<a href="reservation.php?month=10" class="btn btn-primary">&gt;&gt;</a>
+			</strong></caption>
 			<tr align=left><th>Su</th><th>M</th><th>Tu</th><th>W</th><th>Th</th><th>F</th><th>Sa</th></tr>
 			<?php
-
+				
 				$day = 1; //This variable will track the day of the month
 				$wday = $first_week_day; //This variable will track the day of the week (0-6, with Sunday being 0)
 				$firstweek = true; //Initialize $firstweek variable so we can deal with it first
@@ -90,14 +94,14 @@
 					if ($wday==0) //Start a new row every Sunday
 						echo "<tr align=center>";
 
-						echo "<td onclick='showEvent($day);' id='day" . $day;
+						echo "<td onclick='showEvent($day,$month_num);' id='day" . $day;
 						//This function Highlights the date with reservation in green
 						if(getDateReserve($conn,$day,$month_num)) {
 							echo "' bgcolor='green'>"; //highlight TODAY in green
-							echo "<a href='#' class='white-text' title='Click to View Schedule'>$day</a></td>";
+							echo "<a href='javascript: void(0)' class='white-text' title='Click to View Schedule'>$day</a></td>";
 						}
 						else {
-							echo "'><a href='#' class='white-text' title='Click to View Schedule'>$day</a></td>";
+							echo "'><a href='javascript: void(0)' class='white-text' title='Click to View Schedule'>$day</a></td>";
 						}
 						if ($wday==6)
 							echo "</tr>"; //If today is Saturday, close this row

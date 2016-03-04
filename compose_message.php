@@ -97,7 +97,7 @@
 		
 		// Random Number Generator
 		function generateRandomString($length = 10) {
-			$characters = '0123456789';
+			$characters = '0123456789ABCDEFGHIJLKMNOPQRSTUVWXYZ';
 			$charactersLength = strlen($characters);
 			$randomString = '';
 			for ($i = 0; $i < $length; $i++) {

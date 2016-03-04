@@ -100,54 +100,30 @@
 			$val = "8:00am";
 		}
 		else if ($val == 2) {
-			$val = "8:30am";
-		}
-		else if ($val == 3) {
 			$val = "9:00am";
 		}
-		else if ($val == 4) {
-			$val = "9:30am";
-		}
-		else if ($val == 5) {
+		else if ($val == 3) {
 			$val = "10:00am";
 		}
-		else if ($val == 6) {
-			$val = "10:30am";
-		}
-		else if ($val ==7) {
+		else if ($val == 4) {
 			$val = "11:00am";
 		}
-		else if ($val == 8) {
-			$val = "11:30am";
-		}
-		else if ($val == 9) {
+		else if ($val == 5) {
 			$val = "12:00pm";
 		}
-		else if ($val == 10) {
+		else if ($val == 6) {
 			$val = "1:00pm";
 		}
-		else if ($val == 11) {
-			$val = "1:30pm";
-		}
-		else if ($val == 12) {
+		else if ($val ==7) {
 			$val = "2:00pm";
 		}
-		else if ($val == 13) {
-			$val = "2:30pm";
-		}
-		else if ($val == 14) {
+		else if ($val == 8) {
 			$val = "3:00pm";
 		}
-		else if ($val == 15) {
-			$val = "3:30pm";
-		}
-		else if ($val == 16) {
+		else if ($val == 9) {
 			$val = "4:00pm";
 		}
-		else if ($val == 17) {
-			$val = "4:30pm";
-		}
-		else if ($val == 18) {
+		else if ($val == 10) {
 			$val = "5:00pm";
 		}
 		
@@ -155,7 +131,7 @@
 		
 	}
 
-	$select_all_reserv = "SELECT * FROM reservation WHERE username = '$username' ORDER BY reserv_date ASC";
+	$select_all_reserv = "SELECT * FROM reservation WHERE username = '$username' AND status = 'Active' ORDER BY reserv_date ASC";
 	$select_query_result = $conn->query($select_all_reserv);
 	
 	if(@$select_query_result -> num_rows > 0) {
@@ -168,7 +144,7 @@
 		echo "<th>Date</th>";
 		echo "<th>Time</th>";
 		echo "<th>Status</th>";
-		echo "<th>User</th>";
+		echo "<th>Confirmation</th>";
 		echo "</tr>";
 		while($row = $select_query_result->fetch_assoc()) {
 			
@@ -178,7 +154,7 @@
 			echo "<td>" . dateName($row['reserv_date']) . "</td>";
 			echo "<td>" . num_to_time($row['reserv_time']) . "</td>";
 			echo "<td>" . $row['status'] . "</td>";
-			echo "<td>" . $row['username'] . "</td>";
+			echo "<td>" . $row['confirmation'] . "</td>";
 			echo "</tr>";
 		
 		} 

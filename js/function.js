@@ -1,4 +1,4 @@
-function showEvent(day) {
+function showEvent(day,month) {
 
 	//alert("The day is " + day)
 
@@ -29,7 +29,7 @@ function showEvent(day) {
 		}
 	}
 	
-	var queryString = "?day=" + day;
+	var queryString = "?day=" + day + "&month=" + month;
 	ajaxRequest.open("GET", "showEvent.php" + queryString, true); // --> Name of php script + plus query string if any
 	ajaxRequest.send(null);
 }

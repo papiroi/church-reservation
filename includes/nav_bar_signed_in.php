@@ -38,13 +38,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-				<a class="navbar-brand hidden-lg hidden-md" href="#">Menu</a>
+				<a class="navbar-brand hidden-lg hidden-md" href="javascript: void(0)">Menu</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
 					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><strong>My Reservations<span class="caret"></span></strong></a>
+						<a href="javascript: void(0)" class="dropdown-toggle" data-toggle="dropdown"><strong>My Reservations<span class="caret"></span></strong></a>
 					
 						<ul class="dropdown-menu">
 							<li class="menu-dropdown"><a href="reservation.php">Scheduling and Reservation Form</a></li>
@@ -58,7 +58,7 @@
 						</a>
                     </li>
 					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><strong>Messages
+						<a href="javascript: void(0)" class="dropdown-toggle" data-toggle="dropdown"><strong>Messages
 						<span class="label label-danger label-as-badge"><?php echo $unread; ?></span>
 						<span class="caret"></span></strong></a>
 					
@@ -71,7 +71,7 @@
 						</ul>
 					</li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><strong>Services<span class="caret"></span></strong></a>
+                        <a href="javascript: void(0)" class="dropdown-toggle" data-toggle="dropdown"><strong>Services<span class="caret"></span></strong></a>
 						
 						<ul class="dropdown-menu">
 						
@@ -105,7 +105,7 @@
                     </li>
 					
 					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><strong>
+						<a href="javascript: void(0)" class="dropdown-toggle" data-toggle="dropdown"><strong>
 						<u>
 							<?php echo getFirstName($username,$conn);?>
 						</u><span class="caret"></span></strong></a>

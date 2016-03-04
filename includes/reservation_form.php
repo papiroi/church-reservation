@@ -208,47 +208,138 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 			<!-- Start of Month Calendar -->
 			<div id="calendar" class="calendar">
 			<?php
+				if(isset($_GET['month'])) {
+					
+					$month = $_GET['month'];
+					
+					if($month == 1) {
+						include_once "calendar/january.php";
+					}
+					else if($month == 2) {
+						include_once "calendar/february.php";
+					}
+					else if($month == 3) {
+						include_once "calendar/march.php";
+					}
+					else if($month == 4) {
+						
+						include_once "calendar/april.php";
+						
+					}
+					else if($month == 5) {
+						
+						include_once "calendar/may.php";
+						
+					}
+					else if($month == 6) {
+						
+						include_once "calendar/june.php";
+						
+					}
+					else if($month == 7) {
+						
+						include_once "calendar/july.php";
+						
+					}
+					else if($month == 8) {
+						
+						include_once "calendar/august.php";
+						
+					}
+					else if($month == 9) {
+						
+						include_once "calendar/september.php";
+						
+					}
+					else if($month == 10) {
+						
+						include_once "calendar/october.php";
+						
+					}
+					else if($month == 11) {
+						
+						include_once "calendar/november.php";
+						
+					}
+					else if($month == 12) {
+						
+						include_once "calendar/december.php";
+						
+					}
+					
+				}
+				else {
+					
+					$current_month = date('m');
+					
+					if($current_month == 01) {
+						
+						include_once "calendar/january.php";
+						
+					}
+					else if($current_month == 02) {
+						
+						include_once "calendar/february.php";
+						
+					}
+					else if($current_month == 03) {
+						
+						include_once "calendar/march.php";
+						
+					}
+					else if($current_month == 04) {
+						
+						include_once "calendar/april.php";
+						
+					}
+					else if($current_month == 05) {
+						
+						include_once "calendar/may.php";
+						
+					}
+					else if($current_month == 06) {
+						
+						include_once "calendar/june.php";
+						
+					}
+					else if($current_month == 07) {
+						
+						include_once "calendar/july.php";
+						
+					}
+					else if($current_month == 08) {
+						
+						include_once "calendar/august.php";
+						
+					}
+					else if($current_month == 09) {
+						
+						include_once "calendar/september.php";
+						
+					}
+					else if($current_month == 10) {
+						
+						include_once "calendar/october.php";
+						
+					}
+					else if($current_month == 11) {
+						
+						include_once "calendar/november.php";
+						
+					}
+					else if($current_month == 12) {
+						
+						include_once "calendar/december.php";
+						
+					}
+					
+					
+					
+					
+				}
 			
-				$current_month =  date("m");
-				
-				if($current_month == 1) {
-					include "calendar/january.php";
-				}
-				else if($current_month == 2) {
-					include "calendar/february.php";
-				}
-				else if($current_month == 3) {
-					include "calendar/march.php";
-				}
-				else if($current_month == 4) {
-					include "calendar/april.php";
-				}
-				else if($current_month == 5) {
-					include "calendar/may.php";
-				}
-				else if($current_month == 6) {
-					include "calendar/june.php";
-				}
-				else if($current_month == 7) {
-					include "calendar/july.php";
-				}
-				else if($current_month == 8) {
-					include "calendar/august.php";
-				}
-				else if($current_month == 9) {
-					include "calendar/september.php";
-				}
-				else if($current_month == 10) {
-					include "calendar/october.php";
-				}
-				else if($current_month == 11) {
-					include "calendar/november.php";
-				}
-				else if($current_month == 12) {
-					include "calendar/december.php";
-				}
-				
 			?>
+			
 			</div>
 			<!-- End of Month Calendar -->
 			<!-- End of Month Calendar -->

@@ -89,17 +89,47 @@
 		<div class="row">
 			
 			<div class="col-md-12">
+			<div class="center-div">
+			<h1 class="white-text">Reservations Today</h1>
+			<p class="white-text"><em>See Request Reservations to confirm the folling</em></p>
 			
 				<?php
 				// Display on the day request reservations
 				$this_day = date('Y-m-d');
 				
-				$select_all_reserve = "SELECT * FROM reservation WHERE reserv_date = '$this_day'";
+				$select_all_reserve = "SELECT * FROM reservation";
 				$select_all_reserve_query = $conn->query($select_all_reserve);
 				
 				if($select_all_reserve_query->num_rows > 0) {
 					
-					echo "There are record for today.";
+					echo "<table class='table'>";
+					echo "<tr>";
+					echo "<th>Reservation No.</th>";
+					echo "<th>Reserve Event</th>";
+					echo "<th>Date</th>";
+					echo "<th>Time</th>";
+					echo "<th>Status</th>";
+					echo "<th>User</th>";
+					echo "</tr>";
+					while($row_d = $select_all_reserve_query->fetch_assoc()) {
+						
+						if(extractDate($row_d['date_reserved']) == $this_day) {
+							echo "<tr>";
+							echo "<td>" . $row_d['reserv_num'] . "</td>";
+							echo "<td>" . $row_d['event_type'] . "</td>";
+							echo "<td>" . dateName($row_d['reserv_date']) . "</td>";
+							echo "<td>" . num_to_time($row_d['reserv_time']) . "</td>";
+							echo "<td>" . $row_d['status'] . "</td>";
+							echo "<td>" . $row_d['username'] . "</td>";
+							echo "</tr>";
+							
+							
+						}
+						
+						
+					}
+					
+					echo "</table>";
 					
 				}
 				else {
@@ -108,10 +138,78 @@
 					
 				}
 				
+				//function to extract date in datetime format
+				function extractDate($datetime) {
+					
+					$date = date("Y-m-d",strtotime($datetime));
+					
+					return $date;
+					
+				}
+				
+				// Function that converts php date to word
+				function dateName($date) {
+					
+					$result = "";
+					
+					$convert_date = strtotime($date);
+					$month = date('F',$convert_date);
+					$year = date('Y',$convert_date);
+					$name_day = date('l',$convert_date);
+					$day = date('j',$convert_date);
+					
+					
+					$result = $month . " " . $day . ", " . $year . " - " . $name_day;
+					
+					return $result;
+				}
+				
+				/*
+* Function to convert Number values of Time to Time Slots
+* Calling this function to convert certain values to time value
+* num_to_time()
+*/
+	
+	function num_to_time($val) {
+		
+		if($val == 1) {
+			$val = "8:00am";
+		}
+		else if ($val == 2) {
+			$val = "9:00am";
+		}
+		else if ($val == 3) {
+			$val = "10:00am";
+		}
+		else if ($val == 4) {
+			$val = "11:00am";
+		}
+		else if ($val == 5) {
+			$val = "12:00pm";
+		}
+		else if ($val == 6) {
+			$val = "1:00pm";
+		}
+		else if ($val ==7) {
+			$val = "2:00pm";
+		}
+		else if ($val == 8) {
+			$val = "3:00pm";
+		}
+		else if ($val == 9) {
+			$val = "4:00pm";
+		}
+		else if ($val == 10) {
+			$val = "5:00pm";
+		}
+		
+		return $val;
+		
+	}
 				?>
 			
 			</div>
-		
+			</div>
 		</div>
 	</div>
 

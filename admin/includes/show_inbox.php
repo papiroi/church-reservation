@@ -14,10 +14,10 @@
 ?>
 <table class="table ">
 	<tr>
-		<th>MessageID</th>
+		<th>Sender</th>
 		<th>Message</th>
 		<th>Date Send</th>
-		<th>Sender</th>
+		<th> </th>
 	</tr>
 <?php
 	/*
@@ -41,12 +41,20 @@
 		
 		while($q_row = $q_select_sent->fetch_assoc()) {
 		
+
+		
+			echo "<form action='reply.php' method='post'>";
+		
+		
+			echo "<input type='hidden' name='conversation' value='" . $q_row['convID'] . "'";
+			
 			echo "<tr>";
-			echo "<td>" . $q_row['convID'] . "</td>";
-			echo "<td>" . $q_row['Content'] . "</td>";
-			echo "<td>" . $q_row['dateSent'] . "</td>";
 			echo "<td>" . $q_row['sender'] . "</td>";
+			echo "<td>" . mb_substr($q_row['Content'],0,15) . "...</td>";
+			echo "<td>" . $q_row['dateSent'] . "</td>";
+			echo "<td><input type='submit' value='View/Reply' class='btn btn-warning'</td>";
 			echo "</tr>";
+			echo "</form>";
 		}
 	}
 	else {

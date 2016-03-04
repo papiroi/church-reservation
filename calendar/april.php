@@ -68,7 +68,10 @@
 			?>
 				
 			<table class="table table-bordered">
-			<caption class="white-text"><strong><?php echo $month_name . " " . $year;?>&nbsp;<button class="btn btn-primary" onclick="may();">Next Month</button></strong></caption>
+			<caption class="white-text"><strong>
+			<a href="reservation.php?month=3" class="btn btn-primary">&lt;&lt;</a>
+			<?php echo $month_name . " " . $year;?>&nbsp;
+			<a href="reservation.php?month=5" class="btn btn-primary">&gt;&gt;</a></strong></caption>
 			<tr align=left><th>Su</th><th>M</th><th>Tu</th><th>W</th><th>Th</th><th>F</th><th>Sa</th></tr>
 			<?php
 				
@@ -90,14 +93,14 @@
 					if ($wday==0) //Start a new row every Sunday
 						echo "<tr align=center>";
 
-						echo "<td onclick='showEvent($day);' id='day" . $day;
+						echo "<td onclick='showEvent($day,$month_num);' id='day" . $day;
 						//This function Highlights the date with reservation in green
 						if(getDateReserve($conn,$day,$month_num)) {
 							echo "' bgcolor='green'>"; //highlight TODAY in green
-							echo "<a href='#' class='white-text' title='Click to View Schedule'>$day</a></td>";
+							echo "<a href='javascript: void(0)' class='white-text' title='Click to View Schedule'>$day</a></td>";
 						}
 						else {
-							echo "'><a href='#' class='white-text' title='Click to View Schedule'>$day</a></td>";
+							echo "'><a href='javascript: void(0)' class='white-text' title='Click to View Schedule'>$day</a></td>";
 						}
 						if ($wday==6)
 							echo "</tr>"; //If today is Saturday, close this row
@@ -110,7 +113,7 @@
 
 				while($wday <=6 ) //Until we get through Saturday
 				{
-				echo "<td> </td>"; //Output an empty cell
+				//echo "<td> </td>"; //Output an empty cell
 				$wday++;
 				}
 				echo "</tr></table>";
