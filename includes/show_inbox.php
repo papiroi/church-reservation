@@ -15,10 +15,9 @@
 <table class="table">
 <caption><span class="white-text"><i>Click on MessageID to Show Details</i></span></caption>
 	<tr>
-		<th>MessageID</th>
+		<th>Sender</th>
 		<th>Message</th>
 		<!--<th>Date Send</th>-->
-		<th>Sender</th>
 	</tr>
 <?php
 	/*
@@ -43,12 +42,11 @@
 		while($q_row = $q_select_sent->fetch_assoc()) {
 		
 			echo "<tr>";
-			echo "<td><a class='white-text' href='#'><span data-toggle='modal' data-target='#" . $q_row['convID'] . "'>" . $q_row['convID'] . "</span></a>";
+			echo "<td><a class='white-text' href='#'><span data-toggle='modal' data-target='#" . $q_row['MessageID'] . "'>" . $q_row['sender'] . "</span></a>";
 			include "includes/show_inbox_modal.php";
 			echo "</td>";
 			echo "<td>" . $q_row['Content'] . "</td>";
 			//echo "<td>" . $q_row['dateSent'] . "</td>";
-			echo "<td>" . $q_row['sender'] . "</td>";
 			echo "</tr>";
 
 

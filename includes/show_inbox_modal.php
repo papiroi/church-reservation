@@ -1,5 +1,5 @@
 
-<div class="modal fade" id="<?php echo $q_row['convID']; ?>" role="dialog">
+<div class="modal fade" id="<?php echo $q_row['MessageID']; ?>" role="dialog">
 	<div class="modal-dialog">
     
 		<!-- Modal content-->

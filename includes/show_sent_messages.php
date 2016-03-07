@@ -8,7 +8,6 @@
 ?>
 <table class="table">
 	<tr>
-		<th>MessageID</th>
 		<th>Message</th>
 		<th>Date Send</th>
 		<th>Status</th>
@@ -36,7 +35,6 @@
 		while($q_row = $q_select_sent->fetch_assoc()) {
 		
 			echo "<tr>";
-			echo "<td>" . $q_row['convID'] . "</td>";
 			echo "<td>" . $q_row['Content'] . "</td>";
 			echo "<td>" . $q_row['dateSent'] . "</td>";
 			echo "<td>" . readUnread($q_row['status']) . "</td>";

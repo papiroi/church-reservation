@@ -46,7 +46,7 @@
 			echo "<form action='reply.php' method='post'>";
 		
 		
-			echo "<input type='hidden' name='conversation' value='" . $q_row['convID'] . "'";
+			echo "<input type='hidden' name='conversation' value='" . $q_row['MessageID'] . "'";
 			
 			echo "<tr>";
 			echo "<td>" . $q_row['sender'] . "</td>";

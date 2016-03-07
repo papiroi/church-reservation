@@ -86,9 +86,9 @@
 				// if there are no message it will display 
 				// Error message
 				if(isset($_POST['conversation']) && !empty($_POST['conversation'])) {
-					$convID = $_POST['conversation'];
+					$messageID = $_POST['conversation'];
 					
-					$select_message = "SELECT * FROM messages WHERE convID = '$convID'";
+					$select_message = "SELECT * FROM messages WHERE MessageID = '$messageID'";
 					$select_message_query = $conn->query($select_message);
 					
 					while ($row = $select_message_query->fetch_assoc()) {
