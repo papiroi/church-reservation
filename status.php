@@ -137,7 +137,7 @@
 	if(@$select_query_result -> num_rows > 0) {
 		
 		//echo "There is a reservation.";
-		echo "<table class='table table-bordered'>";
+		echo "<table class='table'>";
 		echo "<tr>";
 		echo "<th>Reservation No.</th>";
 		echo "<th>Reserve Event</th>";
@@ -149,7 +149,10 @@
 		while($row = $select_query_result->fetch_assoc()) {
 			
 			echo "<tr>";
-			echo "<td><a href='print.php?r=" .  $row['reserv_num']. "' target='_blank'>" . $row['reserv_num'] . "</a></td>";
+			if($row['confirmation'] == 'Confirmed')
+				echo "<td><a href='print.php?r=" .  $row['reserv_num']. "' target='_blank'>" . $row['reserv_num'] . "</a></td>";
+			else 
+				echo "<td>" . $row['reserv_num'] . "</td>";
 			echo "<td>" . $row['event_type'] . "</td>";
 			echo "<td>" . dateName($row['reserv_date']) . "</td>";
 			echo "<td>" . num_to_time($row['reserv_time']) . "</td>";

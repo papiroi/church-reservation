@@ -63,6 +63,7 @@
 
 	<script>
 		$(document).ready(function(){
+			//alert('ok');
 			$("#bap-type").hide();
 			
 			
@@ -98,12 +99,49 @@
 					$("#priest").show(100);
 				}
 			});
+		
+			$(function() {
+				$("#dateselect" ).datepicker({minDate: 3, maxDate: 60});
+			});
+		
+		
 		});
 		
-		$(function() {
-			$( "#dateselect" ).datepicker({minDate: 3, maxDate: 60});
+		// condition to select only thursday in selecting confirmation
+		$("#eventtype").focusout(function() {
+			
+			if(document.getElementById('eventtype').value == 'Confirmation') {
+			
+				$( "#dateselect" ).datepicker({minDate: 3, maxDate: 60, beforeShowDay:DisableThursday});
+			
+			}
+			
+		
 		});
 		
+		function DisableThursday(date) {
+		
+			var day = date.getDay();
+			// If day == 1 then it is MOnday
+			if (day == 4) {
+			 
+				return [true] ; 
+			 
+			}
+			else { 
+			 
+				return [false] ;
+			
+			}
+		}
+		  
+		/*
+		 $(function() {
+			$( "#datepicker" ).datepicker({
+				beforeShowDay: DisableMonday
+			});
+		 });
+		 */
 	</script>
 	<!-- Custom CSS for Background Image for this page -->
 	<link rel="stylesheet" href="css/background-image.css" />

@@ -70,7 +70,7 @@
 <body>
 	<div class="container">
 
-		<h1 class="white-text">Admin Pannel: View Schedules</h1>
+		<h1 class="white-text">Admin Pannel</h1>
 		
 		<?php
 			if(isset($_GET['s']) && $_GET['s'] == 'logout') {
@@ -91,6 +91,7 @@
 		?>
 
 		<div class="center-div">
+		<h2 class="white-text">Confirmed Reservations</h2>
 		<br/>
 			
 <?php
@@ -143,7 +144,7 @@
 	if($select_query_result -> num_rows > 0) {
 		
 		//echo "There is a reservation.";
-		echo "<table class='table table-bordered'>";
+		echo "<table class='table'>";
 		echo "<tr>";
 		echo "<th>Reservation No.</th>";
 		echo "<th>Reserve Event</th>";
