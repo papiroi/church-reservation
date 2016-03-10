@@ -35,33 +35,33 @@
 						<strong>Home</strong>
 						</a>
                     </li>
-                    <li class="dropdown">
+                   <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><strong>Services<span class="caret"></span></strong></a>
 						
 						<ul class="dropdown-menu">
 						
-							<li class="menu-dropdown"><a href="services.php#baptism">Baptism</a></li>
+							<li class="menu-dropdown"><a href="services.php?services=baptism">Baptism</a></li>
 							
-							<li><a href="services.php#confirmation">Confirmation</a></li>
+							<li><a href="services.php?services=confirmation">Confirmation</a></li>
 							
-							<li><a href="services.php#funeral">Funeral</a></li>
+							<li><a href="services.php?services=funeral">Funeral</a></li>
 							
 							<!-- Start Submenu -->
 							
 							<li>
 							
-								<a href="services.php#seminars">Seminars</a>
+								<a href="services.php?services=seminars">Seminars</a>
 								<ul>
-									<li class="sub-menu1"><a href="services.php#forconfirmation">For Confirmation</a></li>
+									<li class="sub-menu1"><a href="services.php?services=forconfirmation">For Confirmation</a></li>
 									
-									<li class="sub-menu1"><a href="services.php#forwedding">For Wedding</a></li>
+									<li class="sub-menu1"><a href="services.php?services=forwedding">For Wedding</a></li>
 								</ul>
 								
 							</li>
 							
 							<!-- End of Submenu -->
 							
-							<li><a href="services.php#wedding">Wedding</a></li>
+							<li><a href="services.php?services=wedding">Wedding</a></li>
 							
 						</ul>
                     </li>

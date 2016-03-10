@@ -193,6 +193,7 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 			<!-- Start of Month Calendar -->
 			<div id="calendar" class="calendar">
 			<?php
+			
 				$current_month =  date("m");
 				
 				if($current_month == 1) {
@@ -231,6 +232,7 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 				else if($current_month == 12) {
 					include "calendar/december.php";
 				}
+				
 			?>
 			</div>
 			<!-- End of Month Calendar -->

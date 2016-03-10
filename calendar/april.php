@@ -71,7 +71,7 @@
 			<caption class="white-text"><strong><?php echo $month_name . " " . $year;?>&nbsp;<button class="btn btn-primary" onclick="may();">Next Month</button></strong></caption>
 			<tr align=left><th>Su</th><th>M</th><th>Tu</th><th>W</th><th>Th</th><th>F</th><th>Sa</th></tr>
 			<?php
-
+				
 				$day = 1; //This variable will track the day of the month
 				$wday = $first_week_day; //This variable will track the day of the week (0-6, with Sunday being 0)
 				$firstweek = true; //Initialize $firstweek variable so we can deal with it first
