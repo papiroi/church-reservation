@@ -164,8 +164,12 @@
 			echo "<td>" . $row['status'] . "</td>";
 			echo "<td>" . $row['username'] . "</td>";
 			echo "<td><input type='submit' value='Confirm?' class='btn btn-primary'/></td>";
-			echo "</tr>";
 			echo "</form>";
+			echo "<form action='delete.php' method='post'>";
+			
+			echo "</form>";
+			echo "</tr>";
+			
 		}
 		echo "</table>";
 		

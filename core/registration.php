@@ -38,9 +38,9 @@ class Registration {
 		
 	}
 	
-	public function check_user($user) {
+	public function check_user($user,$email) {
 	
-		$check_query = "SELECT * FROM users WHERE username = '$user'";
+		$check_query = "SELECT * FROM users WHERE username = '$user' OR email = '$email'";
 		
 		$check_query_result = $this->conn->query($check_query);
 		
@@ -54,8 +54,10 @@ class Registration {
 	
 	public function register() {
 	
-		if($this->check_user($this->username) == 'true') {
-			echo "<h3>User Already Exists!</h3>";
+		if($this->check_user($this->username,$this->email) == 'true') {
+			echo "<span style='color: red; font-size: 25px;'>User Already Exists!</span>";
+			
+			return false;
 		}
 		else {
 			$reg_query = "INSERT INTO users (username, password, firstname, lastname, mobile, email, address, bday, status, dateReg)
@@ -78,9 +80,13 @@ class Registration {
 				// Successfull Creation of User
 				echo "<h2 class='success-register'>Succesfully Created!</h2>
 					<h3 class='link-login'><a href='login.php' >Click Here To Login</a></h3>";
+					
+				return true;
 			}
 			else {
 				echo "Error in Registration! Try Again Later.";
+				
+				return false;
 			}
 		}
 	}

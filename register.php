@@ -89,7 +89,7 @@
 		<div class="row">
 		<div class="col-md-5">
 		<div class="center-div">
-		<span class="error_message">
+		<div class="error_message">
 <!-- Start of PHP Code in Registration -->
 <?php
 	if(isset($_POST['username']) && !empty($_POST['username'])) {
@@ -142,8 +142,44 @@
 			// Writing User Registration Information to the Database
 			$reg = new Registration($conn, $firstname, $lastname, $mobile, $email, $address, $bday, $username, $password);
 		
-			echo $reg -> register();
 			
+			// select email if there is registered in the database
+			$select_email = "SELECT * FROM users WHERE email = '$email' LIMIT 1";
+			$select_email_query = $conn->query($select_email);
+			
+			if($select_email_query->num_rows > 0 ) {
+				
+				echo "<span style='color: red; font-size: 25px;'>The email is already used by another user.</span>";
+				
+				$email_error = "<spn style='color:red; font-size: 25px;'>*</span>";
+				
+				$ret_fname = $firstname;
+				$ret_lname = $lastname;
+				$ret_mobile = $mobile;
+				$ret_address = $address;
+				$ret_bday = $bday;
+				
+			}
+			else {
+				
+				if($reg -> register() == false) {
+					
+					// the value inputed will be there
+					// but the username and email is empty
+					$ret_fname = $firstname;
+					$ret_lname = $lastname;
+					$ret_mobile = $mobile;
+					$ret_address = $address;
+					$ret_bday = $bday;
+					
+					
+				}
+				else {
+					
+					echo $reg -> register();
+					
+				}
+			}
 		//}
 		//else {
 			
@@ -159,14 +195,15 @@
 
 ?>
 <!-- End of PHP Code in Registration -->
-			</span>
+			</div>
 			<h3 class="white-text">Registration Form</h3>
 			<form autocomplete="off" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
 				
 				<div id="firstnameclassdiv" class="form-group has-feedback">
 				<label for="firstname">First Name:</label>
 				<input type="text" name="firstname" id="firstname" class="form-control input-width" 
-					placeholder="First Name" title="First Name Field is Required!" value="" required autofocus />
+					placeholder="First Name" title="First Name Field is Required!" value="<?php echo @$ret_fname; ?>"
+					required autofocus />
 				<span id="firstnameclassspan" class="glyphicon form-control-feedback"></span>
 				</div>
 				
@@ -175,7 +212,7 @@
 				<div id="lastnameclassdiv" class="form-group has-feedback">
 				<label for="lastname">Lastname:</label>
 				<input type="text" name="lastname" id="lastname" class="form-control input-width" 
-					placeholder="Last Name" title="Lastname is Required!" value="" required/>
+					placeholder="Last Name" title="Lastname is Required!" value="<?php echo @$ret_lname; ?>" required/>
 				<span id="lastnameclassspan" class="glyphicon form-control-feedback"></span>
 				</div>
 				
@@ -184,14 +221,14 @@
 				<div id="mobileclassdiv" class="form-group has-feedback">
 				<label for="mobile">Mobile Number:</label><i> 11 Digit Number</i>
 				<input type="number" name="mobile" id="mobile" class="form-control input-width" 
-					placeholder="Mobile Number" title="Mobile Number is Required!" value="" required/>
+					placeholder="Mobile Number" title="Mobile Number is Required!" value="<?php echo @$ret_mobile; ?>" required/>
 				<span id="mobileclassspan" class="glyphicon form-control-feedback"></span>
 				</div>
 				
 				<br/>
 				
 				<div id="emailclassdiv" class="form-group has-feedback">
-				<label for="email">Email:</label>
+				<label for="email">Email:</label><?php echo @$email_error; ?>
 				<input type="email" name="email" id="email" class="form-control input-width" 
 					placeholder="Email Address" title="Email Address is Required!" value="" required/>
 				<span id="emailclassspan" class="glyphicon form-control-feedback"></span>
@@ -202,7 +239,7 @@
 				<div id="addressclassdiv" class="form-group has-feedback">
 				<label for="address">Address:</label>
 				<input type="text" name="address" id="address" class="form-control input-width" 
-					placeholder="Address" title="Address is Required" value="" required/>
+					placeholder="Address" title="Address is Required" value="<?php echo @$ret_address; ?>" required/>
 				<span id="addressclassspan" class="glyphicon form-control-feedback"></span>
 				</div>
 				
@@ -215,7 +252,7 @@
 			
 			<div id="bdayclassdiv" class="form-group has-feedback">
 				<label for="birthday">Birthday:</label>
-				<input type="text" name="birthday" id="birthday" class="form-control" required/>
+				<input type="text" name="birthday" id="birthday" value="<?php echo @$ret_bday; ?>" class="form-control" required/>
 				<span id="bdayclassspan" class="glyphicon form-control-feedback"></span>
 				</div>
 				
