@@ -149,9 +149,9 @@
 			
 			if($select_email_query->num_rows > 0 ) {
 				
-				echo "<span style='color: red; font-size: 25px;'>The email is already used by another user.</span>";
+				echo "<div style='color: red; background-color: black; font-size: 25px; border: 1px solid red; text-align: center;'>The email is already used by another user.</div>";
 				
-				$email_error = "<spn style='color:red; font-size: 25px;'>*</span>";
+				$email_error = "<span style='color:red; font-size: 25px;'>*</span>";
 				
 				$ret_fname = $firstname;
 				$ret_lname = $lastname;
@@ -162,7 +162,14 @@
 			}
 			else {
 				
-				if($reg -> register() == false) {
+				if($reg -> register()) {
+					
+					
+					echo $reg -> register();
+					
+					
+				}
+				else {
 					
 					// the value inputed will be there
 					// but the username and email is empty
@@ -171,13 +178,6 @@
 					$ret_mobile = $mobile;
 					$ret_address = $address;
 					$ret_bday = $bday;
-					
-					
-				}
-				else {
-					
-					echo $reg -> register();
-					
 				}
 			}
 		//}
