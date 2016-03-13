@@ -90,15 +90,18 @@
 			
 			<div class="col-md-12">
 			<div class="center-div">
-			<h1 class="white-text">Reservations Today</h1>
-			<p class="white-text"><em>See Request Reservations to confirm the folling</em></p>
+			
 			
 				<?php
-				// Display on the day request reservations
+				
 				$this_day = date('Y-m-d');
 				
-				$select_all_reserve = "SELECT * FROM reservation";
+				
+				// This part displays the inconmming reservation for the current month
+				$select_all_reserve = "SELECT * FROM reservation WHERE reserv_date > '$this_day' AND confirmation = 'Confirmed'";
 				$select_all_reserve_query = $conn->query($select_all_reserve);
+				
+				echo "<h1 class='white-text'>This Month Incomming Reservations</h1>";
 				
 				if($select_all_reserve_query->num_rows > 0) {
 					
@@ -113,7 +116,9 @@
 					echo "</tr>";
 					while($row_d = $select_all_reserve_query->fetch_assoc()) {
 						
-						if(extractDate($row_d['date_reserved']) == $this_day) {
+						
+						// This script will use to select Current Date Event
+						/*if(extractDate($row_d['date_reserved']) == $this_day) {
 							echo "<tr>";
 							echo "<td>" . $row_d['reserv_num'] . "</td>";
 							echo "<td>" . $row_d['event_type'] . "</td>";
@@ -123,9 +128,16 @@
 							echo "<td>" . $row_d['username'] . "</td>";
 							echo "</tr>";
 							
-							
-						}
+						}*/
 						
+						echo "<tr>";
+						echo "<td>" . $row_d['reserv_num'] . "</td>";
+						echo "<td>" . $row_d['event_type'] . "</td>";
+						echo "<td>" . dateName($row_d['reserv_date']) . "</td>";
+						echo "<td>" . num_to_time($row_d['reserv_time']) . "</td>";
+						echo "<td>" . $row_d['status'] . "</td>";
+						echo "<td>" . $row_d['username'] . "</td>";
+						echo "</tr>";
 						
 					}
 					

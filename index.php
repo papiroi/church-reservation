@@ -160,9 +160,9 @@
 	}
 	else {
 		
-		//echo "Mass Schedules";
+		//echo "user Limitations";
 		
-		include "includes/mass_sched.php";
+		include "includes/user_limit.php";
 		
 	}
 ?>

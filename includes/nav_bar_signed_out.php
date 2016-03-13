@@ -24,7 +24,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-				<a class="navbar-brand hidden-lg hidden-md" href="javascript: void(0)">Menu</a>
+				<a class="navbar-brand hidden-lg hidden-md hidden-sm" href="javascript: void(0)">Menu</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -65,8 +65,22 @@
 							
 						</ul>
                     </li>
-                    <li>
-                        <a href="about.php"><strong>About</strong></a>
+                    <li class="dropdown">
+                        <a href="javascript: void(0)" class="dropdown-toggle" data-toggle="dropdown"><strong>About<span class="caret"></span></strong></a>
+						
+						<ul class="dropdown-menu">
+						
+							<li class="menu-dropdown"><a href="about.php?about=history">History of Cathedral</a></li>
+							
+							<li><a href="about.php?about=diocese">Diocese of Tarlac</a></li>
+							
+							<li><a href="about.php?about=orgchart">Organizational Chart</a></li>
+							
+							<li><a href="about.php?about=masssched">Mass Schedule</a></li>
+							
+							<li><a href="about.php?about=priestsched">Priest Schedule</a></li>
+							
+						</ul>
                     </li>
 					
 					<li id="user-position"><a href="#">
