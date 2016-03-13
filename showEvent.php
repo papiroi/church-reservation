@@ -68,7 +68,7 @@
 	
 	$date_reserved = $current_year . "-" . $current_month . "-" . $day;
 	
-	$select_date = "SELECT * FROM reservation WHERE reserv_date = '$date_reserved' ORDER BY reserv_time DESC";
+	$select_date = "SELECT * FROM reservation WHERE reserv_date = '$date_reserved' ORDER BY reserv_time ASC";
 	
 	$q_select_date = $conn->query($select_date);
 	

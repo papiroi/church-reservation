@@ -339,13 +339,17 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 				}
 			
 			?>
-			
+			<h4><span style="color: #ff0000;">Red Mark</span> <small><span class="white-text">on the Date Means, the Date is Full</span></small></h4>
+			<h4><span style="color: #00ff00">Green Mark</span> <small><span class="white-text">on the Date Means, the Date has Reservation But not Full. You Can click the Date to show the Reservation</span></small></h4>
+		
 			</div>
 			<!-- End of Month Calendar -->
 			<!-- End of Month Calendar -->
 			<!-- End of Month Calendar -->
 			<!-- End of Month Calendar -->
 		</div>
+		
+		
 	</div>
 </div>
 
