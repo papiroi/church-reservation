@@ -123,11 +123,10 @@
 						
 						<ul class="dropdown-menu">
 						
-							<li class="menu-dropdown"><a href="javascript: void(0)">Download1</a></li>
+							<li class="menu-dropdown"><a href="javascript: void(0)">Requirement Form(For Wedding)</a></li>
 							
-							<li><a href="javascript: void(0)">Download2</a></li>
+							<li><a href="javascript: void(0)">Requirement Form(For Baptism)</a></li>
 							
-							<li><a href="javascript: void(0)">Download3</a></li>
 							
 						</ul>
                     </li>

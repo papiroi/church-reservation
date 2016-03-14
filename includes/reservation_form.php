@@ -160,10 +160,19 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 				
 				<br/>
 				
+				<!-- Default Date Select -->
 				<label for="dateselect">Select Date:</label>
-				<input type="text" id="dateselect" name="dateselect" class="form-control" required/>
+				<input type="text" id="dateselect" name="dateselect" class="form-control" />
 				
 				
+				<!-- Date Select for Confirmation -->
+				<!---<label for="dateselect">Select Date: Confirmation</label>-->
+				<input type="text" id="dateselect2" name="dateselect" class="form-control" />
+				
+				
+				<!-- Date Select for Seminars -->
+				<!--<label for="dateselect">Select Date: Seminars</label>-->
+				<input type="text" id="dateselect3" name="dateselect" class="form-control" />
 				
 				<br/>
 				

@@ -152,7 +152,7 @@
 		echo "<th>Time</th>";
 		echo "<th>Status</th>";
 		echo "<th>User</th>";
-		echo "<th>Action</th>";
+		echo "<th colspan=2>Action</th>";
 		echo "</tr>";
 		while($row = $select_query_result->fetch_assoc()) {
 			echo "<form action='confirm.php' method='post'>";
@@ -163,10 +163,11 @@
 			echo "<td>" . num_to_time($row['reserv_time']) . "</td>";
 			echo "<td>" . $row['status'] . "</td>";
 			echo "<td>" . $row['username'] . "</td>";
-			echo "<td><input type='submit' value='Confirm?' class='btn btn-primary'/></td>";
+			echo "<td><input type='submit' value='Confirm' class='btn btn-primary'/></td>";
 			echo "</form>";
 			echo "<form action='delete.php' method='post'>";
-			
+			echo "<input type='hidden' name='reserv_num' value='" . $row['reserv_num'] . "'/>";
+			echo "<td><input type='submit' value='Delete' class='btn btn-danger'/></td>";
 			echo "</form>";
 			echo "</tr>";
 			

@@ -65,6 +65,8 @@
 		$(document).ready(function(){
 			//alert('ok');
 			$("#bap-type").hide();
+			$("#dateselect2").hide();
+			$("#dateselect3").hide();
 			
 			
 			$("#eventtype").click(function(){
@@ -78,6 +80,42 @@
 					$("#lblpriest").show(100);
 					$("#priest").show(100);
 				}
+				
+				if(document.getElementById('eventtype').value == 'Confirmation') {
+				
+					$("#dateselect2").show();
+					$("#dateselect3").hide();
+					$("#dateselect").hide();
+					$("#lblpriest").hide();
+					$("#priest").hide();
+					
+				}
+				else if(document.getElementById('eventtype').value == 'For Confirmation') {
+				
+					$("#dateselect2").hide();
+					$("#dateselect3").show();
+					$("#dateselect").hide();
+					$("#lblpriest").hide();
+					$("#priest").hide();
+			
+				}
+				else if(document.getElementById('eventtype').value == 'For Wedding') {
+				
+					$("#dateselect2").hide();
+					$("#dateselect3").show();
+					$("#dateselect").hide();
+					$("#lblpriest").hide();
+					$("#priest").hide();
+			
+				}
+				else {
+				
+					$("#dateselect2").hide();
+					$("#dateselect3").hide();
+					$("#dateselect").show();
+				
+				}
+				
 			});
 			
 			
@@ -108,16 +146,18 @@
 		});
 		
 		// condition to select only thursday in selecting confirmation
-		$("#eventtype").focusout(function() {
-			
-			if(document.getElementById('eventtype').value == 'Confirmation') {
-			
-				$( "#dateselect" ).datepicker({minDate: 3, maxDate: 60, beforeShowDay:DisableThursday});
-			
-			}
-			
+	
+			$(function() {
+				$("#dateselect2").datepicker({minDate: 3, maxDate: 60, beforeShowDay:DisableThursday});
+			});
 		
+			
+		// condition to select only saturdays in selecting seminars
+		$(function() {
+				$("#dateselect3").datepicker({minDate: 3, maxDate: 60, beforeShowDay:DisableSaturday});
 		});
+		
+		
 		
 		function DisableThursday(date) {
 		
@@ -134,6 +174,24 @@
 			
 			}
 		}
+		
+		
+		function DisableSaturday(date) {
+		
+			var day = date.getDay();
+			// If day == 1 then it is MOnday
+			if (day == 6) {
+			 
+				return [true] ; 
+			 
+			}
+			else { 
+			 
+				return [false] ;
+			
+			}
+		}
+		
 		  
 		/*
 		 $(function() {
