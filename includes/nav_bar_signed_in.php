@@ -49,6 +49,7 @@
 						<ul class="dropdown-menu">
 							<li class="menu-dropdown"><a href="reservation.php">Scheduling and Reservation Form</a></li>
 							<li><a href="status.php">Reservations</a></li>
+							<li><a href="archive.php">Archive</a></li>
 						</ul>
 					</li>
                     <li>
@@ -123,9 +124,9 @@
 						
 						<ul class="dropdown-menu">
 						
-							<li class="menu-dropdown"><a href="javascript: void(0)">Requirement Form(For Wedding)</a></li>
+							<li class="menu-dropdown"><a href="forms/wedding.pdf" target="_blank">Requirement Form(For Wedding)</a></li>
 							
-							<li><a href="javascript: void(0)">Requirement Form(For Baptism)</a></li>
+							<li><a href="forms/bap.pdf" target="_blank">Requirement Form(Baptism - No Birth Certificate)</a></li>
 							
 							
 						</ul>

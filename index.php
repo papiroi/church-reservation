@@ -60,6 +60,9 @@
 	//Create Messages Table
 	$db->Messages();
 	
+	//Create priests table
+	$db->priests();
+	
 ?>
 
 

@@ -1,6 +1,8 @@
 
 <div class="footer">
 	
-	Mobile No.: 09xxxxxxxxxx &nbsp; Email: email@email.com
+	Tel. No.: (045) 982-0859 
+	<br/>
+	F. Tanedo St. Tarlac City, Philippines 2300
 
 </div>

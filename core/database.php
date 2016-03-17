@@ -178,5 +178,23 @@ class Database {
 	}
 	
 	
+	// Records of the priests
+	public function priests() {
+	
+		$create_priests_table = "CREATE TABLE IF NOT EXISTS priests (
+			priestID int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+			name varchar(200) NOT NULL,
+			sched varchar(100) NOT NULL,
+			dateCreated datetime NOT NULL
+		)";
+		
+		$create_priests_table_query = $this->conn->query($create_priests_table);
+		
+		if(!$create_priests_table_query)
+			exit("p Error:1");
+	
+	
+	}
+	
 	// End of Database Class
 }

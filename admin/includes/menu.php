@@ -49,15 +49,40 @@
 						<strong>Home</strong>
 						</a>
                     </li>
-					<li>
-						<a href="reservations.php"><strong>Request Reservations</strong></a>
-					</li>
-					<li>
-						<a href="confirmed_reserve.php"><strong>Confirmed Reservations</strong></a>
-					</li>
-                    <li>
-						<a href="edit_announcement.php"><strong>Edit Announcement</strong></a>
+					<li class="dropdown">
+                        <a href="javascript: void(0)" class="dropdown-toggle" data-toggle="dropdown"><strong>Reservation<span class="caret"></span></strong></a>
+						
+						<ul class="dropdown-menu">
+						
+							<li>
+								<a href="reservations.php"><strong>Request Reservations</strong></a>
+							</li>
+							<li>
+								<a href="confirmed_reserve.php"><strong>Confirmed Reservations</strong></a>
+							</li>
+							<li>
+								<a href="archive.php"><strong>Archive</strong></a>
+							</li>
+							
+							
+						</ul>
                     </li>
+					
+					<li class="dropdown">
+                        <a href="javascript: void(0)" class="dropdown-toggle" data-toggle="dropdown"><strong>Preferences<span class="caret"></span></strong></a>
+						
+						<ul class="dropdown-menu">
+							<li>
+								<a href="priest.php"><strong>Priests</strong></a>
+							</li>
+							<li>
+								<a href="add_priests.php"><strong>Add Priest Info</strong></a>
+							</li>
+							<li>
+								<a href="edit_announcement.php"><strong>Edit Announcement</strong></a>
+							</li>
+							
+						</ul>
                     </li>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><strong>Messages

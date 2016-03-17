@@ -81,10 +81,9 @@
 
 	<!-- Start of Output for Reservation Status -->
 	<div class="center-div">
-	<h2 class="white-text">Reservations</h2>
+	<h2 class="white-text">Archive</h2>
 	<button class="btn btn-primary" onclick="goBack();">Back</button>
 	<br/>
-	<span class="white-text"><i>Click on Reservation Number to Print</i></span>
 	<br/>
 <?php
 
@@ -130,8 +129,9 @@
 		return $val;
 		
 	}
-
-	$select_all_reserv = "SELECT * FROM reservation WHERE username = '$username' AND status = 'Active' AND reserv_date >= CURRENT_DATE() ORDER BY reserv_date ASC";
+	
+	echo "Past Reservations";
+	$select_all_reserv = "SELECT * FROM reservation WHERE username = '$username' AND reserv_date < CURRENT_DATE() ORDER BY reserv_date ASC";
 	$select_query_result = $conn->query($select_all_reserv);
 	
 	if(@$select_query_result -> num_rows > 0) {
@@ -150,13 +150,14 @@
 			
 			echo "<tr>";
 			if($row['confirmation'] == 'Confirmed')
-				echo "<td><a href='print.php?r=" .  $row['reserv_num']. "' target='_blank'>" . $row['reserv_num'] . "</a></td>";
+				echo "<td>" . $row['reserv_num'] . "</td>";
 			else 
 				echo "<td>" . $row['reserv_num'] . "</td>";
 			echo "<td>" . $row['event_type'] . "</td>";
 			echo "<td>" . dateName($row['reserv_date']) . "</td>";
 			echo "<td>" . num_to_time($row['reserv_time']) . "</td>";
-			echo "<td>" . $row['status'] . "</td>";
+			//set static status as done
+			echo "<td>DONE</td>";
 			echo "<td>" . $row['confirmation'] . "</td>";
 			echo "</tr>";
 		
