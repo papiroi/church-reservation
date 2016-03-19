@@ -13,7 +13,7 @@
 
 ?>
 <table class="table">
-<caption><span class="white-text"><i>Click on MessageID to Show Details</i></span></caption>
+<caption><span class="white-text"><i>Click on Sender to Show Details</i></span></caption>
 	<tr>
 		<th>Sender</th>
 		<th>Message</th>
@@ -42,7 +42,7 @@
 		while($q_row = $q_select_sent->fetch_assoc()) {
 		
 			echo "<tr>";
-			echo "<td><a class='white-text' href='#'><span data-toggle='modal' data-target='#" . $q_row['MessageID'] . "'>" . $q_row['sender'] . "</span></a>";
+			echo "<td><a class='white-text' href='javascript: void(0)'><span data-toggle='modal' data-target='#" . $q_row['MessageID'] . "'>" . $q_row['sender'] . "</span></a>";
 			include "includes/show_inbox_modal.php";
 			echo "</td>";
 			echo "<td>" . $q_row['Content'] . "</td>";

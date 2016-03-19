@@ -46,24 +46,49 @@
 		header ("Location: login.php");
 
 	}
-
+	
 	if(isset($_POST['name']) && !empty($_POST['name'])) {
 	
+		$id = $_POST['priestid'];
 		$name = $_POST['name'];
 		$sched = $_POST['sched'];
 		
-		$add_priest = "INSERT INTO priests (name, sched, dateCreated)
-			VALUES ('$name','$sched',NOW())";
-			
-		$add_priest_query = $conn->query($add_priest);
+		$update_priest = "UPDATE priests SET name = '$name', sched = '$sched' WHERE priestID = '$id'";
+		$update_priest_query = $conn->query($update_priest);
 		
-		if($add_priest_query) {
+		if($update_priest_query) {
 		
-			$p_msg = "<div class='alert alert-info text-center'>
+			$update_msg = "<div class='alert alert-info text-center'>
 				<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-				Priest Added!</div>";
-			
+				Priest Info Updated!</div>";
+		
 		}
+		else {
+		
+			$update_msg = "<div class='alert alert-danger text-center'>
+				<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+				Failed to Update Record!</div>";
+		
+		}
+	
+	
+	}
+	
+	if(isset($_POST['id']) && !empty($_POST['id'])) {
+	
+		$id = $_POST['id'];
+		
+		$select_priest = "SELECT * FROM priests WHERE priestID = '$id'";
+		$select_priest_query = $conn->query($select_priest);
+		
+		while($p_row = $select_priest_query -> fetch_assoc()) {
+		
+			$priest_id = $p_row['priestID'];
+			$priest_name = $p_row['name'];
+			$priest_sched = $p_row['sched'];
+		
+		}
+	
 	
 	}
 
@@ -114,20 +139,21 @@
 		<div class="row">
 			
 			<div class="col-md-7">
-			<?php echo @$p_msg; ?>
+			<?php echo @$update_msg; ?>
 			<div class="center-div">
-				<h2 class='white-text'>Add Priest Info</h2>
+				<h2 class='white-text'>Update Priest Info</h2>
 				<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" autocomplete="off">
 					<label>Name:</label>
-					<input type="text" class="form-control" id="name" name="name"
+					<input type="hidden" name="priestid" value="<?php echo @$priest_id; ?>" />
+					<input type="text" value="<?php echo @$priest_name; ?>" class="form-control" id="name" name="name"
 						required autofocus placeholder="Name of Priest"/>
 					<br/>
 					<label>Schedule:</label>
-					<input type="text" class="form-control" id="sched" name="sched" placeholder="Schedule of the Priest" required />
+					<input type="text" value="<?php echo @$priest_sched; ?>" class="form-control" id="sched" name="sched" placeholder="Schedule of the Priest" required />
 					<br/>
-					<input type="submit" class="btn btn-primary" value="Save" />
+					<input type="submit" class="btn btn-primary" value="Update" />
 					&nbsp;&nbsp;
-					<input type="reset" class="btn btn-danger" value="Clear" />
+					<input type="reset" class="btn btn-danger" value="Clear All" />
 				</form>
 				
 			</div>

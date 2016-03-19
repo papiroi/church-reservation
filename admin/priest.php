@@ -95,7 +95,7 @@
 				<table class="table">
 					<th>Name</th>
 					<th>Schedule</th>
-					<th>Options</th>
+					<th colspan='2' class='text-center'>Options</th>
 				<?php
 					$select_priests = "SELECT * FROM priests";
 					$select_priests_query = $conn->query($select_priests);
@@ -113,7 +113,8 @@
 							echo "<input type='hidden' name='id' value='" . $p_row['priestID'] . "'/>";
 							echo "<input type='submit' value='Update' class='btn btn-primary'/>";
 							echo "</form>";
-							
+							echo "</td>";
+							echo "<td>";
 							echo "<form action='p_delete.php' method='post'>";
 							echo "<input type='hidden' name='id' value='" . $p_row['priestID'] . "'/>";
 							echo "<input type='submit' value='Remove' class='btn btn-danger'/>";

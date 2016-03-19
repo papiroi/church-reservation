@@ -161,7 +161,7 @@ class Database {
 
 		$create_messages_table = "CREATE TABLE IF NOT EXISTS messages (
 			MessageID int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
-			convID int(10) NOT NULL,
+			convID varchar(10) NOT NULL,
 			Content varchar(300) NOT NULL,
 			sender varchar(60) NOT NULL,
 			receiver varchar(10) NOT NULL,

@@ -14,12 +14,28 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 	
 	// Setting the Values in Input Form
 	$event_type = $_POST['eventtype'];
-	$event_date = date('y-m-d', strtotime($_POST['dateselect']));
+	
 	$event_time = $_POST['timeselect'];
 	
 	$type = $_POST['bap-type'];
 	
 	$username = $_SESSION['username'];
+	
+	// date setting
+	if($_POST['dateselect'] != '1970-01-01') {
+		$event_date = date('y-m-d', strtotime($_POST['dateselect']));
+	}
+	else if($_POST['dateselect2'] != '1970-01-01') {
+	
+		$event_date = date('y-m-d', strtotime($_POST['dateselect2']));
+	
+	}
+	else if($_POST['dateselect3'] != '1970-01-01') {
+	
+		$event_date = date('y-m-d', strtotime($_POST['dateselect3']));
+	
+	}
+	
 	
 		// Reserve Number Generator
 		// Reference Number Serve as alternative ID for the
@@ -40,7 +56,7 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 		// Search or Select for Active reservation for a user
 		// if there are active reservation for an event, 
 		// the user will not be able to resreve another
-		$select_user_events = "SELECT * FROM reservation WHERE username = '$username' AND event_type = '$event_type' && status = 'Active'";
+		$select_user_events = "SELECT * FROM reservation WHERE username = '$username' AND event_type = '$event_type' AND status = 'Active' AND reserv_date >= CURRENT_DATE()";
 		$select_user_events_query = $conn -> query($select_user_events);
 		
 	if($select_user_events_query->num_rows > 0) {
@@ -124,6 +140,7 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 	<div class="col-md-5">
 		<div class="center-div">
 			<h2 class="white-text">Reservation Form:</h2>
+			<p class="white-text">All Fields are Required</p>
 			<!-- 
 			Reservation
 			-->
@@ -153,9 +170,16 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 				<label id="lblpriest" for="priest">Priest: </label>
 				<select id="priest" name="priest" class="form-control">
 					<option value="Any">Any</option>
-					<option value="1">Priest 1</option>
-					<option value="2">Priest 2</option>
-					<option value="3">Priest 3</option>
+					<?php
+						$select_priests = "SELECT * FROM priests";
+						$spq = $conn->query($select_priests);
+						
+						while($p_row = $spq -> fetch_assoc()) {
+						
+							echo "<option vavlue='" . $p_row['priestID'] . "'>" . $p_row['name'] . "</option>";
+						
+						}
+					?>
 				</select>
 				
 				<br/>
@@ -167,12 +191,12 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 				
 				<!-- Date Select for Confirmation -->
 				<!---<label for="dateselect">Select Date: Confirmation</label>-->
-				<input type="text" id="dateselect2" name="dateselect" class="form-control" />
+				<input type="text" id="dateselect2" name="dateselect2" class="form-control" />
 				
 				
 				<!-- Date Select for Seminars -->
 				<!--<label for="dateselect">Select Date: Seminars</label>-->
-				<input type="text" id="dateselect3" name="dateselect" class="form-control" />
+				<input type="text" id="dateselect3" name="dateselect3" class="form-control" />
 				
 				<br/>
 				

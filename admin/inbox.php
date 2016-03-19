@@ -53,7 +53,7 @@
 
 	<div class="container">
 
-		<h1 class="text-center white-text">Scheduling and Reservation System for Tarlac San Sebastian Cathedral Parish</h1>
+		<h1 class=" white-text">Admin Panel</h1>
 <!-- Start of Navigation -->
 		<?php
 			if(isset($_GET['s']) && $_GET['s'] == 'logout') {

@@ -34,6 +34,24 @@
 		header('Location: index.php');
 		
 	}
+	
+	if(isset($_POST['id']) && !empty($_POST['id'])) {
+	
+		$id = $_POST['id'];
+		$select_msg = "SELECT * FROM messages WHERE convID = '$id'";
+		$select_msg_query = $conn->query($select_msg);
+		
+		while($m_row = $select_msg_query->fetch_assoc()) {
+			
+			$receiver = $m_row['receiver'];
+			$content = $m_row['Content'];
+		
+		}
+	
+	}
+	
+	
+	
 ?>
 
 <!DOCTYPE html>
@@ -155,12 +173,12 @@
 			<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
 				<div class="compose-receipient">
 				<label for="receipient">Receipient:</label>
-				<input type="text" id="receipient" name="receipient" class="form-control" required 
+				<input type="text" id="receipient" value="<?php echo @$receiver; ?>" name="receipient" class="form-control" required 
 					title="You Must Enter the Username of the receipient!!!" />
 				</div>
 				<br/>
 				<textarea id="content" name="content" class="form-control compose-text" required autofocus
-					title="Content message must not be empty!!!"></textarea>
+					title="Content message must not be empty!!!"><?php echo @$content; ?></textarea>
 				
 				<br/>
 				

@@ -8,11 +8,11 @@
 ?>
 <table class="table">
 	<tr>
-		<th>MessageID</th>
+		<th>Receipient</th>
 		<th>Message</th>
 		<th>Date Send</th>
-		<th>Receipient</th>
 		<th>Status</th>
+		<th class="text-center">Operation</th>
 	</tr>
 <?php
 	/*
@@ -37,13 +37,18 @@
 		while($q_row = $q_select_sent->fetch_assoc()) {
 		
 			echo "<tr>";
-			echo "<td><a class='white-text' href='#'><span data-toggle='modal' data-target='#" . $q_row['convID'] . "'>" . $q_row['convID'] . "</span></a>";
+			echo "<td><a class='white-text' href='javascript: void(0)'><span data-toggle='modal' data-target='#" . $q_row['receiver'] . "'>" . $q_row['receiver'] . "</span></a>";
 			include "includes/show_sent_modal.php";
 			echo "</td>";
 			echo "<td>" . $q_row['Content'] . "</td>";
 			echo "<td>" . $q_row['dateSent'] . "</td>";
-			echo "<td>" . $q_row['receiver'] . "</td>";
 			echo "<td>" . readUnread($q_row['status']) . "</td>";
+			echo "<td class='text-center'>";
+			echo "<form action='delete_msg.php' method='post'>";
+			echo "<input type='hidden' name='conv' value='" . $q_row['convID'] . "'/>";
+			echo "<input type='submit' value='Delete' class='btn btn-danger' />";
+			echo "</form>";
+			echo "</td>";
 			echo "</tr>";
 			
 			

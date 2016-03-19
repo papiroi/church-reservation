@@ -131,7 +131,7 @@
 	}
 	
 	echo "Past Reservations";
-	$select_all_reserv = "SELECT * FROM reservation WHERE username = '$username' AND reserv_date < CURRENT_DATE() ORDER BY reserv_date ASC";
+	$select_all_reserv = "SELECT * FROM reservation WHERE username = '$username' AND reserv_date < CURRENT_DATE() ORDER BY reserv_date DESC";
 	$select_query_result = $conn->query($select_all_reserv);
 	
 	if(@$select_query_result -> num_rows > 0) {

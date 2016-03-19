@@ -6,7 +6,7 @@
 		<div class="modal-content modal-text">
 			<div class="modal-header">
 			  <button type="button" class="close" data-dismiss="modal">&times;</button>
-			  <h4 class="modal-title">Message ID: <?php echo $q_row['convID']; ?></h4>
+			  <h4 class="modal-title">Message</h4>
 			</div>
 			<div class="modal-body">
 			  <p><b>From:</b> <?php echo $q_row['sender']; ?></p>
