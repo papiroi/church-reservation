@@ -1,2 +1,4 @@
 			<h1 class="white-text">Seminar for Wedding</h1>
-			<p class="white-text">This is Seminar for Wedding</p>
+			<div class="boxed">
+				<p class="white-text">This is Seminar for Wedding</p>
+			</div>

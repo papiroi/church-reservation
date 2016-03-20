@@ -86,7 +86,7 @@
 							
 							<li>
 							
-								<a href="services.php?services=seminars">Seminars</a>
+								<a href="javascript: void(0)">Seminars</a>
 								<ul>
 									<li class="sub-menu1"><a href="services.php?services=forconfirmation">For Confirmation</a></li>
 									

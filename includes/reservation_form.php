@@ -216,7 +216,13 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 					<option value="10">5:00pm</option>
 					
 				</select>
+				<select id="timeselect2" name="timeselect2" class="form-control">
 				
+					<option value="">Select Time</option>
+					<option value="1">Morning</option>
+					<option value="6">Afternoon</option>
+					
+				</select>
 				
 				<br/>
 				
@@ -372,8 +378,12 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 				}
 			
 			?>
-			<h4><span style="color: #ff0000;">Red Mark</span> <small><span class="white-text">on the Date Means, the Date is Full</span></small></h4>
-			<h4><span style="color: #00ff00">Green Mark</span> <small><span class="white-text">on the Date Means, the Date has Reservation But not Full. You Can click the Date to show the Reservation</span></small></h4>
+			<h4>
+			<span style="height: 25px; width: 25px; background-color: #ff0000; padding: 2px;">Red Mark</span>
+			<small><span class="white-text">on the Date Means, the Date is Full</span></small></h4>
+			<h4>
+			<span style="height: 25px; width: 25px; background-color: #00ff00; padding: 2px;">Green Mark</span>
+			<small><span class="white-text">on the Date Means, the Date has Reservation But not Full. You Can click the Date to show the Reservation</span></small></h4>
 		
 			</div>
 			<!-- End of Month Calendar -->

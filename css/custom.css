@@ -331,6 +331,17 @@ input, select, textarea{
 	
 }
 
+.boxed {
+	
+	height: auto;
+	width: 100%;
+	border: 2px solid #bdc3c7;
+	padding: 5px;
+	border-radius: 5px;
+	font-size: 15px;
+
+}
+
 /* Highlight Color  */
 ::-moz-selection {
     color: white;

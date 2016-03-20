@@ -67,6 +67,7 @@
 			$("#bap-type").hide();
 			$("#dateselect2").hide();
 			$("#dateselect3").hide();
+			$("#timeselect2").hide();
 			
 			
 			$("#eventtype").click(function(){
@@ -113,6 +114,18 @@
 					$("#dateselect2").hide();
 					$("#dateselect3").hide();
 					$("#dateselect").show();
+				
+				}
+				
+				if(document.getElementById('eventtype').value == 'Wedding') {
+				
+					$("#timeselect2").show();
+					$("#timeselect").hide()
+				}
+				else {
+				
+					$("#timeselect2").hide();
+					$("#timeselect").show()
 				
 				}
 				
