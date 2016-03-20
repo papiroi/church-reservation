@@ -38,14 +38,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-				<a class="navbar-brand hidden-lg hidden-md" href="#">Menu</a>
+				<a class="navbar-brand hidden-lg hidden-md" href="#">Admin Menu</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
                         <a href="index.php">
-						<!---<span class='glyphicon glyphicon-home'></span>-->
+						<!-- <span class="glyphicon glyphicon-home"></span> -->
 						<strong>Home</strong>
 						</a>
                     </li>

@@ -17,6 +17,7 @@
 	<tr>
 		<th>Sender</th>
 		<th>Message</th>
+		<th class="text-center">Option</th>
 		<!--<th>Date Send</th>-->
 	</tr>
 <?php
@@ -40,13 +41,26 @@
 	if($q_select_sent->num_rows > 0) {
 		
 		while($q_row = $q_select_sent->fetch_assoc()) {
+			$status = $q_row['status'];
+			if($status == '0') {
+				$stat_msg = "<span class='label label-danger label-as-badge'>unread</span>";
+			}
+			else {
+				$stat_msg = '';
+			}
 		
 			echo "<tr>";
-			echo "<td><a class='white-text' href='javascript: void(0)'><span data-toggle='modal' data-target='#" . $q_row['MessageID'] . "'>" . $q_row['sender'] . "</span></a>";
+			echo "<td><a class='white-text' href='javascript: void(0)'><span data-toggle='modal' data-target='#" . $q_row['MessageID'] . "'>" . $q_row['sender'] . " </span></a>$stat_msg";
 			include "includes/show_inbox_modal.php";
 			echo "</td>";
 			echo "<td>" . $q_row['Content'] . "</td>";
 			//echo "<td>" . $q_row['dateSent'] . "</td>";
+			echo "<td class='text-center'>";
+			echo "<form action='reply.php' method='post' autocomplete='off'>";
+			echo "<input type='hidden' name='id' value='" . $q_row['convID'] . "'/>";
+			echo "<input type='submit' value='View/Reply' class='btn btn-warning'/>";
+			echo "</form>";
+			echo "</td>";
 			echo "</tr>";
 
 

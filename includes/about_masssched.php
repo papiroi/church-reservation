@@ -1,3 +1,4 @@
+			<div class="text-center">
 			<h3>Mass Schedule</h3>
 			
 			<strong>Monday to Saturday</strong>
@@ -19,3 +20,4 @@
 			Registration: 11:00am - 11:30am
 			<br/>
 			Start: 12:00pm
+			</div>

@@ -11,6 +11,7 @@
 		<th>Message</th>
 		<th>Date Send</th>
 		<th>Status</th>
+		<th>Operation</th>
 	</tr>
 <?php
 	/*
@@ -38,6 +39,12 @@
 			echo "<td>" . $q_row['Content'] . "</td>";
 			echo "<td>" . $q_row['dateSent'] . "</td>";
 			echo "<td>" . readUnread($q_row['status']) . "</td>";
+			echo "<td>";
+			echo "<form action='del_sent.php' method='post'>";
+			echo "<input type='hidden' name='conv' value='" . $q_row['convID'] . "'/>";
+			echo "<input type='submit' value='Delete' class='btn btn-danger'/>";
+			echo "</form>";
+			echo "</td>";
 			echo "</tr>";
 		}
 	}

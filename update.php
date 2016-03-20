@@ -56,7 +56,27 @@
 	<div class="container">
 	
 		<h1 class="text-center white-text">Tarlac Cathedral Online Reservation and Scheduling</h1>
-		<h2 class="white-text">Update User Details</h2>
+		
+<!-- Start of Navigation Bar -->
+<?php
+/*
+* This will show navigation bar menu if there is signed in user or not
+*
+*/
+
+	if(isset($_SESSION['username']) && !empty($_SESSION['username'])) {
+		
+		require_once "includes/nav_bar_signed_in.php";
+	
+	}
+	else {
+	
+		require_once "includes/nav_bar_signed_out.php";
+	
+	}
+?>
+<!-- End of Navigation Bar -->
+		
 <!--
 Condition: If there is no user login 
 Display the right options

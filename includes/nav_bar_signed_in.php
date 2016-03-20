@@ -85,7 +85,7 @@
 							<!-- Start Submenu -->
 							
 							<li>
-							
+								
 								<a href="javascript: void(0)">Seminars</a>
 								<ul>
 									<li class="sub-menu1"><a href="services.php?services=forconfirmation">For Confirmation</a></li>
@@ -132,7 +132,7 @@
 						</ul>
                     </li>
 					
-					<li class="dropdown">
+					<li class="dropdown" id="user-position">
 						<a href="javascript: void(0)" class="dropdown-toggle" data-toggle="dropdown"><strong>
 						<u>
 							<?php echo getFirstName($username,$conn);?>
@@ -140,11 +140,12 @@
 						
 						<ul class="dropdown-menu">
 							<li class="menu-dropdown">
-								<a href="update.php">Update Details</a>
+								<a href="update.php">Update My Info</a>
 							</li>
 							<li>
 								<a href="changepass.php">Change Password</a>
 							</li>
+							<li class="divider"></li>
 							<li>
 								<a href="logout.php">Logout</a>
 							</li>
@@ -152,6 +153,7 @@
 						</ul>
 						
 					</li>
+					
 					
 					
                 </ul>

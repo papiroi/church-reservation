@@ -12,20 +12,16 @@
 	
 	$_SESSION['code'] = 1;
 
+	
+	include "includes/connect.php";
+	
 /*
 * Page redirection part to login if the admin is not logged in
 * 
 */
 	if(isset($_SESSION['username']) && !empty($_SESSION['username'])) {
 		
-		if($_SESSION['username'] != 'admin') {
-
-			header ("Location: error_location.php");
-
-		}	
-		else {
-			// Nothing to do here
-		}
+		$username = $_SESSION['username'];
 
 	}
 	else {
@@ -33,24 +29,27 @@
 		header ("Location: login.php");
 
 	}
+	
+	
+	if(isset($_POST['id']) && !empty($_POST['id'])) {
+		$id = $_POST['id'];
+	
+		//update the status from 0 to 1 or from undread to read
+		$update_read_status = "UPDATE messages 
+			SET status='1'
+			WHERE convID='$id' AND category='Sent'";
+				
+		$q_update_read_status = $conn->query($update_read_status);
+		
+	
+	
+	}
 
 	
 /*
 * Include the connection String
 */
 	include_once "includes/connect.php";
-	
-	if(isset($_POST['conversation']) && !empty($_POST['conversation'])) {
-		$id = $_POST['conversation'];
-		
-		//update the status from 0 to 1 or from undread to read
-		$update_read_status = "UPDATE messages 
-		SET status='1'
-		WHERE convID='$id' AND category='Sent'";
-			
-		$q_update_read_status = $conn->query($update_read_status);
-		
-	}
 
 
 ?>
@@ -66,28 +65,33 @@
 ?>
 
 	<!-- Custome Background for Services Offered Page -->
-	<link rel="stylesheet" href="../css/background-image.css" />
+	<link rel="stylesheet" href="css/background-image.css" />
 
 </head>
 <body>
 	<div class="container">
-		<h1 class="white-text">Reply Message</h1>
-		<?php
-			if(isset($_GET['s']) && $_GET['s'] == 'logout') {
-			
-			session_destroy();
-			
-			if($conn) {
-				$conn->close();
-			}
-			
-			header("Location: " . $_SERVER['PHP_SELF']);
-			
-			}
+		<h1 class="text-center white-text">Scheduling and Reservation System for Tarlac San Sebastian Cathedral Parish</h1>
+
+<!-- Start of Navigation -->
+<?php
+/*
+* This will show navigation bar menu if there is signed in user or not
+*
+*/
+
+	if(isset($_SESSION['username']) && !empty($_SESSION['username'])) {
 		
-			// Include the nav bar for Admin
-			require_once "includes/menu.php";
-		?>
+		require_once "includes/nav_bar_signed_in.php";
+	
+	}
+	else {
+	
+		require_once "includes/nav_bar_signed_out.php";
+	
+	}
+?>		
+<!--End of Navigation -->		
+
 		<div class="row">
 		<div class="col-md-9">
 		<div class="center-div">
@@ -97,12 +101,10 @@
 				// This part of the script will show the message 
 				// if there are no message it will display 
 				// Error message
-				if(isset($_POST['conversation']) && !empty($_POST['conversation'])) {
-					$id = $_POST['conversation'];
+				if(isset($_POST['id']) && !empty($_POST['id'])) {
+					$messageID = $_POST['id'];
 					
-					
-					
-					$select_message = "SELECT * FROM messages WHERE convID = '$id'";
+					$select_message = "SELECT * FROM messages WHERE convID = '$messageID'";
 					$select_message_query = $conn->query($select_message);
 					
 					while ($row = $select_message_query->fetch_assoc()) {

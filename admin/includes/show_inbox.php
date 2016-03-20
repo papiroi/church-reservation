@@ -40,16 +40,23 @@
 	if($q_select_sent->num_rows > 0) {
 		
 		while($q_row = $q_select_sent->fetch_assoc()) {
-		
+			$status = $q_row['status'];
+			
+			if($status == '0') {
+				$stat_msg = "<span class='label label-danger label-as-badge'>unread</span>";
+			}
+			else {
+				$stat_msg = "";
+			}
 
 		
 			echo "<form action='reply.php' method='post'>";
 		
 		
-			echo "<input type='hidden' name='conversation' value='" . $q_row['MessageID'] . "'";
+			echo "<input type='hidden' name='conversation' value='" . $q_row['convID'] . "'";
 			
 			echo "<tr>";
-			echo "<td>" . $q_row['sender'] . "</td>";
+			echo "<td>" . $q_row['sender'] . " $stat_msg </td>";
 			echo "<td>" . mb_substr($q_row['Content'],0,15) . "...</td>";
 			echo "<td>" . $q_row['dateSent'] . "</td>";
 			echo "<td><input type='submit' value='View/Reply' class='btn btn-warning'</td>";

@@ -24,6 +24,10 @@
 	<!-- This is the Custom CSS to be use in the entire website -->
 	<link rel="stylesheet"  href="css/custom.css" />
 	
+	<!-- Uncomment this link to activate mouse over on menu
+	<link rel="stylesheet"  href="css/nav.css" />
+	-->
+	
 	<!-- LESS -->
 	<link rel="stylesheet" href="css/less.css" />
 	
