@@ -1,7 +1,7 @@
 <?php
 /*
 * Start of Tarlac Cathedral Online Reservation and Scheduling
-* View Schedules and Reservations 
+* Index for Admin Page
 */
 
 /*
@@ -18,13 +18,7 @@
 * in the constant BASE
 */
 	include "basepath.php";
-	
-	
-/*
-*  
-*/
 
-	include "includes/connect.php";
 
 /*
 * Page redirection part to login if the admin is not logged in
@@ -55,7 +49,7 @@
 <!DOCTYPE html>
 <html class="full" lang="en-US">
 <head>
-	<title>View Schedules and Reservation</title>
+	<title>Admin Panel</title>
 
 <?php
 	
@@ -70,8 +64,8 @@
 <body>
 	<div class="container">
 
-		<h1 class="white-text">Admin Pannel</h1>
-		
+		<h1 class="white-text">Admin Pannel: Report</h1>
+
 		<?php
 			if(isset($_GET['s']) && $_GET['s'] == 'logout') {
 			
@@ -89,14 +83,71 @@
 			require_once "includes/menu.php";
 		
 		?>
-
-		<div class="center-div">
-		<h2 class="white-text">Archive - Past Reservation</h2>
-		<br/>
+		<div class="row">
 			
-<?php
-
-/*
+			<div class="col-md-12">
+			<div class="center-div">
+				<div style="width: 50%; margin: 0px auto;">
+				<form action="report_gen.php" method="post" target="_blank">
+				<h2>Select Year and Month</h2>
+				
+				<select id="month" name="month" class="form-control" required>
+					<option value="">Select Month</option>
+					<option value="1">January</option>
+					<option value="2">February</option>
+					<option value="3">March</option>
+					<option value="4">April</option>
+					<option value="5">May</option>
+					<option value="6">June</option>
+					<option value="7">July</option>
+					<option value="8">August</option>
+					<option value="9">September</option>
+					<option value="10">October</option>
+					<option value="11">November</option>
+					<option value="12">December</option>
+				</select>
+				<br/>
+				<select id="year" name="year" class="form-control" required>
+					<option value="">Select Year</option>
+					<?php
+						$year_now = date('Y');
+						$year_end = '2015';
+						
+						for($i = $year_now; $i >= $year_end; $i--) {
+							
+							echo "<option value='$i'>$i</option>";
+						
+						}
+						
+						
+					?>
+				</select>
+				<br/>
+				<input type="submit" value="Generate Report" class="btn btn-primary"/>
+				</form>
+				</div>
+				<?php
+				
+				
+				
+				// Function that converts php date to word
+				function dateName($date) {
+					
+					$result = "";
+					
+					$convert_date = strtotime($date);
+					$month = date('F',$convert_date);
+					$year = date('Y',$convert_date);
+					$name_day = date('l',$convert_date);
+					$day = date('j',$convert_date);
+					
+					
+					$result = $month . " " . $day . ", " . $year . " - " . $name_day;
+					
+					return $result;
+				}
+				
+				/*
 * Function to convert Number values of Time to Time Slots
 * Calling this function to convert certain values to time value
 * num_to_time()
@@ -138,61 +189,11 @@
 		return $val;
 		
 	}
-	$select_all_reserv = "SELECT * FROM reservation WHERE confirmation = 'Confirmed' AND reserv_date < CURRENT_DATE() ORDER BY reserv_date ASC";
-	$select_query_result = $conn->query($select_all_reserv);
-	
-	if($select_query_result -> num_rows > 0) {
-		
-		//echo "There is a reservation.";
-		echo "<table class='table'>";
-		echo "<tr>";
-		echo "<th>Reservation No.</th>";
-		echo "<th>Reserve Event</th>";
-		echo "<th>Date</th>";
-		echo "<th>Time</th>";
-		echo "<th>Status</th>";
-		echo "<th>User</th>";
-		echo "</tr>";
-		while($row = $select_query_result->fetch_assoc()) {
-			echo "<tr>";
-			echo "<td>" . $row['reserv_num'] . "<input type='hidden' name='reserv_num' value='" . $row['reserv_num'] . "'/></td>";
-			echo "<td>" . $row['event_type'] . "</td>";
-			echo "<td>" . dateName($row['reserv_date']) . "</td>";
-			echo "<td>" . num_to_time($row['reserv_time']) . "</td>";
-			echo "<td>" . $row['status'] . "</td>";
-			echo "<td>" . $row['username'] . "</td>";
-			echo "</form>";
-		}
-		echo "</table>";
-		
-	}
-	else {
-		
-		echo "<h3 class=''>No Reservations Found</h3>";
-		
-	}
-	
-	
-		// Function that converts php date to word
-	function dateName($date) {
-		
-		$result = "";
-		
-		$convert_date = strtotime($date);
-		$month = date('F',$convert_date);
-		$year = date('Y',$convert_date);
-		$name_day = date('l',$convert_date);
-		$day = date('j',$convert_date);
-		
-		
-		$result = $month . " " . $day . ", " . $year . " - " . $name_day;
-		
-		return $result;
-	}
-?>	
-
+				?>
+			
+			</div>
+			</div>
 		</div>
-
 	</div>
 
 

@@ -68,35 +68,57 @@
 						</ul>
                     </li>
 					
-					<li class="dropdown">
-                        <a href="javascript: void(0)" class="dropdown-toggle" data-toggle="dropdown"><strong>Preferences<span class="caret"></span></strong></a>
-						
-						<ul class="dropdown-menu">
-							<li>
-								<a href="priest.php"><strong>Priests</strong></a>
-							</li>
-							<li>
-								<a href="add_priests.php"><strong>Add Priest Info</strong></a>
-							</li>
-							<li>
-								<a href="edit_announcement.php"><strong>Edit Announcement</strong></a>
-							</li>
-							
-						</ul>
-                    </li>
+					<li>
+						<a href="report.php"><strong>Report</strong></a>
+					</li>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><strong>Messages
 						<span class="label label-danger label-as-badge"><?php echo $unread; ?></span>
 						<span class="caret"></span></strong></a>
 					
 						<ul class="dropdown-menu">
-							<li class="menu-dropdown"><a href="compose_message.php">Compose Message</a></li>
-							<li><a href="inbox.php">Inbox
-							<span class="label label-danger label-as-badge"><?php echo $unread; ?></span></a></li>
-							<li><a href="sent_messages.php">Sent Items</a></li>
-							<li><a href="draft.php">Draft</a></li>
+							<li class="menu-dropdown"><a href="compose_message.php"><strong>Compose Message</strong></a></li>
+							<li><a href="inbox.php"><strong>Inbox
+							<span class="label label-danger label-as-badge"><?php echo $unread; ?></span></strong></a></li>
+							<li><a href="sent_messages.php"><strong>Sent Items</strong></a></li>
+							<li><a href="draft.php"><strong>Draft</strong></a></li>
 						</ul>
-					</li>
+					</li><li class="dropdown">
+                        <a href="javascript: void(0)" class="dropdown-toggle" data-toggle="dropdown"><strong>Add<span class="caret"></span></strong></a>
+						
+						<ul class="dropdown-menu">
+							<li>
+								<a href="add_priests.php"><strong>Priest</strong></a>
+							</li>
+							
+							
+						</ul>
+                    </li>
+					</li><li class="dropdown">
+                        <a href="javascript: void(0)" class="dropdown-toggle" data-toggle="dropdown"><strong>Edit<span class="caret"></span></strong></a>
+						
+						<ul class="dropdown-menu">
+							<li>
+								<a href="priest.php"><strong>Priests</strong></a>
+							</li>
+							<li>
+								<a href="edit_announcement.php"><strong>Edit Announcement</strong></a>
+							</li>
+							
+							
+						</ul>
+                    </li>
+					</li><li class="dropdown">
+                        <a href="javascript: void(0)" class="dropdown-toggle" data-toggle="dropdown"><strong>Delete<span class="caret"></span></strong></a>
+						
+						<ul class="dropdown-menu">
+							<li>
+								<a href="priest.php"><strong>Priests</strong></a>
+							</li>
+							
+							
+						</ul>
+                    </li>
 					<li>
 						<a href="?s=logout"><strong>Logout</strong></a>
 					</li>
