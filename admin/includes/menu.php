@@ -89,6 +89,7 @@
 						<ul class="dropdown-menu">
 							<li>
 								<a href="add_priests.php"><strong>Priest</strong></a>
+								<a href="add_event.php"><strong>Event</strong></a>
 							</li>
 							
 							
@@ -100,6 +101,7 @@
 						<ul class="dropdown-menu">
 							<li>
 								<a href="priest.php"><strong>Priests</strong></a>
+								<a href="javascript: void(0)"><strong>Events</strong></a>
 							</li>
 							<li>
 								<a href="edit_announcement.php"><strong>Edit Announcement</strong></a>
@@ -114,6 +116,7 @@
 						<ul class="dropdown-menu">
 							<li>
 								<a href="priest.php"><strong>Priests</strong></a>
+								<a href="javascript: void(0)"><strong>Events</strong></a>
 							</li>
 							
 							

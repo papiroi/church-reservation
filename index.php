@@ -63,6 +63,9 @@
 	//Create priests table
 	$db->priests();
 	
+	//Create event table
+	$db->events();
+	
 ?>
 
 

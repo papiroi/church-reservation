@@ -196,5 +196,79 @@ class Database {
 	
 	}
 	
+	
+	// Records for Events
+	public function events() {
+	
+		$create_event_table = "CREATE TABLE IF NOT EXISTS events (
+			eventID int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+			code varchar(50) NOT NULL,
+			name varchar(50) NOT NULL,
+			dateMod datetime NOT NULL
+		)";
+		
+		$cet_query = $this->conn->query($create_event_table);
+		
+		if(!$cet_query)
+			exit("Event: Errror!");
+			
+		// Create Events
+		
+		$select_event = "SELECT * FROM events";
+		$select_events_query = $this->conn->query($select_event);
+		
+		if($select_events_query->num_rows > 0) {
+		
+		}
+		else {
+			$c_baptism = "INSERT IGNORE INTO events (code, name, dateMod)
+				VALUES(
+				'Baptism',
+				'Baptism',
+				NOW()
+				)";
+			$c_b_query = $this->conn->query($c_baptism);	
+			
+			$c_confirm = "INSERT IGNORE INTO events (code, name, dateMod)
+				VALUES(
+				'Confirmation',
+				'Confirmation',
+				NOW()
+				)";
+			$c_c_query = $this->conn->query($c_confirm);
+			
+			$c_funeral = "INSERT IGNORE INTO events (code, name, dateMod)
+				VALUES(
+				'Funeral',
+				'Funeral',
+				NOW()
+				)";
+			$c_f_query = $this->conn->query($c_funeral);
+			
+			$c_for_conf = "INSERT IGNORE INTO events (code, name, dateMod)
+				VALUES(
+				'For Confirmation',
+				'Seminar For Confirmation',
+				NOW()
+				)";
+			$c_f_c_query = $this->conn->query($c_for_conf);
+			
+			$c_for_wed = "INSERT IGNORE INTO events (code, name, dateMod)
+				VALUES(
+				'For Wedding',
+				'Seminar For Wedding',
+				NOW()
+				)";
+			$c_f_w_query = $this->conn->query($c_for_wed);
+		
+			$c_wedding = "INSERT IGNORE INTO events (code, name, dateMod)
+				VALUES(
+				'Wedding',
+				'Wedding',
+				NOW()
+				)";
+			$c_w = $this->conn->query($c_wedding);
+		}
+	}
 	// End of Database Class
 }

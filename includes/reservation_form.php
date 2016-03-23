@@ -148,12 +148,30 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 				<label for="eventtype">Select Event:</label>
 				<select id="eventtype" name="eventtype" class="form-control" required autofocus title="Select an Event!">
 					<option value="">Select Event</option>
-					<option value="Baptism">Baptism</option>
-					<option value="Confirmation">Confirmation</option>
-					<option value="Funeral">Funeral</option>
-					<option value="For Confirmation">Seminar For Confirmation</option>
-					<option value="For Wedding">Seminar For Wedding</option>
-					<option value="Wedding">Wedding</option>
+					
+					<!-- Load List of Events -->
+					<?php
+						
+						$select_events = "SELECT * FROM events ORDER BY name ASC";
+						$select_events_query = $conn->query($select_events);
+						
+						if($select_events_query->num_rows > 0) {
+							while($e_row = $select_events_query->fetch_assoc()) {
+								
+								echo "<option value='" . $e_row['code'] . "'>" . $e_row['name'] . "</option>";
+							
+							}
+						
+						}
+						else {
+						
+							echo "<option><i>No Events Lists Found!!!</i></option>";
+							
+						}
+					
+					?>
+					<!-- End of Loading List of Events -->
+					
 				</select>
 				<br/>
 				<!-- Baptism Type Special or Ordinary -->
