@@ -49,27 +49,27 @@
 	
 	if(isset($_POST['name']) && !empty($_POST['name'])) {
 	
-		$id = $_POST['priestid'];
+		$id = $_POST['eventid'];
 		$name = $_POST['name'];
-		$sched = $_POST['sched'];
+		$code = $_POST['code'];
+	
+		$update_e = "UPDATE events SET name='$name', code = '$code' WHERE eventID = '$id'";
+		$update_e_query = $conn->query($update_e);
 		
-		$update_priest = "UPDATE priests SET name = '$name', sched = '$sched' WHERE priestID = '$id'";
-		$update_priest_query = $conn->query($update_priest);
-		
-		if($update_priest_query) {
+		if($update_e_query) {
 		
 			$update_msg = "<div class='alert alert-info text-center'>
 				<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-				Priest Info Updated!</div>";
+				Event Info Updated!</div>";
 				
-				$select_priest = "SELECT * FROM priests WHERE priestID = '$id'";
-				$select_priest_query = $conn->query($select_priest);
+				$select_event = "SELECT * FROM events WHERE eventID = '$id'";
+				$select_event_query = $conn->query($select_event);
 				
-				while($p_row = $select_priest_query -> fetch_assoc()) {
-				
-					$priest_id = $p_row['priestID'];
-					$priest_name = $p_row['name'];
-					$priest_sched = $p_row['sched'];
+				while($e_row = $select_event_query->fetch_assoc()) {
+					
+					$event_id = $e_row['eventID'];
+					$event_name = $e_row['name'];
+					$event_code = $e_row['code'];
 				
 				}
 		
@@ -79,9 +79,7 @@
 			$update_msg = "<div class='alert alert-danger text-center'>
 				<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
 				Failed to Update Record!</div>";
-		
 		}
-	
 	
 	}
 	
@@ -89,18 +87,16 @@
 	
 		$id = $_POST['id'];
 		
-		$select_priest = "SELECT * FROM priests WHERE priestID = '$id'";
-		$select_priest_query = $conn->query($select_priest);
+		$select_event = "SELECT * FROM events WHERE eventID = '$id'";
+		$select_event_query = $conn->query($select_event);
 		
-		while($p_row = $select_priest_query -> fetch_assoc()) {
+		while ($e_row = $select_event_query->fetch_assoc()) {
 		
-			$priest_id = $p_row['priestID'];
-			$priest_name = $p_row['name'];
-			$priest_sched = $p_row['sched'];
+			$event_id = $e_row['eventID'];
+			$event_name = $e_row['name'];
+			$event_code = $e_row['code'];
 		
 		}
-	
-	
 	}
 
 ?>
@@ -109,7 +105,7 @@
 <!DOCTYPE html>
 <html class="full" lang="en-US">
 <head>
-	<title>Priests Panel</title>
+	<title>Event Panel</title>
 
 <?php
 	
@@ -124,7 +120,7 @@
 <body>
 	<div class="container">
 
-		<h1 class="white-text">Admin Pannel</h1>
+		<h1 class="white-text">Admin Pannel: Edit Event</h1>
 		
 		
 		
@@ -152,19 +148,19 @@
 			<div class="col-md-7">
 			<?php echo @$update_msg; ?>
 			<div class="center-div">
-				<h2 class='white-text'>Update Priest Info</h2>
+				<h2 class='white-text'>Update Event Info</h2>
 				<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" autocomplete="off">
 					<label>Name:</label>
-					<input type="hidden" name="priestid" value="<?php echo @$priest_id; ?>" />
-					<input type="text" value="<?php echo @$priest_name; ?>" class="form-control" id="name" name="name"
-						required autofocus placeholder="Name of Priest"/>
+					<input type="hidden" name="eventid" value="<?php echo @$event_id; ?>" />
+					<input type="text" value="<?php echo @$event_name; ?>" class="form-control" id="name" name="name"
+						required autofocus placeholder="Name of Event"/>
 					<br/>
-					<label>Schedule:</label>
-					<input type="text" value="<?php echo @$priest_sched; ?>" class="form-control" id="sched" name="sched" placeholder="Schedule of the Priest" required />
+					<label>Code:</label>
+					<input type="text" value="<?php echo @$event_code; ?>" class="form-control" id="code" name="code" placeholder="Code of Event" required />
 					<br/>
 					<input type="submit" class="btn btn-primary" value="Update" />
 					&nbsp;&nbsp;
-					<input type="reset" class="btn btn-danger" value="Revert" />
+					<input type="reset" class="btn btn-danger" value="Revert Changes" />
 				</form>
 				
 			</div>

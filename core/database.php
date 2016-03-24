@@ -269,6 +269,78 @@ class Database {
 				)";
 			$c_w = $this->conn->query($c_wedding);
 		}
+		
+	
 	}
+	
+	// Method to create about table in database
+	public function about() {
+
+		$create_about = "CREATE TABLE IF NOT EXISTS about (
+			aboutID int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+			code varchar(50) NOT NULL,
+			title varchar(50) NOT NULL,
+			description varchar(500) NOT NULL,
+			dateMod datetime NOT NULL
+		)";
+		
+		$create_about_query =  $this->conn->query($create_about);
+		
+		if(!$create_about_query) {
+			exit("About Error.");
+		}
+		
+		
+		// Create intial content
+		$select_about = "SELECT * FROM about";
+		$select_about_query = $this->conn->query($select_about);
+		
+		if($select_about_query->num_rows > 0) {
+		
+		
+		}
+		else {
+		
+			$a_history = "INSERT IGNORE INTO about (code, title, description, dateMod)
+				VALUES(
+				'history',
+				'History of Cathedral',
+				'History not available.',
+				NOW()
+				)";
+			$a_h = $this->conn->query($a_history);
+			
+			$a_diocese = "INSERT IGNORE INTO about (code, title, description, dateMod)
+				VALUES(
+				'diocese',
+				'Diocese of Tarlac',
+				'Details not available.',
+				NOW()
+				)";
+			$a_a = $this->conn->query($a_diocese);
+			
+			$a_orgchart = "INSERT IGNORE INTO about (code, title, description, dateMod)
+				VALUES(
+				'orgchart',
+				'Organizational Chart',
+				'Information not available.',
+				NOW()
+				)";
+			$a_o = $this->conn->query($a_orgchart);
+			
+			$a_mass = "INSERT IGNORE INTO about (code, title, description, dateMod)
+				VALUES(
+				'masssched',
+				'Mass Schedule',
+				'Schedules of Mass.',
+				NOW()
+				)";
+			$a_m = $this->conn->query($a_mass);
+		
+		
+		}
+		
+	}
+
 	// End of Database Class
 }

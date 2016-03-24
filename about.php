@@ -72,11 +72,12 @@
 	}
 ?>		
 <!--End of Navigation -->
-			<h2 class="white-text">About</h2>
+
 			
 			<div class="row">
 				<div class="col-md-12">
-					<div class="center-div">
+					<div class="scroll">
+				
 						
 						<?php
 							
@@ -108,7 +109,8 @@
 							}
 						
 						?>
-						
+					
+					
 					</div>
 				</div>
 			</div>

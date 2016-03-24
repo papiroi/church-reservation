@@ -66,6 +66,9 @@
 	//Create event table
 	$db->events();
 	
+	// Create about table
+	$db->about();
+	
 ?>
 
 

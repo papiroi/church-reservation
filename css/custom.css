@@ -342,6 +342,18 @@ input, select, textarea{
 
 }
 
+.scroll {
+	background-color: rgba(0,0,0,0.8);
+	margin-top: 30px;
+	padding: 10px 20px 20px 20px;
+	color: #fff;
+	border-radius: 10px;
+	height: 300px;
+	margin-bottom: 50px;
+	overflow: auto;
+	
+}
+
 /* Highlight Color  */
 ::-moz-selection {
     color: white;

@@ -43,6 +43,12 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
+                    <li>
+                        <a href="index.php">
+						<span class="glyphicon glyphicon-home"></span> 
+						<strong>Home</strong>
+						</a>
+                    </li>
 					<li class="dropdown">
 						<a href="javascript: void(0)" class="dropdown-toggle" data-toggle="dropdown"><strong>My Reservations<span class="caret"></span></strong></a>
 					
@@ -52,12 +58,6 @@
 							<li><a href="archive.php">Archive</a></li>
 						</ul>
 					</li>
-                    <li>
-                        <a href="index.php">
-						<span class="glyphicon glyphicon-home"></span> 
-						<strong>Home</strong>
-						</a>
-                    </li>
 					<li class="dropdown">
 						<a href="javascript: void(0)" class="dropdown-toggle" data-toggle="dropdown"><strong>Messages
 						<span class="label label-danger label-as-badge"><?php echo $unread; ?></span>
@@ -106,7 +106,8 @@
 						
 						<ul class="dropdown-menu">
 						
-							<li class="menu-dropdown"><a href="about.php?about=history">History of Cathedral</a></li>
+							<!--
+							<li class=""><a href="about.php?about=history">History of Cathedral</a></li>
 							
 							<li><a href="about.php?about=diocese">Diocese of Tarlac</a></li>
 							
@@ -115,7 +116,19 @@
 							<li><a href="about.php?about=masssched">Mass Schedule</a></li>
 							
 							<li><a href="about.php?about=priestsched">Priest Schedule</a></li>
+							-->
+							<?php
 							
+								$select_about = "SELECT * FROM about ORDER BY title ASC";
+								$select_about_query = $conn->query($select_about);
+								
+								while ($a_row = $select_about_query->fetch_assoc()) {
+								
+									echo "<li><a href='about.php?about=" . $a_row['code'] . "'>" . $a_row['title'] . "</a></li>";
+								
+								}
+							
+							?>
 						</ul>
                     </li>
 					
