@@ -95,7 +95,7 @@
 						echo "<td onclick='showEvent($day,$month_num);' id='day" . $day;
 						//This function Highlights the date with reservation in green
 						if(getDateReserve($conn,$day,$month_num)) {
-							echo "' bgcolor='green'>"; //highlight TODAY in green
+							echo "' bgcolor='#00ff00'>"; //highlight TODAY in green
 							echo "<a href='javascript: void(0)' class='white-text' title='Click to View Schedule'>$day</a></td>";
 						}
 						else {

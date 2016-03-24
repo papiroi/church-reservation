@@ -90,7 +90,7 @@
 			
 			<div class="col-md-12">
 			<div class="center-div">
-				<h2 class="white-text">Edit/Delete About Information</h2>
+				<h2 class="white-text">Edit About Information</h2>
 				
 				<table class="table">
 					<th>Title</th>

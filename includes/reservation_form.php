@@ -397,10 +397,10 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 			
 			?>
 			<h4>
-			<span style="height: 25px; width: 25px; background-color: #ff0000; padding: 2px;">Red Mark</span>
+			<div style="height: 30px; width: 35px; background-color: #ff0000; padding: 2px; display: inline-block;"></div>
 			<small><span class="white-text">on the Date Means, the Date is Full</span></small></h4>
 			<h4>
-			<span style="height: 25px; width: 25px; background-color: #00ff00; padding: 2px;">Green Mark</span>
+			<div style="height: 30px; width: 35px; background-color: #00ff00; padding: 2px; display: inline-block;"></div>
 			<small><span class="white-text">on the Date Means, the Date has Reservation But not Full. You Can click the Date to show the Reservation</span></small></h4>
 		
 			</div>
