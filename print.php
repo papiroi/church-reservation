@@ -47,6 +47,8 @@
 	<!-- Custom CSS for Background Image for this page -->
 	<link rel="stylesheet" href="css/background-image.css" />
 	
+	<link rel="stylesheet" href="css/print.css" media="print" />
+	
 	
 </head>
 <body onload="window.print()">

@@ -1,0 +1,9 @@
+ @media print {
+	hr {
+		color: #ccc;
+	}
+	table {
+	
+		color: #ff0000;
+	}
+ }

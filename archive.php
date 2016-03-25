@@ -150,7 +150,7 @@
 			
 			echo "<tr>";
 			if($row['confirmation'] == 'Confirmed')
-				echo "<td>" . $row['reserv_num'] . "</td>";
+				echo "<td><a href='print.php?r=" .  $row['reserv_num']. "' target='_blank'>" . $row['reserv_num'] . "</a></td>";
 			else 
 				echo "<td>" . $row['reserv_num'] . "</td>";
 			echo "<td>" . $row['event_type'] . "</td>";
