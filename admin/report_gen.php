@@ -163,15 +163,20 @@
 					
 					$year = $_POST['year'];
 					$month = $_POST['month'];
+					$event = $_POST['event'];
 					
 					$record = 0;
 					
 					for($i = 1; $i <= 31; $i++) {
 					
 						$gen_date = $year . "-" . $month . "-" . $i;
-					
-						$reserve_q = "SELECT * FROM reservation WHERE reserv_date = '$gen_date' ORDER BY reserv_date, reserv_time ASC";
 						
+						if($event == '*') {
+							$reserve_q = "SELECT * FROM reservation WHERE reserv_date = '$gen_date' ORDER BY reserv_date, reserv_time ASC";
+						}
+						else {
+							$reserve_q = "SELECT * FROM reservation WHERE reserv_date = '$gen_date' and event_type = '$event' ORDER BY reserv_date, reserv_time ASC";
+						}
 						$select_reserve_q = $conn->query($reserve_q);
 						
 						if($select_reserve_q->num_rows > 0) {
@@ -196,7 +201,7 @@
 						
 					}
 					
-					echo "<h3 class='white-text'>$record Record Found!</h3>";
+					echo "<h3 class='white-text'>$record Record(s) Found!</h3>";
 					
 				}
 				else {

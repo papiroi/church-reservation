@@ -90,6 +90,7 @@
 							<li>
 								<a href="add_priests.php"><strong>Priest</strong></a>
 								<a href="add_event.php"><strong>Event</strong></a>
+								<a href="javascript: void(0)"><strong>About</strong></a>
 							</li>
 							
 							

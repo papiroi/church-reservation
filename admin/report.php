@@ -13,6 +13,8 @@
 	$_SESSION['code'] = 1;
 
 
+	include "includes/connect.php";
+	
 /*
 * Include the basepath file
 * in the constant BASE
@@ -120,6 +122,22 @@
 						}
 						
 						
+					?>
+				</select>
+				<br/>
+				<select class="form-control" id="event" name="event">
+					<option value="*">All Events</option>
+					<?php
+					
+						$select_e = "SELECT * FROM events ORDER BY name";
+						$select_e_query = $conn->query($select_e);
+						
+						while($erow = $select_e_query->fetch_assoc()) {
+						
+							echo "<option value='" . $erow['code'] . "'>" . $erow['name'] . "</option>";
+						
+						}
+					
 					?>
 				</select>
 				<br/>
