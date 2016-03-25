@@ -14,6 +14,7 @@
 	$_SESSION['code'] = 1;
 	
 
+	require_once "includes/connect.php";
 /*
 * Condition to check if there's a logined user
 *

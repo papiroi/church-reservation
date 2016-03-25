@@ -170,7 +170,7 @@
 					
 						$gen_date = $year . "-" . $month . "-" . $i;
 					
-						$reserve_q = "SELECT * FROM reservation WHERE reserv_date = '$gen_date'";
+						$reserve_q = "SELECT * FROM reservation WHERE reserv_date = '$gen_date' ORDER BY reserv_date, reserv_time ASC";
 						
 						$select_reserve_q = $conn->query($reserve_q);
 						
@@ -186,11 +186,11 @@
 								echo "<td>" . $row['username'] . "</td>";
 								echo "</tr>";
 			
-								
+								$record = $record + 1;
 							}
 						
 
-							$record = $record + 1;
+						
 						}
 					
 						

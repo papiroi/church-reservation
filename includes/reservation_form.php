@@ -237,8 +237,8 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 				<select id="timeselect2" name="timeselect2" class="form-control">
 				
 					<option value="">Select Time</option>
-					<option value="1">Morning</option>
-					<option value="6">Afternoon</option>
+					<option value="1">8:00am to 12:00pm</option>
+					<option value="6">1:00pm to 5:00pm</option>
 					
 				</select>
 				

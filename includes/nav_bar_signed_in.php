@@ -141,6 +141,8 @@
 							
 							<li><a href="forms/bap.pdf" target="_blank">Requirement Form(Baptism - No Birth Certificate)</a></li>
 							
+							<li><a href="forms/canonical.pdf" target="_blank">Canonical Investigation Form</a></li>
+							
 							
 						</ul>
                     </li>

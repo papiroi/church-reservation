@@ -123,7 +123,22 @@
 							
 						</ul>
                     </li>
-					<li>
+					
+					<li class="dropdown">
+                        <a href="javascript: void(0)" class="dropdown-toggle" data-toggle="dropdown"><strong>Certificates<span class="caret"></span></strong></a>
+						
+						<ul class="dropdown-menu">
+							<li>
+								<a href="../forms/marriage.pdf" target="_blank"><strong>Marriage Certificate</strong></a>
+								<a href="../forms/bapc.pdf" target="_blank"><strong>Birth Certificate</strong></a>
+								<a href="../forms/gmc.pdf" target="_blank"><strong>Good Moral Certificate</strong></a>
+							</li>
+							
+							
+						</ul>
+                    </li>
+					
+					<li id="user-position">
 						<a href="?s=logout"><strong>Logout</strong></a>
 					</li>
 				

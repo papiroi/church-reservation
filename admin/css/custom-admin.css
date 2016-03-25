@@ -132,6 +132,13 @@ textarea {
 	
 }
 
+#user-position {
+	
+	position: absolute;
+	right: 5px;
+	font-weight: bold;
+	
+}
 
 .messages{
 	background-color: rgba(0,0,0,0.8);

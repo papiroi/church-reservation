@@ -14,6 +14,7 @@
 	$_SESSION['code'] = 1;
 	
 
+	require_once "includes/connect.php";
 /*
 * Condition to check if there's a logined user
 *
@@ -72,7 +73,7 @@
 	}
 ?>
 <!-- End of Navigation -->
-		<h2 class="white-text">Services</h2>
+
 		<div class="row">
 			<div class="col-md-12">
 			
