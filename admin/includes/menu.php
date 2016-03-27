@@ -91,6 +91,7 @@
 								<a href="add_priests.php"><strong>Priest</strong></a>
 								<a href="add_event.php"><strong>Event</strong></a>
 								<a href="add_form.php"><strong>Form</strong></a>
+								<a href="add_about.php"><strong>About</strong></a>
 							</li>
 							
 							
@@ -104,6 +105,7 @@
 								<a href="priest.php"><strong>Priests</strong></a>
 								<a href="events.php"><strong>Events</strong></a>
 								<a href="abouts.php"><strong>Abouts</strong></a>
+								<a href="forms.php"><strong>Forms</strong></a>
 							</li>
 							<li>
 								<a href="edit_announcement.php"><strong>Edit Announcement</strong></a>

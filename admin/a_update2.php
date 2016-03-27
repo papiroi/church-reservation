@@ -194,8 +194,9 @@
 			
 		<div class="row">
 			
-			<div class="col-md-7">
 			<?php echo @$update_msg; ?>
+			<div class="col-md-6">
+			
 			<div class="center-div">
 				<h2 class='white-text'>Update Abouts Details</h2>
 				<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" autocomplete="off">
@@ -215,7 +216,12 @@
 					<label>Wednesday:</label>
 					<input type="text" value="<?php echo @$wed0 ;?>" id="wednesday" name="wednesday" class="form-control" required  placeholder="Time Schedule or Notes"/>
 					<br/>
-					
+			</div>
+			</div>
+			
+			<div class="col-md-6">
+			<div class="center-div">
+					<br/>
 					<label>Thursday:</label>
 					<input type="text" value="<?php echo @$thu0 ;?>" id="thursday" name="thursday" class="form-control" required placeholder="Time Schedule or Notes"/>
 					<br/>
