@@ -88,10 +88,8 @@
 ?>
 <!-- End of Navigation Bar -->
 
-		<div class="row">
-		<div class="col-md-5">
-		<div class="center-div">
-		<div class="error_message">
+		
+		
 <!-- Start of PHP Code in Registration -->
 <?php
 	if(isset($_POST['username']) && !empty($_POST['username'])) {
@@ -151,7 +149,9 @@
 			
 			if($select_email_query->num_rows > 0 ) {
 				
-				echo "<div style='color: red; background-color: black; font-size: 25px; border: 1px solid red; text-align: center;'>The email is already used by another user.</div>";
+				echo "<div class='alert alert-danger text-center'>
+				<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+				This Email is already in used by another user.</div>";
 				
 				$email_error = "<span style='color:red; font-size: 25px;'>*</span>";
 				
@@ -161,6 +161,7 @@
 				$ret_address = $address;
 				$ret_bday = $bday;
 				
+				include_once "includes/register_inc.php";
 			}
 			else {
 				
