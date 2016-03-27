@@ -108,6 +108,30 @@
 								include_once "includes/about_priest.php";
 							
 							}
+							else if ($about == 'priests') {
+							
+								$select_p = "SELECT * FROM priests";
+								$select_p_query = $conn->query($select_p);
+								
+								if($select_p_query->num_rows > 0) {
+								
+									while($prow = $select_p_query->fetch_assoc()) {
+										
+										echo "<h3 class='white-text'>Name: " . $prow['name'] . "</h3>";
+										echo "<p class='white-text'>Schedule: " . $prow['sched'] . "</p>";
+										echo "<p class='white-text'>" . $prow['info'] . "</p><br/>";
+										
+									
+									}
+								
+								}
+								else {
+								
+									echo "<h2 class='white-text'>No Available Information Right Now.</h2>";
+								}
+								
+							
+							}
 						
 						?>
 					

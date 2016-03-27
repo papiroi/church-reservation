@@ -91,9 +91,40 @@
 			<div class="col-md-12">
 			<div class="center-div">
 				<h2 class="white-text">Delete Form</h2>
-				
-				
-				
+				<table class="table">
+					<tr>
+					<th>Display Name</th>
+					<th>Operation</th>
+					</tr>
+				<?php
+					$select_form = "SELECT * FROM docs";
+					$select_form_query = $conn->query($select_form);
+					
+					if($select_form_query -> num_rows > 0) {
+					
+						while($frow = $select_form_query->fetch_assoc()) {
+							echo "<tr>";
+							echo "<td>";
+							echo $frow['name'];
+							echo "</td>";
+							
+							echo "<td>";
+							echo "<form action='f_delete.php' method='post'>";
+							echo "<input type='hidden' name='id' value='" . $frow['docID'] . "' />";
+							echo "<input type='hidden' name='file' value='" . $frow['location'] . "' />";
+							echo "<input type='submit' class='btn btn-danger'/>";
+							echo "</form>";
+							echo "</td>";
+							echo "</tr>";
+							
+						}
+						
+					}
+					else {
+						
+					}
+				?>
+			</table>
 			</div>
 			</div>
 		</div>
