@@ -129,6 +129,8 @@
 								}
 							
 							?>
+							<li class="divider"></li>
+							<li><a href="about.php?about=priests">Priests Informaiton</a></li>
 						</ul>
                     </li>
 					
@@ -137,12 +139,27 @@
 						
 						<ul class="dropdown-menu">
 						
-							<li class="menu-dropdown"><a href="forms/wedding.pdf" target="_blank">Requirement Form(For Wedding)</a></li>
+							<?php 
 							
-							<li><a href="forms/bap.pdf" target="_blank">Requirement Form(Baptism - No Birth Certificate)</a></li>
+								$select_form = "SELECT * FROM docs";
+								$select_form_query = $conn->query($select_form);
+								
+								if($select_form_query->num_rows > 0) {
+									
+									while($frow = $select_form_query->fetch_assoc()) {
+									
+										echo "<li><a href='" . $frow['location'] . "' target='_blank'>" . $frow['name'] . "</a></li>";
+									
+									}
+								
+								}
+								else {
+								
+								
+								}
+								
 							
-							<li><a href="forms/canonical.pdf" target="_blank">Canonical Investigation Form</a></li>
-							
+							?>
 							
 						</ul>
                     </li>

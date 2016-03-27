@@ -1,23 +1,45 @@
 			<div class="text-center">
-			<h3>Mass Schedule</h3>
+			<h3 class="white-text">Weekly Mass Schedule</h3>
+			<div class="row">
+			<div class="col-md-6 col-md-offset-3">
 			
-			<strong>Monday to Saturday</strong>
-			<br/>
-			6:00am, 7:00am
-			<br/><br/>
-			<strong>Anticipated Mass (Saturday)</strong>
-			<br/>
-			5:30pm
-			<br/><br/>
-			<strong>Sunday Masses</strong>
-			<br/>
-			5:00am, 6:00am, 7:00am, 8:00am, 9:00am
-			<br/>
-			4:00pm, 5:00pm, 6:00pm, 7:00pm
-			<br/><br/>
-			<strong>Everyday Baptism</strong>
-			<br/>
-			Registration: 11:00am - 11:30am
-			<br/>
-			Start: 12:00pm
+			<?php
+				$select_sched = "SELECT * FROM mass WHERE schedID = '1' LIMIT 1";
+				$select_sched_query = $conn->query($select_sched);
+				
+				if($select_sched_query->num_rows > 0) {
+					
+					while($prow = $select_sched_query->fetch_assoc()) {
+					
+						echo "<div class='col-md-6'>";
+						echo "<strong>Monday</strong><br/>";
+						echo $prow['monday'] . "<br/>";
+						echo "<strong>Tuesday</strong><br/>";
+						echo $prow['tuesday'] . "<br/>";
+						echo "<strong>Wednesday</strong><br/>";
+						echo $prow['wednesday'] . "<br/>";
+						echo "</div>";
+						
+						echo "<div class='col-md-6'>";
+						echo "<strong>Thursday</strong><br/>";
+						echo $prow['thursday'] . "<br/>";
+						echo "<strong>Friday</strong><br/>";
+						echo $prow['friday'] . "<br/>";
+						echo "<strong>Saturday</strong><br/>";
+						echo $prow['saturday'] . "<br/>";
+						echo "</div>";
+						
+						echo "<strong>Sunday</strong><br/>";
+						echo $prow['sunday'] . "<br/>";
+					}
+					
+				}
+				else {
+				
+					echo "<h3 class='white-text'>No Information Found!</h3>";
+					
+				}
+			
+			?>
+			</div>
 			</div>

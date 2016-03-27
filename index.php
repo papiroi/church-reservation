@@ -69,6 +69,12 @@
 	// Create about table
 	$db->about();
 	
+	//create mass table4
+	$db->mass();
+	
+	//create docs table
+	$db->docs();
+	
 ?>
 
 

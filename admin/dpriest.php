@@ -90,7 +90,7 @@
 			
 			<div class="col-md-12">
 			<div class="center-div">
-				<h2 class="white-text">Edit Priests Information</h2>
+				<h2 class="white-text">Delete Priests Information</h2>
 				
 				<table class="table">
 					<th>Name</th>
@@ -107,12 +107,13 @@
 							echo "<tr>";
 							echo "<td>" . $p_row['name'] . "</td>";
 							echo "<td>" . $p_row['sched'] . "</td>";
-							echo "<td>";
 							
-							echo "<form action='p_update.php' method='post'>";
+							echo "<td>";
+							echo "<form action='p_delete.php' method='post'>";
 							echo "<input type='hidden' name='id' value='" . $p_row['priestID'] . "'/>";
-							echo "<input type='submit' value='Edit' class='btn btn-primary'/>";
+							echo "<input type='submit' value='Delete' class='btn btn-danger'/>";
 							echo "</form>";
+							
 							echo "</td>";
 							echo "</tr>";
 						

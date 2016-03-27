@@ -90,12 +90,12 @@
 			
 			<div class="col-md-12">
 			<div class="center-div">
-				<h2 class="white-text">Edit/Delete Events</h2>
+				<h2 class="white-text">Edit Events</h2>
 				
 				<table class="table">
 					<th>Name</th>
 					<th>Code</th>
-					<th colspan='2' class='text-center'>Options</th>
+					<th>Options</th>
 				<?php
 					$select_events = "SELECT * FROM events ORDER BY name ASC";
 					$select_events_query = $conn->query($select_events);
@@ -114,13 +114,7 @@
 							echo "<input type='submit' value='Edit' class='btn btn-primary'/>";
 							echo "</form>";
 							echo "</td>";
-							echo "<td>";
-							echo "<form action='e_delete.php' method='post'>";
-							echo "<input type='hidden' name='id' value='" . $e_row['eventID'] . "'/>";
-							echo "<input type='submit' value='Delete' class='btn btn-danger'/>";
-							echo "</form>";
 							
-							echo "</td>";
 							echo "</tr>";
 						
 						}

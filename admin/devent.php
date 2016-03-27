@@ -49,7 +49,7 @@
 <!DOCTYPE html>
 <html class="full" lang="en-US">
 <head>
-	<title>Priests Panel</title>
+	<title>Events Panel</title>
 
 <?php
 	
@@ -64,7 +64,7 @@
 <body>
 	<div class="container">
 
-		<h1 class="white-text">Admin Pannel</h1>
+		<h1 class="white-text">Admin Pannel: Events Lists</h1>
 		
 		
 		
@@ -90,29 +90,31 @@
 			
 			<div class="col-md-12">
 			<div class="center-div">
-				<h2 class="white-text">Edit Priests Information</h2>
+				<h2 class="white-text">Delete Events</h2>
 				
 				<table class="table">
 					<th>Name</th>
-					<th>Schedule</th>
+					<th>Code</th>
 					<th>Options</th>
 				<?php
-					$select_priests = "SELECT * FROM priests";
-					$select_priests_query = $conn->query($select_priests);
+					$select_events = "SELECT * FROM events ORDER BY name ASC";
+					$select_events_query = $conn->query($select_events);
 					
-					if($select_priests_query -> num_rows > 0) {
+					if($select_events_query -> num_rows > 0) {
 					
-						while($p_row = $select_priests_query -> fetch_assoc()) {
+						while($e_row = $select_events_query -> fetch_assoc()) {
 							
 							echo "<tr>";
-							echo "<td>" . $p_row['name'] . "</td>";
-							echo "<td>" . $p_row['sched'] . "</td>";
-							echo "<td>";
+							echo "<td>" . $e_row['name'] . "</td>";
+							echo "<td>" . $e_row['code'] . "</td>";
 							
-							echo "<form action='p_update.php' method='post'>";
-							echo "<input type='hidden' name='id' value='" . $p_row['priestID'] . "'/>";
-							echo "<input type='submit' value='Edit' class='btn btn-primary'/>";
+							
+							echo "<td>";
+							echo "<form action='e_delete.php' method='post'>";
+							echo "<input type='hidden' name='id' value='" . $e_row['eventID'] . "'/>";
+							echo "<input type='submit' value='Delete' class='btn btn-danger'/>";
 							echo "</form>";
+							
 							echo "</td>";
 							echo "</tr>";
 						
@@ -138,4 +140,5 @@
 
 	require "includes/footer.php";
 
+?>
 ?>

@@ -185,6 +185,7 @@ class Database {
 			priestID int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
 			name varchar(200) NOT NULL,
 			sched varchar(100) NOT NULL,
+			info varchar(1000) NOT NULL,
 			dateCreated datetime NOT NULL
 		)";
 		
@@ -339,6 +340,60 @@ class Database {
 		
 		
 		}
+		
+	}
+	
+	public function mass() {
+	
+		$create_mass = "CREATE TABLE IF NOT EXISTS mass(
+			schedID varchar(10) PRIMARY KEY NOT NULL,
+			monday varchar(160) NOT NULL,
+			tuesday varchar(160) NOT NULL,
+			wednesday varchar(160) NOT NULL,
+			thursday varchar(160) NOT NULL,
+			friday varchar(160) NOT NULL, 
+			saturday varchar(160) NOT NULL,
+			sunday varchar(160) NOT NULL,
+			dateMod datetime NOT NULL
+		)";
+		$create_mass_query = $this->conn->query($create_mass);
+		
+		if(!$create_mass_query) {
+			exit("Error Mass");
+		}
+		
+		$select_s = "SELECT * FROM mass";
+		$select_s_query = $this->conn->query($select_s);
+		
+		if($select_s_query->num_rows > 0 ) {
+		
+		
+		}
+		else {
+		
+			$insert = "INSERT INTO mass (schedID,dateMod) VALUES ('1', NOW())";
+			$insert_query = $this->conn->query($insert);
+		
+		
+		}
+		
+	
+	
+	}
+	
+	public function docs() {
+	
+		$create_table = "CREATE TABLE IF NOT EXISTS docs(
+			docID int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+			name varchar(100) NOT NULL,
+			location varchar(150) NOT NULL,
+			dateMod datetime NOT NULL
+		)";
+		$create_table_query = $this->conn->query($create_table);
+		
+		if(!$create_table_query)
+			exit("Error Docs");
+	
 		
 	}
 

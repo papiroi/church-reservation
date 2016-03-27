@@ -52,8 +52,9 @@
 		$id = $_POST['priestid'];
 		$name = $_POST['name'];
 		$sched = $_POST['sched'];
+		$info = $_POST['info'];
 		
-		$update_priest = "UPDATE priests SET name = '$name', sched = '$sched' WHERE priestID = '$id'";
+		$update_priest = "UPDATE priests SET name = '$name', sched = '$sched', info = '$info' WHERE priestID = '$id'";
 		$update_priest_query = $conn->query($update_priest);
 		
 		if($update_priest_query) {
@@ -70,6 +71,7 @@
 					$priest_id = $p_row['priestID'];
 					$priest_name = $p_row['name'];
 					$priest_sched = $p_row['sched'];
+					$priest_info = $p_row['info'];
 				
 				}
 		
@@ -97,6 +99,7 @@
 			$priest_id = $p_row['priestID'];
 			$priest_name = $p_row['name'];
 			$priest_sched = $p_row['sched'];
+			$priest_info = $p_row['info'];
 		
 		}
 	
@@ -161,6 +164,9 @@
 					<br/>
 					<label>Schedule:</label>
 					<input type="text" value="<?php echo @$priest_sched; ?>" class="form-control" id="sched" name="sched" placeholder="Schedule of the Priest" required />
+					<br/>
+					<label>Priest Info:</label>
+					<textarea id="info" name="info" class="form-control"><?php echo @$priest_info; ?></textarea>
 					<br/>
 					<input type="submit" class="btn btn-primary" value="Update" />
 					&nbsp;&nbsp;

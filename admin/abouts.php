@@ -109,11 +109,22 @@
 							echo "<td>" . mb_substr($p_row['description'],0,30) . "...</td>";
 							echo "<td>";
 							
-							echo "<form action='a_update.php' method='post'>";
-							echo "<input type='hidden' name='id' value='" . $p_row['aboutID'] . "'/>";
-							echo "<input type='submit' value='Edit' class='btn btn-primary'/>";
-							echo "</form>";
+							if($p_row['code'] == 'masssched') {
 							
+								echo "<form action='a_update2.php' method='post'>";
+								echo "<input type='hidden' name='id' value='" . $p_row['aboutID'] . "'/>";
+								echo "<input type='submit' value='Edit' class='btn btn-primary'/>";
+								echo "</form>";
+							
+							}
+							else {
+							
+								echo "<form action='a_update.php' method='post'>";
+								echo "<input type='hidden' name='id' value='" . $p_row['aboutID'] . "'/>";
+								echo "<input type='submit' value='Edit' class='btn btn-primary'/>";
+								echo "</form>";
+
+							}
 							echo "</td>";
 							echo "</tr>";
 						

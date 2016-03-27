@@ -93,6 +93,9 @@
 								}
 							
 							?>
+							
+							<li class="divider"></li>
+							<li><a href="about.php?about=priests">Priests Informaiton</a></li>
 						</ul>
                     </li>
 					

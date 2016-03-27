@@ -47,22 +47,41 @@
 
 	}
 
-	if(isset($_POST['name']) && !empty($_POST['name'])) {
-	
+	if(isset($_POST['name'])) {
+		
 		$name = $_POST['name'];
-		$sched = $_POST['sched'];
-		$info = $_POST['info'];
+	
+		$dir = "../uploads/";
+		$file = $dir . basename(sha1(date("Y-m-d h:i:sa")) . ".pdf");
+		$file_loc = "uploads/" . basename(sha1(date("Y-m-d h:i:sa")) . ".pdf");
 		
-		$add_priest = "INSERT INTO priests (name, sched, info, dateCreated)
-			VALUES ('$name','$sched','$info',NOW())";
+		$mime = substr($_FILES["uploadfile"]["name"], -4);
+		
+		
+		if($mime == '.pdf') {
+			if(move_uploaded_file($_FILES["uploadfile"]["tmp_name"], $file)) {
 			
-		$add_priest_query = $conn->query($add_priest);
-		
-		if($add_priest_query) {
-		
-			$p_msg = "<div class='alert alert-info text-center'>
+				$add_form = "INSERT INTO docs (name, location, dateMod) 
+					VALUES ('$name','$file_loc',NOW())";
+				$add_form_query = $conn->query($add_form);
+				
+				
+				$msg = "<div class='alert alert-success text-center'>
 				<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-				Priest Added!</div>";
+				Form Successfully Added!</div>";
+			
+			}
+			else {
+				$msg =  "<div class='alert alert-danger text-center'>
+				<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+				Form Failed to Add!</div>";
+			}
+		}
+		else {
+		
+			$msg =  "<div class='alert alert-warning text-center'>
+				<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+				Invalid File Selected!</div>";
 			
 		}
 	
@@ -74,7 +93,7 @@
 <!DOCTYPE html>
 <html class="full" lang="en-US">
 <head>
-	<title>Priests Panel</title>
+	<title>Upload Form Panel</title>
 
 <?php
 	
@@ -89,7 +108,7 @@
 <body>
 	<div class="container">
 
-		<h1 class="white-text">Admin Pannel</h1>
+		<h1 class="white-text">Admin Pannel: Upload Form</h1>
 		
 		
 		
@@ -117,23 +136,21 @@
 			<div class="col-md-7">
 			<?php echo @$p_msg; ?>
 			<div class="center-div">
-				<h2 class='white-text'>Add Priest Info</h2>
-				<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" autocomplete="off">
+				<?php echo @$msg; ?>
+				<h2 class='white-text'>Upload Form</h2>
+				<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" enctype="multipart/form-data">
+					
 					<label>Name:</label>
-					<input type="text" class="form-control" id="name" name="name"
-						required autofocus placeholder="Name of Priest"/>
+					<input type="text" id="name" name="name" class="form-control" required/>
 					<br/>
-					<label>Schedule:</label>
-					<input type="text" class="form-control" id="sched" name="sched" placeholder="Schedule of the Priest" required />
+					
+					<label>Upload File:</label><em>PDF Files Only</em>
+					<input type="file" id="uploadfile" name="uploadfile" class="white-text" accept="application/pdf" required/>
 					<br/>
-					<label>Info:</label>
-					<textarea id="info" name="info" class="form-control" rows="4" placeholder="Add Info About the Priest"></textarea>
-					<br/>
-					<input type="submit" class="btn btn-primary" value="Save" />
-					&nbsp;&nbsp;
-					<input type="reset" class="btn btn-danger" value="Clear" />
-				</form>
+					
+					<input type="submit" value="Upload" class="btn btn-primary" />
 				
+				</form>
 			</div>
 			</div>
 		</div>
