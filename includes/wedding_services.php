@@ -7,7 +7,7 @@
 			</div>
 			<div class="col-md-6">
 			<div class="boxed">
-				<p>Limitations</p>
+				<p>Reminders</p>
 			</div>
 			</div>
 			</div>

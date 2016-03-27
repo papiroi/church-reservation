@@ -48,8 +48,30 @@ function viewReservation() {
 	var eventtype = document.getElementById('eventtype').value;
 	var bapType = document.getElementById('bap-type').value;
 	var priest = document.getElementById('priest').value;
-	var eventDate = document.getElementById('dateselect').value;
-	var eventTime = document.getElementById('timeselect').value;
+	
+	var date1 = document.getElementById('dateselect').value;
+	var date2 = document.getElementById('dateselect2').value;
+	var date3 = document.getElementById('dateselect3').value;
+	
+	if(date1 == '' && date2 == '') {
+		eventDate = document.getElementById('dateselect3').value;
+	}
+	else if (date2 == '' && date3 == '') {
+		eventDate = document.getElementById('dateselect1').value;
+		
+	}
+	else if(date3 == '' && date1 == '') {
+	
+		eventDate = document.getElementById('dateselect2').value;
+	}
+	
+	
+	if(document.getElementById('timeselect').value == '') {
+		var eventTime = document.getElementById('timeselect2').value;
+	}
+	else if (document.getElementById('timeselect2').value == ''){
+		var eventTime = document.getElementById('timeselect').value;
+	}
 	
 	if(bapType == 'Ordinary') {
 		eventTime = "5";
