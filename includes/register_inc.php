@@ -1,4 +1,7 @@
-	</div>
+<div class="row">
+		<div class="col-md-5">
+		<div class="center-div">
+
 			<h3 class="white-text">Registration Form</h3>
 			<form autocomplete="off" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
 				
@@ -105,7 +108,7 @@
 		<div class="col-md-2"></div>
 	
 	</div>
-	</div>
+	
 	<?php
 		include "includes/include_contacts.php";
 	?>
