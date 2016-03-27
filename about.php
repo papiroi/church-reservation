@@ -132,6 +132,25 @@
 								
 							
 							}
+							else {
+							
+								$cat = $_GET['about'];
+								
+								$select_ab = "SELECT * FROM about WHERE code = '$cat' LIMIT 1";
+								$select_ab_query = $conn->query($select_ab);
+								
+								if($select_ab_query->num_rows > 0) {
+									
+									while($arow = $select_ab_query->fetch_assoc()) {
+									
+										echo "<h1 class='white-text'>" . $arow['title'] . "</h1>";
+										echo "<p class='white-text'>" . $arow['description'] . "</p>";
+									
+									}
+								
+								}
+							
+							}
 						
 						?>
 					

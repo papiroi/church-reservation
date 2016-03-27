@@ -49,7 +49,35 @@
 
 	if(isset($_POST['title']) && !empty($_POST['title'])) {
 	
-
+		$title = $_POST['title'];
+		$code = $_POST['code'];
+		$desc = $_POST['desc'];
+		
+		$insert = "INSERT INTO about (title, code, description, dateMod)
+			VALUES (
+			'$title',
+			'$code',
+			'$desc',
+			NOW()
+			)";
+			
+		$insert_query = $conn->query($insert);
+		
+		if($insert_query) {
+			
+			$msg = "<div class='alert alert-info text-center'>
+				<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+				About Added!</div>";
+			
+		
+		}
+		else {
+		
+			$msg = "<div class='alert alert-danger text-center'>
+				<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+				Error in Adding to Database!</div>";
+		
+		}
 	
 	}
 
@@ -100,11 +128,23 @@
 		<div class="row">
 			
 			<div class="col-md-7">
-			<?php echo @$p_msg; ?>
+			<?php echo @$msg; ?>
 			<div class="center-div">
 				<h2 class='white-text'>Add About</h2>
 				<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" autocomplete="off">
+					<label>Title:</label>
+					<input type="text" id="title" name="title" class="form-control" placeholder="Title" required autofocus/>
+					<br/>
 					
+					<label>Code:</label>
+					<input type="text" id="code" name="code" class="form-control" placeholder="Unique Code" required/>
+					<br/>
+					
+					<label>Description:</label>
+					<textarea id="desc" name="desc" class="form-control" placeholder="Decription Here..." required></textarea>
+					<br/>
+					
+					<input type="submit" value="Add to About" class="btn btn-primary" />
 					
 				</form>
 				

@@ -68,7 +68,7 @@
 		
 			$p_msg = "<div class='alert alert-danger text-center'>
 				<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-				Event in Adding Event!</div>";
+				Error in Adding Event!</div>";
 		
 		}
 	

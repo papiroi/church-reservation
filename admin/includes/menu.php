@@ -122,6 +122,7 @@
 								<a href="dpriest.php"><strong>Priests</strong></a>
 								<a href="devent.php"><strong>Events</strong></a>
 								<a href="dform.php"><strong>Form</strong></a>
+								<a href="dabout.php"><strong>About</strong></a>
 							</li>
 							
 							
