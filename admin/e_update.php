@@ -52,8 +52,10 @@
 		$id = $_POST['eventid'];
 		$name = $_POST['name'];
 		$code = $_POST['code'];
+		$description = $_POST['description'];
+		$reminder = $_POST['reminder'];
 	
-		$update_e = "UPDATE events SET name='$name', code = '$code' WHERE eventID = '$id'";
+		$update_e = "UPDATE events SET name='$name', code = '$code', description = '$description', reminder = '$reminder' WHERE eventID = '$id'";
 		$update_e_query = $conn->query($update_e);
 		
 		if($update_e_query) {
@@ -95,6 +97,8 @@
 			$event_id = $e_row['eventID'];
 			$event_name = $e_row['name'];
 			$event_code = $e_row['code'];
+			$description = $e_row['description'];
+			$reminder = $e_row['reminder'];
 		
 		}
 	}
@@ -157,6 +161,12 @@
 					<br/>
 					<label>Code:</label>
 					<input type="text" value="<?php echo @$event_code; ?>" class="form-control" id="code" name="code" placeholder="Code of Event" required />
+					<br/>
+					<label>Description:</label>
+					<textarea id="description" name="description" class="form-control"><?php echo @$description; ?></textarea>
+					<br/>
+					<label>Reminder: </label>
+					<textarea id="reminder" name="reminder" class="form-control"><?php echo @$reminder; ?></textarea>
 					<br/>
 					<input type="submit" class="btn btn-primary" value="Update" />
 					&nbsp;&nbsp;

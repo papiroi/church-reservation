@@ -201,17 +201,20 @@ class Database {
 	// Records for Events
 	public function events() {
 	
-		$create_event_table = "CREATE TABLE IF NOT EXISTS events (
-			eventID int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
-			code varchar(50) NOT NULL,
-			name varchar(50) NOT NULL,
-			dateMod datetime NOT NULL
+		$create_event_table = "CREATE TABLE IF NOT EXISTS`events` (
+		  `eventID` int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+		  `code` varchar(50) NOT NULL,
+		  `name` varchar(50) NOT NULL,
+		  `description` varchar(500) NOT NULL,
+		  `reminder` varchar(500) NOT NULL,
+		  `dateMod` datetime NOT NULL
 		)";
 		
 		$cet_query = $this->conn->query($create_event_table);
 		
-		if(!$cet_query)
+		if(!$cet_query) {
 			exit("Event: Errror!");
+		}
 			
 		// Create Events
 		
@@ -219,53 +222,68 @@ class Database {
 		$select_events_query = $this->conn->query($select_event);
 		
 		if($select_events_query->num_rows > 0) {
-		
+			//echo "";
+			// Nothing to do here
 		}
 		else {
-			$c_baptism = "INSERT IGNORE INTO events (code, name, dateMod)
+			$c_baptism = "INSERT INTO events (code, name, description, reminder, dateMod)
 				VALUES(
 				'Baptism',
 				'Baptism',
+				'this is baptism description',
+				'baptism reminder',
 				NOW()
 				)";
-			$c_b_query = $this->conn->query($c_baptism);	
+				
+			$c_baptism_query = $this->conn->query($c_baptism);
 			
-			$c_confirm = "INSERT IGNORE INTO events (code, name, dateMod)
+			
+			$c_confirm = "INSERT INTO events (code, name, description, reminder, dateMod)
 				VALUES(
 				'Confirmation',
 				'Confirmation',
+				'confirmation description',
+				'cofirmation reminder',
 				NOW()
 				)";
 			$c_c_query = $this->conn->query($c_confirm);
 			
-			$c_funeral = "INSERT IGNORE INTO events (code, name, dateMod)
+			$c_funeral = "INSERT INTO events (code, name, description, reminder, dateMod)
 				VALUES(
 				'Funeral',
 				'Funeral',
+				'funeral description',
+				'funeral reminders',
 				NOW()
 				)";
 			$c_f_query = $this->conn->query($c_funeral);
 			
-			$c_for_conf = "INSERT IGNORE INTO events (code, name, dateMod)
+			$c_for_conf = "INSERT INTO events (code, name, description, reminder, dateMod)
 				VALUES(
 				'For Confirmation',
 				'Seminar For Confirmation',
+				'description for seminar for confirmation',
+				'reminder for seminar for confirmation',
 				NOW()
 				)";
 			$c_f_c_query = $this->conn->query($c_for_conf);
 			
-			$c_for_wed = "INSERT IGNORE INTO events (code, name, dateMod)
+			$c_for_wed = "INSERT INTO events (code, name, description, reminder, dateMod)
 				VALUES(
 				'For Wedding',
 				'Seminar For Wedding',
+				'description for seminar for wedding',
+				'reminder for seminar for wedding',
 				NOW()
 				)";
 			$c_f_w_query = $this->conn->query($c_for_wed);
 		
-			$c_wedding = "INSERT IGNORE INTO events (code, name, dateMod)
+			$c_wedding = "INSERT INTO events (code, name, description, reminder, dateMod)
 				VALUES(
 				'Wedding',
 				'Wedding',
+				'description for wedding',
+				'reminder for wedding',
 				NOW()
 				)";
 			$c_w = $this->conn->query($c_wedding);

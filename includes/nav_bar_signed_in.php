@@ -99,6 +99,35 @@
 							
 							<li><a href="services.php?services=wedding">Wedding</a></li>
 							
+							<?php
+								$select_event = "SELECT * FROM events";
+								$select_event_query = $conn->query($select_event);
+								
+								$separator = 0;
+								
+								while($e = $select_event_query->fetch_assoc()) {
+									
+									if($e['code'] == 'Baptism' || $e['code'] == 'Confirmation' || $e['code'] == 'Funeral' || 
+									$e['code'] == 'For Confirmation' || $e['code'] == 'For Wedding' || $e['code'] == 'Wedding') {
+										
+										// Nothing to do here
+										
+									}
+									else {
+										
+										if($separator == 0) {
+											echo "<li class='divider'></li>";
+											$separator = 1;
+										}
+										
+										echo "<li><a href='services.php?services=" . $e['code'] . "'>" . $e['name'] . "</a></li>";
+										
+									}
+									
+								}
+							
+							?>
+							
 						</ul>
                     </li>
                     <li class="dropdown">

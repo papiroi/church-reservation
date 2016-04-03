@@ -51,9 +51,11 @@
 	
 		$name = $_POST['name'];
 		$code = $_POST['code'];
+		$description = $_POST['description'];
+		$reminder = $_POST['reminder'];
 		
-		$add_event = "INSERT INTO events (name, code, dateMod)
-			VALUES ('$name','$code',NOW())";
+		$add_event = "INSERT INTO events (name, code, description, reminder, dateMod)
+			VALUES ('$name','$code','$description','$reminder',NOW())";
 			
 		$add_event_query = $conn->query($add_event);
 		
@@ -131,6 +133,12 @@
 					<br/>
 					<label>Code:</label>
 					<input type="text" class="form-control" id="code" name="code" placeholder="Unique Code for the Event" required />
+					<br/>
+					<label>Description:</label>
+					<textarea id="desc" name="reminder" class="form-control" placeholder="Description of the Event" required></textarea>
+					<br/>
+					<label>Reminder:</label>
+					<textarea id="desc" name="desc" class="form-control" placeholder="Reminder for the Event" required></textarea>
 					<br/>
 					<input type="submit" class="btn btn-primary" value="Save" />
 					&nbsp;&nbsp;

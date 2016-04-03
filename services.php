@@ -123,7 +123,28 @@
 						}
 						else {
 							
-							"<h1 class='white-text'>Select Services...</h1>";
+							$cat = $_GET['services'];
+							$select_event = "SELECT * FROM events WHERE code = '$cat'";
+							$select_event_query = $conn->query($select_event);
+							
+							while($e_row = $select_event_query->fetch_assoc()) {
+								
+								echo "<h1 class='white-text'>" . $e_row['name'] . "</h1>";
+								echo "<div class='row'>";
+								echo "<div class='col-md-6'>";
+								echo "<div class='boxed'>";
+								echo "<p class='white-text'>" . $e_row['description'] . "</p>";
+								echo "</div>";
+								echo "</div>";
+								echo "<div class='col-md-6'>";
+								echo "<div class='boxed'>";
+								echo "<p class='white-text'>" . $e_row['reminder'] . "</p>";
+								echo "</div>";
+								echo "</div>";
+								echo "</div>";
+								
+							}
+							
 							
 						}
 					
