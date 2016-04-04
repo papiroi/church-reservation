@@ -414,6 +414,22 @@ class Database {
 	
 		
 	}
+	
+	public function usr_limitations() {
+		
+		$create = "CREATE TABLE IF NOT EXISTS limitations(
+			limitationID int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+			limitation varchar(500) NOT NULL,
+			dateMod datetime NOT NULL
+		)";
+		
+		$create_query = $this->conn->query($create);
+		
+		if(!$create_query) {
+			exit("User Limitation Error!");
+			
+		}
+	}
 
 	// End of Database Class
 }

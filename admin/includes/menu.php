@@ -92,6 +92,7 @@
 								<a href="add_event.php"><strong>Event</strong></a>
 								<a href="add_form.php"><strong>Form</strong></a>
 								<a href="add_about.php"><strong>About</strong></a>
+								<a href="add_limit.php"><strong>User Limitations</strong></a>
 							</li>
 							
 							
@@ -106,6 +107,7 @@
 								<a href="events.php"><strong>Events</strong></a>
 								<a href="abouts.php"><strong>Abouts</strong></a>
 								<a href="forms.php"><strong>Forms</strong></a>
+								<a href="userlimit.php"><strong>User Limitaitons</strong></a>
 							</li>
 							<li>
 								<a href="edit_announcement.php"><strong>Edit Announcement</strong></a>
@@ -123,6 +125,8 @@
 								<a href="devent.php"><strong>Events</strong></a>
 								<a href="dform.php"><strong>Form</strong></a>
 								<a href="dabout.php"><strong>About</strong></a>
+								<a href="duserlimit.php"><strong>User Limitation</strong></a>
+								
 							</li>
 							
 							

@@ -75,6 +75,8 @@
 	//create docs table
 	$db->docs();
 	
+	// create limations table
+	$db->usr_limitations();
 ?>
 
 

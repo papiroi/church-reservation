@@ -12,13 +12,27 @@
 
 	<h3>User Limitations</h3>
 	
-	<ul>
-		<li>You can Reserve Only 1 Reservation Per Event at a time.</li>
-		<li>Ordniary Baptismal is schedule daily from 12:00pm to 1:00pm</li>
-		<li>Wedding Reservations must have a down payment for its date.</li>
-		<li>Confirmations will held on Thursdays Only.</li>
-		<li>Seminars will held on Saturdays Only.</li>
-		<li>Your email will be use only once.</li>
-	</ul>
+<?php
+	
+	$limit = "SELECT * FROM limitations";
+	$limit_query = $conn->query($limit);
+	
+	if($limit_query->num_rows > 0 ) {
+		
+		//echo "Found Limitations.";
+		while($lrow = $limit_query->fetch_assoc()) {
+			
+			echo "<li>" . $lrow['limitation'] . "</li>";
+			
+		}
+		
+	}
+	else {
+		
+		echo "User Limitations Data Not Found!<br/>";
+		echo "Please contact your administrator.";
+		
+	}
 
+?>
 </div>
