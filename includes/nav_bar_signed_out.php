@@ -128,7 +128,7 @@
 						</ul>
                     </li>
 					
-					<li id="user-position"><a href="#">
+					<li id="user-position"><a href="javascript: void(0)">
 						Welcome Guest!!!
 					</a></li>
 					
