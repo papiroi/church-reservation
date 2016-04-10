@@ -1,0 +1,5 @@
+- Reservation Confirmation
+- Reservation No Conflict
+
+- Submit -> Delete - OK
+- Redirecting to Another Page: Delete Events -> Edit Events - OK

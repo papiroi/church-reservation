@@ -15,4 +15,4 @@
 	$del_priest = "DELETE FROM priests WHERE priestID = '$id'";
 	$del_p_query = $conn->query($del_priest);
 	
-	header('Location: priest.php');
+	header('Location: dpriest.php');

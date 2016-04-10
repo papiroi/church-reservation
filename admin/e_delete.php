@@ -15,4 +15,4 @@
 	$del_priest = "DELETE FROM events WHERE eventID = '$id'";
 	$del_p_query = $conn->query($del_priest);
 	
-	header('Location: events.php');
+	header('Location: devent.php');

@@ -112,7 +112,7 @@
 							echo "<form action='f_delete.php' method='post'>";
 							echo "<input type='hidden' name='id' value='" . $frow['docID'] . "' />";
 							echo "<input type='hidden' name='file' value='" . $frow['location'] . "' />";
-							echo "<input type='submit' class='btn btn-danger'/>";
+							echo "<input type='submit' value='Delete' class='btn btn-danger'/>";
 							echo "</form>";
 							echo "</td>";
 							echo "</tr>";
