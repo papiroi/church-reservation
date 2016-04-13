@@ -118,10 +118,15 @@
 				VALUES ('$convID','$content','$username','$receiver',NOW(),'$status','$category')
 				";
 				
+			$query_send_copy = "INSERT INTO cached_msg (convID, Content, sender, receiver, dateSent, status, category)
+				VALUES ('$convID','$content','$username','$receiver',NOW(),'$status','$category')
+				";
+				
 			$q_query_send = $conn->query($query_send);
 			
 			if($q_query_send == true) {
 			
+				$qsc = $conn->query($query_send_copy);
 				echo "<script>alert('Message Successfully Sent to Admin!')</script>";
 			
 			}

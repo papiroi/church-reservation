@@ -40,7 +40,7 @@
 			echo "<td><a class='white-text' href='javascript: void(0)'><span data-toggle='modal' data-target='#" . $q_row['receiver'] . "'>" . $q_row['receiver'] . "</span></a>";
 			include "includes/show_sent_modal.php";
 			echo "</td>";
-			echo "<td>" . $q_row['Content'] . "</td>";
+			echo "<td>" . mb_substr($q_row['Content'],0,25) . "...</td>";
 			echo "<td>" . $q_row['dateSent'] . "</td>";
 			echo "<td>" . readUnread($q_row['status']) . "</td>";
 			echo "<td class='text-center'>";

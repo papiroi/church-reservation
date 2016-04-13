@@ -12,7 +12,7 @@
 	
 	$unread = '0';
 	
-	$count_unread = "SELECT * FROM messages WHERE receiver='admin' AND status='0'";
+	$count_unread = "SELECT * FROM cached_msg WHERE receiver='admin' AND status='0'";
 	$q_count_unread = $conn->query($count_unread);
 	
 	if($q_count_unread->num_rows > 0) {
@@ -45,7 +45,7 @@
                 <ul class="nav navbar-nav">
                     <li>
                         <a href="index.php">
-						<!-- <span class="glyphicon glyphicon-home"></span> -->
+						<span class="glyphicon glyphicon-home"></span> 
 						<strong>Home</strong>
 						</a>
                     </li>

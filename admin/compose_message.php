@@ -126,7 +126,13 @@
 					
 				$q_query_send = $conn->query($query_send);
 				
+				
+				$send_copy = "INSERT INTO cached_msg (convID, Content, sender, receiver, dateSent, status, category)
+					VALUES ('$convID','$content','$username','$receiver',NOW(),'$status','$category')";
+				
 				if($q_query_send == true) {
+				
+					$send_copy = $conn->query($send_copy);
 				
 					echo "<script>alert('Message Successfully Send!')</script>";
 				

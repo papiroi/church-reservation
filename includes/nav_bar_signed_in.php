@@ -12,7 +12,7 @@
 	
 	$unread = '0';
 	
-	$count_unread = "SELECT * FROM messages WHERE receiver='$username' AND status='0'";
+	$count_unread = "SELECT * FROM cached_msg WHERE receiver='$username' AND status='0'";
 	$q_count_unread = $conn->query($count_unread);
 	
 	if($q_count_unread->num_rows > 0) {

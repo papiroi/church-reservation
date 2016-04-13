@@ -102,7 +102,7 @@ class Database {
 		$create_reservation = "CREATE TABLE IF NOT EXISTS reservation (
 			reservationID int(11) AUTO_INCREMENT PRIMARY KEY NOT NULL,
 			reserv_num varchar(12) NOT NULL,
-			event_type varchar(15) NOT NULL,
+			event_type varchar(25) NOT NULL,
 			priest varchar(100) NOT NULL,
 			reserv_date date NOT NULL,
 			reserv_time varchar(5) NOT NULL,
@@ -156,7 +156,8 @@ class Database {
 
 
 
-	// database/tables for chat
+	// database/tables for messages
+	// copy of the sender for their sent items
 	public function Messages() {
 
 		$create_messages_table = "CREATE TABLE IF NOT EXISTS messages (
@@ -174,6 +175,29 @@ class Database {
 
 		if(!$cmt) {
 			exit("Database Script Error: 3");
+		}
+	}
+	
+	
+	// database/tables for cached copy for messages
+	// copy of the receiver in their inbox
+	public function Messages2() {
+
+		$create_messages_table = "CREATE TABLE IF NOT EXISTS cached_msg (
+			MessageID int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+			convID varchar(10) NOT NULL,
+			Content varchar(300) NOT NULL,
+			sender varchar(60) NOT NULL,
+			receiver varchar(10) NOT NULL,
+			dateSent datetime NOT NULL,
+			status varchar(1) NOT NULL,
+			category varchar(10) NOT NULL
+			)";
+			
+		$cmt = $this->conn->query($create_messages_table);
+
+		if(!$cmt) {
+			exit("Database Script Error: 4");
 		}
 	}
 	

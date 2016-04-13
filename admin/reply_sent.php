@@ -72,9 +72,15 @@
 					VALUES ('$convID','$message','$sender','$receiver',NOW(),'$status','$category')
 					";
 					
+		$send_copy = "INSERT INTO cached_msg (convID, Content, sender, receiver, dateSent, status, category)
+					VALUES ('$convID','$message','$sender','$receiver',NOW(),'$status','$category')
+					";			
+		
 		$q_query_send = $conn->query($query_send);
 		
 		if($q_query_send == true) {
+			$send_copy_query = $conn->query($send_copy);
+			
 			header('Location: sent_messages.php');
 		}
 		

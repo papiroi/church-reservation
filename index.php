@@ -60,6 +60,9 @@
 	//Create Messages Table
 	$db->Messages();
 	
+	//Create Cached_msg table
+	$db->Messages2();
+	
 	//Create priests table
 	$db->priests();
 	

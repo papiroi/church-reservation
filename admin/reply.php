@@ -50,6 +50,9 @@
 			
 		$q_update_read_status = $conn->query($update_read_status);
 		
+		$update_status = "UPDATE cached_msg SET status='1' WHERE convID = '$id' AND  category = 'Sent'";
+		$update_status_query = $conn->query($update_status);
+		
 	}
 
 
@@ -102,7 +105,7 @@
 					
 					
 					
-					$select_message = "SELECT * FROM messages WHERE convID = '$id'";
+					$select_message = "SELECT * FROM cached_msg WHERE convID = '$id'";
 					$select_message_query = $conn->query($select_message);
 					
 					while ($row = $select_message_query->fetch_assoc()) {

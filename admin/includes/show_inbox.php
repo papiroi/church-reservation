@@ -17,7 +17,7 @@
 		<th>Sender</th>
 		<th>Message</th>
 		<th>Date Send</th>
-		<th> </th>
+		<th class="text-center" colspan="2">Options</th>
 	</tr>
 <?php
 	/*
@@ -33,7 +33,7 @@
 	}
 	
 	
-	$select_sent = "SELECT * FROM messages WHERE receiver='$username' AND category ='Sent' ORDER BY dateSent DESC";
+	$select_sent = "SELECT * FROM cached_msg WHERE receiver='$username' AND category ='Sent' ORDER BY dateSent DESC";
 	
 	$q_select_sent = $conn->query($select_sent);
 	
@@ -49,19 +49,24 @@
 				$stat_msg = "";
 			}
 
-		
-			echo "<form action='reply.php' method='post'>";
-		
-		
-			echo "<input type='hidden' name='conversation' value='" . $q_row['convID'] . "'";
-			
 			echo "<tr>";
+			echo "<form action='reply.php' method='post'>";
+			echo "<input type='hidden' name='conversation' value='" . $q_row['convID'] . "' />";
 			echo "<td>" . $q_row['sender'] . " $stat_msg </td>";
 			echo "<td>" . mb_substr($q_row['Content'],0,15) . "...</td>";
 			echo "<td>" . $q_row['dateSent'] . "</td>";
 			echo "<td><input type='submit' value='View/Reply' class='btn btn-warning'</td>";
-			echo "</tr>";
 			echo "</form>";
+			
+			
+			echo "<td>";
+			echo "<form action='inboxdelete.php' method='post'>";
+			echo "<input type='hidden' name='msgid' value='" . $q_row['convID'] . "' />";
+			echo "<input type='submit' value='Delete' class='btn btn-danger' />";
+			echo "</form>";
+			echo "</td>";
+			
+			echo "</tr>";
 		}
 	}
 	else {

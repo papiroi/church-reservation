@@ -35,13 +35,14 @@
 		$id = $_POST['id'];
 	
 		//update the status from 0 to 1 or from undread to read
-		$update_read_status = "UPDATE messages 
+		$update_read_status = "UPDATE cached_msg 
 			SET status='1'
 			WHERE convID='$id' AND category='Sent'";
 				
 		$q_update_read_status = $conn->query($update_read_status);
 		
-	
+		$update_status = "UPDATE messages SET status = '1' WHERE convID = '$id' AND category = 'Sent'";
+		$update_status_query = $conn->query($update_status);
 	
 	}
 

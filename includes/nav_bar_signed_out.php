@@ -129,7 +129,7 @@
                     </li>
 					
 					<li id="user-position"><a href="javascript: void(0)">
-						Welcome Guest!!!
+						Welcome Guest!
 					</a></li>
 					
 					
