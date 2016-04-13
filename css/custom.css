@@ -354,6 +354,13 @@ input, select, textarea{
 	
 }
 
+.calendar {
+	
+	overflow: auto;
+	height: 513px;
+	
+}
+
 /* Highlight Color  */
 ::-moz-selection {
     color: white;

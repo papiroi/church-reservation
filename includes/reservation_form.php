@@ -258,12 +258,12 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 
 	</div>
 	<div class="col-md-7">
-		<div class="center-div">
+		<div class="center-div calendar">
 			<!-- Start of Month Calendar -->
 			<!-- Start of Month Calendar -->
 			<!-- Start of Month Calendar -->
 			<!-- Start of Month Calendar -->
-			<div id="calendar" class="calendar">
+			<div id="calendar" class="">
 			<?php
 				if(isset($_GET['month'])) {
 					
@@ -402,7 +402,7 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 			<h4>
 			<div style="height: 20px; width: 20px; background-color: #00ff00; padding: 2px; display: inline-block;"></div>
 			<small><span class="white-text">on the Date Means, the Date has Reservation But not Full. You Can click the Date to show the Reservation</span></small></h4>
-		
+			
 			</div>
 			<!-- End of Month Calendar -->
 			<!-- End of Month Calendar -->
