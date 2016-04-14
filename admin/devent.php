@@ -94,7 +94,7 @@
 				
 				<table class="table">
 					<th>Name</th>
-					<th>Code</th>
+					<!--<th>Code</th>-->
 					<th>Options</th>
 				<?php
 					$select_events = "SELECT * FROM events ORDER BY name ASC";
@@ -106,7 +106,7 @@
 							
 							echo "<tr>";
 							echo "<td>" . $e_row['name'] . "</td>";
-							echo "<td>" . $e_row['code'] . "</td>";
+							//echo "<td>" . $e_row['code'] . "</td>";
 							
 							
 							echo "<td>";

@@ -120,7 +120,7 @@
 											$separator = 1;
 										}
 										
-										echo "<li><a href='services.php?services=" . $e['code'] . "'>" . $e['name'] . "</a></li>";
+										echo "<li><a href='services.php?services=" . $e['eventID'] . "'>" . $e['name'] . "</a></li>";
 										
 									}
 									

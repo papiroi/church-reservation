@@ -50,12 +50,12 @@
 	if(isset($_POST['name']) && !empty($_POST['name'])) {
 	
 		$name = $_POST['name'];
-		$code = $_POST['code'];
+		//$code = $_POST['code'];
 		$description = $_POST['description'];
 		$reminder = $_POST['reminder'];
 		
-		$add_event = "INSERT INTO events (name, code, description, reminder, dateMod)
-			VALUES ('$name','$code','$description','$reminder',NOW())";
+		$add_event = "INSERT INTO events (name,  description, reminder, dateMod)
+			VALUES ('$name','$description','$reminder',NOW())";
 			
 		$add_event_query = $conn->query($add_event);
 		
@@ -131,13 +131,13 @@
 					<input type="text" class="form-control" id="name" name="name"
 						required autofocus placeholder="Name to Display"/>
 					<br/>
-					<label>Code:</label>
-					<input type="text" class="form-control" id="code" name="code" placeholder="Unique Code for the Event" required />
+					<!-- <label>Code:</label>
+					<input type="text" class="form-control" id="code" name="code" placeholder="Unique Code for the Event" required /> -->
 					<br/>
 					<label>Description:</label>
 					<textarea id="desc" name="description" class="form-control" placeholder="Description of the Event" required></textarea>
 					<br/>
-					<label>Reminder:</label>
+					<label>Note:</label>
 					<textarea id="desc" name="reminder" class="form-control" placeholder="Reminder for the Event" required></textarea>
 					<br/>
 					<input type="submit" class="btn btn-primary" value="Save" />

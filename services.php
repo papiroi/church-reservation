@@ -124,7 +124,7 @@
 						else {
 							
 							$cat = $_GET['services'];
-							$select_event = "SELECT * FROM events WHERE code = '$cat'";
+							$select_event = "SELECT * FROM events WHERE eventID = '$cat'";
 							$select_event_query = $conn->query($select_event);
 							
 							while($e_row = $select_event_query->fetch_assoc()) {

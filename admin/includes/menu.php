@@ -93,6 +93,8 @@
 								<a href="add_form.php"><strong>Form</strong></a>
 								<a href="add_about.php"><strong>About</strong></a>
 								<a href="add_limit.php"><strong>User Limitations</strong></a>
+								<a href="javascript: void(0)"><strong>Calendar Label</strong></a>
+								
 							</li>
 							
 							
