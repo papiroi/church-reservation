@@ -454,6 +454,22 @@ class Database {
 			
 		}
 	}
+	
+	public function cal_label() {
+		
+		$create = "CREATE TABLE IF NOT EXISTS cal_label(
+			labelID int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+			name varchar(150) NOT NULL,
+			content varchar(200) NOT NULL,
+			dateMod datetime NOT NULL
+		)";
+		
+		$create_query = $this->conn->query($create);
+		
+		if(!$create_query) {
+			exit("Label Error!");
+		}
+	}
 
 	// End of Database Class
 }

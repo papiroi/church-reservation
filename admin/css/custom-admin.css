@@ -12,7 +12,7 @@
 	background-color: rgba(0,0,0,0.8);
 	margin-top:50px;
 	min-width: 350px;
-	min-height: 350px;
+	height: 350px;
 	padding: 5px 30px 20px 30px;
 	border-radius: 10px;
 	margin-bottom: 50px;
@@ -139,6 +139,14 @@ textarea {
 	font-weight: bold;
 	
 }
+
+.scroll {
+	
+	height: ;
+	overflow: auto;
+	
+}
+
 
 .messages{
 	background-color: rgba(0,0,0,0.8);

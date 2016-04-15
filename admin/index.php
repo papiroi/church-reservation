@@ -90,8 +90,7 @@
 		<div class="row">
 			
 			<div class="col-md-12">
-			<div class="center-div">
-			
+			<div class="center-div scroll">
 			
 				<?php
 				
@@ -147,7 +146,7 @@
 				}
 				else {
 					
-					echo "<div class='info-message'>There are no Reservation Requests for today.</div>";
+					echo "<div class='info-message'>There are no Incomming Reservation .</div>";
 					
 				}
 				

@@ -80,6 +80,9 @@
 	
 	// create limations table
 	$db->usr_limitations();
+	
+	// create calendar label table
+	$db->cal_label();
 ?>
 
 
