@@ -172,7 +172,7 @@
 					&nbsp;&nbsp;
 					<input type="reset" class="btn btn-danger" value="Revert Changes" />
 				</form>
-				
+			</div>
 			</div>
 			</div>
 		</div>

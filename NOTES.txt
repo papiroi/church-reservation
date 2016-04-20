@@ -1,5 +1,12 @@
-- Reservation Confirmation
-- Reservation No Conflict
+- Reservation Confirmation *** - ok
+- Confirmation Event to 9:00am only - ok
+- Avoid Cached Query- ok
 
-- Submit -> Delete - OK
-- Redirecting to Another Page: Delete Events -> Edit Events - OK
+- Reservation No Conflict ***
+- Limit 10 Messages (Inbox and Sent Items: User and Admin)
+- Limit Events per Day to 10
+- Edit and Delete Label/Note in Calendar
+- Add Image In Priest
+- Red Mark in Full Day Reservation ***
+- Reservation Conflict and Availability of the Priest Scedule
+- Report Generation Must Add the name of the Priest

@@ -159,6 +159,8 @@
 				</form>
 
 				<br/>
+				<span class="white-text">Forgot Your Password? <a href="javascript: void(0)">here</a>.</span>
+				<br/>
 				<span class="white-text">Doesn't Have an Account? Click <a href="register.php">here</a>.</span>
 				<br/>
 				<a href="index.php"><span class="white-text">Return to Home Page</span></a>

@@ -46,6 +46,16 @@
 */
 
 	include "includes/connect.php";
+	
+	
+	if(isset($_POST['event']) && !empty($_POST['event'])) {
+		
+		$event = $_POST['event'];
+		$edate = $_POST['edate'];
+		$priest = $_POST['priest'];
+		$etime = $_POST['etime'];
+		
+	}
 
 ?>
 <!DOCTYPE html>
@@ -89,6 +99,9 @@
 					$("#dateselect").hide();
 					$("#lblpriest").hide();
 					$("#priest").hide();
+					$("#lbltimeselect").hide();
+					$("#timeselect").hide(1);
+					$("#timeselect2").hide();
 					
 				}
 				else if(document.getElementById('eventtype').value == 'For Confirmation') {
@@ -213,13 +226,13 @@
 			});
 		 });
 		 */
+		 
 	</script>
 	<!-- Custom CSS for Background Image for this page -->
 	<link rel="stylesheet" href="css/background-image.css" />
 	
 </head>
 <body>
-	
 	<div class="container">
 
 		<h1 class="text-center white-text">Scheduling and Reservation System for Tarlac San Sebastian Cathedral Parish</h1>

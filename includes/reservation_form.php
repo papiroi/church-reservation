@@ -21,20 +21,7 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 	
 	$username = $_SESSION['username'];
 	
-	// date setting
-	if($_POST['dateselect'] != '1970-01-01') {
-		$event_date = date('y-m-d', strtotime($_POST['dateselect']));
-	}
-	else if($_POST['dateselect2'] != '1970-01-01') {
-	
-		$event_date = date('y-m-d', strtotime($_POST['dateselect2']));
-	
-	}
-	else if($_POST['dateselect3'] != '1970-01-01') {
-	
-		$event_date = date('y-m-d', strtotime($_POST['dateselect3']));
-	
-	}
+
 	
 	
 		// Reserve Number Generator
@@ -144,9 +131,9 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 			<!-- 
 			Reservation
 			-->
-			<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" onsubmit="return validateForm();" autocomplete="off">
+			<form action="reserv_summ.php" method="post" autocomplete="off">
 				<label for="eventtype">Select Event:</label>
-				<select id="eventtype" name="eventtype" class="form-control" required autofocus title="Select an Event!">
+				<select id="eventtype" name="eventtype" class="form-control" value="<?php echo @$event; ?>" required autofocus title="Select an Event!">
 					<option value="">Select Event</option>
 					
 					<!-- Load List of Events -->
@@ -186,8 +173,8 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 				<br/>
 				
 				<label id="lblpriest" for="priest">Priest: </label>
-				<select id="priest" name="priest" class="form-control">
-					<option value="Any">Any</option>
+				<select id="priest" name="priest" value="<?php echo @$priest; ?>" class="form-control">
+					<option value="">Any</option>
 					<?php
 						$select_priests = "SELECT * FROM priests";
 						$spq = $conn->query($select_priests);
@@ -204,22 +191,22 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 				
 				<!-- Default Date Select -->
 				<label for="dateselect">Select Date:</label>
-				<input type="text" id="dateselect" name="dateselect" class="form-control" />
+				<input type="text" id="dateselect" name="dateselect" value="<?php echo @$edate; ?>" class="form-control" />
 				
 				
 				<!-- Date Select for Confirmation -->
 				<!---<label for="dateselect">Select Date: Confirmation</label>-->
-				<input type="text" id="dateselect2" name="dateselect2" class="form-control" />
+				<input type="text" id="dateselect2" name="dateselect2" value="<?php echo @$edate; ?>" class="form-control" />
 				
 				
 				<!-- Date Select for Seminars -->
 				<!--<label for="dateselect">Select Date: Seminars</label>-->
-				<input type="text" id="dateselect3" name="dateselect3" class="form-control" />
+				<input type="text" id="dateselect3" name="dateselect3" value="<?php echo @$edate; ?>" class="form-control" />
 				
 				<br/>
 				
 				<label id="lbltimeselect" for="timeselect">Select Starting Time:</label>
-				<select id="timeselect" name="timeselect" class="form-control">
+				<select id="timeselect" name="timeselect" value="<?php echo @$etime; ?>" class="form-control">
 				
 					<option value="">Select Time</option>
 					<option value="1">8:00am</option>
@@ -234,7 +221,7 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 					<option value="10">5:00pm</option>
 					
 				</select>
-				<select id="timeselect2" name="timeselect2" class="form-control">
+				<select id="timeselect2" name="timeselect2" value="<?php echo @$etime; ?>" class="form-control">
 				
 					<option value="">Select Time</option>
 					<option value="1">8:00am to 12:00pm</option>
@@ -396,13 +383,35 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 				}
 			
 			?>
-			<h4>
+			<ul>
+			<li><h4>
 			<div style="height: 20px; width: 20px; background-color: #ff0000; padding: 2px; display: inline-block;"></div>
-			<small><span class="white-text">on the Date Means, the Date is Full</span></small></h4>
-			<h4>
+			<small><span class="white-text">on the Date Means, the Date is Full</span></small></h4></li>
+			<li><h4>
 			<div style="height: 20px; width: 20px; background-color: #00ff00; padding: 2px; display: inline-block;"></div>
-			<small><span class="white-text">on the Date Means, the Date has Reservation But not Full. You Can click the Date to show the Reservation</span></small></h4>
+			<small><span class="white-text">on the Date Means, the Date has Reservation But not Full. You Can click the Date to show the Reservation</span></small></h4></li>
+			<?php
+				
+				$select_cal_label = "SELECT * FROM cal_label";
+				$scl_query = $conn -> query($select_cal_label);
+				
+				if($scl_query -> num_rows > 0) {
+					
+					while ($c_row = $scl_query->fetch_assoc()) {
+						
+						echo "<li><h4><small><span class='white-text'>" . $c_row['content'] . "</span></small></h4></li>";
+						
+					}
+					echo "</ul>";
+					
+				}
+				else {
+					
+					echo "";
+					
+				}
 			
+			?>
 			</div>
 			<!-- End of Month Calendar -->
 			<!-- End of Month Calendar -->

@@ -74,5 +74,7 @@
 		<input type="submit" value="Login" class="btn btn-primary form-control"/>
 	</form>
 	<br/>
+	<a href="javascript: void(0)"><span class="white-text">Forgot Your Password?</span></a>
+	<br/>
 	<a href="register.php"><span class="white-text">Click Here to Register</span></a>
 </div>
