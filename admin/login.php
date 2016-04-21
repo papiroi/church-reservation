@@ -114,7 +114,8 @@
 				</form>
 
 				<br/>
-
+				<a href="javascript: void(0)" class="white-text">Forgot Password?</a>
+				<br/>
 				<a href="<?php echo BASE . 'index.php'?>"><span class="white-text"><< Back to Main Page</span></a>
 
 			</div>

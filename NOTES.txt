@@ -1,12 +1,16 @@
 - Reservation Confirmation *** - ok
 - Confirmation Event to 9:00am only - ok
 - Avoid Cached Query- ok
+- Limit Events per Day to 10 - ok
+- Red Mark in Full Day Reservation ***
+- Admin: Update Details and Change Password - ok
 
 - Reservation No Conflict ***
 - Limit 10 Messages (Inbox and Sent Items: User and Admin)
-- Limit Events per Day to 10
 - Edit and Delete Label/Note in Calendar
 - Add Image In Priest
-- Red Mark in Full Day Reservation ***
 - Reservation Conflict and Availability of the Priest Scedule
 - Report Generation Must Add the name of the Priest
+- Forgot Password
+- Add Delete in Confirmed Reservation in Admin
+- Auto Delete after 3 days of Inactive Confirmation

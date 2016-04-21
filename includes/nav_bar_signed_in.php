@@ -66,7 +66,7 @@
 						<ul class="dropdown-menu">
 							<li class="menu-dropdown"><a href="compose_message.php">Compose Message</a></li>
 							<li><a href="inbox.php">Inbox
-							<span class="label label-danger label-as-badge"><?php echo $unread; ?></span></a></li>
+							<span class="label label-danger label-as-badge"><?php echo @$unread; ?></span></a></li>
 							<li><a href="sent_messages.php">Sent Items</a></li>
 							<li><a href="draft.php">Draft</a></li>
 						</ul>

@@ -39,6 +39,57 @@
 				}
 				
 				/*
+				* Functio to get determine the maximum number of reservation per day (10)
+				*/
+				function maxCountLimit($conn, $day, $current_month) {
+					
+				
+					$current_year = date("y");
+					
+					$select_all_dates = "SELECT * FROM reservation";
+					$q_seleect_all_dates = $conn->query($select_all_dates);
+					
+					if($q_seleect_all_dates->num_rows > 0) {
+						while($q_row = $q_seleect_all_dates->fetch_assoc()) {
+							$date_reserved = strtotime($q_row['reserv_date']);
+							$date_reserved_month = date('m',$date_reserved);
+							$date_reserved_year = date('y',$date_reserved);
+							$date_reserved_day = date('d',$date_reserved);
+							
+							if($date_reserved_month == $current_month && $date_reserved_year == $current_year) {
+								
+								if($day == $date_reserved_day) {
+									$r_date = $date_reserved_year . "-" . $date_reserved_month . "-" . $date_reserved_day;
+									
+									$select_date = "SELECT * FROM reservation WHERE reserv_date = '$r_date'";
+									$select_date_query = $conn->query($select_date);
+									
+									$r_count = $select_date_query -> num_rows;
+									
+									if($r_count >= 10) {
+										return true;
+									}
+									else {
+										return false;
+									}
+								}
+								
+							}
+							else {
+								return false;
+								
+							}
+							
+							
+						}
+					}
+					
+				}
+				
+				
+				
+				
+				/*
 				* Lines of Code to Display Current Month Calendar
 				*/
 				$day_num=date("j"); //If today is September 29, $day_num=29
@@ -96,8 +147,15 @@
 						echo "<td onclick='showEvent($day,$month_num);' id='day" . $day;
 						//This function Highlights the date with reservation in green
 						if(getDateReserve($conn,$day,$month_num)) {
-							echo "' bgcolor='#00ff00'>"; //highlight TODAY in green
-							echo "<a href='javascript: void(0)' class='white-text' title='Click to View Schedule'>$day</a></td>";
+							
+							if(maxCountLimit($conn, $day, $month_num)) {
+								echo "' bgcolor='#ff0000'>"; //highlight TODAY in red
+								echo "<a href='javascript: void(0)' class='white-text' title='Full Schedule. Clickto View Schedule'>$day</a></td>";
+							}
+							else {
+								echo "' bgcolor='#00ff00'>"; //highlight TODAY in green
+								echo "<a href='javascript: void(0)' class='white-text' title='Click to View Schedule'>$day</a></td>";
+							}
 						}
 						else {
 							echo "'><a href='javascript: void(0)' class='white-text' title='Click to View Schedule'>$day</a></td>";
