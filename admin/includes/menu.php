@@ -110,6 +110,7 @@
 								<a href="abouts.php"><strong>Abouts</strong></a>
 								<a href="forms.php"><strong>Forms</strong></a>
 								<a href="userlimit.php"><strong>User Limitaitons</strong></a>
+								<a href="javascript: void(0)"><strong>Calendar Label</strong></a>
 							</li>
 							<li>
 								<a href="edit_announcement.php"><strong>Edit Announcement</strong></a>
@@ -131,6 +132,7 @@
 								<a href="dform.php"><strong>Form</strong></a>
 								<a href="dabout.php"><strong>About</strong></a>
 								<a href="duserlimit.php"><strong>User Limitation</strong></a>
+								<a href="del_cal_label.php"><strong>Calendar Label</strong></a>
 								
 							</li>
 							

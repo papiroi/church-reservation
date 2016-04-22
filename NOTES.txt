@@ -7,7 +7,7 @@
 
 - Reservation No Conflict ***
 - Limit 10 Messages (Inbox and Sent Items: User and Admin)
-- Edit and Delete Label/Note in Calendar
+***- Edit and Delete Label/Note in Calendar
 - Add Image In Priest
 - Reservation Conflict and Availability of the Priest Scedule
 - Report Generation Must Add the name of the Priest
