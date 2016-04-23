@@ -111,6 +111,7 @@
 								<a href="forms.php"><strong>Forms</strong></a>
 								<a href="userlimit.php"><strong>User Limitaitons</strong></a>
 								<a href="javascript: void(0)"><strong>Calendar Label</strong></a>
+								<!-- Start in this line of this script continue -->
 							</li>
 							<li>
 								<a href="edit_announcement.php"><strong>Edit Announcement</strong></a>

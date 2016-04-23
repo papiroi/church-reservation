@@ -152,6 +152,7 @@
 		echo "<th>Time</th>";
 		echo "<th>Status</th>";
 		echo "<th>User</th>";
+		echo "<th class=''>Operation</th>";
 		echo "</tr>";
 		while($row = $select_query_result->fetch_assoc()) {
 			echo "<tr>";
@@ -161,7 +162,13 @@
 			echo "<td>" . num_to_time($row['reserv_time']) . "</td>";
 			echo "<td>" . $row['status'] . "</td>";
 			echo "<td>" . $row['username'] . "</td>";
+			echo "<td>";
+			echo "<form action='del_reserv.php' method='post'>";
+			echo "<input type='hidden' name='id' value='" . $row['reserv_num'] . "' />";
+			echo "<input type='submit' value='Delete Reservation' class='btn btn-danger'/>";
 			echo "</form>";
+			echo "</td>";
+			
 		}
 		echo "</table>";
 		

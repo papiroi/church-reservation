@@ -154,8 +154,9 @@ textarea {
 	padding: 20px;
 	color: #fff;
 	border-radius: 10px;
-	min-height: 300px;
+	height: 500px;
 	margin-bottom: 50px;
+	overflow: auto;
 }
 .compose-receipient {
 	margin: 0px auto;

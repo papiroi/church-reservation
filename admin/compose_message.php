@@ -80,7 +80,7 @@
 <!--End of Navigation -->
 
 		<!-- Start of Div of Compose Message -->
-		<div class="messages">
+		<div class="center-div">
 		<div id="messages"></div>
 			<h2 class="white-text">Compose Message</h2>
 <!-- Script to send message to admin -->
