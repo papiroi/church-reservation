@@ -63,7 +63,7 @@
 							<li>
 								<a href="archive.php"><strong>Archive</strong></a>
 							</li>
-							
+							<li><a href="search.php"><strong>Search Reservations</strong></a></li>
 							
 						</ul>
                     </li>
