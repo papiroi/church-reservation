@@ -98,7 +98,7 @@
 				
 				
 				// This part displays the inconmming reservation for the current month
-				$select_all_reserve = "SELECT * FROM reservation WHERE reserv_date > '$this_day' AND confirmation = 'Confirmed' ORDER BY reserv_date AND reserv_time ASC";
+				$select_all_reserve = "SELECT * FROM reservation WHERE reserv_date > '$this_day' AND confirmation = 'Confirmed' ORDER BY reserv_date, reserv_time ASC";
 				$select_all_reserve_query = $conn->query($select_all_reserve);
 				
 				echo "<h1 class='white-text'>Incomming Reservations</h1>";
@@ -129,6 +129,7 @@
 							echo "</tr>";
 							
 						}*/
+						
 						
 						echo "<tr>";
 						echo "<td>" . $row_d['reserv_num'] . "</td>";
