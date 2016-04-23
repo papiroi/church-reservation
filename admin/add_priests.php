@@ -53,19 +53,30 @@
 		$sched = $_POST['sched'];
 		$info = $_POST['info'];
 		
-		$add_priest = "INSERT INTO priests (name, sched, info, dateCreated)
-			VALUES ('$name','$sched','$info',NOW())";
-			
-		$add_priest_query = $conn->query($add_priest);
+		$dir = "../uploads/";
+		$file = $dir . basename(sha1($name) . ".jpg");
+		$file_loc = "uploads/" . $name . ".jpg";
 		
-		if($add_priest_query) {
+		$mime = substr($_FILES["img"]["name"], -4);
 		
-			$p_msg = "<div class='alert alert-info text-center'>
-				<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-				Priest Added!</div>";
-			
+		
+		if($mime == '.jpg') {
+			if(move_uploaded_file($_FILES["img"]["tmp_name"], $file)) {
+		
+				$add_priest = "INSERT INTO priests (name, sched, info, dateCreated)
+					VALUES ('$name','$sched','$info',NOW())";
+					
+				$add_priest_query = $conn->query($add_priest);
+				
+				if($add_priest_query) {
+				
+					$p_msg = "<div class='alert alert-info text-center'>
+						<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+						Priest Added!</div>";
+					
+				}
+			}
 		}
-	
 	}
 
 ?>
@@ -118,7 +129,7 @@
 			<?php echo @$p_msg; ?>
 			<div class="center-div">
 				<h2 class='white-text'>Add Priest Info</h2>
-				<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" autocomplete="off">
+				<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" autocomplete="off" enctype="multipart/form-data">
 					<label>Name:</label>
 					<input type="text" class="form-control" id="name" name="name"
 						required autofocus placeholder="Name of Priest"/>
@@ -128,6 +139,9 @@
 					<br/>
 					<label>Info:</label>
 					<textarea id="info" name="info" class="form-control" rows="4" placeholder="Add Info About the Priest"></textarea>
+					<br/>
+					<label>Image: </label>
+					<input type="file" id="img"  name="img" accept="image/*" class="white-text" size="60"/>
 					<br/>
 					<input type="submit" class="btn btn-primary" value="Save" />
 					&nbsp;&nbsp;

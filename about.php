@@ -117,6 +117,7 @@
 								
 									while($prow = $select_p_query->fetch_assoc()) {
 										
+										echo "<img src='uploads/" . sha1($prow['name']) . ".jpg' style='width: 200px; height: 175px; border-radius: 5px;'/>";
 										echo "<h3 class='white-text'>Name: " . $prow['name'] . "</h3>";
 										echo "<p class='white-text'>Schedule: " . $prow['sched'] . "</p>";
 										echo "<p class='white-text'>" . $prow['info'] . "</p><br/>";

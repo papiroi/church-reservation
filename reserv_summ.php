@@ -213,27 +213,37 @@
 			else {
 		
 				$greater_to_ten = "SELECT * FROM reservation WHERE reserv_date = '$edate'";
+				$greater_to_ten_query = $conn->query($greater_to_ten);
+				
+				if($greater_to_ten_query -> num_rows >= 10) {
+					
+					echo "<script>alert('We have meet the maximum reservation for today! Try another date. Thank you!');</script>";
+					
+				}
+				else {
 		
-			// Start of Adding Reservation
-			// Start of Adding Reservation
-			$reservation = "INSERT INTO reservation (reserv_num, event_type, priest, reserv_date, reserv_time, username, status, confirmation, date_reserved)
-				VALUES(
-					'$rn',
-					'$event',
-					'$priest',
-					'$edate',
-					'$etime',
-					'$username',
-					'Active',
-					'NC',
-					NOW()
-				)";
-			$reservation_query = $conn->query($reservation);
-			if($reservation_query == true) {
-				echo "<script>alert('Reservation Saved For Approving by the Admin');";
-				echo "window.location.href = 'reservation.php';</script>";
-			}// End of Adding Reservation
-			// End of Adding Reservation
+				// Start of Adding Reservation
+				// Start of Adding Reservation
+				$reservation = "INSERT INTO reservation (reserv_num, event_type, priest, reserv_date, reserv_time, username, status, confirmation, date_reserved)
+					VALUES(
+						'$rn',
+						'$event',
+						'$priest',
+						'$edate',
+						'$etime',
+						'$username',
+						'Active',
+						'NC',
+						NOW()
+					)";
+				$reservation_query = $conn->query($reservation);
+				if($reservation_query == true) {
+					echo "<script>alert('Reservation Saved For Approving by the Admin');";
+					echo "window.location.href = 'reservation.php';</script>";
+				}// End of Adding Reservation
+				// End of Adding Reservation
+				
+				}
 			
 			}
 		}

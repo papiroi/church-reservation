@@ -6,10 +6,10 @@
 - Edit and Delete Label/Note in Calendar - ok
 - Add Delete in Confirmed Reservation in Admin - ok
 - Limit 10 Messages (Inbox and Sent Items: User and Admin) - ok
+- Add Image In Priest - ok
 
 
 - Reservation No Conflict ***
-- Add Image In Priest
 - Reservation Conflict and Availability of the Priest Scedule
 - Report Generation Must Add the name of the Priest
 
