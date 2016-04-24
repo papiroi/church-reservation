@@ -142,6 +142,22 @@
 				
 				}
 				
+				if(document.getElementById('eventtype').value == 'For Wedding') {
+				
+					$("#timeselect2").hide();
+					$("#timeselect").hide()
+					$("#lbltimeselect").hide()
+				}
+
+				
+				if(document.getElementById('eventtype').value == 'For Confirmation') {
+				
+					$("#timeselect2").hide();
+					$("#timeselect").hide()
+					$("#lbltimeselect").hide()
+				}
+
+				
 			});
 			
 			

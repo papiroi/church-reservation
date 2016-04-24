@@ -88,6 +88,29 @@
 				}
 				
 				
+				// Function to Get Wedding Reservations for a day
+				function maxWeddingReservation($conn, $day, $month) {
+					
+					$event = 'Wedding';
+					
+					$date = date("Y") . "-" . $month . "-" . $day;
+					
+					$select_wed = "SELECT * FROM reservation WHERE reserv_date = '$date' AND event_type = '$event'";
+					$select_wed_query = $conn->query($select_wed);
+					
+					if($select_wed_query -> num_rows >= 2) {
+						
+						return true;
+						
+					}
+					else {
+						
+						return false;
+						
+					}
+					
+				}
+				
 				/*
 				* Lines of Code to Display Current Month Calendar
 				*/
@@ -147,6 +170,12 @@
 							if(maxCountLimit($conn, $day, $month_num)) {
 								echo "' bgcolor='#ff0000'>"; //highlight TODAY in red
 								echo "<a href='javascript: void(0)' class='white-text' title='Click to View Schedule'>$day</a></td>";
+							}
+							else if(maxWeddingReservation($conn, $day ,$month_num) ) {
+								
+								echo "' bgcolor='#ff0000'>"; //highlight TODAY in red
+								echo "<a href='javascript: void(0)' class='white-text' title='Full Schedule. Clickto View Schedule'>$day</a></td>";
+								
 							}
 							else {
 								echo "' bgcolor='#00ff00'>"; //highlight TODAY in green

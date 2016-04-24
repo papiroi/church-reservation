@@ -90,7 +90,7 @@
 		<div class="row">
 			
 			<div class="col-md-12">
-			<div class="center-div scroll">
+			<div class="messages">
 			
 				<?php
 				
@@ -143,7 +143,6 @@
 					}
 					
 					echo "</table>";
-					
 				}
 				else {
 					
@@ -229,6 +228,15 @@
 
 <?php
 
+	// Change the status of the event that is done
+	$change_status = "UPDATE reservation SET status = 'DONE' WHERE reserv_date < CURDATE()";
+	$change_status_query = $conn->query($change_status);
+	
+	// Delete the reservation that is not confirmed in 3 days
+	$delete_unconfirmed_reservation = "DELETE FROM reservation WHERE date_reserved < UNIX_TIMESTAMP(DATE_SUB(NOW(), INTERVAL 3 DAY))";
+	$dur_query = $conn->query($delete_unconfirmed_reservation);
+	
+	
 	require "includes/footer.php";
 
 ?>

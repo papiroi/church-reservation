@@ -160,6 +160,16 @@
 			$event_time = '2';
 		}
 		
+		// Event Time for Seminar for Wedding
+		if ($event == 'For Wedding') {
+			$event_time = '9';
+		}
+		
+		// Event Time for Seminar for Confirmation
+		if ($event == 'For Confirmation') {
+			$event_time = '9';
+		}
+		
 		if($event == 'Wedding') {
 			
 			$time = $_POST['timeselect2'];
@@ -176,7 +186,7 @@
 		
 	}
 	
-	
+	/*** Start of Condition in Reservation Script **/
 	if(isset($_POST['event']) && !empty($_POST['event'])) {
 		
 		$event = $_POST['event'];
@@ -185,17 +195,18 @@
 		$etime = $_POST['etime'];
 		$rn = $_POST['rn'];
 		
+		// $bap_type is Type of Baptism
+		@$bap_type = $_POST['bap-type'];
+		
 		// Search or Select for Active reservation for a user
 		// if there are active reservation for an event, 
 		// the user will not be able to resreve another
 		$select_user_events = "SELECT * FROM reservation WHERE username = '$username' AND event_type = '$event' AND status = 'Active' AND reserv_date >= CURRENT_DATE()";
 		$select_user_events_query = $conn -> query($select_user_events);
 			
-		if($select_user_events_query->num_rows > 0) {
-				
+		if($select_user_events_query->num_rows > 0) {	
 			echo "<script>alert('You have another pending reservation on this event!');";
 			echo "window.location.href = 'reservation.php';</script>";
-			
 		}
 		else {
 			
@@ -207,41 +218,271 @@
 		
 			if($srq->num_rows > 0) {
 				
-				echo "<script>alert('The Date and Time is already reserved.')</script>";
-				
-			}
-			else {
-		
-				$greater_to_ten = "SELECT * FROM reservation WHERE reserv_date = '$edate'";
-				$greater_to_ten_query = $conn->query($greater_to_ten);
-				
-				if($greater_to_ten_query -> num_rows >= 10) {
+				if($event == "Ordinary Baptism") {
 					
-					echo "<script>alert('We have meet the maximum reservation for today! Try another date. Thank you!');</script>";
+					// Start of Adding Reservation
+					// Start of Adding Reservation
+					$reservation = "INSERT INTO reservation (reserv_num, event_type, priest, reserv_date, reserv_time, username, status, confirmation, date_reserved)
+						VALUES(
+							'$rn',
+							'$event',
+							'$priest',
+							'$edate',
+							'$etime',
+							'$username',
+							'Active',
+							'NC',
+							NOW()
+						)";
+					$reservation_query = $conn->query($reservation);
+					if($reservation_query == true) {
+						echo "<script>alert('Reservation Saved For Approving by the Admin');";
+						echo "window.location.href = 'reservation.php';</script>";
+					}// End of Adding Reservation
+					// End of Adding Reservation
+					
+				}
+				else if ($event == "Confirmation") {
+					
+					// Start of Adding Reservation
+					// Start of Adding Reservation
+					$reservation = "INSERT INTO reservation (reserv_num, event_type, priest, reserv_date, reserv_time, username, status, confirmation, date_reserved)
+						VALUES(
+							'$rn',
+							'$event',
+							'$priest',
+							'$edate',
+							'$etime',
+							'$username',
+							'Active',
+							'NC',
+							NOW()
+						)";
+					$reservation_query = $conn->query($reservation);
+					if($reservation_query == true) {
+						echo "<script>alert('Reservation Saved For Approving by the Admin');";
+						echo "window.location.href = 'reservation.php';</script>";
+					}// End of Adding Reservation
+					// End of Adding Reservation
+					
+				}
+				else if($event == "For Wedding") {
+					
+					// Start of Adding Reservation
+					// Start of Adding Reservation
+					$reservation = "INSERT INTO reservation (reserv_num, event_type, priest, reserv_date, reserv_time, username, status, confirmation, date_reserved)
+						VALUES(
+							'$rn',
+							'$event',
+							'$priest',
+							'$edate',
+							'$etime',
+							'$username',
+							'Active',
+							'NC',
+							NOW()
+						)";
+					$reservation_query = $conn->query($reservation);
+					if($reservation_query == true) {
+						echo "<script>alert('Reservation Saved For Approving by the Admin');";
+						echo "window.location.href = 'reservation.php';</script>";
+					}// End of Adding Reservation
+					// End of Adding Reservation
+					
+				}
+				else if($event == "For Confirmation") {
+					
+					// Start of Adding Reservation
+					// Start of Adding Reservation
+					$reservation = "INSERT INTO reservation (reserv_num, event_type, priest, reserv_date, reserv_time, username, status, confirmation, date_reserved)
+						VALUES(
+							'$rn',
+							'$event',
+							'$priest',
+							'$edate',
+							'$etime',
+							'$username',
+							'Active',
+							'NC',
+							NOW()
+						)";
+					$reservation_query = $conn->query($reservation);
+					if($reservation_query == true) {
+						echo "<script>alert('Reservation Saved For Approving by the Admin');";
+						echo "window.location.href = 'reservation.php';</script>";
+					}// End of Adding Reservation
+					// End of Adding Reservation
 					
 				}
 				else {
-		
-				// Start of Adding Reservation
-				// Start of Adding Reservation
-				$reservation = "INSERT INTO reservation (reserv_num, event_type, priest, reserv_date, reserv_time, username, status, confirmation, date_reserved)
-					VALUES(
-						'$rn',
-						'$event',
-						'$priest',
-						'$edate',
-						'$etime',
-						'$username',
-						'Active',
-						'NC',
-						NOW()
-					)";
-				$reservation_query = $conn->query($reservation);
-				if($reservation_query == true) {
-					echo "<script>alert('Reservation Saved For Approving by the Admin');";
-					echo "window.location.href = 'reservation.php';</script>";
-				}// End of Adding Reservation
-				// End of Adding Reservation
+				
+					echo "<script>alert('The Date and Time is already reserved.')</script>";
+				
+				}
+			}
+			else {
+				
+				
+				$wedding_condition = "SELECT * FROM reservation WHERE reserv_date = '$edate' AND event_type = 'Wedding' AND reserv_time = '1'";
+				$wedding_condition_query = $conn->query($wedding_condition);
+				
+				$wedding_condition2 = "SELECT * FROM reservation WHERE reserv_date = '$edate' AND event_type = 'Wedding' AND reserv_time = '6'";
+				$wedding_condition2_query = $conn->query($wedding_condition2);
+
+				
+				if($wedding_condition == true) {
+					
+					if($event == 'Confirmation' || $event == 'For Wedding' || $event == 'For Confirmation') {
+						// Insert Reservation Script
+						
+						// Start of Adding Reservation
+						// Start of Adding Reservation
+						$reservation = "INSERT INTO reservation (reserv_num, event_type, priest, reserv_date, reserv_time, username, status, confirmation, date_reserved)
+							VALUES(
+								'$rn',
+								'$event',
+								'$priest',
+								'$edate',
+								'$etime',
+								'$username',
+								'Active',
+								'NC',
+								NOW()
+							)";
+						$reservation_query = $conn->query($reservation);
+						if($reservation_query == true) {
+							echo "<script>alert('Reservation Saved For Approving by the Admin');";
+							echo "window.location.href = 'reservation.php';</script>";
+						}// End of Adding Reservation
+						// End of Adding Reservation
+					}
+					else if($etime == '2' || $etime == '3' || $etime == '4') {
+						
+						echo "<script>alert('There is a Wedding Event in Morning 8am to 12nn.');";
+						echo "window.locaiton.href='reservation.php';</script>";
+						
+					}
+					else {
+						
+						//echo "<script>alert('Wedding Reservation Error: 1')</script>";
+						
+						// Start of Adding Reservation
+						// Start of Adding Reservation
+						$reservation = "INSERT INTO reservation (reserv_num, event_type, priest, reserv_date, reserv_time, username, status, confirmation, date_reserved)
+							VALUES(
+								'$rn',
+								'$event',
+								'$priest',
+								'$edate',
+								'$etime',
+								'$username',
+								'Active',
+								'NC',
+								NOW()
+							)";
+						$reservation_query = $conn->query($reservation);
+						if($reservation_query == true) {
+							echo "<script>alert('Reservation Saved For Approving by the Admin');";
+							echo "window.location.href = 'reservation.php';</script>";
+						}// End of Adding Reservation
+						// End of Adding Reservation
+						
+					}
+					
+				}
+				
+				else if($wedding_condition2 == true) {
+					
+					if($event == 'Confirmation' || $event == 'For Wedding' || $event == 'For Confirmation') {
+						// Insert Reservation Script
+						
+						// Start of Adding Reservation
+						// Start of Adding Reservation
+						$reservation = "INSERT INTO reservation (reserv_num, event_type, priest, reserv_date, reserv_time, username, status, confirmation, date_reserved)
+							VALUES(
+								'$rn',
+								'$event',
+								'$priest',
+								'$edate',
+								'$etime',
+								'$username',
+								'Active',
+								'NC',
+								NOW()
+							)";
+						$reservation_query = $conn->query($reservation);
+						if($reservation_query == true) {
+							echo "<script>alert('Reservation Saved For Approving by the Admin');";
+							echo "window.location.href = 'reservation.php';</script>";
+						}// End of Adding Reservation
+						// End of Adding Reservation
+					}
+					else if($etime == '6' || $etime == '7' || $etime == '8' || $etime = '9') {
+						
+						echo "<script>alert('There is a Wedding Event in the Afternoon 1pm to 5pm.');";
+						
+					}
+					else {
+						
+						// Start of Adding Reservation
+						// Start of Adding Reservation
+						$reservation = "INSERT INTO reservation (reserv_num, event_type, priest, reserv_date, reserv_time, username, status, confirmation, date_reserved)
+							VALUES(
+								'$rn',
+								'$event',
+								'$priest',
+								'$edate',
+								'$etime',
+								'$username',
+								'Active',
+								'NC',
+								NOW()
+							)";
+						$reservation_query = $conn->query($reservation);
+						if($reservation_query == true) {
+							echo "<script>alert('Reservation Saved For Approving by the Admin');";
+							echo "window.location.href = 'reservation.php';</script>";
+						}// End of Adding Reservation
+						// End of Adding Reservation
+						
+					}
+				}
+				else {
+					
+					// Reservation is Restricted if the Reservations is equal to 10
+					// you cannot reserve beyond 10 reservation per day
+					$greater_to_ten = "SELECT * FROM reservation WHERE reserv_time in (1,2,3,4,5,6,7,8,9,10)";
+					$greater_to_ten_query = $conn->query($greater_to_ten);
+					
+					if($greater_to_ten_query -> num_rows >= 10) {
+						
+						echo "<script>alert('We have meet the maximum reservation for today! Try another date. Thank you!');</script>";
+						
+					}
+					else {
+			
+					// Start of Adding Reservation
+					// Start of Adding Reservation
+					$reservation = "INSERT INTO reservation (reserv_num, event_type, priest, reserv_date, reserv_time, username, status, confirmation, date_reserved)
+						VALUES(
+							'$rn',
+							'$event',
+							'$priest',
+							'$edate',
+							'$etime',
+							'$username',
+							'Active',
+							'NC',
+							NOW()
+						)";
+					$reservation_query = $conn->query($reservation);
+					if($reservation_query == true) {
+						echo "<script>alert('Reservation Saved For Approving by the Admin');";
+						echo "window.location.href = 'reservation.php';</script>";
+					}// End of Adding Reservation
+					// End of Adding Reservation
+					
+					}
 				
 				}
 			
@@ -249,7 +490,7 @@
 		}
 		
 	}
-	
+	/*** End of the Condition and Reservation Script ***/
 
 ?>
 
@@ -276,8 +517,8 @@
 <body>
 
 	<div class="container">
-	
 		<h1 class="white-text">Summary of Reservation</h1>
+		<a href="reservation.php" class="btn btn-primary">Back to Reservation</a>
 		
 		<div class="center-div">
 		
@@ -295,6 +536,9 @@
 				<input type="hidden" name="priest" value="<?php echo $priest; ?>" />
 				<input type="hidden" name="etime" value="<?php echo $event_time; ?>" />
 				<input type="hidden" name="rn" value="<?php echo $reserv_num; ?>" />
+				
+				<input type="hidden" name="bap-type" value="<?php echo $bap_type; ?>" />
+				
 				<td>
 				<input type="submit" value="Continue" class="btn-lg btn-primary" />
 				</td>

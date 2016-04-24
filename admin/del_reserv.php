@@ -15,4 +15,4 @@
 	$del = "DELETE FROM reservation WHERE reserv_num = '$id'";
 	$del_query = $conn->query($del);
 	
-	header('Location: dabout.php');
+	header('Location: confirmed_reserve.php');
