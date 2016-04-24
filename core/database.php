@@ -105,7 +105,7 @@ class Database {
 			event_type varchar(25) NOT NULL,
 			priest varchar(100) NOT NULL,
 			reserv_date date NOT NULL,
-			reserv_time varchar(5) NOT NULL,
+			reserv_time int(5) NOT NULL,
 			username varchar(60) NOT NULL,
 			type varchar(15) NOT NULL,
 			status varchar(15) NOT NULL,

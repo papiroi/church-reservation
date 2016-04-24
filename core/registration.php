@@ -60,7 +60,7 @@ class Registration {
 			//return false;
 		}
 		else {
-			$reg_query = "INSERT INTO users (username, password, firstname, lastname, mobile, email, address, bday, status, dateReg)
+			$reg_query = "INSERT INTO users (username, password, firstname, lastname, mobile, email, address, bday, status, recovery, dateReg)
 				VALUES(
 					'$this->username',
 					'$this->password',
@@ -71,6 +71,7 @@ class Registration {
 					'$this->address',
 					'$this->bday',
 					'Active',
+					'$this->password',
 					NOW()
 				)";
 	

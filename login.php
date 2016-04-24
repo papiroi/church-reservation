@@ -159,7 +159,7 @@
 				</form>
 
 				<br/>
-				<span class="white-text">Forgot Your Password? <a href="javascript: void(0)">here</a>.</span>
+				<span class="white-text">Forgot Your Password? <a href="recovery.php">here</a>.</span>
 				<br/>
 				<span class="white-text">Doesn't Have an Account? Click <a href="register.php">here</a>.</span>
 				<br/>

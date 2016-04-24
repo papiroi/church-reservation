@@ -32,7 +32,7 @@ class Password {
 	
 		$user_query = "SELECT * FROM users WHERE username = '$this->username' LIMIT 1";
 		
-		$change_query = "UPDATE users SET password = '$this->new_password', dateLastMod = NOW() WHERE username = '$this->username'";
+		$change_query = "UPDATE users SET password = '$this->new_password', recovery = '$this->new_password', dateLastMod = NOW() WHERE username = '$this->username'";
 		
 		$user_query_result = $this->conn->query($user_query);
 		

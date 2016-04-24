@@ -133,7 +133,7 @@
 			
 		<div class="row">
 			
-			<div class="col-md-7">
+			<div class="col-md-6 col-md-offset-3">
 			<?php echo @$p_msg; ?>
 			<div class="center-div">
 				<?php echo @$msg; ?>

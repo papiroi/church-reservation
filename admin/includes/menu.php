@@ -158,7 +158,7 @@
 					<li id="user-position" class="dropdown">
 						<a href="javascript: void(0)" class="dropdown-toggle" data-toggle="dropdown"><strong>Admin<span class="caret"></span></strong></a>
 						<ul class="dropdown-menu">
-							<li><a href="update.php"><strong>Update Details</strong></a></li>
+							<!--<li><a href="update.php"><strong>Update Details</strong></a></li>-->
 							<li><a href="changepass.php"><strong>Change Password</strong></a></li>
 							<li class="divider"></li>
 							<li><a href="?s=logout"><strong>Logout</strong></a></li>

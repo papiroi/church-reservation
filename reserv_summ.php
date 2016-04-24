@@ -517,6 +517,9 @@
 <body>
 
 	<div class="container">
+		<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+
 		<h1 class="white-text">Summary of Reservation</h1>
 		<a href="reservation.php" class="btn btn-primary">Back to Reservation</a>
 		
@@ -557,6 +560,8 @@
 			</tr>
 			</table>
 				
+		</div>
+		</div>
 		</div>
 	
 	</div>
