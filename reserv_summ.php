@@ -18,7 +18,7 @@
 
 	if(isset($_SESSION['username']) && !empty($_SESSION['username'])) {
 		
-		$username = $_SESSION['username'];;
+		$username = $_SESSION['username'];
 		
 		
 	}
@@ -316,7 +316,8 @@
 				}
 				else {
 				
-					echo "<script>alert('The Date and Time is already reserved.')</script>";
+					echo "<script>alert('The Date and Time is already reserved.');";
+					echo "window.location.href = 'reservation.php';</script>";
 				
 				}
 			}
@@ -358,7 +359,7 @@
 					}
 					else if($etime == '2' || $etime == '3' || $etime == '4') {
 						
-						echo "<script>alert('There is a Wedding Event in Morning 8am to 12nn.');";
+						echo "<script>alert('There is an Event conflict.');";
 						echo "window.locaiton.href='reservation.php';</script>";
 						
 					}
@@ -521,7 +522,7 @@
 		<div class="col-md-6 col-md-offset-3">
 
 		<h1 class="white-text">Summary of Reservation</h1>
-		<a href="reservation.php" class="btn btn-primary">Back to Reservation</a>
+		
 		
 		<div class="center-div">
 		
@@ -557,6 +558,7 @@
 				<input type="submit" value="Change" class="btn-lg btn-success" style="float: left;"/>
 				</td>
 			</form>
+			<td>&nbsp;&nbsp;&nbsp;<a href="reservation.php"><input type="button" value="Back to Reservation" class="btn-lg btn-info"/></a></td>
 			</tr>
 			</table>
 				
