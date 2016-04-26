@@ -9,7 +9,8 @@
 - Add Image In Priest - ok
 - Reservation No Conflict *** Wedding Time - ok
 - Auto Delete after 3 days of Inactive Confirmation - ok
-
+- User only Update no Admin - ok
+- Error in editing events - ok
 
 - Reservation Conflict and Availability of the Priest Scedule
 - Report Generation Must Add the name of the Priest

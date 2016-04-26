@@ -33,7 +33,12 @@
 */
 
 	if(isset($_SESSION['username']) && !empty($_SESSION['username'])) {
-		$username = $_SESSION['username'];;
+		$username = $_SESSION['username'];
+		if($username == 'admin') {
+
+			header('Location: admin/index.php');
+
+		}
 	}
 	else {
 		$username = "Guest";
