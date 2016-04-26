@@ -1,24 +1,9 @@
-- Reservation Confirmation *** - ok
-- Confirmation Event to 9:00am only - ok
-- Limit Events per Day to 10 - ok
-- Red Mark in Full Day Reservation ***
-- Admin: Update Details and Change Password - ok
-- Edit and Delete Label/Note in Calendar - ok
-- Add Delete in Confirmed Reservation in Admin - ok
-- Limit 10 Messages (Inbox and Sent Items: User and Admin) - ok
-- Add Image In Priest - ok
-- Reservation No Conflict *** Wedding Time - ok
-- Auto Delete after 3 days of Inactive Confirmation - ok
-- User only Update no Admin - ok
-- Error in editing events - ok
-- reservation - ok
-- back butto in user summary - ok
+- Forgot Password - online
 
-- Reservation Conflict and Availability of the Priest Scedule
-- Report Generation Must Add the name of the Priest
+- Reply Send - Reply Page in User and Admin - ok
+- Check Mass Sched - ok
 
-- Forgot Password
-
-- Reply Send - Reply Page in User
-- Check Edit Calendar Label in Admin
-- Event Edit - ok
+- Justify all Reminders and Description
+- Reminders and Description (askteris to bullet and new line)
+- admin forgot password
+- change username

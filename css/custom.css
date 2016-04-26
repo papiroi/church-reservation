@@ -334,7 +334,7 @@ input, select, textarea{
 
 .boxed {
 	
-	height: auto;
+	height: 100%;
 	width: 100%;
 	border: 2px solid #bdc3c7;
 	padding: 5px;

@@ -31,8 +31,8 @@
 	}
 	
 	
-	if(isset($_POST['id']) && !empty($_POST['id'])) {
-		$id = $_POST['id'];
+	if(isset($_GET['id']) && !empty($_GET['id'])) {
+		$id = $_GET['id'];
 	
 		//update the status from 0 to 1 or from undread to read
 		$update_read_status = "UPDATE cached_msg 
@@ -102,10 +102,10 @@
 				// This part of the script will show the message 
 				// if there are no message it will display 
 				// Error message
-				if(isset($_POST['id']) && !empty($_POST['id'])) {
-					$messageID = $_POST['id'];
+				if(isset($_GET['id']) && !empty($_GET['id'])) {
+					$messageID = $_GET['id'];
 					
-					$select_message = "SELECT * FROM messages WHERE convID = '$messageID'";
+					$select_message = "SELECT * FROM cached_msg WHERE convID = '$messageID'";
 					$select_message_query = $conn->query($select_message);
 					
 					while ($row = $select_message_query->fetch_assoc()) {

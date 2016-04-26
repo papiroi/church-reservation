@@ -127,7 +127,7 @@
 										echo "<h3 class='text-center white-text'>Name: " . $prow['name'] . "</h3>";
 										echo "<p class='text-center white-text'>Schedule: " . $prow['sched'] . "</p>";
 										echo "<p class='text-center white-text'>" . $prow['info'] . "</p><br/>";
-										
+										echo "</div>";
 									
 									}
 									
@@ -162,7 +162,7 @@
 						
 						?>
 					
-					
+					</div>
 					</div>
 				</div>
 			</div>
@@ -171,10 +171,9 @@
 
 			
 	</div>
-		<?php
-			include "includes/include_contacts.php";
-		?>
 <?php
+	include "includes/include_contacts.php";
+
 
 	require_once "includes/footer.php";
 

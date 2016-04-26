@@ -41,6 +41,7 @@
 
 	if(isset($_POST['sender_reply']) && !empty($_POST['sender_reply'])) {
 		
+		$id = $_POST['id'];
 		$receiver = $_POST['sender_reply'];
 		$sender = $_SESSION['username'];
 		$message = $_POST['reply_message'];
@@ -73,7 +74,12 @@
 		if($q_query_send == true) {
 			$q_query_send2 = $conn->query($query_send2);
 			
-			header('Location: sent_messages.php');
+			echo "<script>";
+			echo "alert('Message Sent to Admin');";
+			echo "window.location.href = 'reply.php?id=$id';";
+			echo "</script>";
+
+			//header("Location: reply.php?id=$id");
 		}
 		
 	}

@@ -100,8 +100,8 @@
 				// This part of the script will show the message 
 				// if there are no message it will display 
 				// Error message
-				if(isset($_POST['conversation']) && !empty($_POST['conversation'])) {
-					$id = $_POST['conversation'];
+				if(isset($_GET['conversation']) && !empty($_GET['conversation'])) {
+					$id = $_GET['conversation'];
 					
 					
 					

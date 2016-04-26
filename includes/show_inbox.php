@@ -56,7 +56,7 @@
 			echo "<td>" . mb_substr($q_row['Content'],0,15) . "...</td>";
 			//echo "<td>" . $q_row['dateSent'] . "</td>";
 			echo "<td class='text-center'>";
-			echo "<form action='reply.php' method='post' autocomplete='off'>";
+			echo "<form action='reply.php' method='get' autocomplete='off'>";
 			echo "<input type='hidden' name='id' value='" . $q_row['convID'] . "'/>";
 			echo "<input type='submit' value='View/Reply' class='btn btn-warning'/>";
 			echo "</form>";

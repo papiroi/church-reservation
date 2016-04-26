@@ -50,7 +50,7 @@
 			}
 
 			echo "<tr>";
-			echo "<form action='reply.php' method='post'>";
+			echo "<form action='reply.php' method='get'>";
 			echo "<input type='hidden' name='conversation' value='" . $q_row['convID'] . "' />";
 			echo "<td>" . $q_row['sender'] . " $stat_msg </td>";
 			echo "<td>" . mb_substr($q_row['Content'],0,15) . "...</td>";

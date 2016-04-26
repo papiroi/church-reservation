@@ -1,6 +1,8 @@
 <form action="reply_sent.php" method="post">
 
+
 	<input type="hidden" name="sender_reply" value="<?php echo $sender;?>"/> 
+	<input type="hidden" name="id" value="<?php echo $id; ?>" />
 	<textarea name="reply_message" rows="5" class="form-control"></textarea>
 	<br/>
 	<input type="submit" value="Send" class="btn btn-primary"/>

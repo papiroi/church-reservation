@@ -139,12 +139,12 @@
 								echo "<div class='row'>";
 								echo "<div class='col-md-6'>";
 								echo "<div class='boxed'>";
-								echo "<p class='white-text'>" . $e_row['description'] . "</p>";
+								echo "<p class='white-text text-justify'><u>" . bulletToAsterisk($e_row['description']) . "</u></p>";
 								echo "</div>";
 								echo "</div>";
 								echo "<div class='col-md-6'>";
 								echo "<div class='boxed'>";
-								echo "<p class='white-text'>" . $e_row['reminder'] . "</p>";
+								echo "<p class='white-text text-justify'>" . $e_row['reminder'] . "</p>";
 								echo "</div>";
 								echo "</div>";
 								echo "</div>";
@@ -152,6 +152,14 @@
 							}
 							
 							
+						}
+
+						function bulletToAsterisk($str) {
+
+							$new_str = str_replace("*", "<li> ", $str);
+
+							return $new_str;
+
 						}
 					
 					?>

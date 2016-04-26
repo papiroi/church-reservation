@@ -48,6 +48,7 @@
 
 	if(isset($_POST['sender_reply']) && !empty($_POST['sender_reply'])) {
 		
+		$id = $_POST['id'];
 		$receiver = $_POST['sender_reply'];
 		$sender = 'admin';
 		$message = $_POST['reply_message'];
@@ -81,7 +82,10 @@
 		if($q_query_send == true) {
 			$send_copy_query = $conn->query($send_copy);
 			
-			header('Location: sent_messages.php');
+			echo "<script>";
+			echo "alert('Message Send to $receiver');";
+			echo "window.location.href = 'reply.php?conversation=$id';";
+			echo "</script>";
 		}
 		
 	}
