@@ -75,7 +75,7 @@
 	
 	
 </head>
-<body onload="window.print()">
+<body onload="window.print()" style="">
 
 	<div class="container">
 	
@@ -85,6 +85,7 @@
 			<tr>
 				<th>Reservation Number</th>
 				<th>Event</th>
+				<th>Priest</th>
 				<th>Date</th>
 				<th>Time</th>
 				<th>User</th>
@@ -159,9 +160,14 @@
 							
 							while ($row = $select_reserve_q->fetch_assoc()) {
 								
+								if($row['priest'] == 'Any') {
+									$priest = "Not Specified";
+								}
+
 								echo "<tr>";
 								echo "<td>" . $row['reserv_num'] . "</td>";
 								echo "<td>" . $row['event_type'] . "</td>";
+								echo "<td>" . $priest . "</td>";
 								echo "<td>" . dateName($row['reserv_date']) . "</td>";
 								echo "<td>" . num_to_time($row['reserv_time']) . "</td>";
 								echo "<td>" . $row['username'] . "</td>";

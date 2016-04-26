@@ -51,11 +51,11 @@
 	
 		$id = $_POST['eventid'];
 		$name = $_POST['name'];
-		$code = $_POST['code'];
+		//$code = $_POST['code'];
 		$description = $_POST['description'];
 		$reminder = $_POST['reminder'];
 	
-		$update_e = "UPDATE events SET name='$name', code = '$code', description = '$description', reminder = '$reminder' WHERE eventID = '$id'";
+		$update_e = "UPDATE events SET name='$name', description = '$description', reminder = '$reminder' WHERE eventID = '$id'";
 		$update_e_query = $conn->query($update_e);
 		
 		if($update_e_query) {

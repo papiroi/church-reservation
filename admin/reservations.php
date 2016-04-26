@@ -90,7 +90,7 @@
 		
 		?>
 
-		<div class="center-div">
+		<div class="messages">
 		<h2 class="white-text">Pending Reservation</h2>
 		<br/>
 			

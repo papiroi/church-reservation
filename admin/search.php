@@ -2,7 +2,6 @@
 	//error_reporting(0);
 /*
 * Start of Tarlac Cathedral Online Reservation and Scheduling
-* Index for Admin Page
 */
 
 /*
@@ -89,8 +88,8 @@
 		?>
 		<div class="row">
 			
-			<div class="col-md-4">
-			<div class="center-div">
+			<div class="col-md-3">
+			<div class="center-div" width="200px">
 			
 			<h2 class="white-text">Search Reservation</h2>
 			
@@ -104,7 +103,7 @@
 			</form>
 			</div>
 			</div>
-			<div class="col-md-8">
+			<div class="col-md-9">
 			<div class="center-div">
 <?php
 			if(isset($_POST['res_num']) && !empty($_POST['res_num'])) {
@@ -125,6 +124,7 @@
 					echo "<th>Status</th>";
 					echo "<th>Confirmation</th>";
 					echo "<th>User</th>";
+					echo "<th>Opt.</th>";
 					echo "</tr>";
 					while($r = $select_query -> fetch_assoc()) {
 						
@@ -136,6 +136,12 @@
 						echo "<td>" . $r['status'] . "</td>";
 						echo "<td>" . $r['confirmation'] . "</td>";
 						echo "<td>" . $r['username'] . "</td>";
+						echo "<td>";
+						echo "<form action='del_search.php' method='post'>";
+						echo "<input type='hidden' name='id' value='" . $r['reserv_num'] . "' />";
+						echo "<input type='submit' value='Delete' class='btn btn-danger'/>";
+						echo "</form>";
+						echo "</td>";
 						echo "</tr>";
 					}
 					

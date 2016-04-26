@@ -90,8 +90,18 @@
 		
 		?>
 
-		<div class="center-div">
+		<div class="messages">
 		<h2 class="white-text">Confirmed Reservations</h2>
+		<form action="search.php" method="post">
+			<div style="width: 300px; float: left;">
+			<input type="text" id="res_num" name="res_num" required class="form-control" placeholder="Enter Reservation Number to Search"/>
+			</div>
+			<div style="width: 100px; float: left;">
+			&nbsp;
+			<input type="submit" value="Search" class="btn btn-primary" />
+			</div>
+		</form>
+		<br/>
 		<br/>
 			
 <?php

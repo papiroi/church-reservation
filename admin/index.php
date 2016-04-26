@@ -143,6 +143,7 @@
 					}
 					
 					echo "</table>";
+					
 				}
 				else {
 					
