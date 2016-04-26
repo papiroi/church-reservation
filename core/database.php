@@ -132,7 +132,7 @@ class Database {
 		
 		$create_announcement_table = "CREATE TABLE IF NOT EXISTS announcement (
 			announcementID int(11) PRIMARY KEY NOT NULL,
-			atext varchar(255) NOT NULL,
+			atext varchar(1500) NOT NULL,
 			dateReg datetime NOT NULL,
 			dateLastMod datetime NOT NULL
 			)";
@@ -163,7 +163,7 @@ class Database {
 		$create_messages_table = "CREATE TABLE IF NOT EXISTS messages (
 			MessageID int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
 			convID varchar(10) NOT NULL,
-			Content varchar(300) NOT NULL,
+			Content varchar(1500) NOT NULL,
 			sender varchar(60) NOT NULL,
 			receiver varchar(10) NOT NULL,
 			dateSent datetime NOT NULL,
@@ -186,7 +186,7 @@ class Database {
 		$create_messages_table = "CREATE TABLE IF NOT EXISTS cached_msg (
 			MessageID int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
 			convID varchar(10) NOT NULL,
-			Content varchar(300) NOT NULL,
+			Content varchar(1500) NOT NULL,
 			sender varchar(60) NOT NULL,
 			receiver varchar(10) NOT NULL,
 			dateSent datetime NOT NULL,
@@ -209,7 +209,7 @@ class Database {
 			priestID int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
 			name varchar(200) NOT NULL,
 			sched varchar(100) NOT NULL,
-			info varchar(1000) NOT NULL,
+			info varchar(1500) NOT NULL,
 			dateCreated datetime NOT NULL
 		)";
 		
@@ -229,8 +229,8 @@ class Database {
 		  `eventID` int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
 		  `code` varchar(50) NOT NULL,
 		  `name` varchar(50) NOT NULL,
-		  `description` varchar(500) NOT NULL,
-		  `reminder` varchar(500) NOT NULL,
+		  `description` varchar(1500) NOT NULL,
+		  `reminder` varchar(1500) NOT NULL,
 		  `dateMod` datetime NOT NULL
 		)";
 		
@@ -323,7 +323,7 @@ class Database {
 			aboutID int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
 			code varchar(50) NOT NULL,
 			title varchar(50) NOT NULL,
-			description varchar(500) NOT NULL,
+			description varchar(1500) NOT NULL,
 			dateMod datetime NOT NULL
 		)";
 		
@@ -389,13 +389,13 @@ class Database {
 	
 		$create_mass = "CREATE TABLE IF NOT EXISTS mass(
 			schedID varchar(10) PRIMARY KEY NOT NULL,
-			monday varchar(160) NOT NULL,
-			tuesday varchar(160) NOT NULL,
-			wednesday varchar(160) NOT NULL,
-			thursday varchar(160) NOT NULL,
-			friday varchar(160) NOT NULL, 
-			saturday varchar(160) NOT NULL,
-			sunday varchar(160) NOT NULL,
+			monday varchar(1600) NOT NULL,
+			tuesday varchar(1600) NOT NULL,
+			wednesday varchar(1600) NOT NULL,
+			thursday varchar(1600) NOT NULL,
+			friday varchar(1060) NOT NULL, 
+			saturday varchar(1060) NOT NULL,
+			sunday varchar(1060) NOT NULL,
 			dateMod datetime NOT NULL
 		)";
 		$create_mass_query = $this->conn->query($create_mass);
@@ -428,7 +428,7 @@ class Database {
 		$create_table = "CREATE TABLE IF NOT EXISTS docs(
 			docID int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
 			name varchar(100) NOT NULL,
-			location varchar(150) NOT NULL,
+			location varchar(200) NOT NULL,
 			dateMod datetime NOT NULL
 		)";
 		$create_table_query = $this->conn->query($create_table);
@@ -443,7 +443,7 @@ class Database {
 		
 		$create = "CREATE TABLE IF NOT EXISTS limitations(
 			limitationID int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
-			limitation varchar(500) NOT NULL,
+			limitation varchar(1500) NOT NULL,
 			dateMod datetime NOT NULL
 		)";
 		
@@ -460,7 +460,7 @@ class Database {
 		$create = "CREATE TABLE IF NOT EXISTS cal_label(
 			labelID int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
 			name varchar(150) NOT NULL,
-			content varchar(200) NOT NULL,
+			content varchar(1200) NOT NULL,
 			dateMod datetime NOT NULL
 		)";
 		
