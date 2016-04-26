@@ -70,7 +70,7 @@ class Database {
 			'$default_password',
 			'Admin',
 			'Active',
-			'tarlaccathedral',
+			'$default_password',
 			NOW()
 			)";
 		

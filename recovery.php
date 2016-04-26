@@ -1,6 +1,6 @@
 <?php
 /*
-* Login Page
+* Recovery Script
 * 
 */
 
@@ -14,16 +14,7 @@
 	$_SESSION['code'] = 1;
 	
 
-/*
-* Condition to check if there's a logined user
-*
-*/
-	if(isset($_SESSION['username']) && !empty($_SESSION['username'])) {
-		header('Location: index.php');
-	}
-	else {
-		// Nothing to do
-	}
+
 	
 /*
 * Check if session username or name of the logged in user isset
@@ -31,10 +22,12 @@
 */
 
 	if(isset($_SESSION['username']) && !empty($_SESSION['username'])) {
-		$username = $_SESSION['username'];;
-	}
-	else {
-		$username = "Guest";
+		$username = $_SESSION['username'];
+
+		if($username == 'admin') {
+			header("Location: admin/index.php");
+		}
+
 	}
 
 	
@@ -134,7 +127,14 @@
 				<div class="white-text text-center">
 				<strong>Note: </strong>A link will send to your registered email address corresponding to the valid
 				and registered username to recover your password.</div>
-				
+				<br/>
+					<div class="text-center">
+					<strong><a class="white-text" href="index.php"><span class="glyphicon glyphicon-home"></span> Home</a>
+					
+					<br/>
+					<a href="javascript: void(0)" class="white-text" onclick="goBack();">&lt;&lt;Back</a>
+					</strong>
+					</div>
 				</div>
 			</div>
 			<div class="col-md-4"></div>
