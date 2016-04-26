@@ -110,7 +110,7 @@
 								<a href="abouts.php"><strong>Abouts</strong></a>
 								<a href="forms.php"><strong>Forms</strong></a>
 								<a href="userlimit.php"><strong>User Limitaitons</strong></a>
-								<a href="javascript: void(0)"><strong>Calendar Label</strong></a>
+								<a href="callabel.php"><strong>Calendar Label</strong></a>
 								<!-- Start in this line of this script continue -->
 							</li>
 							<li>

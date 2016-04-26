@@ -61,13 +61,18 @@
 		$status = '0';
 		$category = 'Sent';
 		
-		$query_send = "INSERT INTO messages (convID, Content, sender, receiver, dateSent, status, category)
+		$query_send = "INSERT INTO cached_msg (convID, Content, sender, receiver, dateSent, status, category)
 					VALUES ('$convID','$message','$sender','$receiver',NOW(),'$status','$category')
 					";
-					
+		$query_send2 = "INSERT INTO messages (convID, Content, sender, receiver, dateSent, status, category)
+					VALUES ('$convID','$message','$sender','$receiver',NOW(),'$status','$category')
+					";
+
 		$q_query_send = $conn->query($query_send);
 		
 		if($q_query_send == true) {
+			$q_query_send2 = $conn->query($query_send2);
+			
 			header('Location: sent_messages.php');
 		}
 		

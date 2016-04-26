@@ -49,7 +49,7 @@
 <!DOCTYPE html>
 <html class="full" lang="en-US">
 <head>
-	<title>User Limit Panel</title>
+	<title>Calendar Label Panel</title>
 
 <?php
 	
@@ -64,7 +64,7 @@
 <body>
 	<div class="container">
 
-		<h1 class="white-text">Admin Pannel: User Limit</h1>
+		<h1 class="white-text">Admin Pannel:  Calendar Label</h1>
 		
 		
 		
@@ -90,40 +90,43 @@
 			
 			<div class="col-md-12">
 			<div class="center-div">
-				<h2 class="white-text">Delete User Limitatons</h2>
+				<h2 class="white-text">Edit Calendar Label</h2>
 				
 				<table class="table">
-					<th>Limitation</th>
+					<th>Name</th>
+					<th>Content</th>
 					<th>Operation</th>
 				<?php
-				
-					$select = "SELECT * FROM limitations ORDER BY limitation ASC";
+					$select = "SELECT * FROM cal_label";
 					$select_query = $conn->query($select);
 					
-					if($select_query->num_rows > 0) {
-						
+					if($select_query -> num_rows > 0) {
+					
 						while($row = $select_query->fetch_assoc()) {
 							
 							echo "<tr>";
 							echo "<td>";
-							echo $row['limitation'];
+							echo $row['name'];
 							echo "</td>";
-							
 							echo "<td>";
-							echo "<form action='dlimit.php' method='post'>";
-							echo "<input type='hidden' name='id' value='" . $row['limitationID'] . "'/>";
-							echo "<input type='submit' value='Delete' class='btn btn-danger'/>";
+							echo $row['content'];
+							echo "</td>";
+							echo "<td>";
+							echo "<form action='u_cal_label.php' method='post'>";
+							echo "<input type='hidden' name='id' value='" . $row['labelID'] . "'/>";
+							echo "<input type='submit' value='Edit' class='btn btn-primary' />";
 							echo "</form>";
 							echo "</td>";
 							echo "</tr>";
 							
 						}
-						
+				
+					
 					}
 					else {
-						
-						echo "<h3 class='white-text'>No User Limits Found!</h3>";
-						
+					
+						echo "<h3 class='white-text'>No Calendar Label Found!</h3>";
+					
 					}
 				
 				?>
@@ -139,5 +142,4 @@
 
 	require "includes/footer.php";
 
-?>
 ?>

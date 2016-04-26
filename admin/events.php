@@ -121,7 +121,7 @@
 					}
 					else {
 					
-						echo "<h3 class='white-text'>NO Available Priest</h3>";
+						echo "<h3 class='white-text'>NO Available Events</h3>";
 					
 					}
 				

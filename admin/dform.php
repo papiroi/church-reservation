@@ -121,7 +121,7 @@
 						
 					}
 					else {
-						
+						echo "<h3 class='white-text'>No Availabe Form</h3>";
 					}
 				?>
 			</table>

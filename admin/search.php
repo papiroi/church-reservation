@@ -99,7 +99,7 @@
 			<br/>
 			<input type="submit" value="Search" class="btn btn-primary" />
 			&nbsp;&nbsp;&nbsp;
-			<input type="reset" value="Clear" class="btn btn-danger" />
+			<a href="confirmed_reserve.php" class="btn btn-info">Back</a>
 			</form>
 			</div>
 			</div>
@@ -149,7 +149,7 @@
 					
 				}
 				else {
-					echo "<h2 class='white-text'>No Matching Reservation Found!</h2>";
+					echo "<h2 class='white-text text-center'>No Matching Reservation Found!</h2>";
 				}
 				
 			}

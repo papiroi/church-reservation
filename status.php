@@ -88,7 +88,7 @@
 	<!-- Start of Output for Reservation Status -->
 	<div class="center-div">
 	<h2 class="white-text">Reservations</h2>
-	<button class="btn btn-primary" onclick="goBack();">Back</button>
+	<!--<button class="btn btn-primary" onclick="goBack();">Back</button>-->
 	<br/>
 	<span class="white-text"><i>Click on Reservation Number to Print</i></span>
 	<br/>

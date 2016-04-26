@@ -122,7 +122,7 @@
 					}
 					else {
 						
-						echo "No User Limits Found!";
+						echo "<h3 class='white-text'>No User Calendar Found!</h3>";
 						
 					}
 				

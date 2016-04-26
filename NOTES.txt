@@ -18,3 +18,7 @@
 - Report Generation Must Add the name of the Priest
 
 - Forgot Password
+
+- Reply Send - Reply Page in User
+- Check Edit Calendar Label in Admin
+- Event Edit - ok

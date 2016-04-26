@@ -87,8 +87,7 @@
 	<!-- Start of Output for Reservation Status -->
 	<div class="center-div">
 	<h2 class="white-text">Archive</h2>
-	<button class="btn btn-primary" onclick="goBack();">Back</button>
-	<br/>
+	<!--<button class="btn btn-primary" onclick="goBack();">Back</button>-->
 	<br/>
 <?php
 
@@ -135,7 +134,7 @@
 		
 	}
 	
-	echo "Past Reservations";
+	echo "<em>Past Reservations</em>";
 	$select_all_reserv = "SELECT * FROM reservation WHERE username = '$username' AND reserv_date < CURRENT_DATE() ORDER BY reserv_date, reserv_time ASC";
 	$select_query_result = $conn->query($select_all_reserv);
 	
