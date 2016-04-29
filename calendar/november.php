@@ -8,7 +8,7 @@
 					
 					$current_year = date("y");
 					
-					$select_all_dates = "SELECT * FROM reservation";
+					$select_all_dates = "SELECT * FROM reservation WHERE confirmation = 'Confirmed'";
 					$q_seleect_all_dates = $conn->query($select_all_dates);
 					
 					if($q_seleect_all_dates->num_rows > 0) {
@@ -172,13 +172,13 @@
 							if(maxCountLimit($conn, $day, $month_num)) {
 								echo "' bgcolor='#ff0000'>"; //highlight TODAY in red
 								echo "<a href='javascript: void(0)' class='white-text' title='Click to View Schedule'>$day</a></td>";
-							}
+							}/*
 							else if(maxWeddingReservation($conn, $day ,$month_num) ) {
 								
 								echo "' bgcolor='#ff0000'>"; //highlight TODAY in red
 								echo "<a href='javascript: void(0)' class='white-text' title='Full Schedule. Clickto View Schedule'>$day</a></td>";
 								
-							}
+							}*/
 							else {
 								echo "' bgcolor='#00ff00'>"; //highlight TODAY in green
 								echo "<a href='javascript: void(0)' class='white-text' title='Click to View Schedule'>$day</a></td>";

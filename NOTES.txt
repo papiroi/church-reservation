@@ -1,9 +1,2 @@
 - Forgot Password - online
 
-- Reply Send - Reply Page in User and Admin - ok
-- Check Mass Sched - ok
-
-- Justify all Reminders and Description
-- Reminders and Description (askteris to bullet and new line)sss
-- admin forgot password
-- change username

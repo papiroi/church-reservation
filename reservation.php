@@ -90,6 +90,7 @@
 			$("#eventtype").click(function(){
 				if(document.getElementById('eventtype').value == 'Baptism') {
 					$("#bap-type").show();
+					$("#dateselect4").hide();
 				}
 				else {
 					$("#bap-type").hide();

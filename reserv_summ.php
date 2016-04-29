@@ -197,6 +197,17 @@
 		$etime = $_POST['etime'];
 		$rn = $_POST['rn'];
 		
+		// Name of the Day
+		$day_name = date('l',$edate);
+		
+		// Wedding Confirmation Condition
+		if($event == 'Wedding') {
+			$conf = 'NC';
+		}
+		else {
+			$conf = 'Confirmed';
+		}
+		
 		// $bap_type is Type of Baptism
 		@$bap_type = $_POST['bap-type'];
 		
@@ -205,6 +216,14 @@
 		// the user will not be able to resreve another
 		$select_user_events = "SELECT * FROM reservation WHERE username = '$username' AND event_type = '$event' AND status = 'Active' AND reserv_date >= CURRENT_DATE()";
 		$select_user_events_query = $conn -> query($select_user_events);
+			
+		/*
+		* Select Conflict
+		*/
+		$select_conflict = "SELECT * FROM reservation WHERE reserv_date = '$edate' AND reserv_time = '$etime'";
+		$select_conflict_query = $conn->query($select_conflict);
+					
+		
 			
 		/*
 		* Search Query for Date Selected
@@ -223,7 +242,7 @@
 				
 			}
 			
-			if($event == 'Wedding' && $etime == '1' && @$stime <= '5') {
+			if($event == 'Wedding' && $etime == '1' && @$stime <= '4') {
 				echo "<script>alert('The full slot of Date and Time is not available.');";
 				echo "window.location.href = 'reservation.php';</script>";
 			}
@@ -231,7 +250,7 @@
 				echo "<script>alert('The full slot of  Date and is not available.');";
 				echo "window.location.href = 'reservation.php';</script>";
 			}
-			else if($sevent == 'Wedding' && $etime <= '5' && $stime <= '5') {
+			else if($sevent == 'Wedding' && $etime <= '5' && $stime <= '4') {
 				echo "<script>alert('The Date and Time Conflict.');";
 				echo "window.location.href = 'reservation.php';</script>";
 			}
@@ -257,7 +276,7 @@
 								'$etime',
 								'$username',
 								'Active',
-								'Confirmed',
+								'$conf',
 								NOW()
 							)";
 						$reservation_query = $conn->query($reservation);
@@ -288,7 +307,7 @@
 								'$etime',
 								'$username',
 								'Active',
-								'Confirmed',
+								'$conf',
 								NOW()
 							)";
 						$reservation_query = $conn->query($reservation);
@@ -308,27 +327,33 @@
 						echo "window.location.href = 'reservation.php';</script>";
 					}
 					else {
-						// Start of Adding Reservation
-						// Start of Adding Reservation
-						$reservation = "INSERT INTO reservation (reserv_num, event_type, priest, reserv_date, reserv_time, username, status, confirmation, date_reserved)
-							VALUES(
-								'$rn',
-								'$event',
-								'$priest',
-								'$edate',
-								'$etime',
-								'$username',
-								'Active',
-								'Confirmed',
-								NOW()
-							)";
-						$reservation_query = $conn->query($reservation);
-						if($reservation_query == true) {
-							echo "<script>alert('Schedule is Successfully Reserved');";
+						if($select_user_events_query -> num_rows > 0) {
+							echo "<script>alert('You have another pending reservation on this event!');";
 							echo "window.location.href = 'reservation.php';</script>";
-						}// End of Adding Reservation
-						// End of Adding Reservation
-						break;
+						}
+						else {
+							// Start of Adding Reservation
+							// Start of Adding Reservation
+							$reservation = "INSERT INTO reservation (reserv_num, event_type, priest, reserv_date, reserv_time, username, status, confirmation, date_reserved)
+								VALUES(
+									'$rn',
+									'$event',
+									'$priest',
+									'$edate',
+									'$etime',
+									'$username',
+									'Active',
+									'$conf',
+									NOW()
+								)";
+							$reservation_query = $conn->query($reservation);
+							if($reservation_query == true) {
+								echo "<script>alert('Schedule is Successfully Reserved');";
+								echo "window.location.href = 'reservation.php';</script>";
+							}// End of Adding Reservation
+							// End of Adding Reservation
+							break;
+						}
 					}
 					
 				}else if($event == 'Baptism') {
@@ -354,7 +379,7 @@
 								'$etime',
 								'$username',
 								'Active',
-								'Confirmed',
+								'$conf',
 								NOW()
 							)";
 						$reservation_query = $conn->query($reservation);
@@ -367,6 +392,86 @@
 					}
 					
 				}
+				else if($event == 'Funeral') {
+					
+					if($select_conflict_query -> num_rows > 0) {
+						
+						echo "<script>alert('The Date and Time is already reserved.');";
+						echo "window.location.href = 'reservation.php';</script>";
+						
+					}
+					else {
+						// Start of Adding Reservation
+						// Start of Adding Reservation
+						$reservation = "INSERT INTO reservation (reserv_num, event_type, priest, reserv_date, reserv_time, username, status, confirmation, date_reserved)
+							VALUES(
+								'$rn',
+								'$event',
+								'$priest',
+								'$edate',
+								'$etime',
+								'$username',
+								'Active',
+								'$conf',
+								NOW()
+							)";
+						$reservation_query = $conn->query($reservation);
+						if($reservation_query == true) {
+							echo "<script>alert('Schedule is Successfully Reserved');";
+							echo "window.location.href = 'reservation.php';</script>";
+						}// End of Adding Reservation
+						// End of Adding Reservation
+						break;
+					}
+					
+				}
+				else if($event == 'Wedding') {
+					
+					if($day_name == 'Thursday' && $etime <= '4') {
+						/*
+						* Prevent Wedding from Reserving Thursday Morning
+						*/
+						echo "<script>alert('There will no Wedding Reservation on Thursday Morning and Saturday Afternoon!');";
+						echo "window.location.href = 'reservation.php';</script>";
+						
+					}
+					else if($day_name == 'Saturday' && $etime >= '6') {
+						/*
+						* Prevent Wedding From Reserving Saturday Afternoon
+						*/
+						echo "<script>alert('There will no Wedding Reservation on Thursday Morning and Saturday Afternoon!');";
+						echo "window.location.href = 'reservation.php';</script>";
+					}
+					else {
+						if($select_user_events_query -> num_rows > 0) {
+							echo "<script>alert('You have another pending reservation on this event!');";
+							echo "window.location.href = 'reservation.php';</script>";
+						}
+						else {
+							// Start of Adding Reservation
+							// Start of Adding Reservation
+							$reservation = "INSERT INTO reservation (reserv_num, event_type, priest, reserv_date, reserv_time, username, status, confirmation, date_reserved)
+								VALUES(
+									'$rn',
+									'$event',
+									'$priest',
+									'$edate',
+									'$etime',
+									'$username',
+									'Active',
+									'$conf',
+									NOW()
+								)";
+							$reservation_query = $conn->query($reservation);
+							if($reservation_query == true) {
+								echo "<script>alert('Schedule is saved to be reviewed by Admin');";
+								echo "window.location.href = 'reservation.php';</script>";
+							}// End of Adding Reservation
+							// End of Adding Reservation
+							break;
+						}
+					}
+				}
 				else {
 					
 					echo "<script>alert('another condition');</script>";
@@ -376,27 +481,33 @@
 			
 		}
 		else {
-			// Start of Adding Reservation
-			// Start of Adding Reservation
-			$reservation = "INSERT INTO reservation (reserv_num, event_type, priest, reserv_date, reserv_time, username, status, confirmation, date_reserved)
-				VALUES(
-					'$rn',
-					'$event',
-					'$priest',
-					'$edate',
-					'$etime',
-					'$username',
-					'Active',
-					'Confirmed',
-					NOW()
-				)";
-			$reservation_query = $conn->query($reservation);
-			if($reservation_query == true) {
-				echo "<script>alert('Schedule is Successfully Reserved');";
+			if($select_user_events_query -> num_rows > 0) {
+				echo "<script>alert('You have another pending reservation on this event!');";
 				echo "window.location.href = 'reservation.php';</script>";
-			}// End of Adding Reservation
-			// End of Adding Reservation
-			break;
+			}
+			else {
+				// Start of Adding Reservation
+				// Start of Adding Reservation
+					$reservation = "INSERT INTO reservation (reserv_num, event_type, priest, reserv_date, reserv_time, username, status, confirmation, date_reserved)
+					VALUES(
+						'$rn',
+						'$event',
+						'$priest',
+						'$edate',
+						'$etime',
+						'$username',
+						'Active',
+						'$conf',
+						NOW()
+					)";
+				$reservation_query = $conn->query($reservation);
+				if($reservation_query == true) {
+					echo "<script>alert('Schedule is Successfully Reserved');";
+					echo "window.location.href = 'reservation.php';</script>";
+				}// End of Adding Reservation
+				// End of Adding Reservation
+				break;
+			}
 						
 		}
 		
@@ -433,7 +544,7 @@
 								'$etime',
 								'$username',
 								'Active',
-								'Confirmed',
+								'$conf',
 								NOW()
 							)";
 						$reservation_query = $conn->query($reservation);
@@ -464,7 +575,7 @@
 								'$etime',
 								'$username',
 								'Active',
-								'Confirmed',
+								'$conf',
 								NOW()
 							)";
 						$reservation_query = $conn->query($reservation);
@@ -495,7 +606,7 @@
 								'$etime',
 								'$username',
 								'Active',
-								'Confirmed',
+								'$conf',
 								NOW()
 							)";
 						$reservation_query = $conn->query($reservation);
@@ -526,7 +637,7 @@
 								'$etime',
 								'$username',
 								'Active',
-								'Confirmed',
+								'$conf',
 								NOW()
 							)";
 						$reservation_query = $conn->query($reservation);
@@ -580,7 +691,7 @@
 										'$etime',
 										'$username',
 										'Active',
-										'Confirmed',
+										'$conf',
 										NOW()
 									)";
 								$reservation_query = $conn->query($reservation);
@@ -614,29 +725,33 @@
 						}
 						else {
 							
-							//echo "<script>alert('Wedding Reservation Error: 1')</script>";
-							
-							// Start of Adding Reservation
-							// Start of Adding Reservation
-							$reservation = "INSERT INTO reservation (reserv_num, event_type, priest, reserv_date, reserv_time, username, status, confirmation, date_reserved)
-								VALUES(
-									'$rn',
-									'$event',
-									'$priest',
-									'$edate',
-									'$etime',
-									'$username',
-									'Active',
-									'NC',
-									NOW()
-								)";
-							$reservation_query = $conn->query($reservation);
-							if($reservation_query == true) {
-								echo "<script>alert('Schedule is Successfully Reserved');";
+							if($select_user_events_query -> num_rows > 0) {
+								echo "<script>alert('You have another pending reservation on this event!');";
 								echo "window.location.href = 'reservation.php';</script>";
-							}// End of Adding Reservation
-							// End of Adding Reservation
-							break;
+							}
+							else {
+								// Start of Adding Reservation
+								// Start of Adding Reservation
+								$reservation = "INSERT INTO reservation (reserv_num, event_type, priest, reserv_date, reserv_time, username, status, confirmation, date_reserved)
+									VALUES(
+										'$rn',
+										'$event',
+										'$priest',
+										'$edate',
+										'$etime',
+										'$username',
+										'Active',
+										'$conf',
+										NOW()
+									)";
+								$reservation_query = $conn->query($reservation);
+								if($reservation_query == true) {
+									echo "<script>alert('Schedule is Successfully Reserved');";
+									echo "window.location.href = 'reservation.php';</script>";
+								}// End of Adding Reservation
+								// End of Adding Reservation
+								break;
+							}
 							
 						}
 						
@@ -662,7 +777,7 @@
 										'$etime',
 										'$username',
 										'Active',
-										'Confirmed',
+										'$conf',
 										NOW()
 									)";
 								$reservation_query = $conn->query($reservation);
@@ -681,27 +796,33 @@
 						}
 						else {
 							
-							// Start of Adding Reservation
-							// Start of Adding Reservation
-							$reservation = "INSERT INTO reservation (reserv_num, event_type, priest, reserv_date, reserv_time, username, status, confirmation, date_reserved)
-								VALUES(
-									'$rn',
-									'$event',
-									'$priest',
-									'$edate',
-									'$etime',
-									'$username',
-									'Active',
-									'NC',
-									NOW()
-								)";
-							$reservation_query = $conn->query($reservation);
-							if($reservation_query == true) {
-								echo "<script>alert('Schedule is Successfully Reserved');";
+							if($select_user_events_query -> num_rows > 0) {
+								echo "<script>alert('You have another pending reservation on this event!');";
 								echo "window.location.href = 'reservation.php';</script>";
-							}// End of Adding Reservation
-							// End of Adding Reservation
-							break;
+							}
+							else {
+								// Start of Adding Reservation
+								// Start of Adding Reservation
+								$reservation = "INSERT INTO reservation (reserv_num, event_type, priest, reserv_date, reserv_time, username, status, confirmation, date_reserved)
+									VALUES(
+										'$rn',
+										'$event',
+										'$priest',
+										'$edate',
+										'$etime',
+										'$username',
+										'Active',
+										'$conf',
+										NOW()
+									)";
+								$reservation_query = $conn->query($reservation);
+								if($reservation_query == true) {
+									echo "<script>alert('Schedule is Successfully Reserved');";
+									echo "window.location.href = 'reservation.php';</script>";
+								}// End of Adding Reservation
+								// End of Adding Reservation
+								break;
+							}
 							
 						}
 					}

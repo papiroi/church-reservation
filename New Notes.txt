@@ -1,7 +1,16 @@
 - 2 Months (60 days) before: datepicker - ok
 - remove 12pm to all events - ok
+- if availabe(time and date) auto confirm except for wedding - ok
 
-- if availabe(time and date) auto confirm - **
 - if there is an confirmation on thursday morning and seminar on saturday afternoon no wedding
 - notification automatic: cron jobs
 - 2 wedding green if 12pm to 1pm is available
+
+- funeral/wedding check not working - last condition alert
+- wedding time is zero
+- check event reservation blocking for unfinished reservation
+
+- Justify all Reminders and Description
+- Reminders and Description (askteris to bullet and new line)
+- admin forgot password
+- change username

@@ -138,7 +138,7 @@
 		return $val;
 		
 	}
-	$select_all_reserv = "SELECT * FROM reservation WHERE confirmation = 'NC' ORDER BY reserv_date, reserv_time ASC";
+	$select_all_reserv = "SELECT * FROM reservation WHERE confirmation = 'NC' ORDER BY date_reserved ASC";
 	$select_query_result = $conn->query($select_all_reserv);
 	
 	if($select_query_result -> num_rows > 0) {
