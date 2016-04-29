@@ -137,7 +137,7 @@
 		
 	}
 
-	$select_all_reserv = "SELECT * FROM reservation WHERE username = '$username' AND confirmation = 'Confirmed' AND reserv_date >= CURRENT_DATE() ORDER BY reserv_date ASC";
+	$select_all_reserv = "SELECT * FROM reservation WHERE username = '$username' AND confirmation = 'Confirmed' AND reserv_date >= CURRENT_DATE() ORDER BY reserv_date, reserv_time ASC";
 	$select_query_result = $conn->query($select_all_reserv);
 	
 	if(@$select_query_result -> num_rows > 0) {

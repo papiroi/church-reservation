@@ -3,7 +3,7 @@
 - if availabe(time and date) auto confirm except for wedding - ok
 
 - if there is an confirmation on thursday morning and seminar on saturday afternoon no wedding
-- notification automatic: cron jobs
+- notification automatic: cron jobs on wedding on reserve pending message
 - 2 wedding green if 12pm to 1pm is available
 
 - funeral/wedding check not working - last condition alert
@@ -14,3 +14,10 @@
 - Reminders and Description (askteris to bullet and new line)
 - admin forgot password
 - change username
+
+- thursday block 9am: only for confirmation
+- saturday block 4pm: only for seminars
+
+- remove pending wedding on calendar date if not confirmed
+
+- check for redundant reservation
