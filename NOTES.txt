@@ -4,6 +4,6 @@
 - Check Mass Sched - ok
 
 - Justify all Reminders and Description
-- Reminders and Description (askteris to bullet and new line)
+- Reminders and Description (askteris to bullet and new line)sss
 - admin forgot password
 - change username

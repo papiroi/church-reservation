@@ -119,18 +119,22 @@
 								$select_p_query = $conn->query($select_p);
 								
 								if($select_p_query->num_rows > 0) {
+									echo "<div  class='text-center'>";
+									
 									
 									while($prow = $select_p_query->fetch_assoc()) {
-										echo "<div  class='text-center'>";
+										
 										echo "<img src='uploads/" . sha1($prow['name']) . ".jpg' style='width: 200px; height: 175px; border-radius: 5px;'/>";
-										echo "</div>";
+										
 										echo "<h3 class='text-center white-text'>Name: " . $prow['name'] . "</h3>";
 										echo "<p class='text-center white-text'>Schedule: " . $prow['sched'] . "</p>";
 										echo "<p class='text-center white-text'>" . $prow['info'] . "</p><br/>";
-										echo "</div>";
-									
+										
+										if($select_p_query -> num_rows > 1) {
+											echo "<hr/>";
+										}
 									}
-									
+									echo "</div>";
 								
 								}
 								else {

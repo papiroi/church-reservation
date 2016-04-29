@@ -205,6 +205,9 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 				
 				<br/>
 				
+				<!-- Date Select / Date Picker for Wedding 2 months -->
+				<input type="text" id="dateselect4" name="dateselect4" value="<?php echo @$edate; ?>" class="form-control"/>
+
 				<label id="lbltimeselect" for="timeselect">Select Starting Time:</label>
 				<select id="timeselect" name="timeselect" value="<?php echo @$etime; ?>" class="form-control">
 				
@@ -213,7 +216,7 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 					<option value="2">9:00am</option>
 					<option value="3">10:00am</option>
 					<option value="4">11:00am</option>
-					<option value="5">12:00pm</option>
+					<!--<option value="5">12:00pm</option>-->
 					<option value="6">1:00pm</option>
 					<option value="7">2:00pm</option>
 					<option value="8">3:00pm</option>

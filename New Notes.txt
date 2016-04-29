@@ -1,0 +1,7 @@
+- 2 Months (60 days) before: datepicker - ok
+- remove 12pm to all events - ok
+
+- if availabe(time and date) auto confirm - **
+- if there is an confirmation on thursday morning and seminar on saturday afternoon no wedding
+- notification automatic: cron jobs
+- 2 wedding green if 12pm to 1pm is available

@@ -88,6 +88,9 @@
 	
 	// create calendar label table
 	$db->cal_label();
+
+	// Create recovery table
+	$db->recovery();
 ?>
 
 

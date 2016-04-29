@@ -471,5 +471,23 @@ class Database {
 		}
 	}
 
+
+	public function recovery() {
+
+		$create = "CREATE TABLE IF NOT EXISTS recovery(
+			qID int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+			question varchar(250) NOT NULL,
+			answer varchar(100) NOT NULL,
+			dateMod datetime NOT NULL
+		)";
+		$create_query = $this->conn->query($create);
+		
+		if(!$create_query) {
+			exit("Question Error!");
+		}
+
+
+	}
+
 	// End of Database Class
 }

@@ -84,6 +84,7 @@
 			$("#dateselect2").hide();
 			$("#dateselect3").hide();
 			$("#timeselect2").hide();
+			$("#dateselect4").hide();
 			
 			
 			$("#eventtype").click(function(){
@@ -96,12 +97,14 @@
 					$("#lbltimeselect").show(100);
 					$("#lblpriest").show(100);
 					$("#priest").show(100);
+					$("#dateselect4").hide();
 				}
 				
 				if(document.getElementById('eventtype').value == 'Confirmation') {
 				
 					$("#dateselect2").show();
 					$("#dateselect3").hide();
+					$("#dateselect4").hide();
 					$("#dateselect").hide();
 					$("#lblpriest").hide();
 					$("#priest").hide();
@@ -114,6 +117,7 @@
 				
 					$("#dateselect2").hide();
 					$("#dateselect3").show();
+					$("#dateselect4").hide();
 					$("#dateselect").hide();
 					$("#lblpriest").hide();
 					$("#priest").hide();
@@ -123,10 +127,19 @@
 				
 					$("#dateselect2").hide();
 					$("#dateselect3").show();
+					$("#dateselect4").hide();
 					$("#dateselect").hide();
 					$("#lblpriest").hide();
 					$("#priest").hide();
 			
+				}
+				else if(document.getElementById('eventtype').value == 'Wedding') {
+
+					$("#dateselect2").hide();
+					$("#dateselect3").hide();
+					$("#dateselect4").show();
+					$("#dateselect").hide();
+
 				}
 				else {
 				
@@ -173,6 +186,7 @@
 					$("#lbltimeselect").hide(100);
 					$("#lblpriest").hide(100);
 					$("#priest").hide(100);
+					$("#dateselect4").hide();
 				}
 			});
 			
@@ -188,6 +202,10 @@
 		
 			$(function() {
 				$("#dateselect" ).datepicker({minDate: 3, maxDate: 60});
+			});
+
+			$(function() {
+				$("#dateselect4" ).datepicker({minDate: 60});
 			});
 		
 		
