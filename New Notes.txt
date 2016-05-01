@@ -2,7 +2,3 @@
 - New Line in Description
 - admin forgot password
 - change username
-
-- thursday block 9am: only for confirmation
-- Seminars won't be block
-- 

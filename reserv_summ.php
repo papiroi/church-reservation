@@ -213,6 +213,107 @@
 		// $bap_type is Type of Baptism
 		@$bap_type = $_POST['bap-type'];
 		
+		
+		function weddingNotification($conn, $username, $edate, $etime, $rn) {
+			// Random Number Generator
+			function generateRandomString($length = 10) {
+				$characters = '0123456789ABCDEFGHIJLKMNOPQRSTUVWXYZ';
+				$charactersLength = strlen($characters);
+				$randomString = '';
+				for ($i = 0; $i < $length; $i++) {
+					$randomString .= $characters[rand(0, $charactersLength - 1)];
+				}
+				return $randomString;
+			}
+			
+		/*
+		* Function to convert Number values of Time to Time Slots
+		* Calling this function to convert certain values to time value
+		* num_to_time()
+		*/
+				
+				function num_to_time($val) {
+					
+					if($val == 1) {
+						$val = "8:00am";
+					}
+					else if ($val == 2) {
+						$val = "9:00am";
+					}
+					else if ($val == 3) {
+						$val = "10:00am";
+					}
+					else if ($val == 4) {
+						$val = "11:00am";
+					}
+					else if ($val == 5) {
+						$val = "12:00pm";
+					}
+					else if ($val == 6) {
+						$val = "1:00pm";
+					}
+					else if ($val ==7) {
+						$val = "2:00pm";
+					}
+					else if ($val == 8) {
+						$val = "3:00pm";
+					}
+					else if ($val == 9) {
+						$val = "4:00pm";
+					}
+					else if ($val == 10) {
+						$val = "5:00pm";
+					}
+					
+					return $val;
+					
+				}
+
+			// Function that converts php date to word
+			function dateName($date) {
+				
+				$result = "";
+				
+				$convert_date = strtotime($date);
+				$month = date('F',$convert_date);
+				$year = date('Y',$convert_date);
+				$name_day = date('l',$convert_date);
+				$day = date('j',$convert_date);
+				
+				
+				$result = $month . " " . $day . ", " . $year . " - " . $name_day;
+				
+				return $result;
+			}
+			
+			//create conversation ID
+			$convID = generateRandomString();
+			
+			$status = "0";
+			
+			$category = "Sent";
+			
+			$msg = "Your Wedding Reservation requrest scheduled on " .  dateName($edate) . " at " . num_to_time($etime) . " with 
+			the Reservation Number: $rn is Pending. You Need to Pay the amount of 500
+			to the admin enable to be confirm your request. After 3 days of not paying the amount
+			nor reporting to the admin, your request will automatically removed from the pending list.
+			Thank You!";
+			
+			$send = "INSERT INTO cached_msg (convID, Content, sender, receiver, dateSent, status, category)
+				VALUES(
+				'$convID',
+				'$msg',
+				'System Notification',
+				'$username',
+				NOW(),
+				'$status',
+				'$category'
+				)";
+				
+			$send_query = $conn->query($send);
+			
+		}
+		
 		// Search or Select for Active reservation for a user
 		// if there are active reservation for an event, 
 		// the user will not be able to resreve another
@@ -379,6 +480,11 @@
 								echo "<script>alert('You have another Reservation in this Event.');";
 								echo "window.location.href= 'reservation.php';</script>";
 							}
+							else if($day_name == 'Thursday' && $etime == '2') {
+								echo "<script>alert('This time is only for Confirmation. Contact Admin for more information');";
+								echo "window.location.href= 'reservation.php';</script>";
+								
+							}
 							else {
 								// Start of Adding Reservation
 								// Start of Adding Reservation
@@ -424,6 +530,11 @@
 								echo "<script>alert('You have another Reservation in this Event.');";
 								echo "window.location.href= 'reservation.php';</script>";
 							}
+							else if($day_name == 'Thursday' && $etime == '2') {
+								echo "<script>alert('This time is only for Confirmation. Contact Admin for more information');";
+								echo "window.location.href= 'reservation.php';</script>";
+								
+							}
 							else {
 								// Start of Adding Reservation
 								// Start of Adding Reservation
@@ -441,7 +552,7 @@
 									)";
 								$reservation_query = $conn->query($reservation);
 								if($reservation_query == true) {
-									echo "<script>alert('Schedule is Successfully Reserved 4');";
+									echo "<script>alert('Schedule is Successfully Reserved 5');";
 									echo "window.location.href = 'reservation.php';</script>";
 								}// End of Adding Reservation
 								// End of Adding Reservation
@@ -488,7 +599,10 @@
 									)";
 								$reservation_query = $conn->query($reservation);
 								if($reservation_query == true) {
-									echo "<script>alert('Schedule is Successfully Reserved 4');";
+									// Message Notification
+									weddingNotification($conn, $username, $edate, $etime, $rn);
+									
+									echo "<script>alert('Schedule is Successfully Reserved 6');";
 									echo "window.location.href = 'reservation.php';</script>";
 								}// End of Adding Reservation
 								// End of Adding Reservation
@@ -543,7 +657,10 @@
 								)";
 							$reservation_query = $conn->query($reservation);
 							if($reservation_query == true) {
-								echo "<script>alert('Schedule is Successfully Reserved 4');";
+								// Wedding Notification
+								weddingNotification($conn, $username, $edate, $etime, $rn);
+								
+								echo "<script>alert('Schedule is Successfully Reserved 7');";
 								echo "window.location.href = 'reservation.php';</script>";
 							}// End of Adding Reservation
 							// End of Adding Reservation
@@ -578,7 +695,7 @@
 							)";
 						$reservation_query = $conn->query($reservation);
 						if($reservation_query == true) {
-							echo "<script>alert('Schedule is Successfully Reserved 1');";
+							echo "<script>alert('Schedule is Successfully Reserved 8');";
 							echo "window.location.href = 'reservation.php';</script>";
 						}// End of Adding Reservation
 						// End of Adding Reservation
@@ -645,7 +762,7 @@
 								)";
 							$reservation_query = $conn->query($reservation);
 							if($reservation_query == true) {
-								echo "<script>alert('Schedule is Successfully Reserved 3');";
+								echo "<script>alert('Schedule is Successfully Reserved 9');";
 								echo "window.location.href = 'reservation.php';</script>";
 							}// End of Adding Reservation
 							// End of Adding Reservation
@@ -682,7 +799,7 @@
 								)";
 							$reservation_query = $conn->query($reservation);
 							if($reservation_query == true) {
-								echo "<script>alert('Schedule is Successfully Reserved 3');";
+								echo "<script>alert('Schedule is Successfully Reserved 10');";
 								echo "window.location.href = 'reservation.php';</script>";
 							}// End of Adding Reservation
 							// End of Adding Reservation
@@ -707,6 +824,11 @@
 							echo "<script>alert('You have another Reservation in this Event.');";
 							echo "window.location.href= 'reservation.php';</script>";
 						}
+						else if($day_name == 'Thursday' && $etime == '2') {
+							echo "<script>alert('This time is only for Confirmation. Contact Admin for more information');";
+							echo "window.location.href= 'reservation.php';</script>";
+							
+						}
 						else {
 							// Start of Adding Reservation
 							// Start of Adding Reservation
@@ -724,7 +846,7 @@
 								)";
 							$reservation_query = $conn->query($reservation);
 							if($reservation_query == true) {
-								echo "<script>alert('Schedule is Successfully Reserved 4');";
+								echo "<script>alert('Schedule is Successfully Reserved 11');";
 								echo "window.location.href = 'reservation.php';</script>";
 							}// End of Adding Reservation
 							// End of Adding Reservation
@@ -746,6 +868,11 @@
 							echo "<script>alert('You have another Reservation in this Event.');";
 							echo "window.location.href= 'reservation.php';</script>";
 						}
+						else if($day_name == 'Thursday' && $etime == '2') {
+							echo "<script>alert('This time is only for Confirmation. Contact Admin for more information');";
+							echo "window.location.href= 'reservation.php';</script>";
+							
+						}
 						else {
 							// Start of Adding Reservation
 							// Start of Adding Reservation
@@ -763,7 +890,7 @@
 								)";
 							$reservation_query = $conn->query($reservation);
 							if($reservation_query == true) {
-								echo "<script>alert('Schedule is Successfully Reserved 4');";
+								echo "<script>alert('Schedule is Successfully Reserved 12');";
 								echo "window.location.href = 'reservation.php';</script>";
 							}// End of Adding Reservation
 							// End of Adding Reservation
@@ -823,7 +950,7 @@
 							)";
 						$reservation_query = $conn->query($reservation);
 						if($reservation_query == true) {
-							echo "<script>alert('Schedule is Successfully Reserved 8');";
+							echo "<script>alert('Schedule is Successfully Reserved 13');";
 							echo "window.location.href = 'reservation.php';</script>";
 						}// End of Adding Reservation
 						// End of Adding Reservation
@@ -854,7 +981,7 @@
 							)";
 						$reservation_query = $conn->query($reservation);
 						if($reservation_query == true) {
-							echo "<script>alert('Schedule is Successfully Reserved 9');";
+							echo "<script>alert('Schedule is Successfully Reserved 14');";
 							echo "window.location.href = 'reservation.php';</script>";
 						}// End of Adding Reservation
 						// End of Adding Reservation
@@ -885,7 +1012,7 @@
 							)";
 						$reservation_query = $conn->query($reservation);
 						if($reservation_query == true) {
-							echo "<script>alert('Schedule is Successfully Reserved 9');";
+							echo "<script>alert('Schedule is Successfully Reserved 15');";
 							echo "window.location.href = 'reservation.php';</script>";
 						}// End of Adding Reservation
 						// End of Adding Reservation
@@ -916,7 +1043,7 @@
 							)";
 						$reservation_query = $conn->query($reservation);
 						if($reservation_query == true) {
-							echo "<script>alert('Schedule is Successfully Reserved 10');";
+							echo "<script>alert('Schedule is Successfully Reserved 16');";
 							echo "window.location.href = 'reservation.php';</script>";
 						}// End of Adding Reservation
 						// End of Adding Reservation
@@ -970,7 +1097,7 @@
 									)";
 								$reservation_query = $conn->query($reservation);
 								if($reservation_query == true) {
-									echo "<script>alert('Schedule is Successfully Reserved 11');";
+									echo "<script>alert('Schedule is Successfully Reserved 17');";
 									echo "window.location.href = 'reservation.php';</script>";
 								}// End of Adding Reservation
 								// End of Adding Reservation
@@ -1020,7 +1147,7 @@
 									)";
 								$reservation_query = $conn->query($reservation);
 								if($reservation_query == true) {
-									echo "<script>alert('Schedule is Successfully Reserved 12');";
+									echo "<script>alert('Schedule is Successfully Reserved 18');";
 									echo "window.location.href = 'reservation.php';</script>";
 								}// End of Adding Reservation
 								// End of Adding Reservation
@@ -1056,7 +1183,7 @@
 									)";
 								$reservation_query = $conn->query($reservation);
 								if($reservation_query == true) {
-									echo "<script>alert('Schedule is Successfully Reserved 13');";
+									echo "<script>alert('Schedule is Successfully Reserved 19');";
 									echo "window.location.href = 'reservation.php';</script>";
 								}// End of Adding Reservation
 								// End of Adding Reservation
@@ -1091,7 +1218,7 @@
 									)";
 								$reservation_query = $conn->query($reservation);
 								if($reservation_query == true) {
-									echo "<script>alert('Schedule is Successfully Reserved 14');";
+									echo "<script>alert('Schedule is Successfully Reserved 20');";
 									echo "window.location.href = 'reservation.php';</script>";
 								}// End of Adding Reservation
 								// End of Adding Reservation

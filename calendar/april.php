@@ -61,7 +61,7 @@
 								if($day == $date_reserved_day) {
 									$r_date = $date_reserved_year . "-" . $date_reserved_month . "-" . $date_reserved_day;
 									
-									$select_date = "SELECT * FROM reservation WHERE reserv_date = '$r_date'";
+									$select_date = "SELECT DISTINCT event_type, reserv_time FROM reservation WHERE reserv_date = '$r_date'";
 									$select_date_query = $conn->query($select_date);
 									
 									$r_count = $select_date_query -> num_rows;
