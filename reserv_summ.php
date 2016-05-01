@@ -455,16 +455,9 @@
 						/*
 						* Prevent Wedding from Reserving Thursday Morning
 						*/
-						echo "<script>alert('There will no Wedding Reservation on Thursday Morning and Saturday Afternoon!');";
+						echo "<script>alert('There will no Wedding Reservation on Thursday Morning!');";
 						echo "window.location.href = 'reservation.php';</script>";
 						
-					}
-					else if($day_name == 'Saturday' && $etime >= '6') {
-						/*
-						* Prevent Wedding From Reserving Saturday Afternoon
-						*/
-						echo "<script>alert('There will no Wedding Reservation on Thursday Morning and Saturday Afternoon!');";
-						echo "window.location.href = 'reservation.php';</script>";
 					}
 					else {
 						if($select_user_events_query -> num_rows > 0) {
@@ -516,16 +509,9 @@
 					/*
 					* Prevent Wedding from Reserving Thursday Morning
 					*/
-					echo "<script>alert('There will no Wedding Reservation on Thursday Morning and Saturday Afternoon!');";
+					echo "<script>alert('There will no Wedding Reservation on Thursday Morning!');";
 					echo "window.location.href = 'reservation.php';</script>";
 					
-				}
-				else if($day_name == 'Saturday' && $etime >= '6') {
-					/*
-					* Prevent Wedding From Reserving Saturday Afternoon
-					*/
-					echo "<script>alert('There will no Wedding Reservation on Thursday Morning and Saturday Afternoon!');";
-					echo "window.location.href = 'reservation.php';</script>";
 				}
 				else {
 					

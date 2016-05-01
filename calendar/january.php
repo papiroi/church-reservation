@@ -100,7 +100,15 @@
 					
 					if($select_wed_query -> num_rows >= 2) {
 						
-						return true;
+						$select_rem_time = "SELECT * FROM reservation WHERE reserv_date = '$date' AND reserv_time = '5'";
+						$srt_query = $conn->query($select_rem_time);
+						
+						if($srt_query -> num_rows > 0) {
+							return true;
+						}
+						else {
+							return false;
+						}
 						
 					}
 					else {
@@ -170,13 +178,13 @@
 							if(maxCountLimit($conn, $day, $month_num)) {
 								echo "' bgcolor='#ff0000'>"; //highlight TODAY in red
 								echo "<a href='javascript: void(0)' class='white-text' title='Click to View Schedule'>$day</a></td>";
-							}/*
+							}
 							else if(maxWeddingReservation($conn, $day ,$month_num) ) {
 								
 								echo "' bgcolor='#ff0000'>"; //highlight TODAY in red
 								echo "<a href='javascript: void(0)' class='white-text' title='Full Schedule. Clickto View Schedule'>$day</a></td>";
 								
-							}*/
+							}
 							else {
 								echo "' bgcolor='#00ff00'>"; //highlight TODAY in green
 								echo "<a href='javascript: void(0)' class='white-text' title='Click to View Schedule'>$day</a></td>";
