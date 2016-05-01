@@ -1,16 +1,8 @@
-
-
-- if there is an confirmation on thursday morning and seminar on saturday afternoon no wedding
-- notification automatic: cron jobs on wedding on reserve pending message
-- 2 wedding green if 12pm to 1pm is available
-
-- funeral/wedding check not working - last condition alert
-- wedding time is zero
-- check event reservation blocking for unfinished reservation
-
 - Justify all Reminders and Description
-- Reminders and Description (askteris to bullet and new line)
+- New Line in Description
 - admin forgot password
 - change username
 
 - thursday block 9am: only for confirmation
+- Seminars won't be block
+- 

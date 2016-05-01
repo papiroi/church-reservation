@@ -93,7 +93,7 @@
 					
 					$date = date("Y") . "-" . $month . "-" . $day;
 					
-					$select_wed = "SELECT * FROM reservation WHERE reserv_date = '$date' AND event_type = '$event'";
+					$select_wed = "SELECT * FROM reservation WHERE reserv_date = '$date' AND event_type = '$event' AND cofirmation = 'Confirmed'";
 					$select_wed_query = $conn->query($select_wed);
 					
 					if($select_wed_query -> num_rows >= 2) {

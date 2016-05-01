@@ -189,6 +189,8 @@
 	}
 	
 	/*** Start of Condition in Reservation Script **/
+	/*** Start of Condition in Reservation Script **/
+	/*** Start of Condition in Reservation Script **/
 	if(isset($_POST['event']) && !empty($_POST['event'])) {
 		
 		$event = $_POST['event'];
@@ -1119,11 +1121,9 @@
 		
 	}
 	/*** End of the Condition and Reservation Script ***/
-	else {
-		
-		//header("Location: reservation.php");
-		
-	}
+	/*** End of the Condition and Reservation Script ***/
+	/*** End of the Condition and Reservation Script ***/
+
 ?>
 
 
