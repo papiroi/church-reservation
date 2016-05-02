@@ -35,6 +35,10 @@
 		$username = 'Guest';
 		
 	}
+	
+	function nl2br2($text){
+		return preg_replace("/\r\n|\n|\r/", "<br>", $text);
+	}
 ?>
 
 <!DOCTYPE html>
@@ -144,7 +148,7 @@
 								echo "</div>";
 								echo "<div class='col-md-6'>";
 								echo "<div class='boxed'>";
-								echo "<p class='white-text text-justify'>" . nl2br($e_row['reminder']) . "</p>";
+								echo "<p class='white-text text-justify'>" . nl2br2($e_row['reminder']) . "</p>";
 								echo "</div>";
 								echo "</div>";
 								echo "</div>";
@@ -154,21 +158,6 @@
 							
 						}
 
-						function bulletToAsterisk($str) {
-
-							$new_str = str_replace("*", "<li>", $str);
-
-							return $new_str;
-
-						}
-
-						function newLine($str) {
-
-							if(strstr($string, PHP_EOL)) {
-								echo "<br/>";
-							}
-
-						}
 					
 					?>
 				</div>

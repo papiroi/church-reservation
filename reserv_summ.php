@@ -466,9 +466,39 @@
 					
 					if($select_conflict_query -> num_rows > 0) {
 						
-						echo "<script>alert('The Date and Time is already reserved.');";
-						echo "window.location.href = 'reservation.php';</script>";
+						while($mrow = $select_conflict_query -> fetch_assoc()) {
+							$fevent = $mrow['event_type'];
+						}
 						
+						if($fevent == 'For Confirmation' || $fevent == 'For Wedding') {
+							// Start of Adding Reservation
+							// Start of Adding Reservation
+							$reservation = "INSERT INTO reservation (reserv_num, event_type, priest, reserv_date, reserv_time, username, status, confirmation, date_reserved)
+								VALUES(
+									'$rn',
+									'$event',
+									'$priest',
+									'$edate',
+									'$etime',
+									'$username',
+									'Active',
+									'$conf',
+									NOW()
+								)";
+							$reservation_query = $conn->query($reservation);
+							if($reservation_query == true) {
+								echo "<script>alert('Schedule is Successfully Reserved 4');";
+								echo "window.location.href = 'reservation.php';</script>";
+							}// End of Adding Reservation
+							// End of Adding Reservation
+							break;
+						}
+						else {
+						
+							echo "<script>alert('The Date and Time is already reserved 8.');";
+							echo "window.location.href = 'reservation.php';</script>";
+							
+						}
 					}
 					else {
 						if($select_user_events_query -> num_rows > 0) {
@@ -516,8 +546,39 @@
 					
 					if($select_conflict_query -> num_rows > 0) {
 						
-						echo "<script>alert('The Date and Time is already reserved.');";
-						echo "window.location.href = 'reservation.php';</script>";
+						while($mrow = $select_conflict_query -> fetch_assoc()) {
+							$fevent = $mrow['event_type'];
+						}
+						
+						if($fevent == 'For Confirmation' || $fevent == 'For Wedding') {
+							// Start of Adding Reservation
+							// Start of Adding Reservation
+							$reservation = "INSERT INTO reservation (reserv_num, event_type, priest, reserv_date, reserv_time, username, status, confirmation, date_reserved)
+								VALUES(
+									'$rn',
+									'$event',
+									'$priest',
+									'$edate',
+									'$etime',
+									'$username',
+									'Active',
+									'$conf',
+									NOW()
+								)";
+							$reservation_query = $conn->query($reservation);
+							if($reservation_query == true) {
+								echo "<script>alert('Schedule is Successfully Reserved 4');";
+								echo "window.location.href = 'reservation.php';</script>";
+							}// End of Adding Reservation
+							// End of Adding Reservation
+							break;
+						}
+						else {
+						
+							echo "<script>alert('The Date and Time is already reserved 8.');";
+							echo "window.location.href = 'reservation.php';</script>";
+							
+						}
 						
 					}
 					else {
@@ -588,7 +649,7 @@
 								$check_query = $conn->query($check);
 								
 								if($check_query -> num_rows > 0) {
-									echo "<script>alert('The Date and Time is already reserved.');";
+									echo "<script>alert('The Date and Time is already reserved 2.');";
 									echo "window.location.href = 'reservation.php';</script>";
 								}
 								else {
@@ -825,7 +886,7 @@
 					
 					if($select_conflict_query -> num_rows > 0) {
 						
-						echo "<script>alert('The Date and Time is already reserved.');";
+						echo "<script>alert('The Date and Time is already reserved 3.');";
 						echo "window.location.href = 'reservation.php';</script>";
 						
 					}
@@ -869,7 +930,7 @@
 					
 					if($select_conflict_query -> num_rows > 0) {
 						
-						echo "<script>alert('The Date and Time is already reserved.');";
+						echo "<script>alert('The Date and Time is already reserved 4.');";
 						echo "window.location.href = 'reservation.php';</script>";
 						
 					}
@@ -1063,13 +1124,13 @@
 				}
 				else if($event == 'Wedding') {
 					
-					echo "<script>alert('The Date and Time is already reserved.');";
+					echo "<script>alert('The Date and Time is already reserved 5.');";
 					echo "window.location.href = 'reservation.php';</script>";
 					
 				}
 				else {
 				
-					echo "<script>alert('The Date and Time is already reserved.');";
+					echo "<script>alert('The Date and Time is already reserved 6.');";
 					echo "window.location.href = 'reservation.php';</script>";
 				
 				}

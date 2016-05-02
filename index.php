@@ -41,6 +41,14 @@
 	
 	
 	
+	function nl2br2($text){
+		return preg_replace("/\r\n|\n|\r/", "<br>", $text);
+	}
+	
+	
+	
+	
+	
 /*
 * This will create the database and tables needed in the database of the website
 * 
@@ -165,7 +173,7 @@
 							
 							}
 							// The new announcement will display in the home page of the website
-							echo nl2br($new_announcement, false);
+							echo nl2br2($new_announcement, false);
 							
 							
 						?>

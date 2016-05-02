@@ -12,5 +12,5 @@
 			
 			?>
 			
-			<h1 class="white-text"><?php echo @$title; ?></h1>
-			<p class="white-text"><?php echo nl2br($description, false); ?></p>
+			<h1 class="white-text text-center"><?php echo @$title; ?></h1>
+			<p class="white-text text-center"><?php echo nl2br2($description, false); ?></p>

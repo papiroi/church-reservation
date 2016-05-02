@@ -34,6 +34,10 @@
 		$username = 'Guest';
 		
 	}
+	
+	function nl2br2($text){
+		return preg_replace("/\r\n|\n|\r/", "<br>", $text);
+	}
 ?>
 
 <!DOCTYPE html>

@@ -27,7 +27,7 @@
 			</div>
 			<div class="col-md-6">
 			<div class="boxed">
-				<p><?php echo nl2br($reminder, false); ?></p>
+				<p><?php echo nl2br2($reminder, false); ?></p>
 			</div>
 			</div>
 			</div>
