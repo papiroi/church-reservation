@@ -165,7 +165,7 @@
 							
 							}
 							// The new announcement will display in the home page of the website
-							echo $new_announcement;
+							echo nl2br($new_announcement, false);
 							
 							
 						?>
