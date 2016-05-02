@@ -127,8 +127,8 @@
 										echo "<img src='uploads/" . sha1($prow['name']) . ".jpg' style='width: 200px; height: 175px; border-radius: 5px;'/>";
 										
 										echo "<h3 class='text-center white-text'>Name: " . $prow['name'] . "</h3>";
-										echo "<p class='text-center white-text'>Schedule: " . $prow['sched'] . "</p>";
-										echo "<p class='text-center white-text'>" . $prow['info'] . "</p><br/>";
+										echo "<p class='text-center white-text'>Schedule: " . nl2br($prow['sched'], false) . "</p>";
+										echo "<p class='text-center white-text'>" . nl2br($prow['info'], false) . "</p><br/>";
 										
 										if($select_p_query -> num_rows > 1) {
 											echo "<hr/>";

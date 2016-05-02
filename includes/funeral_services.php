@@ -18,16 +18,16 @@
 	}
 ?>
 
-			<h1 class="white-text"><?php echo @$name; ?></h1>
+			<h1 class="white-text"><?php echo nl2br($name, false); ?></h1>
 			<div class="row">
 			<div class="col-md-6">
 			<div class="boxed">
-				<p class="white-text"><?php echo @$description; ?></p>
+				<p class="white-text"><?php echo nl2br($description, false); ?></p>
 			</div>
 			</div>
 			<div class="col-md-6">
 			<div class="boxed">
-				<p><?php echo @$reminder; ?></p>
+				<p><?php echo nl2br($reminder, false); ?></p>
 			</div>
 			</div>
 			</div>

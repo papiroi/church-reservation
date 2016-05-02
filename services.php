@@ -139,12 +139,12 @@
 								echo "<div class='row'>";
 								echo "<div class='col-md-6'>";
 								echo "<div class='boxed'>";
-								echo "<p class='white-text text-justify'><u>" . newLine($e_row['description']) . "</u></p>";
+								echo "<p class='white-text text-justify'>" . nl2br($e_row['description']) . "</pre></p>";
 								echo "</div>";
 								echo "</div>";
 								echo "<div class='col-md-6'>";
 								echo "<div class='boxed'>";
-								echo "<p class='white-text text-justify'>" . $e_row['reminder'] . "</p>";
+								echo "<p class='white-text text-justify'>" . nl2br($e_row['reminder']) . "</p>";
 								echo "</div>";
 								echo "</div>";
 								echo "</div>";
