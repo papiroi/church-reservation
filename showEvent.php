@@ -81,9 +81,17 @@
 	if($q_select_date->num_rows > 0) {
 		
 		while($row = $q_select_date->fetch_assoc()) {
+			$eventf = $row['event_type'];
+			
+			if($eventf == 'For Confirmation') {
+				$eventf = "Seminar For Confirmation";
+			}
+			else if($eventf == 'For Wedding') {
+				$eventf = "Seminar For Wedding";
+			}
 			echo "<tr>";
 			echo "<td>" . num_to_time($row['reserv_time']) . "</td>";
-			echo "<td>" . $row['event_type'] . "</td>";
+			echo "<td>" . $eventf . "</td>";
 			echo "</tr>";
 			
 			

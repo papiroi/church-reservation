@@ -2,3 +2,8 @@
 - New Line in Description
 - admin forgot password
 - change username
+
+	$db_server = "mysql9.000webhost.com";
+	$db_user = "a9013501_user";
+	$db_pass = "DatabasePassword1";
+	$db = "a9013501_data";
