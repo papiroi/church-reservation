@@ -1,4 +1,4 @@
-# church-reservation
+# Church Reservation
 Church Reservation System for Tarlac Cathedral
 
 How to install?
@@ -8,14 +8,3 @@ How to install?
 2. In your database server, create a database named "church"
 3. Update all files in the server.
 4. the default admin user is admin:admin (username:password)
-
-That's IT!!!
-
-History of Development
-Checkout1 - Register and Login
-editannouncement - Editting Announcement Finished
-
-Database: a9013501_data
-Username: a9013501_user
-Host: mysql9.000webhost.com
-Password: new
