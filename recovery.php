@@ -54,7 +54,7 @@
 			while($r = $select_user_query->fetch_assoc()) {
 
 				$email = $r['email'];
-				$link = "www.tarlaccathedral.cf/passrecovery.php?code=" . $r['recovery'];
+				$link = "www.staugustine.cf/passrecovery.php?code=" . $r['recovery'];
 
 			}
 
@@ -84,7 +84,7 @@
 <!DOCTYPE html>
 <html class="full" lang="en-US">
 <head>
-	<title>Scheduling and Reservation System for Tarlac San Sebastian Cathedral Parish</title>
+	<title>St. Augustine Parish Church</title>
 	
 <?php
 /*

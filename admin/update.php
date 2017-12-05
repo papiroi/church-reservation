@@ -49,7 +49,7 @@
 <!DOCTYPE html>
 <html class="full" lang="en-US">
 <head>
-	<title>Update Admin Details - Tarlac Cathedral Online Reservation and Scheduling</title>
+	<title>Update Admin Details - St. Augustine Parish Church Online Reservation and Scheduling</title>
 
 <?php
 

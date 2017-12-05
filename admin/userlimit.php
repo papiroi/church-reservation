@@ -1,6 +1,6 @@
 <?php
 /*
-* Start of Tarlac Cathedral Online Reservation and Scheduling
+* Start of St. Augustine Parish Church Online Reservation and Scheduling
 * 
 */
 

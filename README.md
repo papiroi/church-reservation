@@ -1,5 +1,5 @@
 # Church Reservation
-Church Reservation System for Tarlac Cathedral
+Church Reservation System for St. Augustine Parish Church
 
 How to install?
 

@@ -45,7 +45,7 @@
 <!doctype html>
 <html class="full" lang="en-US">
 <head>
-	<title>Gallery - Scheduling and Reservation for Tarlac San Sebastian Cathedral Parish</title>
+	<title>Gallery - St. Augustine Parish Church Online Reservation and Scheduling</title>
 	
 	<?php
 		include "includes/head_include.php";

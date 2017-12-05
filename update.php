@@ -38,7 +38,7 @@
 <!DOCTYPE html>
 <html class="full" lang="en-US">
 <head>
-	<title>Update User Detail - Tarlac Cathedral Online Reservation and Scheduling</title>
+	<title>Update User Detail - St. Augustine Parish Church Online Reservation and Scheduling</title>
 
 <?php
 
@@ -61,7 +61,7 @@
 	
 	<div class="container">
 	
-		<h1 class="text-center white-text">Tarlac Cathedral Online Reservation and Scheduling</h1>
+		<h1 class="text-center white-text">St. Augustine Parish Church Online Reservation and Scheduling</h1>
 		
 <!-- Start of Navigation Bar -->
 <?php

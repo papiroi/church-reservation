@@ -15,8 +15,7 @@
 
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta name="description" content="Scheduling and Reservation System for Tarlac San Sebastian
-		Cathedral Parish" />
+	<meta name="description" content="St. Augustine Parish Church Online Scheduling and Reservation"/>
 	
 	<!-- Bootstrap 3.2.0 Framework -->
 	<link rel="stylesheet" href="css/bootstrap.css" />

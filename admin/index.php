@@ -1,7 +1,7 @@
 <?php
 	//error_reporting(0);
 /*
-* Start of Tarlac Cathedral Online Reservation and Scheduling
+* Start of St. Augustine Parish Church Online Reservation and Scheduling
 * Index for Admin Page
 */
 

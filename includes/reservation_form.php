@@ -319,47 +319,47 @@ if(isset($_POST['eventtype']) && !empty($_POST['eventtype'])) {
 					
 					$current_month = date('m');
 					
-					if($current_month == 01) {
+					if($current_month == 1) {
 						
 						include_once "calendar/january.php";
 						
 					}
-					else if($current_month == 02) {
+					else if($current_month == 2) {
 						
 						include_once "calendar/february.php";
 						
 					}
-					else if($current_month == 03) {
+					else if($current_month == 3) {
 						
 						include_once "calendar/march.php";
 						
 					}
-					else if($current_month == 04) {
+					else if($current_month == 4) {
 						
 						include_once "calendar/april.php";
 						
 					}
-					else if($current_month == 05) {
+					else if($current_month == 5) {
 						
 						include_once "calendar/may.php";
 						
 					}
-					else if($current_month == 06) {
+					else if($current_month == 6) {
 						
 						include_once "calendar/june.php";
 						
 					}
-					else if($current_month == 07) {
+					else if($current_month == 7) {
 						
 						include_once "calendar/july.php";
 						
 					}
-					else if($current_month == 08) {
+					else if($current_month == 8) {
 						
 						include_once "calendar/august.php";
 						
 					}
-					else if($current_month == 09) {
+					else if($current_month == 9) {
 						
 						include_once "calendar/september.php";
 						

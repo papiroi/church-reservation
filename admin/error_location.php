@@ -36,7 +36,7 @@
 <body>
 
 	<div class="container">
-		<h1>Tarlac Cathedral Online Reservation and Scheduling</h1>
+		<h1>St. Augustine Parish Church Online Reservation and Scheduling</h1>
 		<h2 class="error-message">Error Location</h2>
 	</div>
 

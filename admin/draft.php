@@ -39,7 +39,7 @@
 <html class="full" lang="en-US">
 <head>
 
-	<title>Draft - Scheduling and Reservation System for Tarlac San Sebastian Cathedral Parish</title>
+	<title>Draft - St. Augustine Parish Church</title>
 	
 <?php
 

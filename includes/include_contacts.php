@@ -1,8 +1,8 @@
 
 <div class="footer">
 	
-	Tel. No.: (045) 982-0859 
+	Tel. No.: (046) 472-3218 
 	<br/>
-	F. Tanedo St. Tarlac City, Philippines 2300
+	Mendez, Cavite
 
 </div>

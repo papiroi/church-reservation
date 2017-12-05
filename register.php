@@ -50,7 +50,7 @@
 <!DOCTYPE html>
 <html class="full" lang="en-US">
 <head>
-	<title>Registration - Scheduling and Reservation System for Tarlac San Sebastian Cathedral Parish</title>
+	<title>Registration - St. Augustine Parish Church</title>
 	
 <?php
 
@@ -71,7 +71,7 @@
 </head>
 <body>
 	<div class="container">
-		<h1 class="text-center white-text">Scheduling and Reservation System for Tarlac San Sebastian Cathedral Parish</h1>
+		<h1 class="text-center white-text">St. Augustine Parish Church</h1>
 
 <!-- Start of Navigation Bar -->
 <?php

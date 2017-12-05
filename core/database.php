@@ -356,7 +356,7 @@ class Database {
 			$a_diocese = "INSERT IGNORE INTO about (code, title, description, dateMod)
 				VALUES(
 				'diocese',
-				'Diocese of Tarlac',
+				'Diocese of Mendez',
 				'Details not available.',
 				NOW()
 				)";

@@ -35,7 +35,7 @@
 <html class="full" lang="en-US">
 <head>
 
-	<title>Message Inbox - Scheduling and Reservation System for Tarlac San Sebastian Cathedral Parish</title>
+	<title>Message Inbox - St. Augustine Parish Church</title>
 	
 <?php
 

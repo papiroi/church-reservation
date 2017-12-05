@@ -40,7 +40,7 @@
 <html class="full" lang="en-US">
 <head>
 
-	<title>Sent Messages - Scheduling and Reservation System for Tarlac San Sebastian Cathedral Parish</title>
+	<title>Sent Messages - St. Augustine Parish Church</title>
 	
 <?php
 

@@ -388,7 +388,7 @@
 							echo "window.location.href = 'reservation.php';</script>";
 						}// End of Adding Reservation
 						// End of Adding Reservation
-						break;
+						//break;
 					}
 					
 				}
@@ -419,7 +419,7 @@
 							echo "window.location.href = 'reservation.php';</script>";
 						}// End of Adding Reservation
 						// End of Adding Reservation
-						break;
+						//break;
 					}
 					
 				}
@@ -455,7 +455,7 @@
 								echo "window.location.href = 'reservation.php';</script>";
 							}// End of Adding Reservation
 							// End of Adding Reservation
-							break;
+							//break;
 						}
 					}
 					
@@ -491,7 +491,7 @@
 								echo "window.location.href = 'reservation.php';</script>";
 							}// End of Adding Reservation
 							// End of Adding Reservation
-							break;
+							//break;
 						}
 						else {
 						
@@ -536,7 +536,7 @@
 									echo "window.location.href = 'reservation.php';</script>";
 								}// End of Adding Reservation
 								// End of Adding Reservation
-								break;
+								//break;
 							}
 						}
 					}
@@ -571,7 +571,7 @@
 								echo "window.location.href = 'reservation.php';</script>";
 							}// End of Adding Reservation
 							// End of Adding Reservation
-							break;
+							//break;
 						}
 						else {
 						
@@ -617,7 +617,7 @@
 									echo "window.location.href = 'reservation.php';</script>";
 								}// End of Adding Reservation
 								// End of Adding Reservation
-								break;
+								//break;
 							}
 						}
 					}
@@ -676,7 +676,7 @@
 										echo "window.location.href = 'reservation.php';</script>";
 									}// End of Adding Reservation
 									// End of Adding Reservation
-									break;
+									//break;
 								}
 							}
 						}
@@ -735,7 +735,7 @@
 								echo "window.location.href = 'reservation.php';</script>";
 							}// End of Adding Reservation
 							// End of Adding Reservation
-							break;
+							//break;
 						}
 					}
 					
@@ -770,7 +770,7 @@
 							echo "window.location.href = 'reservation.php';</script>";
 						}// End of Adding Reservation
 						// End of Adding Reservation
-						break;
+						//break;
 					}
 					
 				}
@@ -801,7 +801,7 @@
 							echo "window.location.href = 'reservation.php';</script>";
 						}// End of Adding Reservation
 						// End of Adding Reservation
-						break;
+						//break;
 					}
 					
 				}
@@ -837,7 +837,7 @@
 								echo "window.location.href = 'reservation.php';</script>";
 							}// End of Adding Reservation
 							// End of Adding Reservation
-							break;
+							//break;
 						}
 					}
 					
@@ -874,7 +874,7 @@
 								echo "window.location.href = 'reservation.php';</script>";
 							}// End of Adding Reservation
 							// End of Adding Reservation
-							break;
+							//break;
 						}
 					}
 					
@@ -921,7 +921,7 @@
 								echo "window.location.href = 'reservation.php';</script>";
 							}// End of Adding Reservation
 							// End of Adding Reservation
-							break;
+							//break;
 						}
 					}
 					
@@ -965,7 +965,7 @@
 								echo "window.location.href = 'reservation.php';</script>";
 							}// End of Adding Reservation
 							// End of Adding Reservation
-							break;
+							//break;
 						}
 					}
 					
@@ -1025,7 +1025,7 @@
 							echo "window.location.href = 'reservation.php';</script>";
 						}// End of Adding Reservation
 						// End of Adding Reservation
-						break;
+						//break;
 					}
 					
 				}
@@ -1056,7 +1056,7 @@
 							echo "window.location.href = 'reservation.php';</script>";
 						}// End of Adding Reservation
 						// End of Adding Reservation
-						break;
+						//break;
 					}
 					
 				}
@@ -1087,7 +1087,7 @@
 							echo "window.location.href = 'reservation.php';</script>";
 						}// End of Adding Reservation
 						// End of Adding Reservation
-						break;
+						//break;
 					}
 					
 				}
@@ -1118,7 +1118,7 @@
 							echo "window.location.href = 'reservation.php';</script>";
 						}// End of Adding Reservation
 						// End of Adding Reservation
-						break;
+						//break;
 					}
 					
 				}
@@ -1172,7 +1172,7 @@
 									echo "window.location.href = 'reservation.php';</script>";
 								}// End of Adding Reservation
 								// End of Adding Reservation
-								break;
+								//break;
 							}
 						}
 						else if($wedding_condition_query -> num_rows > 0) {
@@ -1222,7 +1222,7 @@
 									echo "window.location.href = 'reservation.php';</script>";
 								}// End of Adding Reservation
 								// End of Adding Reservation
-								break;
+								//break;
 							}
 							
 						}
@@ -1258,7 +1258,7 @@
 									echo "window.location.href = 'reservation.php';</script>";
 								}// End of Adding Reservation
 								// End of Adding Reservation
-								break;
+								//break;
 							}
 						}
 						else if($etime == '6' || $etime == '7' || $etime == '8' || $etime = '9') {
@@ -1293,7 +1293,7 @@
 									echo "window.location.href = 'reservation.php';</script>";
 								}// End of Adding Reservation
 								// End of Adding Reservation
-								break;
+								//break;
 							}
 							
 						}
@@ -1328,7 +1328,7 @@
 <!DOCTYPE html>
 <html class="full" lang="en-US">
 <head>
-	<title>Scheduling and Reservation System for Tarlac San Sebastian Cathedral Parish</title>
+	<title>St. Augustine Parish Church</title>
 	
 <?php
 /*

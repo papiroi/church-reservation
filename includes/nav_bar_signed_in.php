@@ -138,7 +138,7 @@
 							<!--
 							<li class=""><a href="about.php?about=history">History of Cathedral</a></li>
 							
-							<li><a href="about.php?about=diocese">Diocese of Tarlac</a></li>
+							<li><a href="about.php?about=diocese">Diocese of Mendez</a></li>
 							
 							<li><a href="about.php?about=orgchart">Organizational Chart</a></li>
 							
