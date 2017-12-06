@@ -49,7 +49,7 @@
 <!DOCTYPE html>
 <html class="full" lang="en-US">
 <head>
-	<title>Accounts</title>
+	<title>Vouchers</title>
 
 <?php
 	
@@ -91,17 +91,18 @@
 			<div class="col-md-12">
 			<div class="center-div">
                 <div class="accounting-title">
-                    <h2 class="white-text">Accounts Info</h2>
-                    <a href="add_account.php" class='btn btn-success' role="button"/>Add New Account</a>
+                    <h2 class="white-text">Voucher Info</h2>
+                    <a href="add_account.php" class='btn btn-success' role="button"/>Add New Voucher</a>
                 </div>
 				
 				<table class="table">
-					<th>Account Name</th>
-					<th>Account Type</th>
+					<th>Voucher No.</th>
+                                        <th>Description</th>
+                                        <th>Date</th>
 					<th>Status</th>
                                         <th>Option</th>
 				<?php
-					$select_accounts = "SELECT * FROM accounts";
+					$select_accounts = "SELECT * FROM vouchers";
 					$select_accounts_query = $conn->query($select_accounts);
 					
 					if($select_accounts_query->num_rows > 0) {
@@ -109,14 +110,15 @@
 						while($p_row = $select_accounts_query -> fetch_assoc()) {
 							
 							echo "<tr>";
-							echo "<td>" . $p_row['account_name'] . "</td>";
-							echo "<td>" . $p_row['account_type'] . "</td>";
+							echo "<td>" . $p_row['voucherid'] . "</td>";
+                                                        echo "<td>" . $p_row['voucher_description'] . "</td>";
+							echo "<td>" . $p_row['voucher_date'] . "</td>";
                                                         echo "<td>" . $p_row['account_status'] . "</td>";
 							echo "<td>";
 							
-							echo "<form action='p_update.php' method='post'>";
-							echo "<input type='hidden' name='id' value='" . $p_row['accountid'] . "'/>";
-							echo "<input type='submit' value='Edit' class='btn btn-primary'/>";
+							echo "<form action='acc_update.php' method='post'>";
+							echo "<input type='hidden' name='id' value='" . $p_row['voucherid'] . "'/>";
+							echo "<input type='submit' value='View Details' class='btn btn-primary'/>";
 							echo "</form>";
 							echo "</td>";
 							echo "</tr>";
@@ -126,7 +128,7 @@
 					}
 					else {
 					
-						echo "<h3 class='white-text'>NO Available Accounts</h3>";
+						echo "<h3 class='white-text'>NO Available Vouchers</h3>";
 					
 					}
 				

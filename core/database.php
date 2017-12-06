@@ -511,8 +511,9 @@ class Database {
         public function vouchers() {
             $create = "CREATE TABLE IF NOT EXISTS `vouchers` (
                         `voucherid` INT NOT NULL AUTO_INCREMENT,
+                        `voucher_description` VARCHAR(512) NOT NULL,
                         `voucher_date` DATE NOT NULL,
-                        `voucher_status` VARCHAR(64) NOT NULL,
+                        `voucher_status` VARCHAR(64) NOT NULL
                         PRIMARY KEY (`voucherid`))
                       ENGINE = InnoDB;";
             
