@@ -154,6 +154,20 @@
 							
 						</ul>
                     </li>
+
+					<li class="dropdown">
+                        <a href="javascript: void(0)" class="dropdown-toggle" data-toggle="dropdown"><strong>Accounting<span class="caret"></span></strong></a>
+						
+						<ul class="dropdown-menu">
+							<li>
+								<a href="accounts.php" target="_blank"><strong>Accounts</strong></a>
+								<a href="../forms/bapc.pdf" target="_blank"><strong>Vouchers</strong></a>
+								<a href="../forms/gmc.pdf" target="_blank"><strong>Income Statement</strong></a>
+							</li>
+							
+							
+						</ul>
+                    </li>
 					
 					<li id="user-position" class="dropdown">
 						<a href="javascript: void(0)" class="dropdown-toggle" data-toggle="dropdown"><strong>Admin<span class="caret"></span></strong></a>

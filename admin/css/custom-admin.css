@@ -194,3 +194,18 @@ textarea {
 .glyphicon .glyphicon-home {
 	font-size: 45px;
 }
+
+.accounting-title {
+	height: unset;
+}
+
+.accounting-title h2 {
+	display: inline-block;
+}
+
+.accounting-title > button {
+	display: inline-block;
+	float: right;
+	margin-top: 15px;
+	vertical-align: text-bottom;
+}
