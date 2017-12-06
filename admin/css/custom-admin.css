@@ -203,7 +203,7 @@ textarea {
 	display: inline-block;
 }
 
-.accounting-title > button {
+.accounting-title > a {
 	display: inline-block;
 	float: right;
 	margin-top: 15px;

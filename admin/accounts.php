@@ -92,29 +92,31 @@
 			<div class="center-div">
                 <div class="accounting-title">
                     <h2 class="white-text">Accounts Info</h2>
-                    <button type='button' class='btn btn-success'/>Add New Account</button>
+                    <a href="add_account.php" class='btn btn-success' role="button"/>Add New Account</a>
                 </div>
 				
 				<table class="table">
 					<th>Account Name</th>
 					<th>Account Type</th>
 					<th>Status</th>
+                                        <th>Option</th>
 				<?php
-					$select_priests = "SELECT * FROM priests";
-					$select_priests_query = $conn->query($select_priests);
+					$select_accounts = "SELECT * FROM accounts";
+					$select_accounts_query = $conn->query($select_accounts);
 					
-					if($select_priests_query -> num_rows > 0) {
+					if($select_accounts_query->num_rows > 0) {
 					
-						while($p_row = $select_priests_query -> fetch_assoc()) {
+						while($p_row = $select_accounts_query -> fetch_assoc()) {
 							
 							echo "<tr>";
-							echo "<td>" . $p_row['name'] . "</td>";
-							echo "<td>" . $p_row['sched'] . "</td>";
+							echo "<td>" . $p_row['account_name'] . "</td>";
+							echo "<td>" . $p_row['account_type'] . "</td>";
+                                                        echo "<td>" . $p_row['account_status'] . "</td>";
 							echo "<td>";
 							
 							echo "<form action='p_update.php' method='post'>";
-							echo "<input type='hidden' name='id' value='" . $p_row['priestID'] . "'/>";
-							echo "<select name='status'><option value='active'>Active</option><option value='inactive'>Inactive</option></select>";
+							echo "<input type='hidden' name='id' value='" . $p_row['accountid'] . "'/>";
+							echo "<input type='submit' value='Edit' class='btn btn-primary'/>";
 							echo "</form>";
 							echo "</td>";
 							echo "</tr>";
@@ -124,7 +126,7 @@
 					}
 					else {
 					
-						echo "<h3 class='white-text'>NO Available Priest</h3>";
+						echo "<h3 class='white-text'>NO Available Accounts</h3>";
 					
 					}
 				

@@ -47,15 +47,14 @@
 
 	}
 
-	if(isset($_POST['name']) && !empty($_POST['name'])) {
+	if(isset($_POST['account-name']) && !empty($_POST['account-name'])) {
 	
-		$name = $_POST['name'];
-		//$code = $_POST['code'];
-		$description = $_POST['description'];
-		$reminder = $_POST['reminder'];
+		$name = $_POST['account-name'];
+		$accountType = $_POST['account-type'];
+                $accountStatus = 'active';
 		
-		$add_event = "INSERT INTO events (name,  description, reminder, dateMod)
-			VALUES ('$name','$description','$reminder',NOW())";
+		$add_event = "INSERT INTO accounts (account_name,  account_type, account_status)
+			VALUES ('$name','$accountType','$accountStatus')";
 			
 		$add_event_query = $conn->query($add_event);
 		
@@ -63,14 +62,14 @@
 		
 			$p_msg = "<div class='alert alert-info text-center'>
 				<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-				Event Added!</div>";
+				Account Added!</div>";
 			
 		}
 		else {
 		
 			$p_msg = "<div class='alert alert-danger text-center'>
 				<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-				Error in Adding Event!</div>";
+				Error in Adding Account!</div>";
 		
 		}
 	
@@ -128,7 +127,7 @@
 				<h2 class='white-text'>Add New Account</h2>
 				<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" autocomplete="off">
 					<label>Account Name:</label>
-					<input type="text" class="form-control" id="account-name" name="name"
+					<input type="text" class="form-control" id="account-name" name="account-name"
 						required autofocus placeholder="Account Name"/>
 					<br/>
 					<!-- <label>Code:</label>

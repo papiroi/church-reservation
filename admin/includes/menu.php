@@ -160,7 +160,7 @@
 						
 						<ul class="dropdown-menu">
 							<li>
-								<a href="accounts.php" target="_blank"><strong>Accounts</strong></a>
+								<a href="accounts.php"><strong>Accounts</strong></a>
 								<a href="../forms/bapc.pdf" target="_blank"><strong>Vouchers</strong></a>
 								<a href="../forms/gmc.pdf" target="_blank"><strong>Income Statement</strong></a>
 							</li>
