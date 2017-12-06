@@ -25,6 +25,7 @@
 */
 	include "includes/connect.php";
 
+        
 /*
 * Page redirection part to login if the admin is not logged in
 * 
@@ -47,14 +48,14 @@
 
 	}
 
-	if(isset($_POST['account-name']) && !empty($_POST['account-name'])) {
+	if(isset($_POST['voucher-description']) && !empty($_POST['voucher-description'])) {
 	
-		$name = $_POST['account-name'];
-		$accountType = $_POST['account-type'];
-                $accountStatus = 'active';
+		$voucherDescription = $_POST['voucher-description'];
+		$voucherDate = date('y-m-d', strtotime($_POST['voucher-date']));
+                $voucherStatus = 'confirmed';
 		
-		$add_event = "INSERT INTO accounts (account_name,  account_type, account_status)
-			VALUES ('$name','$accountType','$accountStatus')";
+		$add_event = "INSERT INTO vouchers (voucher_description,  voucher_date, voucher_status)
+			VALUES ('$voucherDescription','$voucherDate','$voucherStatus')";
 			
 		$add_event_query = $conn->query($add_event);
 		
@@ -62,14 +63,14 @@
 		
 			$p_msg = "<div class='alert alert-info text-center'>
 				<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-				Account Added!</div>";
+				Voucher Added!</div>";
 			
 		}
 		else {
 		
 			$p_msg = "<div class='alert alert-danger text-center'>
 				<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-				Error in Adding Account!</div>";
+				Error in Adding Voucher!</div>";
 		
 		}
 	
@@ -100,7 +101,7 @@
 <body>
 	<div class="container">
 
-		<h1 class="white-text">Admin Pannel: Add Account</h1>
+		<h1 class="white-text">Admin Pannel: Add Voucher</h1>
 		
 		
 		
@@ -139,6 +140,28 @@
 					<label>Date:</label>
                                         <input type="text" name="voucher-date" id="voucher-date" value="" class="form-control" required/>
 					<br/>
+                                        
+                                        <label>Add Account:</label>
+                                        <select name="account-add">
+                                            <?php
+                                                $select_accounts_voucher_entry = 'SELECT * FROM accounts;';
+                                                $accounts = $conn->query($select_accounts_voucher_entry);
+                                                
+                                                while ($a_row = $accounts->fetch_assoc()) {
+                                                    echo '<option value="' . $a_row['accountid'] . '">' . $a_row['account_name'] . '</option>';
+                                                }
+                                            ?>
+                                        </select>
+                                        <button type="button" class="btn btn-success" id="voucher-add-account">+ Add</button>
+                                        <br/>
+                                        <br/>
+                                        
+                                        <table class="table">
+                                            <th colspan="2">Account</th>
+                                            <th>Debit</th>
+                                            <th>Credit</th>
+                                        </table>
+                                        
 					<br/>
 					<input type="submit" class="btn btn-primary" value="Save" />
 					&nbsp;&nbsp;

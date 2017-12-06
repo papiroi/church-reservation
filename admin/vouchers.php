@@ -113,7 +113,7 @@
 							echo "<td>" . $p_row['voucherid'] . "</td>";
                                                         echo "<td>" . $p_row['voucher_description'] . "</td>";
 							echo "<td>" . $p_row['voucher_date'] . "</td>";
-                                                        echo "<td>" . $p_row['account_status'] . "</td>";
+                                                        echo "<td>" . $p_row['voucher_status'] . "</td>";
 							echo "<td>";
 							
 							echo "<form action='acc_update.php' method='post'>";
