@@ -114,7 +114,7 @@
                                                         echo "<td>" . $p_row['account_status'] . "</td>";
 							echo "<td>";
 							
-							echo "<form action='p_update.php' method='post'>";
+							echo "<form action='acc_update.php' method='post'>";
 							echo "<input type='hidden' name='id' value='" . $p_row['accountid'] . "'/>";
 							echo "<input type='submit' value='Edit' class='btn btn-primary'/>";
 							echo "</form>";

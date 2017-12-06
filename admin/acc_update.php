@@ -1,7 +1,7 @@
 <?php
 /*
 * Start of St. Augustine Parish Church Online Reservation and Scheduling
-* 
+* TODO: change variable name according to attribute
 */
 
 /*
@@ -47,31 +47,31 @@
 
 	}
 	
-	if(isset($_POST['name']) && !empty($_POST['name'])) {
+	if(isset($_POST['account-name']) && !empty($_POST['account-name'])) {
 	
-		$id = $_POST['priestid'];
-		$name = $_POST['name'];
-		$sched = $_POST['sched'];
-		$info = $_POST['info'];
+		$id = $_POST['accountid'];
+		$name = $_POST['account-name'];
+		$sched = $_POST['account-type'];
+		$info = $_POST['account-status'];
 		
-		$update_priest = "UPDATE priests SET name = '$name', sched = '$sched', info = '$info' WHERE priestID = '$id'";
+		$update_priest = "UPDATE accounts SET account_name = '$name', account_type = '$sched', account_status = '$info' WHERE accountid = '$id'";
 		$update_priest_query = $conn->query($update_priest);
 		
 		if($update_priest_query) {
 		
 			$update_msg = "<div class='alert alert-info text-center'>
 				<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-				Priest Info Updated!</div>";
+				Account Info Updated!</div>";
 				
-				$select_priest = "SELECT * FROM priests WHERE priestID = '$id'";
+				$select_priest = "SELECT * FROM accounts WHERE accountid = '$id'";
 				$select_priest_query = $conn->query($select_priest);
 				
 				while($p_row = $select_priest_query -> fetch_assoc()) {
 				
-					$priest_id = $p_row['priestID'];
-					$priest_name = $p_row['name'];
-					$priest_sched = $p_row['sched'];
-					$priest_info = $p_row['info'];
+					$priest_id = $p_row['accountid'];
+					$priest_name = $p_row['account_name'];
+					$priest_sched = $p_row['account_type'];
+					$priest_info = $p_row['account_status'];
 				
 				}
 		
@@ -96,10 +96,10 @@
 		
 		while($p_row = $select_priest_query -> fetch_assoc()) {
 		
-			$priest_id = $p_row['priestID'];
-			$priest_name = $p_row['name'];
-			$priest_sched = $p_row['sched'];
-			$priest_info = $p_row['info'];
+			$priest_id = $p_row['accountid'];
+			$priest_name = $p_row['account_name'];
+			$priest_sched = $p_row['account_type'];
+			$priest_info = $p_row['account_status'];
 		
 		}
 	
@@ -112,7 +112,7 @@
 <!DOCTYPE html>
 <html class="full" lang="en-US">
 <head>
-	<title>Priests Panel</title>
+	<title>Accounts Panel</title>
 
 <?php
 	
@@ -155,18 +155,22 @@
 			<div class="col-md-7">
 			<?php echo @$update_msg; ?>
 			<div class="center-div">
-				<h2 class='white-text'>Update Priest Info</h2>
+				<h2 class='white-text'>Update Account Info</h2>
 				<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" autocomplete="off">
 					<label>Name:</label>
-					<input type="hidden" name="priestid" value="<?php echo @$priest_id; ?>" />
-					<input type="text" value="<?php echo @$priest_name; ?>" class="form-control" id="name" name="name"
-						required autofocus placeholder="Name of Priest"/>
+					<input type="hidden" name="accountid" value="<?php echo @$priest_id; ?>" />
+                                        <input type="text" readonly value="<?php echo @$priest_name; ?>" class="form-control" id="name" name="account-name"
+						required autofocus placeholder="Name of Account"/>
 					<br/>
-					<label>Schedule:</label>
-					<input type="text" value="<?php echo @$priest_sched; ?>" class="form-control" id="sched" name="sched" placeholder="Schedule of the Priest" required />
+					<label>Account Type:</label>
+                                        <input type="text" readonly="" value="<?php echo @$priest_sched; ?>" class="form-control" id="name" name="account-type"
+						required autofocus placeholder="Account Type"/>
 					<br/>
-					<label>Priest Info:</label>
-					<textarea id="info" name="info" class="form-control"><?php echo @$priest_info; ?></textarea>
+					<label>Account Status:</label>
+					<select name="account-status">
+                                            <option value="active" selected>Active</option>
+                                            <option value="inactive" <?php if(@$priest_info === 'inactive') echo 'selected'; ?>>Inactive</option>
+                                        </select>
 					<br/>
 					<input type="submit" class="btn btn-primary" value="Update" />
 					&nbsp;&nbsp;

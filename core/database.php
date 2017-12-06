@@ -526,18 +526,17 @@ class Database {
             $create = "CREATE TABLE IF NOT EXISTS `voucher_accounts` (
                         `accounts_accountid` INT NOT NULL,
                         `vouchers_voucherid` INT NOT NULL,
-                        `debit` DOUBLE NULL DEFAULT 0,
-                        `credit` DOUBLE NULL DEFAULT 0,
+                        `amount` DOUBLE NULL DEFAULT 0,
                         INDEX `fk_table1_accounts_idx` (`accounts_accountid` ASC),
                         INDEX `fk_table1_vouchers1_idx` (`vouchers_voucherid` ASC),
                         CONSTRAINT `fk_table1_accounts`
                           FOREIGN KEY (`accounts_accountid`)
-                          REFERENCES `mydb`.`accounts` (`accountid`)
+                          REFERENCES `accounts` (`accountid`)
                           ON DELETE NO ACTION
                           ON UPDATE NO ACTION,
                         CONSTRAINT `fk_table1_vouchers1`
                           FOREIGN KEY (`vouchers_voucherid`)
-                          REFERENCES `mydb`.`vouchers` (`voucherid`)
+                          REFERENCES `vouchers` (`voucherid`)
                           ON DELETE NO ACTION
                           ON UPDATE NO ACTION)
                       ENGINE = InnoDB;";
