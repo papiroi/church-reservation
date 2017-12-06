@@ -488,6 +488,65 @@ class Database {
 
 
 	}
+        
+        /**
+         * Don't repeat yourself
+         */
+        public function accounts() {
+            $create = "CREATE TABLE IF NOT EXISTS `accounts` (
+                    `accountid` INT NOT NULL,
+                    `account_name` VARCHAR(128) NOT NULL,
+                    `account_type` VARCHAR(128) NOT NULL,
+                    `account_status` VARCHAR(128) NOT NULL,
+                    PRIMARY KEY (`accountid`))
+                  ENGINE = InnoDB;
+                  ";
+            
+            $create_query = $this->conn->query($create);
+            if(!$create_query) {
+                exit("Accounts error!");
+            }
+        }
+        
+        public function vouchers() {
+            $create = "CREATE TABLE IF NOT EXISTS `vouchers` (
+                        `voucherid` INT NOT NULL,
+                        `voucher_date` DATE NOT NULL,
+                        `voucher_status` VARCHAR(64) NOT NULL,
+                        PRIMARY KEY (`voucherid`))
+                      ENGINE = InnoDB;";
+            
+            $create_query = $this->conn->query($create);
+            if(!$create_query) {
+                exit("Vouchers error!");
+            }
+        }
+        
+        public function voucherAccounts() {
+            $create = "CREATE TABLE IF NOT EXISTS `voucher_accounts` (
+                        `accounts_accountid` INT NOT NULL,
+                        `vouchers_voucherid` INT NOT NULL,
+                        `debit` DOUBLE NULL DEFAULT 0,
+                        `credit` DOUBLE NULL DEFAULT 0,
+                        INDEX `fk_table1_accounts_idx` (`accounts_accountid` ASC),
+                        INDEX `fk_table1_vouchers1_idx` (`vouchers_voucherid` ASC),
+                        CONSTRAINT `fk_table1_accounts`
+                          FOREIGN KEY (`accounts_accountid`)
+                          REFERENCES `mydb`.`accounts` (`accountid`)
+                          ON DELETE NO ACTION
+                          ON UPDATE NO ACTION,
+                        CONSTRAINT `fk_table1_vouchers1`
+                          FOREIGN KEY (`vouchers_voucherid`)
+                          REFERENCES `mydb`.`vouchers` (`voucherid`)
+                          ON DELETE NO ACTION
+                          ON UPDATE NO ACTION)
+                      ENGINE = InnoDB;";
+            
+            $create_query = $this->conn->query($create);
+            if(!$create_query) {
+                exit("Voucher accounts error!");
+            }
+        }
 
 	// End of Database Class
 }
