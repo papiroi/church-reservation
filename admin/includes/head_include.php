@@ -28,7 +28,11 @@
 	
 	<!-- jQuery - Needs at the head part of the hmtl document -->
     <script src="js/jquery.js"></script>
+    
+        <link rel="stylesheet" href="css/jquery-ui2.css">
+	<script src="js/jquery-ui.js"></script>
 	
 	<!-- Save to Draft Message and Clear message-->
 	<script src="js/saveToDraft.js"></script>
 	
+        <script src="js/calendarMonth.js"></script>

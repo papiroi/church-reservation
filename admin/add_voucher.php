@@ -86,11 +86,15 @@
 <?php
 	
 	include "includes/head_include.php";
-
 ?>
 
 	<!-- Custome Background for Services Offered Page -->
 	<link rel="stylesheet" href="../css/background-image.css" />
+        <script>
+		$(function() {
+			$("#voucher-date").datepicker({ maxDate: 90, changeYear: true, changeMonth: true });
+		});
+	</script>
 
 </head>
 <body>
@@ -124,22 +128,16 @@
 			<div class="col-md-6 col-md-offset-3">
 			<?php echo @$p_msg; ?>
 			<div class="center-div">
-				<h2 class='white-text'>Add New Account</h2>
+				<h2 class='white-text'>Add New Voucher</h2>
 				<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" autocomplete="off">
-					<label>Account Name:</label>
-					<input type="text" class="form-control" id="account-name" name="account-name"
-						required autofocus placeholder="Account Name"/>
+					<label>Voucher Description</label>
+                                        <textarea rows="3" class="form-control" id="voucher-description" name="voucher-description"
+                                                  required autofocus placeholder="Enter description here"></textarea>
 					<br/>
 					<!-- <label>Code:</label>
 					<input type="text" class="form-control" id="code" name="code" placeholder="Unique Code for the Event" required /> -->
-					<label>Account Type:</label>
-                                        <select name="account-type">
-                                            <option value="revenue" selected>Revenue</option>
-                                            <option value="expenses">Expenses</option>
-                                            <option value="assets">Assets</option>
-                                            <option value="liabilities">Liabilities</option>
-                                            <option value="equity">Equity</option>
-                                        </select>
+					<label>Date:</label>
+                                        <input type="text" name="voucher-date" id="voucher-date" value="" class="form-control" required/>
 					<br/>
 					<br/>
 					<input type="submit" class="btn btn-primary" value="Save" />

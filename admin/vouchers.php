@@ -92,7 +92,7 @@
 			<div class="center-div">
                 <div class="accounting-title">
                     <h2 class="white-text">Voucher Info</h2>
-                    <a href="add_account.php" class='btn btn-success' role="button"/>Add New Voucher</a>
+                    <a href="add_voucher.php" class='btn btn-success' role="button"/>Add New Voucher</a>
                 </div>
 				
 				<table class="table">

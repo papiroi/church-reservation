@@ -513,7 +513,7 @@ class Database {
                         `voucherid` INT NOT NULL AUTO_INCREMENT,
                         `voucher_description` VARCHAR(512) NOT NULL,
                         `voucher_date` DATE NOT NULL,
-                        `voucher_status` VARCHAR(64) NOT NULL
+                        `voucher_status` VARCHAR(64) NOT NULL,
                         PRIMARY KEY (`voucherid`))
                       ENGINE = InnoDB;";
             
@@ -527,7 +527,8 @@ class Database {
             $create = "CREATE TABLE IF NOT EXISTS `voucher_accounts` (
                         `accounts_accountid` INT NOT NULL,
                         `vouchers_voucherid` INT NOT NULL,
-                        `amount` DOUBLE NULL DEFAULT 0,
+                        `debit` DOUBLE NULL DEFAULT 0,
+                        `credit` DOUBLE NULL DEFAULT 0,
                         INDEX `fk_table1_accounts_idx` (`accounts_accountid` ASC),
                         INDEX `fk_table1_vouchers1_idx` (`vouchers_voucherid` ASC),
                         CONSTRAINT `fk_table1_accounts`
