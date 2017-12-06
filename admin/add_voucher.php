@@ -91,11 +91,6 @@
 
 	<!-- Custome Background for Services Offered Page -->
 	<link rel="stylesheet" href="../css/background-image.css" />
-        <script>
-		$(function() {
-			$("#voucher-date").datepicker({ maxDate: 90, changeYear: true, changeMonth: true });
-		});
-	</script>
 
 </head>
 <body>
@@ -142,7 +137,7 @@
 					<br/>
                                         
                                         <label>Add Account:</label>
-                                        <select name="account-add">
+                                        <select name="account-add" id="account-add">
                                             <?php
                                                 $select_accounts_voucher_entry = 'SELECT * FROM accounts;';
                                                 $accounts = $conn->query($select_accounts_voucher_entry);
@@ -156,7 +151,7 @@
                                         <br/>
                                         <br/>
                                         
-                                        <table class="table">
+                                        <table class="table" id="voucher-account-table">
                                             <th colspan="2">Account</th>
                                             <th>Debit</th>
                                             <th>Credit</th>
@@ -172,7 +167,7 @@
 			</div>
 		</div>
 	</div>
-
+<script src="js/Voucher.js"/>
 
 <?php
 

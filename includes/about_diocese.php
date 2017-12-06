@@ -21,6 +21,3 @@
 
 
 
-
-			Dog dog = new Dog();
-			dog.bark();
