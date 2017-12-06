@@ -99,6 +99,15 @@
 
 	// Create recovery table
 	$db->recovery();
+        
+        // Create accounts table
+        $db->accounts();
+        
+        // Create vouchers table
+        $db->vouchers();
+        
+        // Create voucher-accounts table
+        $db->voucherAccounts();
 ?>
 
 

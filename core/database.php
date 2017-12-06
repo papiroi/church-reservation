@@ -494,7 +494,7 @@ class Database {
          */
         public function accounts() {
             $create = "CREATE TABLE IF NOT EXISTS `accounts` (
-                    `accountid` INT NOT NULL,
+                    `accountid` INT NOT NULL AUTO_INCREMENT,
                     `account_name` VARCHAR(128) NOT NULL,
                     `account_type` VARCHAR(128) NOT NULL,
                     `account_status` VARCHAR(128) NOT NULL,
@@ -510,7 +510,7 @@ class Database {
         
         public function vouchers() {
             $create = "CREATE TABLE IF NOT EXISTS `vouchers` (
-                        `voucherid` INT NOT NULL,
+                        `voucherid` INT NOT NULL AUTO_INCREMENT,
                         `voucher_date` DATE NOT NULL,
                         `voucher_status` VARCHAR(64) NOT NULL,
                         PRIMARY KEY (`voucherid`))
